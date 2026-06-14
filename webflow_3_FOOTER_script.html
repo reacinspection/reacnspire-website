@@ -1,0 +1,8 @@
+<script>
+  function toggleLang() {
+    const isEs = document.body.classList.toggle('es');
+    document.querySelectorAll('[data-ph-en]').forEach(el => {
+      el.placeholder = isEs ? el.dataset.phEs : el.dataset.phEn;
+    });
+  }
+</script>

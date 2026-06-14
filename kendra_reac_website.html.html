@@ -1,0 +1,1202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kendra REAC Consultant, Inc. | HUD NSPIRE Inspection Experts</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0D1F3C;
+    --navy-mid: #1A3358;
+    --navy-light: #2B4A72;
+    --gold: #C9993A;
+    --gold-light: #E8B85A;
+    --gold-pale: #F5E8C8;
+    --cream: #FAF7F2;
+    --white: #FFFFFF;
+    --gray-100: #F4F1EC;
+    --gray-200: #E5E0D5;
+    --gray-400: #9A9486;
+    --gray-600: #5C5548;
+    --text: #1A1410;
+    --text-light: #4A4339;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--text);
+    line-height: 1.6;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background: rgba(13,31,60,0.97);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(201,153,58,0.2);
+    padding: 0 40px;
+    display: flex; align-items: center; justify-content: space-between;
+    height: 68px;
+  }
+
+  .nav-logo {
+    display: flex; align-items: center; gap: 12px;
+    text-decoration: none;
+  }
+  .nav-logo-mark {
+    width: 38px; height: 38px; border-radius: 8px;
+    background: var(--gold);
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 18px; font-weight: 700; color: var(--navy);
+  }
+  .nav-logo-text { font-size: 14px; font-weight: 500; color: var(--white); line-height: 1.2; }
+  .nav-logo-text span { display: block; font-size: 11px; font-weight: 300; color: var(--gold-light); letter-spacing: 0.05em; }
+
+  .nav-links { display: flex; align-items: center; gap: 4px; }
+  .nav-links a {
+    font-size: 13px; font-weight: 400; color: rgba(255,255,255,0.75);
+    text-decoration: none; padding: 8px 14px; border-radius: 6px;
+    transition: all 0.2s;
+  }
+  .nav-links a:hover { color: var(--white); background: rgba(255,255,255,0.08); }
+
+  .nav-lang {
+    font-size: 12px; font-weight: 500; color: var(--gold-light);
+    border: 1px solid rgba(201,153,58,0.4); border-radius: 20px;
+    padding: 4px 12px; cursor: pointer;
+    background: rgba(201,153,58,0.08);
+    transition: all 0.2s;
+  }
+  .nav-lang:hover { background: rgba(201,153,58,0.18); }
+
+  .nav-cta {
+    background: var(--gold); color: var(--navy);
+    font-size: 13px; font-weight: 600;
+    padding: 9px 20px; border-radius: 6px;
+    text-decoration: none; white-space: nowrap;
+    transition: all 0.2s;
+  }
+  .nav-cta:hover { background: var(--gold-light); }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh;
+    background: var(--navy);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-bg-pattern {
+    position: absolute; inset: 0;
+    background-image:
+      radial-gradient(circle at 70% 50%, rgba(201,153,58,0.08) 0%, transparent 60%),
+      radial-gradient(circle at 20% 80%, rgba(43,74,114,0.6) 0%, transparent 50%);
+    pointer-events: none;
+  }
+
+  .hero-bg-photo {
+    position: absolute; inset: 0;
+    background-image: url('https://static.wixstatic.com/media/e7c6f5_e3b1d3347c6e4566b8ab041887336a97~mv2.jpg/v1/fill/w_964,h_613,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/e7c6f5_e3b1d3347c6e4566b8ab041887336a97~mv2.jpg');
+    background-size: cover; background-position: center;
+    opacity: 0.08; pointer-events: none;
+  }
+
+  .hero-grid-lines {
+    position: absolute; inset: 0; pointer-events: none;
+    background-image:
+      linear-gradient(rgba(201,153,58,0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(201,153,58,0.04) 1px, transparent 1px);
+    background-size: 60px 60px;
+  }
+
+  .hero-left {
+    padding: 130px 60px 80px;
+    display: flex; flex-direction: column; justify-content: center;
+    position: relative; z-index: 2;
+  }
+
+  .hero-badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(201,153,58,0.15);
+    border: 1px solid rgba(201,153,58,0.35);
+    border-radius: 20px; padding: 6px 14px;
+    font-size: 12px; font-weight: 500; color: var(--gold-light);
+    letter-spacing: 0.06em; text-transform: uppercase;
+    margin-bottom: 28px; width: fit-content;
+  }
+  .hero-badge::before {
+    content: ''; width: 6px; height: 6px; border-radius: 50%;
+    background: var(--gold); display: block;
+  }
+
+  .hero-headline {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(36px, 4vw, 54px);
+    font-weight: 700; line-height: 1.15;
+    color: var(--white); margin-bottom: 20px;
+  }
+  .hero-headline em { font-style: normal; color: var(--gold-light); }
+
+  .hero-sub {
+    font-size: 16px; font-weight: 300; line-height: 1.7;
+    color: rgba(255,255,255,0.65); margin-bottom: 36px;
+    max-width: 460px;
+  }
+
+  .hero-cta-row { display: flex; gap: 14px; align-items: center; flex-wrap: wrap; margin-bottom: 52px; }
+
+  .btn-primary {
+    background: var(--gold); color: var(--navy);
+    font-size: 15px; font-weight: 600;
+    padding: 14px 28px; border-radius: 8px;
+    text-decoration: none; transition: all 0.2s;
+    border: 2px solid var(--gold);
+  }
+  .btn-primary:hover { background: var(--gold-light); border-color: var(--gold-light); transform: translateY(-1px); }
+
+  .btn-ghost {
+    color: rgba(255,255,255,0.8); font-size: 15px; font-weight: 400;
+    padding: 14px 28px; border-radius: 8px;
+    text-decoration: none; transition: all 0.2s;
+    border: 1px solid rgba(255,255,255,0.2);
+  }
+  .btn-ghost:hover { border-color: rgba(255,255,255,0.5); color: var(--white); }
+
+  .hero-stats {
+    display: flex; gap: 36px; flex-wrap: wrap;
+    padding-top: 36px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+  }
+  .hero-stat-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px; font-weight: 600; color: var(--gold-light);
+    display: block;
+  }
+  .hero-stat-label { font-size: 12px; color: rgba(255,255,255,0.5); font-weight: 300; line-height: 1.4; }
+
+  .hero-right {
+    display: flex; align-items: center; justify-content: center;
+    padding: 130px 60px 80px 20px;
+    position: relative; z-index: 2;
+  }
+
+  .hero-card {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(201,153,58,0.2);
+    border-radius: 16px;
+    padding: 36px;
+    width: 100%; max-width: 400px;
+  }
+
+  .hero-card-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px; color: var(--white); margin-bottom: 20px;
+  }
+
+  .score-item {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+  }
+  .score-item:last-of-type { border-bottom: none; }
+  .score-freq { font-size: 13px; color: rgba(255,255,255,0.7); }
+  .score-range {
+    font-family: 'Playfair Display', serif;
+    font-size: 15px; font-weight: 600;
+  }
+  .score-range.green { color: #7BC67E; }
+  .score-range.yellow { color: #F5C842; }
+  .score-range.red { color: #E87474; }
+
+  .hero-card-note {
+    margin-top: 20px; padding: 14px;
+    background: rgba(201,153,58,0.1);
+    border-radius: 8px; border-left: 3px solid var(--gold);
+    font-size: 13px; color: rgba(255,255,255,0.7); line-height: 1.6;
+  }
+
+  /* ── TRUST BAR ── */
+  .trust-bar {
+    background: var(--gold);
+    padding: 16px 40px;
+    display: flex; align-items: center; justify-content: center;
+    gap: 48px; flex-wrap: wrap;
+  }
+  .trust-item {
+    font-size: 13px; font-weight: 600; color: var(--navy);
+    display: flex; align-items: center; gap: 8px;
+  }
+  .trust-item::before {
+    content: '✓'; width: 18px; height: 18px;
+    background: var(--navy); color: var(--gold);
+    border-radius: 50%; display: flex; align-items: center; justify-content: center;
+    font-size: 10px; font-weight: 700; flex-shrink: 0;
+  }
+
+  /* ── SECTION COMMONS ── */
+  section { padding: 90px 40px; }
+  .container { max-width: 1100px; margin: 0 auto; }
+
+  .section-label {
+    font-size: 11px; font-weight: 600; letter-spacing: 0.1em;
+    text-transform: uppercase; color: var(--gold);
+    margin-bottom: 12px;
+  }
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(28px, 3vw, 40px);
+    font-weight: 700; line-height: 1.2;
+    color: var(--navy); margin-bottom: 16px;
+  }
+  .section-sub {
+    font-size: 16px; color: var(--gray-600); line-height: 1.7;
+    max-width: 580px;
+  }
+
+  /* ── SERVICES ── */
+  .services { background: var(--white); }
+  .services-header { text-align: center; margin-bottom: 56px; }
+  .services-header .section-sub { margin: 0 auto; }
+
+  .services-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
+  }
+
+  .service-card {
+    background: var(--cream); border: 1px solid var(--gray-200);
+    border-radius: 16px; padding: 32px 28px;
+    position: relative; overflow: hidden;
+    transition: all 0.3s;
+  }
+  .service-card:hover {
+    border-color: var(--gold); transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(13,31,60,0.1);
+  }
+  .service-card::before {
+    content: ''; position: absolute; top: 0; left: 0; right: 0;
+    height: 3px; background: var(--gold);
+    transform: scaleX(0); transform-origin: left;
+    transition: transform 0.3s;
+  }
+  .service-card:hover::before { transform: scaleX(1); }
+
+  .service-icon {
+    width: 48px; height: 48px; border-radius: 12px;
+    background: var(--gold-pale); display: flex; align-items: center;
+    justify-content: center; font-size: 22px; margin-bottom: 20px;
+  }
+  .service-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px; font-weight: 700; color: var(--navy);
+    margin-bottom: 10px;
+  }
+  .service-card p {
+    font-size: 14px; color: var(--gray-600); line-height: 1.7; margin-bottom: 20px;
+  }
+  .service-link {
+    font-size: 13px; font-weight: 600; color: var(--gold);
+    text-decoration: none; display: flex; align-items: center; gap: 6px;
+  }
+  .service-link::after { content: '→'; transition: transform 0.2s; }
+  .service-link:hover::after { transform: translateX(4px); }
+
+  /* ── WHY US ── */
+  .why { background: var(--navy); }
+  .why .section-title { color: var(--white); }
+  .why .section-sub { color: rgba(255,255,255,0.6); }
+  .why-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; margin-top: 56px; }
+
+  .differentiator {
+    display: flex; gap: 18px; margin-bottom: 32px;
+    padding-bottom: 32px; border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+  .differentiator:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+  .diff-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px; font-weight: 700; color: rgba(201,153,58,0.3);
+    line-height: 1; flex-shrink: 0; width: 40px;
+  }
+  .diff-title { font-size: 16px; font-weight: 600; color: var(--white); margin-bottom: 6px; }
+  .diff-body { font-size: 14px; color: rgba(255,255,255,0.55); line-height: 1.7; }
+
+  .why-right {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(201,153,58,0.2);
+    border-radius: 20px; padding: 36px;
+  }
+  .why-right-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px; color: var(--gold-light); margin-bottom: 24px;
+  }
+  .training-item {
+    padding: 16px 0; border-bottom: 1px solid rgba(255,255,255,0.07);
+    display: flex; justify-content: space-between; align-items: flex-start;
+  }
+  .training-item:last-child { border-bottom: none; }
+  .training-name { font-size: 14px; color: var(--white); font-weight: 500; }
+  .training-name span { display: block; font-size: 12px; color: rgba(255,255,255,0.45); font-weight: 300; margin-top: 2px; }
+  .training-dur {
+    font-size: 12px; font-weight: 600; color: var(--gold);
+    background: rgba(201,153,58,0.12);
+    padding: 3px 10px; border-radius: 20px;
+    white-space: nowrap; flex-shrink: 0;
+  }
+
+  /* ── TESTIMONIALS ── */
+  .testimonials { background: var(--gray-100); }
+  .testimonials-header { text-align: center; margin-bottom: 52px; }
+  .testimonials-header .section-sub { margin: 0 auto; }
+
+  .testimonials-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+
+  .testimonial-card {
+    background: var(--white); border: 1px solid var(--gray-200);
+    border-radius: 16px; padding: 28px;
+  }
+  .testimonial-quote {
+    font-size: 32px; color: var(--gold); line-height: 1; margin-bottom: 14px;
+    font-family: 'Playfair Display', serif;
+  }
+  .testimonial-text {
+    font-size: 14px; color: var(--text-light); line-height: 1.75;
+    margin-bottom: 20px; font-style: italic;
+  }
+  .testimonial-score {
+    display: flex; align-items: center; gap: 10px; margin-bottom: 16px;
+  }
+  .score-before, .score-after {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px; font-weight: 700;
+  }
+  .score-before { color: var(--gray-400); }
+  .score-after { color: #3A8A3A; }
+  .score-arrow { color: var(--gold); font-size: 18px; }
+  .testimonial-author {
+    font-size: 13px; font-weight: 600; color: var(--navy);
+  }
+  .testimonial-author span { display: block; font-weight: 400; font-size: 12px; color: var(--gray-400); }
+
+  /* ── CLIENTS ── */
+  .clients { background: var(--white); }
+  .clients-header { text-align: center; margin-bottom: 48px; }
+
+  .clients-grid {
+    display: grid; grid-template-columns: repeat(4, 1fr);
+    gap: 0; border: 1px solid var(--gray-200); border-radius: 12px;
+    overflow: hidden;
+  }
+  .client-item {
+    padding: 18px 20px; font-size: 13px; font-weight: 500;
+    color: var(--gray-600); border-right: 1px solid var(--gray-200);
+    border-bottom: 1px solid var(--gray-200);
+    transition: all 0.2s;
+  }
+  .client-item:hover { background: var(--gold-pale); color: var(--navy); }
+  .client-item:nth-child(4n) { border-right: none; }
+
+  /* ── ABOUT ── */
+  .about { background: var(--cream); }
+  .about-grid { display: grid; grid-template-columns: 1fr 1.5fr; gap: 80px; align-items: start; }
+  .about-img-wrap {
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+  }
+  .about-img-placeholder {
+    font-family: 'Playfair Display', serif;
+    font-size: 80px; color: rgba(201,153,58,0.3);
+    text-align: center;
+  }
+  .about-img-badge {
+    position: absolute; bottom: 24px; left: 24px; right: 24px;
+    background: var(--gold); border-radius: 10px;
+    padding: 14px 18px;
+    font-size: 13px; font-weight: 600; color: var(--navy);
+  }
+  .about-img-badge span { display: block; font-size: 11px; font-weight: 400; opacity: 0.7; margin-top: 2px; }
+
+  .about-content { padding-top: 8px; }
+  .about-content .section-title { margin-bottom: 20px; }
+  .about-content p { font-size: 15px; color: var(--gray-600); line-height: 1.8; margin-bottom: 16px; }
+
+  .about-highlights {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 32px;
+  }
+  .highlight {
+    background: var(--white); border: 1px solid var(--gray-200);
+    border-radius: 10px; padding: 16px;
+  }
+  .highlight-icon { font-size: 20px; margin-bottom: 8px; }
+  .highlight-label { font-size: 13px; font-weight: 600; color: var(--navy); margin-bottom: 4px; }
+  .highlight-text { font-size: 12px; color: var(--gray-400); line-height: 1.5; }
+
+  /* ── CTA BANNER ── */
+  .cta-banner {
+    background: var(--navy);
+    padding: 80px 40px;
+    text-align: center;
+    position: relative; overflow: hidden;
+  }
+  .cta-banner::before {
+    content: ''; position: absolute; inset: 0;
+    background: radial-gradient(ellipse at 50% 0%, rgba(201,153,58,0.15) 0%, transparent 70%);
+  }
+  .cta-banner-content { position: relative; z-index: 2; }
+  .cta-banner h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(28px, 3.5vw, 44px); font-weight: 700;
+    color: var(--white); margin-bottom: 14px;
+  }
+  .cta-banner h2 em { font-style: normal; color: var(--gold-light); }
+  .cta-banner p { font-size: 16px; color: rgba(255,255,255,0.6); margin-bottom: 36px; }
+  .cta-banner-btns { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+
+  /* ── CONTACT ── */
+  .contact { background: var(--white); }
+  .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; }
+  .contact-info { padding-top: 8px; }
+  .contact-item {
+    display: flex; align-items: flex-start; gap: 16px;
+    margin-bottom: 28px;
+  }
+  .contact-icon {
+    width: 44px; height: 44px; border-radius: 10px;
+    background: var(--gold-pale); display: flex; align-items: center;
+    justify-content: center; font-size: 18px; flex-shrink: 0;
+  }
+  .contact-label { font-size: 12px; font-weight: 600; color: var(--gray-400); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 2px; }
+  .contact-value { font-size: 15px; color: var(--navy); font-weight: 500; text-decoration: none; }
+  .contact-value:hover { color: var(--gold); }
+
+  .contact-social { display: flex; gap: 10px; margin-top: 36px; }
+  .social-btn {
+    width: 40px; height: 40px; border-radius: 8px;
+    border: 1px solid var(--gray-200); display: flex;
+    align-items: center; justify-content: center;
+    text-decoration: none; font-size: 16px; transition: all 0.2s;
+    color: var(--navy);
+  }
+  .social-btn:hover { background: var(--navy); color: var(--white); border-color: var(--navy); }
+
+  .contact-form { background: var(--cream); border-radius: 20px; padding: 36px; }
+  .contact-form h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px; color: var(--navy); margin-bottom: 24px;
+  }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 14px; }
+  .form-group { margin-bottom: 14px; }
+  .form-group label { display: block; font-size: 12px; font-weight: 600; color: var(--gray-600); margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.04em; }
+  .form-group input, .form-group select, .form-group textarea {
+    width: 100%; padding: 11px 14px;
+    border: 1px solid var(--gray-200); border-radius: 8px;
+    font-family: 'DM Sans', sans-serif; font-size: 14px; color: var(--text);
+    background: var(--white); transition: border-color 0.2s;
+    outline: none;
+  }
+  .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+    border-color: var(--gold);
+  }
+  .form-group textarea { resize: vertical; min-height: 100px; }
+  .form-submit {
+    width: 100%; padding: 13px;
+    background: var(--navy); color: var(--white);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px; font-weight: 600;
+    border: none; border-radius: 8px; cursor: pointer;
+    transition: background 0.2s;
+  }
+  .form-submit:hover { background: var(--navy-light); }
+
+  /* ── FOOTER ── */
+  footer {
+    background: #080F1C; padding: 40px;
+    display: flex; align-items: center; justify-content: space-between;
+    flex-wrap: wrap; gap: 16px;
+    border-top: 1px solid rgba(201,153,58,0.15);
+  }
+  .footer-copy { font-size: 13px; color: rgba(255,255,255,0.35); }
+  .footer-links { display: flex; gap: 24px; }
+  .footer-links a { font-size: 13px; color: rgba(255,255,255,0.4); text-decoration: none; }
+  .footer-links a:hover { color: var(--gold-light); }
+
+  /* ── LANG TOGGLE ── */
+  [data-lang="es"] { display: none; }
+  body.es [data-lang="en"] { display: none; }
+  body.es [data-lang="es"] { display: revert; }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .hero-badge { animation: fadeUp 0.6s ease both; }
+  .hero-headline { animation: fadeUp 0.6s 0.1s ease both; }
+  .hero-sub { animation: fadeUp 0.6s 0.2s ease both; }
+  .hero-cta-row { animation: fadeUp 0.6s 0.3s ease both; }
+  .hero-stats { animation: fadeUp 0.6s 0.4s ease both; }
+  .hero-card { animation: fadeUp 0.6s 0.3s ease both; }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    nav { padding: 0 20px; }
+    .nav-links { display: none; }
+    .hero { grid-template-columns: 1fr; }
+    .hero-right { display: none; }
+    .hero-left { padding: 120px 24px 60px; }
+    .services-grid, .testimonials-grid { grid-template-columns: 1fr; }
+    .why-grid, .about-grid, .contact-grid { grid-template-columns: 1fr; gap: 40px; }
+    .clients-grid { grid-template-columns: repeat(2, 1fr); }
+    .trust-bar { gap: 20px; padding: 14px 20px; }
+    section { padding: 60px 24px; }
+    .form-row { grid-template-columns: 1fr; }
+    footer { flex-direction: column; text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">
+    <img src="https://static.wixstatic.com/media/e7c6f5_20bd9080792d47988dbb3170d50d75b9~mv2.jpg/v1/fill/w_136,h_50,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/Kendra%20New%20Logo.jpg" alt="Kendra REAC Consultant" style="height:42px;width:auto;border-radius:4px;">
+  </a>
+  <div class="nav-links">
+    <a href="#services">Services</a>
+    <a href="#training">Training</a>
+    <a href="#about">About</a>
+    <a href="#clients">Clients</a>
+    <a href="#contact">Contact</a>
+  </div>
+  <div style="display:flex;align-items:center;gap:12px;">
+    <span class="nav-lang" onclick="toggleLang()">EN / ES</span>
+    <a href="#contact" class="nav-cta">Book a Consultation</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg-photo"></div>
+  <div class="hero-bg-pattern"></div>
+  <div class="hero-grid-lines"></div>
+
+  <div class="hero-left">
+    <div class="hero-badge">HUD REAC Certified Since 2009</div>
+
+    <h1 class="hero-headline" data-lang="en">
+      The only REAC consultant who trains your team <em>in Spanish.</em>
+    </h1>
+    <h1 class="hero-headline" data-lang="es">
+      La única consultora de REAC que capacita a su equipo <em>en español.</em>
+    </h1>
+
+    <p class="hero-sub" data-lang="en">
+      Pass your HUD NSPIRE inspection — the first time. Expert pre-inspections, bilingual staff training, and REAC consulting for property managers and housing authorities nationwide.
+    </p>
+    <p class="hero-sub" data-lang="es">
+      Apruebe su inspección NSPIRE del HUD — a la primera. Pre-inspecciones expertas, capacitación bilingüe del personal y consultoría de REAC para administradores de propiedades y autoridades de vivienda en todo el país.
+    </p>
+
+    <div class="hero-cta-row">
+      <a href="#contact" class="btn-primary" data-lang="en">Book a Consultation</a>
+      <a href="#contact" class="btn-primary" data-lang="es">Reservar una Consulta</a>
+      <a href="#services" class="btn-ghost" data-lang="en">View Training Programs</a>
+      <a href="#services" class="btn-ghost" data-lang="es">Ver Programas de Entrenamiento</a>
+    </div>
+
+    <div style="display:flex;align-items:center;gap:10px;margin-bottom:20px;">
+      <span style="font-size:12px;color:rgba(255,255,255,0.4);font-weight:300;" data-lang="en">Follow us:</span>
+      <span style="font-size:12px;color:rgba(255,255,255,0.4);font-weight:300;" data-lang="es">Síguenos:</span>
+      <a href="http://Facebook.com/kendrareac" target="_blank" style="display:flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:8px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);color:rgba(255,255,255,0.75);text-decoration:none;font-size:13px;font-weight:700;transition:all 0.2s;" onmouseover="this.style.background='rgba(255,255,255,0.18)'" onmouseout="this.style.background='rgba(255,255,255,0.08)'">f</a>
+      <a href="https://www.instagram.com/kendrareac/" target="_blank" style="display:flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:8px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);color:rgba(255,255,255,0.75);text-decoration:none;font-size:12px;font-weight:700;transition:all 0.2s;" onmouseover="this.style.background='rgba(255,255,255,0.18)'" onmouseout="this.style.background='rgba(255,255,255,0.08)'">in</a>
+      <a href="http://twitter.com/@ReacConsultant" target="_blank" style="display:flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:8px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);color:rgba(255,255,255,0.75);text-decoration:none;font-size:13px;font-weight:700;transition:all 0.2s;" onmouseover="this.style.background='rgba(255,255,255,0.18)'" onmouseout="this.style.background='rgba(255,255,255,0.08)'">𝕏</a>
+    </div>
+
+    <div class="hero-stats">
+      <div>
+        <span class="hero-stat-num">2009</span>
+        <span class="hero-stat-label" data-lang="en">HUD REAC<br>Certified</span>
+        <span class="hero-stat-label" data-lang="es">Certificada<br>HUD REAC</span>
+      </div>
+      <div>
+        <span class="hero-stat-num">5,600+</span>
+        <span class="hero-stat-label" data-lang="en">FEMA<br>Inspections</span>
+        <span class="hero-stat-label" data-lang="es">Inspecciones<br>con FEMA</span>
+      </div>
+      <div>
+        <span class="hero-stat-num">EN+ES</span>
+        <span class="hero-stat-label" data-lang="en">Bilingual<br>Training</span>
+        <span class="hero-stat-label" data-lang="es">Entrenamiento<br>Bilingüe</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-right">
+    <div class="hero-card">
+      <h3 class="hero-card-title" data-lang="en">Your REAC score determines inspection frequency</h3>
+      <h3 class="hero-card-title" data-lang="es">Su puntuación de REAC determina la frecuencia de inspección</h3>
+
+      <div class="score-item">
+        <div>
+          <div class="score-range green">90 – 100</div>
+          <div class="score-freq" data-lang="en">Every 3 years</div>
+          <div class="score-freq" data-lang="es">Cada 3 años</div>
+        </div>
+      </div>
+      <div class="score-item">
+        <div>
+          <div class="score-range yellow">80 – 89</div>
+          <div class="score-freq" data-lang="en">Every 2 years</div>
+          <div class="score-freq" data-lang="es">Cada 2 años</div>
+        </div>
+      </div>
+      <div class="score-item">
+        <div>
+          <div class="score-range red">79 or below</div>
+          <div class="score-freq" data-lang="en">Annual inspection</div>
+          <div class="score-freq" data-lang="es">Inspección anual</div>
+        </div>
+      </div>
+
+      <div class="hero-card-note" data-lang="en">
+        Our clients consistently improve their scores — reducing inspection frequency and protecting their HUD funding.
+      </div>
+      <div class="hero-card-note" data-lang="es">
+        Nuestros clientes mejoran consistentemente sus puntuaciones — reduciendo la frecuencia de inspección y protegiendo su financiamiento de HUD.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+<div class="trust-bar">
+  <div class="trust-item" data-lang="en">HUD REAC Certified Since 2009</div>
+  <div class="trust-item" data-lang="es">Certificada HUD REAC desde 2009</div>
+  <div class="trust-item" data-lang="en">Training in English & Spanish</div>
+  <div class="trust-item" data-lang="es">Capacitación en español e inglés</div>
+  <div class="trust-item" data-lang="en">NSPIRE · UPCS · HQS</div>
+  <div class="trust-item" data-lang="es">NSPIRE · UPCS · HQS</div>
+  <div class="trust-item" data-lang="en">Nationwide Pre-Inspections</div>
+  <div class="trust-item" data-lang="es">Pre-Inspecciones en todo el país</div>
+  <div class="trust-item" data-lang="en">Conference Speaker</div>
+  <div class="trust-item" data-lang="es">Conferencista Reconocida</div>
+  <div style="display:flex;align-items:center;gap:10px;margin-left:8px;">
+    <a href="http://Facebook.com/kendrareac" target="_blank" style="display:flex;align-items:center;justify-content:center;width:32px;height:32px;border-radius:6px;background:rgba(13,31,60,0.15);color:var(--navy);text-decoration:none;font-size:13px;font-weight:700;">f</a>
+    <a href="https://www.instagram.com/kendrareac/" target="_blank" style="display:flex;align-items:center;justify-content:center;width:32px;height:32px;border-radius:6px;background:rgba(13,31,60,0.15);color:var(--navy);text-decoration:none;font-size:12px;font-weight:700;">in</a>
+    <a href="http://twitter.com/@ReacConsultant" target="_blank" style="display:flex;align-items:center;justify-content:center;width:32px;height:32px;border-radius:6px;background:rgba(13,31,60,0.15);color:var(--navy);text-decoration:none;font-size:13px;font-weight:700;">𝕏</a>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+  <div class="container">
+    <div class="services-header">
+      <p class="section-label" data-lang="en">What We Do</p>
+      <p class="section-label" data-lang="es">Lo Que Hacemos</p>
+      <h2 class="section-title" data-lang="en">Expert REAC services — in English & Spanish</h2>
+      <h2 class="section-title" data-lang="es">Servicios expertos de REAC — en español e inglés</h2>
+      <p class="section-sub" data-lang="en">From pre-inspection walkthroughs to hands-on staff training, we give your team everything they need to score higher and stay compliant.</p>
+      <p class="section-sub" data-lang="es">Desde recorridos de pre-inspección hasta capacitación práctica del personal, le damos a su equipo todo lo que necesitan para obtener una puntuación más alta y cumplir con las normas.</p>
+    </div>
+
+    <div class="services-grid" id="training">
+      <div class="service-card">
+        <img src="https://static.wixstatic.com/media/e7c6f5_db7668f0e31d47aa9e8c235b33da535f~mv2.jpg/v1/fill/w_596,h_306,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/e7c6f5_db7668f0e31d47aa9e8c235b33da535f~mv2.jpg" alt="REAC inspection preparation" style="width:100%;height:160px;object-fit:cover;border-radius:10px;margin-bottom:20px;">
+        <h3 data-lang="en">Pre-Inspection Service</h3>
+        <h3 data-lang="es">Servicio de Pre-Inspección</h3>
+        <p data-lang="en">We walk your property before the federal inspector arrives — identifying every deficiency, documenting it in detail, and giving your team a clear action plan to fix it in time.</p>
+        <p data-lang="es">Recorremos su propiedad antes de que llegue el inspector federal — identificando cada deficiencia, documentándola en detalle y dándole a su equipo un plan de acción claro para corregirla a tiempo.</p>
+        <a href="#contact" class="service-link" data-lang="en">Schedule a pre-inspection</a>
+        <a href="#contact" class="service-link" data-lang="es">Programar una pre-inspección</a>
+      </div>
+
+      <div class="service-card">
+        <img src="https://static.wixstatic.com/media/e7c6f5_564c47f3fae247369518ec2c26164f09~mv2.jpg/v1/fill/w_596,h_306,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/e7c6f5_564c47f3fae247369518ec2c26164f09~mv2.jpg" alt="REAC staff training" style="width:100%;height:160px;object-fit:cover;border-radius:10px;margin-bottom:20px;">
+        <h3 data-lang="en">Staff Training Programs</h3>
+        <h3 data-lang="es">Programas de Capacitación</h3>
+        <p data-lang="en">From NSPIRE Fundamentals (1 day) to our signature Hands-On Training (2 days with a live mock inspection) — all programs include a training manual written in Spanish. On-site, hotel, or virtual via Zoom/Teams.</p>
+        <p data-lang="es">Desde los Fundamentos de NSPIRE (1 día) hasta nuestro programa insignia de Entrenamiento Práctico (2 días con un simulacro de inspección en vivo) — todos los programas incluyen un manual de entrenamiento en español.</p>
+        <a href="#contact" class="service-link" data-lang="en">Book a training program</a>
+        <a href="#contact" class="service-link" data-lang="es">Reservar un programa de entrenamiento</a>
+      </div>
+
+      <div class="service-card">
+        <img src="https://static.wixstatic.com/media/e7c6f5_fdc94bc7c0074d29bb8c606efa5c74ea~mv2.jpg/v1/fill/w_596,h_306,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/e7c6f5_fdc94bc7c0074d29bb8c606efa5c74ea~mv2.jpg" alt="NSPIRE consulting" style="width:100%;height:160px;object-fit:cover;border-radius:10px;margin-bottom:20px;">
+        <h3 data-lang="en">NSPIRE Consulting</h3>
+        <h3 data-lang="es">Consultoría NSPIRE</h3>
+        <p data-lang="en">Customized compliance strategies for property management companies, housing authorities, and HUD-subsidized owners. We adapt to your specific portfolio, scoring challenges, and inspection history.</p>
+        <p data-lang="es">Estrategias de cumplimiento personalizadas para empresas de administración de propiedades, autoridades de vivienda y propietarios subsidiados por HUD. Nos adaptamos a su cartera específica, desafíos de puntuación e historial de inspección.</p>
+        <a href="#contact" class="service-link" data-lang="en">Request a consultation</a>
+        <a href="#contact" class="service-link" data-lang="es">Solicitar una consulta</a>
+      </div>
+    </div>
+
+    <!-- UPCOMING TRAINING BANNER -->
+    <div style="margin-top: 40px; background: var(--navy); border-radius: 16px; overflow: hidden; display: grid; grid-template-columns: 1fr 1fr; border: 2px solid var(--gold);">
+      <div style="padding: 32px 36px;">
+        <div style="display: inline-flex; align-items: center; gap: 8px; background: rgba(201,153,58,0.2); border: 1px solid rgba(201,153,58,0.4); border-radius: 20px; padding: 5px 14px; margin-bottom: 16px;">
+          <span style="width: 8px; height: 8px; background: #E87474; border-radius: 50%; display: inline-block; animation: pulse 1.5s infinite;"></span>
+          <span style="font-size: 11px; font-weight: 600; color: var(--gold-light); text-transform: uppercase; letter-spacing: 0.08em;" data-lang="en">Live Webinar — Coming Up</span>
+          <span style="font-size: 11px; font-weight: 600; color: var(--gold-light); text-transform: uppercase; letter-spacing: 0.08em;" data-lang="es">Webinar en Vivo — Próximamente</span>
+        </div>
+        <h3 style="font-family: 'Playfair Display', serif; font-size: 28px; font-weight: 700; color: #fff; margin-bottom: 8px; line-height: 1.2;" data-lang="en">NSPIRE Workshop<br><em style="color: var(--gold-light); font-style: normal;">for Maintenance Staff</em></h3>
+        <h3 style="font-family: 'Playfair Display', serif; font-size: 28px; font-weight: 700; color: #fff; margin-bottom: 8px; line-height: 1.2;" data-lang="es">NSPIRE Workshop<br><em style="color: var(--gold-light); font-style: normal;">para Personal de Mantenimiento</em></h3>
+        <p style="font-size: 14px; color: rgba(255,255,255,0.6); margin-bottom: 24px; line-height: 1.6;" data-lang="en">Everything your maintenance team needs to know to succeed on inspection day — taught entirely in Spanish.</p>
+        <p style="font-size: 14px; color: rgba(255,255,255,0.6); margin-bottom: 24px; line-height: 1.6;" data-lang="es">Todo lo que su personal de mantenimiento necesita saber para tener éxito el día de la inspección.</p>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 28px;">
+          <div style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 10px; padding: 12px 14px;">
+            <div style="font-size: 10px; font-weight: 600; color: var(--gold); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 4px;" data-lang="en">Date</div>
+            <div style="font-size: 10px; font-weight: 600; color: var(--gold); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 4px;" data-lang="es">Fecha</div>
+            <div style="font-size: 14px; font-weight: 600; color: #fff;">Miércoles, Junio 10</div>
+          </div>
+          <div style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 10px; padding: 12px 14px;">
+            <div style="font-size: 10px; font-weight: 600; color: var(--gold); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 4px;" data-lang="en">Time</div>
+            <div style="font-size: 10px; font-weight: 600; color: var(--gold); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 4px;" data-lang="es">Hora</div>
+            <div style="font-size: 14px; font-weight: 600; color: #fff;">1:00 PM – 4:00 PM</div>
+          </div>
+          <div style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 10px; padding: 12px 14px;">
+            <div style="font-size: 10px; font-weight: 600; color: var(--gold); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 4px;">Platform</div>
+            <div style="font-size: 14px; font-weight: 600; color: #fff;">Microsoft Teams</div>
+          </div>
+          <div style="background: rgba(201,153,58,0.15); border: 1px solid rgba(201,153,58,0.4); border-radius: 10px; padding: 12px 14px;">
+            <div style="font-size: 10px; font-weight: 600; color: var(--gold); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 4px;" data-lang="en">Cost</div>
+            <div style="font-size: 10px; font-weight: 600; color: var(--gold); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 4px;" data-lang="es">Costo</div>
+            <div style="font-size: 22px; font-weight: 700; color: var(--gold-light);">$150</div>
+          </div>
+        </div>
+        <a href="#contact" class="btn-primary" data-lang="en" style="display: inline-block;">Book Your Spot →</a>
+        <a href="#contact" class="btn-primary" data-lang="es" style="display: inline-block;">Reserve su Lugar →</a>
+      </div>
+      <div style="position: relative; overflow: hidden; min-height: 340px;">
+        <img src="https://static.wixstatic.com/media/e7c6f5_564c47f3fae247369518ec2c26164f09~mv2.jpg/v1/fill/w_596,h_306,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/e7c6f5_564c47f3fae247369518ec2c26164f09~mv2.jpg" alt="NSPIRE Workshop" style="width: 100%; height: 100%; object-fit: cover; position: absolute; inset: 0;">
+        <div style="position: absolute; inset: 0; background: linear-gradient(to right, rgba(13,31,60,0.4) 0%, transparent 60%);"></div>
+        <div style="position: absolute; top: 20px; right: 20px; background: #E87474; color: #fff; font-size: 12px; font-weight: 700; padding: 6px 14px; border-radius: 20px;" data-lang="en">Limited Spots!</div>
+        <div style="position: absolute; top: 20px; right: 20px; background: #E87474; color: #fff; font-size: 12px; font-weight: 700; padding: 6px 14px; border-radius: 20px;" data-lang="es">¡Cupos Limitados!</div>
+        <div style="position: absolute; bottom: 20px; left: 20px; right: 20px;">
+          <div style="background: rgba(13,31,60,0.85); border-radius: 10px; padding: 14px; border: 1px solid rgba(201,153,58,0.3);">
+            <p style="font-size: 11px; font-weight: 600; color: var(--gold); margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.06em;" data-lang="en">You'll learn:</p>
+            <p style="font-size: 11px; font-weight: 600; color: var(--gold); margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.06em;" data-lang="es">Aprenderá:</p>
+            <div style="display: flex; flex-direction: column; gap: 4px;">
+              <div style="font-size: 12px; color: rgba(255,255,255,0.8);" data-lang="en">✓ What is NSPIRE &amp; inspection areas</div>
+              <div style="font-size: 12px; color: rgba(255,255,255,0.8);" data-lang="es">✓ Qué es NSPIRE y áreas de inspección</div>
+              <div style="font-size: 12px; color: rgba(255,255,255,0.8);" data-lang="en">✓ Your role &amp; common deficiencies</div>
+              <div style="font-size: 12px; color: rgba(255,255,255,0.8);" data-lang="es">✓ Su rol y problemas comunes</div>
+              <div style="font-size: 12px; color: rgba(255,255,255,0.8);" data-lang="en">✓ Best practices to stay inspection-ready</div>
+              <div style="font-size: 12px; color: rgba(255,255,255,0.8);" data-lang="es">✓ Mejores prácticas para mantenerse listo</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <style>@keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }</style>
+
+  </div>
+</section>
+
+<!-- WHY US -->
+<section class="why">
+  <div class="container">
+    <p class="section-label" data-lang="en">Why Choose Us</p>
+    <p class="section-label" data-lang="es">Por Qué Elegirnos</p>
+    <h2 class="section-title" data-lang="en">Your unfair advantage on inspection day</h2>
+    <h2 class="section-title" data-lang="es">Su ventaja decisiva el día de la inspección</h2>
+
+    <div class="why-grid">
+      <div>
+        <div class="differentiator">
+          <div class="diff-num">01</div>
+          <div>
+            <div class="diff-title" data-lang="en">The only bilingual REAC training in the industry</div>
+            <div class="diff-title" data-lang="es">El único entrenamiento de REAC bilingüe en la industria</div>
+            <div class="diff-body" data-lang="en">Our training materials are written in Spanish — not translated, written. Your Spanish-speaking maintenance staff will actually understand and apply what they learn.</div>
+            <div class="diff-body" data-lang="es">Nuestros materiales de entrenamiento están escritos en español — no traducidos, escritos. Su personal de mantenimiento de habla hispana realmente comprenderá y aplicará lo que aprende.</div>
+          </div>
+        </div>
+        <div class="differentiator">
+          <div class="diff-num">02</div>
+          <div>
+            <div class="diff-title" data-lang="en">Certified inspector — so you know what HUD is looking for</div>
+            <div class="diff-title" data-lang="es">Inspectora certificada — sabe exactamente qué busca HUD</div>
+            <div class="diff-body" data-lang="en">Sandra Romero-Negron has been a HUD REAC certified inspector since 2009 — carrying out NSPIRE, UPCS, and HQS inspections. We teach from the inside out.</div>
+            <div class="diff-body" data-lang="es">Sandra Romero-Negron ha sido inspectora certificada de HUD REAC desde 2009 — realizando inspecciones NSPIRE, UPCS y HQS. Enseñamos desde adentro hacia afuera.</div>
+          </div>
+        </div>
+        <div class="differentiator">
+          <div class="diff-num">03</div>
+          <div>
+            <div class="diff-title" data-lang="en">5,600+ FEMA inspections — real-world experience</div>
+            <div class="diff-title" data-lang="es">Más de 5,600 inspecciones con FEMA — experiencia real</div>
+            <div class="diff-body" data-lang="en">As a certified FEMA Disaster Response inspector under Vanguard/DHS, our founder has documented deficiencies across thousands of properties. Nothing surprises us.</div>
+            <div class="diff-body" data-lang="es">Como inspectora certificada de Respuesta a Desastres de FEMA bajo Vanguard/DHS, nuestra fundadora ha documentado deficiencias en miles de propiedades. Nada nos sorprende.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="why-right">
+        <div class="why-right-title" data-lang="en">Training programs at a glance</div>
+        <div class="why-right-title" data-lang="es">Programas de entrenamiento</div>
+
+        <div class="training-item">
+          <div class="training-name">
+            NSPIRE Fundamentals
+            <span data-lang="en">What is NSPIRE, the 3-3-3 rule, scoring methodology</span>
+            <span data-lang="es">Qué es NSPIRE, la regla 3-3-3, metodología de puntuación</span>
+          </div>
+          <div class="training-dur" data-lang="en">1 Day</div>
+          <div class="training-dur" data-lang="es">1 Día</div>
+        </div>
+        <div class="training-item">
+          <div class="training-name">
+            Advanced REAC Workshop
+            <span data-lang="en">All deficiencies with real photos & point values</span>
+            <span data-lang="es">Todas las deficiencias con fotos reales y valores de puntos</span>
+          </div>
+          <div class="training-dur" data-lang="en">1 Day</div>
+          <div class="training-dur" data-lang="es">1 Día</div>
+        </div>
+        <div class="training-item">
+          <div class="training-name">
+            NSPIRE Hands-On Training
+            <span data-lang="en">Theory + live mock inspection at your property</span>
+            <span data-lang="es">Teoría + simulacro de inspección en vivo en su propiedad</span>
+          </div>
+          <div class="training-dur" data-lang="en">2 Days</div>
+          <div class="training-dur" data-lang="es">2 Días</div>
+        </div>
+        <div class="training-item">
+          <div class="training-name">
+            Resident Council Workshop
+            <span data-lang="en">Help residents understand their role in inspections</span>
+            <span data-lang="es">Ayuda a los residentes a entender su papel en las inspecciones</span>
+          </div>
+          <div class="training-dur">4 hrs</div>
+        </div>
+        <div class="training-item">
+          <div class="training-name">
+            Live TEAMS Webinars
+            <span data-lang="en">Various NSPIRE topics — see upcoming events</span>
+            <span data-lang="es">Varios temas de NSPIRE — ver próximos eventos</span>
+          </div>
+          <div class="training-dur">3 hrs</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials">
+  <div class="container">
+    <div class="testimonials-header">
+      <p class="section-label" data-lang="en">Client Results</p>
+      <p class="section-label" data-lang="es">Resultados de Clientes</p>
+      <h2 class="section-title" data-lang="en">Real scores. Real results.</h2>
+      <h2 class="section-title" data-lang="es">Puntuaciones reales. Resultados reales.</h2>
+      <p class="section-sub" data-lang="en">Our clients don't just pass — they improve. Here's what property managers across the country say about working with Kendra REAC.</p>
+      <p class="section-sub" data-lang="es">Nuestros clientes no solo aprueban — mejoran. Esto es lo que dicen los administradores de propiedades en todo el país sobre trabajar con Kendra REAC.</p>
+    </div>
+
+    <div class="testimonials-grid">
+      <div class="testimonial-card">
+        <div class="testimonial-quote">"</div>
+        <p class="testimonial-text" data-lang="en">Sandra's training transformed how our maintenance team prepares for inspections. Her Spanish materials made all the difference — our team actually understood the process for the first time.</p>
+        <p class="testimonial-text" data-lang="es">El entrenamiento de Sandra transformó la manera en que nuestro equipo de mantenimiento se prepara para las inspecciones. Sus materiales en español marcaron la diferencia.</p>
+        <div class="testimonial-score">
+          <span class="score-before">72</span>
+          <span class="score-arrow">→</span>
+          <span class="score-after">91</span>
+        </div>
+        <div class="testimonial-author">
+          Property Manager
+          <span data-lang="en">Housing Authority — Florida</span>
+          <span data-lang="es">Autoridad de Vivienda — Florida</span>
+        </div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="testimonial-quote">"</div>
+        <p class="testimonial-text" data-lang="en">We had been failing our REAC inspections for two years running. After Kendra REAC's pre-inspection and two-day training, we scored an 88 and moved to a 2-year inspection cycle. Life-changing for our team.</p>
+        <p class="testimonial-text" data-lang="es">Habíamos estado fallando nuestras inspecciones de REAC durante dos años consecutivos. Después de la pre-inspección y el entrenamiento de dos días de Kendra REAC, obtuvimos 88 puntos.</p>
+        <div class="testimonial-score">
+          <span class="score-before">64</span>
+          <span class="score-arrow">→</span>
+          <span class="score-after">88</span>
+        </div>
+        <div class="testimonial-author">
+          Executive Director
+          <span data-lang="en">Public Housing Authority — Puerto Rico</span>
+          <span data-lang="es">Autoridad de Vivienda Pública — Puerto Rico</span>
+        </div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="testimonial-quote">"</div>
+        <p class="testimonial-text" data-lang="en">As a conference organizer, Sandra is one of the most sought-after speakers we've had on REAC updates. Knowledgeable, engaging, and always current on NSPIRE changes.</p>
+        <p class="testimonial-text" data-lang="es">Como organizadora de conferencias, Sandra es una de las ponentes más solicitadas que hemos tenido en actualizaciones de REAC. Conocedora, dinámica y siempre al día en los cambios de NSPIRE.</p>
+        <div class="testimonial-author">
+          Conference Director
+          <span data-lang="en">LeadingAge Florida Annual Conference</span>
+          <span data-lang="es">Conferencia Anual LeadingAge Florida</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CLIENTS -->
+<section class="clients" id="clients">
+  <div class="container">
+    <div class="clients-header">
+      <p class="section-label" data-lang="en">Past & Present Clients</p>
+      <p class="section-label" data-lang="es">Clientes Pasados y Presentes</p>
+      <h2 class="section-title" data-lang="en">Trusted by property managers across the U.S. & Puerto Rico</h2>
+      <h2 class="section-title" data-lang="es">Con la confianza de administradores de propiedades en EE.UU. y Puerto Rico</h2>
+    </div>
+
+    <div class="clients-grid">
+      <div class="client-item">A & M Contract, Inc.</div>
+      <div class="client-item">Administración de Vivienda Pública de Puerto Rico</div>
+      <div class="client-item">Catholic Charities Community Development Corp.</div>
+      <div class="client-item">Catholic Housing Management</div>
+      <div class="client-item">Combined Building & Housing Consultants Inc.</div>
+      <div class="client-item">Cost Control Company</div>
+      <div class="client-item">Delonix Management LLC</div>
+      <div class="client-item">Égida Del Buen Samaritano</div>
+      <div class="client-item">Égida del Colegio de Ingenieros</div>
+      <div class="client-item">Excellence Management</div>
+      <div class="client-item">Fernando L. Sumaza & Company, LLC</div>
+      <div class="client-item">GR Management Corp.</div>
+      <div class="client-item">Housing Promoters Inc.</div>
+      <div class="client-item">Lakeland Housing Authority</div>
+      <div class="client-item">Las Américas Housing</div>
+      <div class="client-item">MJ Consulting & Dev., Inc.</div>
+      <div class="client-item">Municipio de Aguadilla</div>
+      <div class="client-item">Municipio de Barceloneta</div>
+      <div class="client-item">Municipio de Carolina</div>
+      <div class="client-item">Partners Business Services, LLC</div>
+      <div class="client-item">Sandalwood Management</div>
+      <div class="client-item">Inn Capital Housing Division</div>
+      <div class="client-item">J A Machuca & Associates</div>
+      <div class="client-item">Individual Management & Consulting</div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div>
+        <div class="about-img-wrap" style="background:none;">
+          <img src="https://static.wixstatic.com/media/e7c6f5_fc3188ef62f7401a9a90c809e59958c2~mv2.jpg/v1/fill/w_596,h_306,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/CostControl1_edited.jpg" alt="Kendra REAC training session" style="width:100%;height:280px;object-fit:cover;border-radius:16px 16px 0 0;">
+          <img src="https://static.wixstatic.com/media/e7c6f5_4bdee4ff977941949a18fbd6200a8e90~mv2.jpg/v1/fill/w_964,h_182,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/e7c6f5_4bdee4ff977941949a18fbd6200a8e90~mv2.jpg" alt="Kendra REAC team" style="width:100%;height:120px;object-fit:cover;border-radius:0 0 16px 16px;margin-top:4px;">
+          <div class="about-img-badge">
+            Sandra Romero-Negron
+            <span data-lang="en">President, Kendra REAC Consultant, Inc.</span>
+            <span data-lang="es">Presidenta, Kendra REAC Consultant, Inc.</span>
+          </div>
+        </div>
+      </div>
+      <div class="about-content">
+        <p class="section-label" data-lang="en">About Sandra</p>
+        <p class="section-label" data-lang="es">Sobre Sandra</p>
+        <h2 class="section-title" data-lang="en">15+ years as a certified HUD REAC inspector</h2>
+        <h2 class="section-title" data-lang="es">Más de 15 años como inspectora certificada de HUD REAC</h2>
+        <p data-lang="en">Sandra Romero-Negron founded Kendra REAC Consultant, Inc. in 2009 after years of experience with Osceola County government in construction, planning, and emergency management — plus her work as a Century 21 real estate broker overseeing Section 8 housing.</p>
+        <p data-lang="es">Sandra Romero-Negron fundó Kendra REAC Consultant, Inc. en 2009 después de años de experiencia en el gobierno del Condado de Osceola en construcción, planificación y manejo de emergencias — además de su trabajo como corredora de bienes raíces supervisando viviendas de Sección 8.</p>
+        <p data-lang="en">She created the industry's only Spanish-language REAC training materials and has delivered training to property owners, housing authorities, maintenance directors, and managing agents across the entire United States and Puerto Rico.</p>
+        <p data-lang="es">Creó los únicos materiales de entrenamiento de REAC en español de la industria y ha impartido capacitación a propietarios, autoridades de vivienda, directores de mantenimiento y agentes en todo Estados Unidos y Puerto Rico.</p>
+        <p data-lang="en">As an independent contractor with Vanguard/FEMA, Sandra has successfully completed over 5,600 disaster-relief inspections as a certified Disaster Response and Recovery Inspector under the Department of Homeland Security.</p>
+        <p data-lang="es">Como contratista independiente con Vanguard/FEMA, Sandra ha completado con éxito más de 5,600 inspecciones de alivio por desastre como inspectora certificada de Respuesta y Recuperación ante Desastres bajo el Departamento de Seguridad Nacional.</p>
+
+        <div class="about-highlights">
+          <div class="highlight">
+            <div class="highlight-icon">🎤</div>
+            <div class="highlight-label" data-lang="en">Conference Speaker</div>
+            <div class="highlight-label" data-lang="es">Conferencista</div>
+            <div class="highlight-text" data-lang="en">LeadingAge FL, SPM Conference, EHDOC and more</div>
+            <div class="highlight-text" data-lang="es">LeadingAge FL, Conferencia SPM, EHDOC y más</div>
+          </div>
+          <div class="highlight">
+            <div class="highlight-icon">📋</div>
+            <div class="highlight-label">NSPIRE · UPCS · HQS</div>
+            <div class="highlight-text" data-lang="en">Certified in all three HUD inspection protocols</div>
+            <div class="highlight-text" data-lang="es">Certificada en los tres protocolos de inspección de HUD</div>
+          </div>
+          <div class="highlight">
+            <div class="highlight-icon">🌎</div>
+            <div class="highlight-label" data-lang="en">Nationwide reach</div>
+            <div class="highlight-label" data-lang="es">Alcance nacional</div>
+            <div class="highlight-text" data-lang="en">On-site, virtual, and hotel training available</div>
+            <div class="highlight-text" data-lang="es">Entrenamiento en sitio, virtual y en hotel</div>
+          </div>
+          <div class="highlight">
+            <div class="highlight-icon">🇺🇸</div>
+            <div class="highlight-label">FEMA</div>
+            <div class="highlight-text" data-lang="en">5,600+ disaster relief inspections under DHS</div>
+            <div class="highlight-text" data-lang="es">Más de 5,600 inspecciones de ayuda por desastre bajo DHS</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BANNER -->
+<div class="cta-banner">
+  <div class="cta-banner-content">
+    <h2 data-lang="en">Ready for your next <em>REAC inspection?</em></h2>
+    <h2 data-lang="es">¿Listo para su próxima <em>inspección de REAC?</em></h2>
+    <p data-lang="en">Let's talk about your property, your score history, and how we can get your team inspection-ready — in English or Spanish.</p>
+    <p data-lang="es">Hablemos sobre su propiedad, su historial de puntuaciones y cómo podemos preparar a su equipo para la inspección — en español o inglés.</p>
+    <div class="cta-banner-btns">
+      <a href="#contact" class="btn-primary" data-lang="en">Book a Free Consultation</a>
+      <a href="#contact" class="btn-primary" data-lang="es">Reservar una Consulta Gratuita</a>
+      <a href="tel:4075165393" class="btn-ghost">📞 407-516-5393</a>
+    </div>
+    <div style="display:flex;align-items:center;justify-content:center;gap:12px;margin-top:28px;">
+      <span style="font-size:13px;color:rgba(255,255,255,0.35);" data-lang="en">Stay connected:</span>
+      <span style="font-size:13px;color:rgba(255,255,255,0.35);" data-lang="es">Manténgase conectado:</span>
+      <a href="http://Facebook.com/kendrareac" target="_blank" style="display:flex;align-items:center;justify-content:center;width:38px;height:38px;border-radius:8px;background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.15);color:rgba(255,255,255,0.7);text-decoration:none;font-size:14px;font-weight:700;">f</a>
+      <a href="https://www.instagram.com/kendrareac/" target="_blank" style="display:flex;align-items:center;justify-content:center;width:38px;height:38px;border-radius:8px;background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.15);color:rgba(255,255,255,0.7);text-decoration:none;font-size:12px;font-weight:700;">in</a>
+      <a href="http://twitter.com/@ReacConsultant" target="_blank" style="display:flex;align-items:center;justify-content:center;width:38px;height:38px;border-radius:8px;background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.15);color:rgba(255,255,255,0.7);text-decoration:none;font-size:14px;font-weight:700;">𝕏</a>
+    </div>
+  </div>
+</div>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="container">
+    <div class="contact-grid">
+      <div class="contact-info">
+        <p class="section-label" data-lang="en">Get in Touch</p>
+        <p class="section-label" data-lang="es">Contáctenos</p>
+        <h2 class="section-title" data-lang="en">Let's get your property inspection-ready</h2>
+        <h2 class="section-title" data-lang="es">Preparemos su propiedad para la inspección</h2>
+
+        <div class="contact-item">
+          <div class="contact-icon">📞</div>
+          <div>
+            <div class="contact-label" data-lang="en">Phone</div>
+            <div class="contact-label" data-lang="es">Teléfono</div>
+            <a href="tel:4075165393" class="contact-value">407-516-5393</a>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">✉️</div>
+          <div>
+            <div class="contact-label">Email</div>
+            <a href="mailto:proposals@kendrareacconsultant.com" class="contact-value">proposals@kendrareacconsultant.com</a>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">📍</div>
+          <div>
+            <div class="contact-label" data-lang="en">Service Area</div>
+            <div class="contact-label" data-lang="es">Área de Servicio</div>
+            <span class="contact-value" data-lang="en">Nationwide · Puerto Rico</span>
+            <span class="contact-value" data-lang="es">Todo el país · Puerto Rico</span>
+          </div>
+        </div>
+
+        <div class="contact-social">
+          <a href="http://Facebook.com/kendrareac" class="social-btn" title="Facebook">f</a>
+          <a href="https://www.instagram.com/kendrareac/" class="social-btn" title="Instagram">in</a>
+          <a href="http://twitter.com/@ReacConsultant" class="social-btn" title="Twitter">𝕏</a>
+        </div>
+      </div>
+
+      <div class="contact-form">
+        <h3 data-lang="en">Book a consultation</h3>
+        <h3 data-lang="es">Reserve su consulta</h3>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label data-lang="en">First name</label>
+            <label data-lang="es">Nombre</label>
+            <input type="text" placeholder="First name" data-ph-en="First name" data-ph-es="Nombre">
+          </div>
+          <div class="form-group">
+            <label data-lang="en">Last name</label>
+            <label data-lang="es">Apellido</label>
+            <input type="text" placeholder="Last name" data-ph-en="Last name" data-ph-es="Apellido">
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Email</label>
+          <input type="email" placeholder="Email address" data-ph-en="Email address" data-ph-es="Correo electrónico">
+        </div>
+        <div class="form-group">
+          <label data-lang="en">Phone</label>
+          <label data-lang="es">Teléfono</label>
+          <input type="tel" placeholder="Phone number" data-ph-en="Phone number" data-ph-es="Número de teléfono">
+        </div>
+        <div class="form-group">
+          <label data-lang="en">Service needed</label>
+          <label data-lang="es">Servicio requerido</label>
+          <select data-lang="en">
+            <option>Pre-Inspection</option>
+            <option>Staff Training</option>
+            <option>NSPIRE Consulting</option>
+            <option>Conference Speaking</option>
+          </select>
+          <select data-lang="es">
+            <option>Pre-Inspección</option>
+            <option>Capacitación del Personal</option>
+            <option>Consultoría NSPIRE</option>
+            <option>Ponente en Conferencia</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label data-lang="en">Tell us about your property</label>
+          <label data-lang="es">Cuéntenos sobre su propiedad</label>
+          <textarea placeholder="Property type, number of units, recent REAC score..." data-ph-en="Property type, number of units, recent REAC score..." data-ph-es="Tipo de propiedad, número de unidades, puntuación REAC reciente..."></textarea>
+        </div>
+        <button class="form-submit" data-lang="en">Send message →</button>
+        <button class="form-submit" data-lang="es">Enviar mensaje →</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div style="display:flex;flex-direction:column;align-items:center;gap:20px;width:100%;">
+    <div style="display:flex;align-items:center;gap:14px;">
+      <span style="font-size:13px;color:rgba(255,255,255,0.4);" data-lang="en">Follow Kendra REAC:</span>
+      <span style="font-size:13px;color:rgba(255,255,255,0.4);" data-lang="es">Síguenos:</span>
+      <a href="http://Facebook.com/kendrareac" target="_blank" style="display:flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:8px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);color:rgba(255,255,255,0.65);text-decoration:none;font-size:14px;font-weight:700;">f</a>
+      <a href="https://www.instagram.com/kendrareac/" target="_blank" style="display:flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:8px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);color:rgba(255,255,255,0.65);text-decoration:none;font-size:12px;font-weight:700;">in</a>
+      <a href="http://twitter.com/@ReacConsultant" target="_blank" style="display:flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:8px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);color:rgba(255,255,255,0.65);text-decoration:none;font-size:14px;font-weight:700;">𝕏</a>
+    </div>
+    <div style="width:100%;height:1px;background:rgba(255,255,255,0.07);"></div>
+    <div style="display:flex;align-items:center;justify-content:space-between;width:100%;flex-wrap:wrap;gap:12px;">
+      <div class="footer-copy">© 2025 Kendra REAC Consultant, Inc. All rights reserved.</div>
+      <div class="footer-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Use</a>
+        <a href="#">Fulfillment Policy</a>
+        <a href="#">Cancellation Policy</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  function toggleLang() {
+    const isEs = document.body.classList.toggle('es');
+    document.querySelectorAll('[data-ph-en]').forEach(el => {
+      el.placeholder = isEs ? el.dataset.phEs : el.dataset.phEn;
+    });
+  }
+</script>
+</body>
+</html>
