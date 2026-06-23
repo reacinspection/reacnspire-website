@@ -46,7 +46,7 @@
   "serviceType": ["REAC Inspection Consulting", "NSPIRE Compliance", "HUD Inspection Training", "Pre-Inspection Preparation"],
   "sameAs": [
     "https://twitter.com/ReacConsultant",
-    "https://www.instagram.com/kendrareacconsultant"
+    "https://www.instagram.com/kendrareac/"
   ]
 }
 </script>
@@ -607,6 +607,106 @@
     .form-row { grid-template-columns: 1fr; }
     footer { flex-direction: column; text-align: center; }
   }
+
+  /* ── INSTAGRAM REELS ── */
+  .instagram-section {
+    background: var(--white);
+    padding: 90px 40px;
+  }
+  .instagram-header { text-align: center; margin-bottom: 52px; }
+  .instagram-header .section-sub { margin: 0 auto; }
+
+  .ig-label {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-size: 11px; font-weight: 600; letter-spacing: 0.1em;
+    text-transform: uppercase; margin-bottom: 12px;
+    background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .reels-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 20px; max-width: 840px; margin: 0 auto 48px;
+  }
+
+  .reel-card {
+    position: relative; border-radius: 16px; overflow: hidden;
+    aspect-ratio: 9/16; max-height: 380px;
+    background: var(--navy); cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+    text-decoration: none; display: block;
+  }
+  .reel-card:hover {
+    transform: translateY(-6px) scale(1.02);
+    box-shadow: 0 20px 50px rgba(13,31,60,0.25);
+  }
+  .reel-card-bg {
+    position: absolute; inset: 0;
+    background-image: radial-gradient(ellipse at 30% 20%, rgba(201,153,58,0.18) 0%, transparent 60%),
+                      radial-gradient(ellipse at 80% 80%, rgba(43,74,114,0.5) 0%, transparent 60%);
+  }
+  .reel-card-grid {
+    position: absolute; inset: 0;
+    background-image: linear-gradient(rgba(201,153,58,0.04) 1px, transparent 1px),
+                      linear-gradient(90deg, rgba(201,153,58,0.04) 1px, transparent 1px);
+    background-size: 24px 24px;
+  }
+  .reel-card-gradient {
+    position: absolute; inset: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.78) 0%, rgba(0,0,0,0.1) 50%, transparent 100%);
+  }
+  .reel-card-tag {
+    position: absolute; top: 14px; left: 14px;
+    background: rgba(201,153,58,0.2); border: 1px solid rgba(201,153,58,0.4);
+    border-radius: 20px; padding: 4px 10px;
+    font-size: 10px; font-weight: 600; color: var(--gold-light);
+    letter-spacing: 0.06em; text-transform: uppercase;
+  }
+  .reel-card-play {
+    position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+    width: 48px; height: 48px; border-radius: 50%;
+    background: rgba(255,255,255,0.15); border: 2px solid rgba(255,255,255,0.4);
+    display: flex; align-items: center; justify-content: center;
+    transition: all 0.3s;
+  }
+  .reel-card:hover .reel-card-play {
+    background: rgba(255,255,255,0.28); border-color: rgba(255,255,255,0.75);
+    transform: translate(-50%, -50%) scale(1.12);
+  }
+  .reel-card-play svg { margin-left: 3px; }
+  .reel-card-bottom { position: absolute; bottom: 0; left: 0; right: 0; padding: 18px 16px; }
+  .reel-card-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 15px; font-weight: 700; color: var(--white);
+    line-height: 1.3; margin-bottom: 5px;
+  }
+  .reel-card-meta { font-size: 11px; color: rgba(255,255,255,0.48); }
+
+  .ig-follow-cta {
+    display: flex; align-items: center; justify-content: center;
+    gap: 16px; flex-wrap: wrap;
+  }
+  .ig-follow-btn {
+    display: inline-flex; align-items: center; gap: 10px;
+    padding: 14px 28px; border-radius: 8px;
+    font-size: 15px; font-weight: 600; text-decoration: none;
+    background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+    color: #fff; transition: all 0.2s;
+  }
+  .ig-follow-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(220,39,67,0.35); }
+  .ig-handle-note { font-size: 13px; color: var(--gray-400); }
+  .ig-handle-note strong { color: var(--gray-600); }
+
+  @media (max-width: 700px) {
+    .reels-grid { grid-template-columns: repeat(2, 1fr); gap: 14px; }
+    .reel-card { max-height: 300px; }
+    .instagram-section { padding: 60px 20px; }
+  }
+  @media (max-width: 420px) {
+    .reels-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
+    .reel-card-title { font-size: 13px; }
+  }
 </style>
 </head>
 <body>
@@ -664,7 +764,7 @@
       <span style="font-size:12px;color:rgba(255,255,255,0.4);font-weight:300;" data-lang="en">Follow us:</span>
       <span style="font-size:12px;color:rgba(255,255,255,0.4);font-weight:300;" data-lang="es">Síguenos:</span>
       <a href="http://Facebook.com/kendrareac" target="_blank" style="display:flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:8px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);color:rgba(255,255,255,0.75);text-decoration:none;font-size:13px;font-weight:700;transition:all 0.2s;" onmouseover="this.style.background='rgba(255,255,255,0.18)'" onmouseout="this.style.background='rgba(255,255,255,0.08)'">f</a>
-      <a href="https://www.instagram.com/kendrareac/" target="_blank" style="display:flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:8px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);color:rgba(255,255,255,0.75);text-decoration:none;font-size:12px;font-weight:700;transition:all 0.2s;" onmouseover="this.style.background='rgba(255,255,255,0.18)'" onmouseout="this.style.background='rgba(255,255,255,0.08)'">in</a>
+      <a href="https://www.instagram.com/kendrareac/" target="_blank" aria-label="Instagram" style="display:flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:8px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);color:rgba(255,255,255,0.75);text-decoration:none;transition:all 0.2s;" onmouseover="this.style.background='rgba(255,255,255,0.18)'" onmouseout="this.style.background='rgba(255,255,255,0.08)'"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.791-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
       <a href="http://twitter.com/@ReacConsultant" target="_blank" style="display:flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:8px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);color:rgba(255,255,255,0.75);text-decoration:none;font-size:13px;font-weight:700;transition:all 0.2s;" onmouseover="this.style.background='rgba(255,255,255,0.18)'" onmouseout="this.style.background='rgba(255,255,255,0.08)'">𝕏</a>
     </div>
 
@@ -738,7 +838,7 @@
   <div class="trust-item" data-lang="es">Conferencista Reconocida</div>
   <div style="display:flex;align-items:center;gap:10px;margin-left:8px;">
     <a href="http://Facebook.com/kendrareac" target="_blank" style="display:flex;align-items:center;justify-content:center;width:32px;height:32px;border-radius:6px;background:rgba(13,31,60,0.15);color:var(--navy);text-decoration:none;font-size:13px;font-weight:700;">f</a>
-    <a href="https://www.instagram.com/kendrareac/" target="_blank" style="display:flex;align-items:center;justify-content:center;width:32px;height:32px;border-radius:6px;background:rgba(13,31,60,0.15);color:var(--navy);text-decoration:none;font-size:12px;font-weight:700;">in</a>
+    <a href="https://www.instagram.com/kendrareac/" target="_blank" aria-label="Instagram" style="display:flex;align-items:center;justify-content:center;width:32px;height:32px;border-radius:6px;background:rgba(13,31,60,0.15);color:var(--navy);text-decoration:none;"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.791-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
     <a href="http://twitter.com/@ReacConsultant" target="_blank" style="display:flex;align-items:center;justify-content:center;width:32px;height:32px;border-radius:6px;background:rgba(13,31,60,0.15);color:var(--navy);text-decoration:none;font-size:13px;font-weight:700;">𝕏</a>
   </div>
 </div>
@@ -1161,6 +1261,142 @@
   </div>
 </section>
 
+<!-- INSTAGRAM REELS -->
+<section class="instagram-section" id="instagram">
+  <div class="container">
+    <div class="instagram-header">
+      <p class="ig-label" data-lang="en">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="url(#ig-grad-label)" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="ig-grad-label" x1="0%" y1="100%" x2="100%" y2="0%"><stop offset="0%" stop-color="#f09433"/><stop offset="50%" stop-color="#dc2743"/><stop offset="100%" stop-color="#bc1888"/></linearGradient></defs><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.791-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+        On Instagram
+      </p>
+      <p class="ig-label" data-lang="es">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="url(#ig-grad-label)" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.791-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+        En Instagram
+      </p>
+      <h2 class="section-title" data-lang="en">Watch Our Latest Reels</h2>
+      <h2 class="section-title" data-lang="es">Mira Nuestros Últimos Reels</h2>
+      <p class="section-sub" data-lang="en">Expert REAC &amp; NSPIRE tips, inspection insights, and bilingual training content — straight from the field.</p>
+      <p class="section-sub" data-lang="es">Consejos expertos de REAC y NSPIRE, información sobre inspecciones y contenido de entrenamiento bilingüe — directo desde el campo.</p>
+    </div>
+
+    <div class="reels-grid">
+
+      <!-- Reel 1 -->
+      <a href="https://www.instagram.com/kendrareac/reels/" target="_blank" class="reel-card" aria-label="Watch NSPIRE 101 reel">
+        <div class="reel-card-bg"></div>
+        <div class="reel-card-grid"></div>
+        <div class="reel-card-gradient"></div>
+        <div class="reel-card-tag" data-lang="en">NSPIRE 101</div>
+        <div class="reel-card-tag" data-lang="es">NSPIRE 101</div>
+        <div class="reel-card-play">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="rgba(255,255,255,0.9)" xmlns="http://www.w3.org/2000/svg"><path d="M8 5v14l11-7z"/></svg>
+        </div>
+        <div class="reel-card-bottom">
+          <div class="reel-card-title" data-lang="en">What Changed from REAC to NSPIRE?</div>
+          <div class="reel-card-title" data-lang="es">¿Qué Cambió del REAC al NSPIRE?</div>
+          <div class="reel-card-meta">#NSPIRE #HUDInspection</div>
+        </div>
+      </a>
+
+      <!-- Reel 2 -->
+      <a href="https://www.instagram.com/kendrareac/reels/" target="_blank" class="reel-card" aria-label="Watch Top Violations reel">
+        <div class="reel-card-bg" style="background-image:radial-gradient(ellipse at 70% 30%, rgba(201,153,58,0.2) 0%, transparent 60%), radial-gradient(ellipse at 20% 80%, rgba(43,74,114,0.6) 0%, transparent 60%);"></div>
+        <div class="reel-card-grid"></div>
+        <div class="reel-card-gradient"></div>
+        <div class="reel-card-tag" data-lang="en">Top Violations</div>
+        <div class="reel-card-tag" data-lang="es">Infracciones</div>
+        <div class="reel-card-play">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="rgba(255,255,255,0.9)" xmlns="http://www.w3.org/2000/svg"><path d="M8 5v14l11-7z"/></svg>
+        </div>
+        <div class="reel-card-bottom">
+          <div class="reel-card-title" data-lang="en">Top 5 Most Cited Deficiencies</div>
+          <div class="reel-card-title" data-lang="es">Las 5 Deficiencias Más Citadas</div>
+          <div class="reel-card-meta">#REACViolations #PropertyManagement</div>
+        </div>
+      </a>
+
+      <!-- Reel 3 -->
+      <a href="https://www.instagram.com/kendrareac/reels/" target="_blank" class="reel-card" aria-label="Watch Score Strategy reel">
+        <div class="reel-card-bg" style="background-image:radial-gradient(ellipse at 50% 10%, rgba(201,153,58,0.22) 0%, transparent 55%), radial-gradient(ellipse at 30% 90%, rgba(43,74,114,0.55) 0%, transparent 60%);"></div>
+        <div class="reel-card-grid"></div>
+        <div class="reel-card-gradient"></div>
+        <div class="reel-card-tag" data-lang="en">Score Strategy</div>
+        <div class="reel-card-tag" data-lang="es">Estrategia</div>
+        <div class="reel-card-play">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="rgba(255,255,255,0.9)" xmlns="http://www.w3.org/2000/svg"><path d="M8 5v14l11-7z"/></svg>
+        </div>
+        <div class="reel-card-bottom">
+          <div class="reel-card-title" data-lang="en">How We Improved a 62 Score to a 91</div>
+          <div class="reel-card-title" data-lang="es">Cómo Mejoramos una Puntuación de 62 a 91</div>
+          <div class="reel-card-meta">#REACScore #CaseStudy</div>
+        </div>
+      </a>
+
+      <!-- Reel 4 -->
+      <a href="https://www.instagram.com/kendrareac/reels/" target="_blank" class="reel-card" aria-label="Watch Inspection Day reel">
+        <div class="reel-card-bg" style="background-image:radial-gradient(ellipse at 20% 30%, rgba(201,153,58,0.15) 0%, transparent 55%), radial-gradient(ellipse at 80% 70%, rgba(26,51,88,0.7) 0%, transparent 60%);"></div>
+        <div class="reel-card-grid"></div>
+        <div class="reel-card-gradient"></div>
+        <div class="reel-card-tag" data-lang="en">Inspection Day</div>
+        <div class="reel-card-tag" data-lang="es">Día de Inspección</div>
+        <div class="reel-card-play">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="rgba(255,255,255,0.9)" xmlns="http://www.w3.org/2000/svg"><path d="M8 5v14l11-7z"/></svg>
+        </div>
+        <div class="reel-card-bottom">
+          <div class="reel-card-title" data-lang="en">What Happens During a HUD Inspection</div>
+          <div class="reel-card-title" data-lang="es">Qué Sucede Durante una Inspección del HUD</div>
+          <div class="reel-card-meta">#HUDInspection #AffordableHousing</div>
+        </div>
+      </a>
+
+      <!-- Reel 5 -->
+      <a href="https://www.instagram.com/kendrareac/reels/" target="_blank" class="reel-card" aria-label="Watch Bilingual Training reel">
+        <div class="reel-card-bg" style="background-image:radial-gradient(ellipse at 60% 20%, rgba(201,153,58,0.18) 0%, transparent 55%), radial-gradient(ellipse at 10% 80%, rgba(43,74,114,0.5) 0%, transparent 60%);"></div>
+        <div class="reel-card-grid"></div>
+        <div class="reel-card-gradient"></div>
+        <div class="reel-card-tag" data-lang="en">Bilingual Training</div>
+        <div class="reel-card-tag" data-lang="es">Entrenamiento Bilingüe</div>
+        <div class="reel-card-play">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="rgba(255,255,255,0.9)" xmlns="http://www.w3.org/2000/svg"><path d="M8 5v14l11-7z"/></svg>
+        </div>
+        <div class="reel-card-bottom">
+          <div class="reel-card-title" data-lang="en">Why Spanish Training Changes Everything</div>
+          <div class="reel-card-title" data-lang="es">Por Qué el Entrenamiento en Español lo Cambia Todo</div>
+          <div class="reel-card-meta">#BilingualTraining #HousingStaff</div>
+        </div>
+      </a>
+
+      <!-- Reel 6 -->
+      <a href="https://www.instagram.com/kendrareac/reels/" target="_blank" class="reel-card" aria-label="Watch Quick Fixes reel">
+        <div class="reel-card-bg" style="background-image:radial-gradient(ellipse at 40% 60%, rgba(201,153,58,0.2) 0%, transparent 55%), radial-gradient(ellipse at 80% 20%, rgba(43,74,114,0.6) 0%, transparent 60%);"></div>
+        <div class="reel-card-grid"></div>
+        <div class="reel-card-gradient"></div>
+        <div class="reel-card-tag" data-lang="en">Quick Tips</div>
+        <div class="reel-card-tag" data-lang="es">Consejos Rápidos</div>
+        <div class="reel-card-play">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="rgba(255,255,255,0.9)" xmlns="http://www.w3.org/2000/svg"><path d="M8 5v14l11-7z"/></svg>
+        </div>
+        <div class="reel-card-bottom">
+          <div class="reel-card-title" data-lang="en">5 Fixes That Boost Your Score Right Now</div>
+          <div class="reel-card-title" data-lang="es">5 Correcciones Que Mejoran Su Puntuación Ahora</div>
+          <div class="reel-card-meta">#REACTips #NSPIRECompliance</div>
+        </div>
+      </a>
+
+    </div>
+
+    <div class="ig-follow-cta">
+      <a href="https://www.instagram.com/kendrareac/" target="_blank" class="ig-follow-btn">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.791-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+        <span data-lang="en">Follow @kendrareac</span>
+        <span data-lang="es">Seguir @kendrareac</span>
+      </a>
+      <p class="ig-handle-note" data-lang="en">Daily REAC &amp; NSPIRE tips · English &amp; Spanish</p>
+      <p class="ig-handle-note" data-lang="es">Consejos diarios de REAC y NSPIRE · en español e inglés</p>
+    </div>
+  </div>
+</section>
+
 <!-- CTA BANNER -->
 <div class="cta-banner">
   <div class="cta-banner-content">
@@ -1177,7 +1413,7 @@
       <span style="font-size:13px;color:rgba(255,255,255,0.35);" data-lang="en">Stay connected:</span>
       <span style="font-size:13px;color:rgba(255,255,255,0.35);" data-lang="es">Manténgase conectado:</span>
       <a href="http://Facebook.com/kendrareac" target="_blank" style="display:flex;align-items:center;justify-content:center;width:38px;height:38px;border-radius:8px;background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.15);color:rgba(255,255,255,0.7);text-decoration:none;font-size:14px;font-weight:700;">f</a>
-      <a href="https://www.instagram.com/kendrareac/" target="_blank" style="display:flex;align-items:center;justify-content:center;width:38px;height:38px;border-radius:8px;background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.15);color:rgba(255,255,255,0.7);text-decoration:none;font-size:12px;font-weight:700;">in</a>
+      <a href="https://www.instagram.com/kendrareac/" target="_blank" aria-label="Instagram" style="display:flex;align-items:center;justify-content:center;width:38px;height:38px;border-radius:8px;background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.15);color:rgba(255,255,255,0.7);text-decoration:none;"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.791-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
       <a href="http://twitter.com/@ReacConsultant" target="_blank" style="display:flex;align-items:center;justify-content:center;width:38px;height:38px;border-radius:8px;background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.15);color:rgba(255,255,255,0.7);text-decoration:none;font-size:14px;font-weight:700;">𝕏</a>
     </div>
   </div>
@@ -1220,7 +1456,7 @@
 
         <div class="contact-social">
           <a href="http://Facebook.com/kendrareac" class="social-btn" title="Facebook">f</a>
-          <a href="https://www.instagram.com/kendrareac/" class="social-btn" title="Instagram">in</a>
+          <a href="https://www.instagram.com/kendrareac/" class="social-btn" title="Instagram" aria-label="Instagram"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.791-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
           <a href="http://twitter.com/@ReacConsultant" class="social-btn" title="Twitter">𝕏</a>
         </div>
       </div>
@@ -1285,7 +1521,7 @@
       <span style="font-size:13px;color:rgba(255,255,255,0.4);" data-lang="en">Follow Kendra REAC:</span>
       <span style="font-size:13px;color:rgba(255,255,255,0.4);" data-lang="es">Síguenos:</span>
       <a href="http://Facebook.com/kendrareac" target="_blank" style="display:flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:8px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);color:rgba(255,255,255,0.65);text-decoration:none;font-size:14px;font-weight:700;">f</a>
-      <a href="https://www.instagram.com/kendrareac/" target="_blank" style="display:flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:8px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);color:rgba(255,255,255,0.65);text-decoration:none;font-size:12px;font-weight:700;">in</a>
+      <a href="https://www.instagram.com/kendrareac/" target="_blank" aria-label="Instagram" style="display:flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:8px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);color:rgba(255,255,255,0.65);text-decoration:none;"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.791-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
       <a href="http://twitter.com/@ReacConsultant" target="_blank" style="display:flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:8px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);color:rgba(255,255,255,0.65);text-decoration:none;font-size:14px;font-weight:700;">𝕏</a>
     </div>
     <div style="width:100%;height:1px;background:rgba(255,255,255,0.07);"></div>
