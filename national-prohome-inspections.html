@@ -1,0 +1,984 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>National ProHome Inspections | Professional Property Inspection Services</title>
+
+<meta name="description" content="National ProHome Inspections delivers thorough, certified property inspections for home buyers, sellers, and property managers across the United States. Backed by 15+ years of HUD REAC inspection expertise.">
+<meta name="keywords" content="national home inspection, property inspection, home inspector, pre-listing inspection, buyer inspection, commercial property inspection, REAC inspection, professional home inspection, nationwide inspection service">
+<meta name="author" content="National ProHome Inspections">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://reacnspire.com/national-prohome-inspections">
+
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://reacnspire.com/national-prohome-inspections">
+<meta property="og:title" content="National ProHome Inspections | Professional Property Inspection Services">
+<meta property="og:description" content="Thorough, certified property inspections for buyers, sellers, and property managers — nationwide. Backed by 15+ years of HUD REAC expertise.">
+<meta property="og:site_name" content="National ProHome Inspections">
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0D1F3C;
+    --navy-mid: #1A3358;
+    --navy-light: #2B4A72;
+    --gold: #C9993A;
+    --gold-light: #E8B85A;
+    --gold-pale: #F5E8C8;
+    --cream: #FAF7F2;
+    --white: #FFFFFF;
+    --gray-100: #F4F1EC;
+    --gray-200: #E5E0D5;
+    --gray-400: #9A9486;
+    --gray-600: #5C5548;
+    --text: #1A1410;
+    --text-light: #4A4339;
+    --green: #2E7D4F;
+    --green-light: #4CAF73;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'DM Sans', sans-serif; background: var(--cream); color: var(--text); line-height: 1.6; }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background: rgba(13,31,60,0.97);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(201,153,58,0.2);
+    padding: 0 40px;
+    display: flex; align-items: center; justify-content: space-between;
+    height: 68px;
+  }
+  .nav-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+  .nav-logo-mark {
+    width: 38px; height: 38px; border-radius: 8px;
+    background: var(--gold);
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 16px; font-weight: 700; color: var(--navy); line-height: 1;
+  }
+  .nav-logo-text { font-size: 14px; font-weight: 500; color: var(--white); line-height: 1.2; }
+  .nav-logo-text span { display: block; font-size: 11px; font-weight: 300; color: var(--gold-light); letter-spacing: 0.05em; }
+
+  .nav-links { display: flex; align-items: center; gap: 4px; }
+  .nav-links a {
+    font-size: 13px; font-weight: 400; color: rgba(255,255,255,0.75);
+    text-decoration: none; padding: 8px 14px; border-radius: 6px;
+    transition: all 0.2s;
+  }
+  .nav-links a:hover { color: var(--white); background: rgba(255,255,255,0.08); }
+  .nav-links a.active { color: var(--gold-light); }
+
+  .nav-back {
+    font-size: 12px; font-weight: 500; color: rgba(255,255,255,0.55);
+    text-decoration: none; display: flex; align-items: center; gap: 6px;
+    padding: 7px 14px; border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 6px; transition: all 0.2s;
+  }
+  .nav-back:hover { color: var(--white); border-color: rgba(255,255,255,0.35); }
+  .nav-back::before { content: '←'; }
+
+  .nav-cta {
+    background: var(--gold); color: var(--navy);
+    font-size: 13px; font-weight: 600;
+    padding: 9px 20px; border-radius: 6px;
+    text-decoration: none; white-space: nowrap;
+    transition: all 0.2s;
+  }
+  .nav-cta:hover { background: var(--gold-light); }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    background: var(--navy);
+    display: grid; grid-template-columns: 1fr 1fr;
+    position: relative; overflow: hidden;
+  }
+  .hero-bg-pattern {
+    position: absolute; inset: 0;
+    background-image:
+      radial-gradient(circle at 65% 45%, rgba(46,125,79,0.12) 0%, transparent 55%),
+      radial-gradient(circle at 20% 80%, rgba(43,74,114,0.5) 0%, transparent 50%);
+    pointer-events: none;
+  }
+  .hero-grid-lines {
+    position: absolute; inset: 0; pointer-events: none;
+    background-image:
+      linear-gradient(rgba(201,153,58,0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(201,153,58,0.04) 1px, transparent 1px);
+    background-size: 60px 60px;
+  }
+  .hero-left {
+    padding: 130px 60px 80px;
+    display: flex; flex-direction: column; justify-content: center;
+    position: relative; z-index: 2;
+  }
+  .hero-badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(76,175,115,0.15);
+    border: 1px solid rgba(76,175,115,0.35);
+    border-radius: 20px; padding: 6px 14px;
+    font-size: 12px; font-weight: 500; color: #7DDBA0;
+    letter-spacing: 0.06em; text-transform: uppercase;
+    margin-bottom: 28px; width: fit-content;
+  }
+  .hero-badge::before {
+    content: ''; width: 6px; height: 6px; border-radius: 50%;
+    background: var(--green-light); display: block;
+  }
+  .hero-headline {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(34px, 3.8vw, 52px);
+    font-weight: 700; line-height: 1.15;
+    color: var(--white); margin-bottom: 20px;
+  }
+  .hero-headline em { font-style: normal; color: var(--gold-light); }
+  .hero-sub {
+    font-size: 16px; font-weight: 300; line-height: 1.7;
+    color: rgba(255,255,255,0.65); margin-bottom: 36px;
+    max-width: 460px;
+  }
+  .hero-cta-row { display: flex; gap: 14px; align-items: center; flex-wrap: wrap; margin-bottom: 48px; }
+
+  .btn-primary {
+    background: var(--gold); color: var(--navy);
+    font-size: 15px; font-weight: 600;
+    padding: 14px 28px; border-radius: 8px;
+    text-decoration: none; transition: all 0.2s;
+    border: 2px solid var(--gold);
+  }
+  .btn-primary:hover { background: var(--gold-light); border-color: var(--gold-light); transform: translateY(-1px); }
+
+  .btn-ghost {
+    color: rgba(255,255,255,0.8); font-size: 15px; font-weight: 400;
+    padding: 14px 28px; border-radius: 8px;
+    text-decoration: none; transition: all 0.2s;
+    border: 1px solid rgba(255,255,255,0.2);
+  }
+  .btn-ghost:hover { border-color: rgba(255,255,255,0.5); color: var(--white); }
+
+  .hero-stats {
+    display: flex; gap: 36px; flex-wrap: wrap;
+    padding-top: 36px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+  }
+  .hero-stat-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px; font-weight: 600; color: var(--gold-light);
+    display: block;
+  }
+  .hero-stat-label { font-size: 12px; color: rgba(255,255,255,0.5); font-weight: 300; line-height: 1.4; }
+
+  .hero-right {
+    display: flex; align-items: center; justify-content: center;
+    padding: 130px 60px 80px 20px;
+    position: relative; z-index: 2;
+  }
+  .hero-card {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(201,153,58,0.25);
+    border-radius: 16px; padding: 36px;
+    width: 100%; max-width: 400px;
+  }
+  .hero-card-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px; color: var(--white); margin-bottom: 20px;
+  }
+  .checklist-item {
+    display: flex; align-items: flex-start; gap: 12px;
+    padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,0.07);
+  }
+  .checklist-item:last-child { border-bottom: none; }
+  .check-icon {
+    width: 22px; height: 22px; border-radius: 50%;
+    background: rgba(76,175,115,0.2); border: 1px solid rgba(76,175,115,0.4);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 11px; color: #7DDBA0; flex-shrink: 0; margin-top: 1px;
+  }
+  .checklist-item-text { font-size: 14px; color: rgba(255,255,255,0.8); line-height: 1.5; }
+  .checklist-item-text strong { color: var(--white); font-weight: 600; display: block; }
+
+  /* TRUST BAR */
+  .trust-bar {
+    background: var(--gold); padding: 16px 40px;
+    display: flex; align-items: center; justify-content: center;
+    gap: 48px; flex-wrap: wrap;
+  }
+  .trust-item {
+    font-size: 13px; font-weight: 600; color: var(--navy);
+    display: flex; align-items: center; gap: 8px;
+  }
+  .trust-item::before {
+    content: '✓'; width: 18px; height: 18px;
+    background: var(--navy); color: var(--gold);
+    border-radius: 50%; display: flex; align-items: center; justify-content: center;
+    font-size: 10px; font-weight: 700; flex-shrink: 0;
+  }
+
+  /* COMMONS */
+  section { padding: 90px 40px; }
+  .container { max-width: 1100px; margin: 0 auto; }
+  .section-label {
+    font-size: 11px; font-weight: 600; letter-spacing: 0.1em;
+    text-transform: uppercase; color: var(--gold); margin-bottom: 12px;
+  }
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(26px, 3vw, 38px);
+    font-weight: 700; line-height: 1.2;
+    color: var(--navy); margin-bottom: 16px;
+  }
+  .section-sub {
+    font-size: 16px; color: var(--gray-600); line-height: 1.7;
+    max-width: 580px;
+  }
+
+  /* SERVICES */
+  .services { background: var(--white); }
+  .services-header { text-align: center; margin-bottom: 56px; }
+  .services-header .section-sub { margin: 0 auto; }
+  .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+
+  .service-card {
+    background: var(--cream); border: 1px solid var(--gray-200);
+    border-radius: 16px; padding: 32px 28px;
+    position: relative; overflow: hidden; transition: all 0.3s;
+  }
+  .service-card:hover {
+    border-color: var(--gold); transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(13,31,60,0.1);
+  }
+  .service-card::before {
+    content: ''; position: absolute; top: 0; left: 0; right: 0;
+    height: 3px; background: var(--gold);
+    transform: scaleX(0); transform-origin: left; transition: transform 0.3s;
+  }
+  .service-card:hover::before { transform: scaleX(1); }
+  .service-icon {
+    width: 52px; height: 52px; border-radius: 12px;
+    background: var(--gold-pale); display: flex; align-items: center;
+    justify-content: center; font-size: 24px; margin-bottom: 20px;
+  }
+  .service-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 19px; font-weight: 700; color: var(--navy); margin-bottom: 10px;
+  }
+  .service-card p { font-size: 14px; color: var(--gray-600); line-height: 1.7; margin-bottom: 18px; }
+  .service-tag {
+    display: inline-block; font-size: 11px; font-weight: 600; color: var(--gold);
+    background: var(--gold-pale); padding: 3px 10px; border-radius: 20px;
+    margin-right: 6px; margin-bottom: 6px;
+  }
+
+  /* PROCESS */
+  .process { background: var(--gray-100); }
+  .process-header { text-align: center; margin-bottom: 60px; }
+  .process-header .section-sub { margin: 0 auto; }
+  .process-steps {
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 0;
+    position: relative;
+  }
+  .process-steps::before {
+    content: ''; position: absolute;
+    top: 28px; left: calc(12.5% + 20px); right: calc(12.5% + 20px);
+    height: 2px; background: var(--gray-200); z-index: 0;
+  }
+  .process-step { text-align: center; padding: 0 20px; position: relative; z-index: 1; }
+  .step-num {
+    width: 56px; height: 56px; border-radius: 50%;
+    background: var(--navy); border: 3px solid var(--gold);
+    display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 20px;
+    font-family: 'Playfair Display', serif;
+    font-size: 20px; font-weight: 700; color: var(--gold-light);
+  }
+  .step-title { font-size: 15px; font-weight: 600; color: var(--navy); margin-bottom: 8px; }
+  .step-body { font-size: 13px; color: var(--gray-600); line-height: 1.6; }
+
+  /* WHY */
+  .why { background: var(--navy); }
+  .why .section-title { color: var(--white); }
+  .why .section-sub { color: rgba(255,255,255,0.6); }
+  .why-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; margin-top: 52px; }
+
+  .differentiator {
+    display: flex; gap: 18px; margin-bottom: 32px;
+    padding-bottom: 32px; border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+  .differentiator:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+  .diff-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px; font-weight: 700; color: rgba(201,153,58,0.3);
+    line-height: 1; flex-shrink: 0; width: 40px;
+  }
+  .diff-title { font-size: 16px; font-weight: 600; color: var(--white); margin-bottom: 6px; }
+  .diff-body { font-size: 14px; color: rgba(255,255,255,0.55); line-height: 1.7; }
+
+  .why-right {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(201,153,58,0.2);
+    border-radius: 20px; padding: 36px;
+  }
+  .why-right-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px; color: var(--gold-light); margin-bottom: 24px;
+  }
+  .cert-item {
+    padding: 16px 0; border-bottom: 1px solid rgba(255,255,255,0.07);
+    display: flex; align-items: center; gap: 14px;
+  }
+  .cert-item:last-child { border-bottom: none; }
+  .cert-icon {
+    width: 36px; height: 36px; border-radius: 8px;
+    background: rgba(201,153,58,0.12); border: 1px solid rgba(201,153,58,0.25);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 16px; flex-shrink: 0;
+  }
+  .cert-name { font-size: 14px; color: var(--white); font-weight: 500; }
+  .cert-name span { display: block; font-size: 12px; color: rgba(255,255,255,0.4); font-weight: 300; margin-top: 2px; }
+
+  /* COVERAGE */
+  .coverage { background: var(--white); }
+  .coverage-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+  .coverage-map-placeholder {
+    background: var(--gray-100); border: 1px solid var(--gray-200);
+    border-radius: 20px; padding: 60px 40px; text-align: center;
+    position: relative; overflow: hidden;
+  }
+  .coverage-map-placeholder::before {
+    content: '🗺️'; font-size: 80px; display: block; margin-bottom: 20px;
+    opacity: 0.3;
+  }
+  .coverage-label {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px; color: var(--navy); font-weight: 700; margin-bottom: 10px;
+  }
+  .coverage-sub { font-size: 14px; color: var(--gray-400); line-height: 1.6; }
+
+  .coverage-content .section-title { margin-bottom: 20px; }
+  .region-list { list-style: none; margin-top: 28px; }
+  .region-list li {
+    padding: 12px 0; border-bottom: 1px solid var(--gray-200);
+    display: flex; align-items: center; gap: 12px;
+    font-size: 14px; color: var(--gray-600);
+  }
+  .region-list li:last-child { border-bottom: none; }
+  .region-list li::before {
+    content: '✓'; width: 20px; height: 20px;
+    background: rgba(46,125,79,0.12); color: var(--green);
+    border-radius: 50%; display: flex; align-items: center; justify-content: center;
+    font-size: 11px; font-weight: 700; flex-shrink: 0;
+  }
+  .region-list li strong { color: var(--navy); font-weight: 600; }
+
+  /* TESTIMONIALS */
+  .testimonials { background: var(--gray-100); }
+  .testimonials-header { text-align: center; margin-bottom: 52px; }
+  .testimonials-header .section-sub { margin: 0 auto; }
+  .testimonials-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  .testimonial-card {
+    background: var(--white); border: 1px solid var(--gray-200);
+    border-radius: 16px; padding: 28px;
+  }
+  .testimonial-quote {
+    font-size: 32px; color: var(--gold); line-height: 1; margin-bottom: 14px;
+    font-family: 'Playfair Display', serif;
+  }
+  .testimonial-text {
+    font-size: 14px; color: var(--text-light); line-height: 1.75;
+    margin-bottom: 20px; font-style: italic;
+  }
+  .star-row { color: var(--gold); font-size: 14px; margin-bottom: 14px; letter-spacing: 2px; }
+  .testimonial-author { font-size: 13px; font-weight: 600; color: var(--navy); }
+  .testimonial-author span { display: block; font-weight: 400; font-size: 12px; color: var(--gray-400); }
+
+  /* CTA BANNER */
+  .cta-banner {
+    background: var(--navy); padding: 80px 40px; text-align: center;
+    position: relative; overflow: hidden;
+  }
+  .cta-banner::before {
+    content: ''; position: absolute; inset: 0;
+    background: radial-gradient(ellipse at 50% 0%, rgba(201,153,58,0.15) 0%, transparent 70%);
+  }
+  .cta-banner-content { position: relative; z-index: 2; }
+  .cta-banner h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(26px, 3.2vw, 42px); font-weight: 700;
+    color: var(--white); margin-bottom: 14px;
+  }
+  .cta-banner h2 em { font-style: normal; color: var(--gold-light); }
+  .cta-banner p { font-size: 16px; color: rgba(255,255,255,0.6); margin-bottom: 36px; }
+  .cta-banner-btns { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+
+  /* CONTACT */
+  .contact { background: var(--white); }
+  .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; }
+  .contact-info { padding-top: 8px; }
+  .contact-item { display: flex; align-items: flex-start; gap: 16px; margin-bottom: 28px; }
+  .contact-icon {
+    width: 44px; height: 44px; border-radius: 10px;
+    background: var(--gold-pale); display: flex; align-items: center;
+    justify-content: center; font-size: 18px; flex-shrink: 0;
+  }
+  .contact-label { font-size: 12px; font-weight: 600; color: var(--gray-400); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 2px; }
+  .contact-value { font-size: 15px; color: var(--navy); font-weight: 500; text-decoration: none; }
+  .contact-value:hover { color: var(--gold); }
+
+  .contact-form { background: var(--cream); border-radius: 20px; padding: 36px; }
+  .contact-form h3 { font-family: 'Playfair Display', serif; font-size: 22px; color: var(--navy); margin-bottom: 24px; }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 14px; }
+  .form-group { margin-bottom: 14px; }
+  .form-group label { display: block; font-size: 12px; font-weight: 600; color: var(--gray-600); margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.04em; }
+  .form-group input, .form-group select, .form-group textarea {
+    width: 100%; padding: 11px 14px;
+    border: 1px solid var(--gray-200); border-radius: 8px;
+    font-family: 'DM Sans', sans-serif; font-size: 14px; color: var(--text);
+    background: var(--white); transition: border-color 0.2s; outline: none;
+  }
+  .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--gold); }
+  .form-group textarea { resize: vertical; min-height: 100px; }
+  .form-submit {
+    width: 100%; padding: 13px;
+    background: var(--navy); color: var(--white);
+    font-family: 'DM Sans', sans-serif; font-size: 14px; font-weight: 600;
+    border: none; border-radius: 8px; cursor: pointer; transition: background 0.2s;
+  }
+  .form-submit:hover { background: var(--navy-light); }
+
+  /* FOOTER */
+  footer {
+    background: #080F1C; padding: 40px;
+    display: flex; align-items: center; justify-content: space-between;
+    flex-wrap: wrap; gap: 16px;
+    border-top: 1px solid rgba(201,153,58,0.15);
+  }
+  .footer-copy { font-size: 13px; color: rgba(255,255,255,0.35); }
+  .footer-links { display: flex; gap: 24px; }
+  .footer-links a { font-size: 13px; color: rgba(255,255,255,0.4); text-decoration: none; }
+  .footer-links a:hover { color: var(--gold-light); }
+  .footer-parent {
+    font-size: 12px; color: rgba(255,255,255,0.3);
+    display: flex; align-items: center; gap: 8px;
+  }
+  .footer-parent a { color: var(--gold-light); text-decoration: none; }
+  .footer-parent a:hover { text-decoration: underline; }
+
+  /* ANIMATIONS */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .hero-badge { animation: fadeUp 0.6s ease both; }
+  .hero-headline { animation: fadeUp 0.6s 0.1s ease both; }
+  .hero-sub { animation: fadeUp 0.6s 0.2s ease both; }
+  .hero-cta-row { animation: fadeUp 0.6s 0.3s ease both; }
+  .hero-stats { animation: fadeUp 0.6s 0.4s ease both; }
+  .hero-card { animation: fadeUp 0.6s 0.3s ease both; }
+
+  /* RESPONSIVE */
+  @media (max-width: 900px) {
+    nav { padding: 0 20px; }
+    .nav-links { display: none; }
+    .hero { grid-template-columns: 1fr; }
+    .hero-right { display: none; }
+    .hero-left { padding: 120px 24px 60px; }
+    .services-grid, .testimonials-grid { grid-template-columns: 1fr; }
+    .why-grid, .coverage-grid, .contact-grid { grid-template-columns: 1fr; gap: 40px; }
+    .process-steps { grid-template-columns: 1fr 1fr; gap: 40px; }
+    .process-steps::before { display: none; }
+    .trust-bar { gap: 20px; padding: 14px 20px; }
+    section { padding: 60px 24px; }
+    .form-row { grid-template-columns: 1fr; }
+    footer { flex-direction: column; text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">
+    <div class="nav-logo-mark">NPI</div>
+    <div class="nav-logo-text">
+      National ProHome Inspections
+      <span>A Kendra REAC Company</span>
+    </div>
+  </a>
+  <div class="nav-links">
+    <a href="#services">Services</a>
+    <a href="#process">How It Works</a>
+    <a href="#coverage">Coverage</a>
+    <a href="#contact">Contact</a>
+  </div>
+  <div style="display:flex;align-items:center;gap:12px;">
+    <a href="index.html" class="nav-back">Kendra REAC</a>
+    <a href="#contact" class="nav-cta">Schedule an Inspection</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg-pattern"></div>
+  <div class="hero-grid-lines"></div>
+
+  <div class="hero-left">
+    <div class="hero-badge">Certified · Nationwide · Trusted</div>
+
+    <h1 class="hero-headline">
+      Professional property inspections — <em>built on 15+ years of HUD expertise.</em>
+    </h1>
+
+    <p class="hero-sub">
+      National ProHome Inspections delivers thorough, certified inspections for home buyers, sellers, and property managers across the United States — backed by the experience of a HUD REAC certified inspector.
+    </p>
+
+    <div class="hero-cta-row">
+      <a href="#contact" class="btn-primary">Schedule an Inspection</a>
+      <a href="#services" class="btn-ghost">View Services</a>
+    </div>
+
+    <div class="hero-stats">
+      <div>
+        <span class="hero-stat-num">15+</span>
+        <span class="hero-stat-label">Years of inspection<br>experience</span>
+      </div>
+      <div>
+        <span class="hero-stat-num">5,600+</span>
+        <span class="hero-stat-label">FEMA disaster<br>inspections</span>
+      </div>
+      <div>
+        <span class="hero-stat-num">50</span>
+        <span class="hero-stat-label">States &amp;<br>Puerto Rico</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-right">
+    <div class="hero-card">
+      <h3 class="hero-card-title">What's included in every inspection</h3>
+      <div class="checklist-item">
+        <div class="check-icon">✓</div>
+        <div class="checklist-item-text">
+          <strong>Structural Components</strong>
+          Foundation, roof, framing, attic
+        </div>
+      </div>
+      <div class="checklist-item">
+        <div class="check-icon">✓</div>
+        <div class="checklist-item-text">
+          <strong>Electrical Systems</strong>
+          Panel, wiring, outlets, GFCI
+        </div>
+      </div>
+      <div class="checklist-item">
+        <div class="check-icon">✓</div>
+        <div class="checklist-item-text">
+          <strong>Plumbing &amp; HVAC</strong>
+          Water heater, supply lines, heating, cooling
+        </div>
+      </div>
+      <div class="checklist-item">
+        <div class="check-icon">✓</div>
+        <div class="checklist-item-text">
+          <strong>Interior &amp; Exterior</strong>
+          Walls, floors, ceilings, windows, doors, siding
+        </div>
+      </div>
+      <div class="checklist-item">
+        <div class="check-icon">✓</div>
+        <div class="checklist-item-text">
+          <strong>Detailed Written Report</strong>
+          Photos, findings, and recommended actions
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+<div class="trust-bar">
+  <div class="trust-item">HUD REAC Certified Since 2009</div>
+  <div class="trust-item">NSPIRE · UPCS · HQS Protocols</div>
+  <div class="trust-item">Bilingual Inspection Reports</div>
+  <div class="trust-item">Nationwide Service Coverage</div>
+  <div class="trust-item">48-Hour Report Delivery</div>
+</div>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+  <div class="container">
+    <div class="services-header">
+      <p class="section-label">What We Inspect</p>
+      <h2 class="section-title">Inspection services for every property type</h2>
+      <p class="section-sub">From single-family homes to large multi-family complexes, we bring the same rigorous standards and HUD-certified expertise to every inspection.</p>
+    </div>
+
+    <div class="services-grid">
+
+      <div class="service-card">
+        <div class="service-icon">🏠</div>
+        <h3>Buyer's Home Inspection</h3>
+        <p>Know exactly what you're buying before you close. We thoroughly inspect the property and deliver a clear, photo-documented report within 48 hours — so you can negotiate with confidence.</p>
+        <span class="service-tag">Single-Family</span>
+        <span class="service-tag">Condos</span>
+        <span class="service-tag">Townhomes</span>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">📋</div>
+        <h3>Pre-Listing Inspection</h3>
+        <p>Sell faster and for more. Identify deficiencies before buyers do — giving you time to make repairs or price accordingly, and reducing the chance of a deal falling through.</p>
+        <span class="service-tag">Seller Prep</span>
+        <span class="service-tag">Fix-Before-List</span>
+        <span class="service-tag">Pricing Confidence</span>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">🏢</div>
+        <h3>Multi-Family &amp; Commercial</h3>
+        <p>Comprehensive inspections for apartment complexes, mixed-use buildings, and commercial properties. Our HUD background means we inspect to the highest federal standards.</p>
+        <span class="service-tag">Apartments</span>
+        <span class="service-tag">Commercial</span>
+        <span class="service-tag">HUD-Standard</span>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">🔍</div>
+        <h3>HUD / NSPIRE Pre-Inspection</h3>
+        <p>Preparing for a federal HUD NSPIRE inspection? We walk your property first — identifying every deficiency that would affect your score, documented with photos and a clear remediation plan.</p>
+        <span class="service-tag">HUD Subsidized</span>
+        <span class="service-tag">Section 8</span>
+        <span class="service-tag">Public Housing</span>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">🆕</div>
+        <h3>New Construction Inspection</h3>
+        <p>Builder mistakes happen. We inspect new construction at key phases — foundation, framing, and final walkthrough — to ensure your new home is built to code and to standard.</p>
+        <span class="service-tag">Phase Inspections</span>
+        <span class="service-tag">Final Walkthrough</span>
+        <span class="service-tag">Builder Warranty</span>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">🔄</div>
+        <h3>Re-Inspection &amp; Verification</h3>
+        <p>After repairs are made, we return to verify the work was completed correctly and to the standard required — giving buyers, sellers, and housing authorities documented confirmation.</p>
+        <span class="service-tag">Post-Repair</span>
+        <span class="service-tag">HUD Compliance</span>
+        <span class="service-tag">Documentation</span>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="process" id="process">
+  <div class="container">
+    <div class="process-header">
+      <p class="section-label">How It Works</p>
+      <h2 class="section-title">From booking to report in 4 simple steps</h2>
+      <p class="section-sub">We make the process straightforward — so you can focus on what matters.</p>
+    </div>
+    <div class="process-steps">
+      <div class="process-step">
+        <div class="step-num">1</div>
+        <div class="step-title">Schedule Online or by Phone</div>
+        <div class="step-body">Contact us with your property address and preferred inspection date. We'll confirm availability and send a booking confirmation.</div>
+      </div>
+      <div class="process-step">
+        <div class="step-num">2</div>
+        <div class="step-title">We Inspect the Property</div>
+        <div class="step-body">Our certified inspector conducts a thorough, systematic walkthrough of every accessible area — typically 2–4 hours depending on property size.</div>
+      </div>
+      <div class="process-step">
+        <div class="step-num">3</div>
+        <div class="step-title">Receive Your Report</div>
+        <div class="step-body">Within 48 hours you receive a detailed, photo-documented inspection report highlighting findings, severity ratings, and recommended next steps.</div>
+      </div>
+      <div class="process-step">
+        <div class="step-num">4</div>
+        <div class="step-title">We Answer Your Questions</div>
+        <div class="step-body">We walk you through the report — in English or Spanish — and help you understand what's critical, what to negotiate, and what can wait.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY US -->
+<section class="why">
+  <div class="container">
+    <p class="section-label">Why National ProHome</p>
+    <h2 class="section-title">The inspector's perspective — working for you</h2>
+
+    <div class="why-grid">
+      <div>
+        <div class="differentiator">
+          <div class="diff-num">01</div>
+          <div>
+            <div class="diff-title">HUD-certified inspector — not just home-certified</div>
+            <div class="diff-body">Our lead inspector has been HUD REAC certified since 2009, conducting NSPIRE, UPCS, and HQS federal inspections. We hold residential and commercial properties to the highest documented standard in the industry.</div>
+          </div>
+        </div>
+        <div class="differentiator">
+          <div class="diff-num">02</div>
+          <div>
+            <div class="diff-title">5,600+ inspections — nothing surprises us</div>
+            <div class="diff-body">As a certified FEMA Disaster Response and Recovery Inspector under the Department of Homeland Security, our founder has documented deficiencies across thousands of properties across every climate and property type.</div>
+          </div>
+        </div>
+        <div class="differentiator">
+          <div class="diff-num">03</div>
+          <div>
+            <div class="diff-title">Bilingual reports in English &amp; Spanish</div>
+            <div class="diff-body">Our inspection reports and consultations are available in both English and Spanish — the only inspection firm in the market where Spanish-speaking buyers, sellers, and maintenance staff can fully understand every finding.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="why-right">
+        <div class="why-right-title">Certifications &amp; credentials</div>
+        <div class="cert-item">
+          <div class="cert-icon">🏛️</div>
+          <div>
+            <div class="cert-name">HUD REAC Certified Inspector
+              <span>Certified since 2009 — NSPIRE, UPCS, HQS protocols</span>
+            </div>
+          </div>
+        </div>
+        <div class="cert-item">
+          <div class="cert-icon">🚨</div>
+          <div>
+            <div class="cert-name">FEMA Disaster Response Inspector
+              <span>Vanguard/DHS — 5,600+ disaster relief inspections</span>
+            </div>
+          </div>
+        </div>
+        <div class="cert-item">
+          <div class="cert-icon">🏗️</div>
+          <div>
+            <div class="cert-name">Construction &amp; Planning Background
+              <span>Osceola County government — construction &amp; emergency management</span>
+            </div>
+          </div>
+        </div>
+        <div class="cert-item">
+          <div class="cert-icon">🏡</div>
+          <div>
+            <div class="cert-name">Licensed Real Estate Broker
+              <span>Century 21 — Section 8 and subsidized housing oversight</span>
+            </div>
+          </div>
+        </div>
+        <div class="cert-item">
+          <div class="cert-icon">🌐</div>
+          <div>
+            <div class="cert-name">Bilingual — English &amp; Spanish
+              <span>Native-language reports and consultations</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COVERAGE -->
+<section class="coverage" id="coverage">
+  <div class="container">
+    <div class="coverage-grid">
+      <div class="coverage-map-placeholder">
+        <div class="coverage-label">Nationwide Coverage</div>
+        <div class="coverage-sub">All 50 states &amp; Puerto Rico<br>On-site inspection available</div>
+      </div>
+      <div class="coverage-content">
+        <p class="section-label">Service Area</p>
+        <h2 class="section-title">We go where your property is</h2>
+        <p class="section-sub">National ProHome Inspections serves property owners, buyers, and housing authorities across the entire United States and Puerto Rico.</p>
+
+        <ul class="region-list">
+          <li><strong>Southeast U.S.</strong> — Florida, Georgia, South Carolina, North Carolina</li>
+          <li><strong>Northeast U.S.</strong> — New York, New Jersey, Connecticut, Massachusetts</li>
+          <li><strong>Midwest U.S.</strong> — Illinois, Ohio, Michigan, Indiana</li>
+          <li><strong>Southwest U.S.</strong> — Texas, Arizona, New Mexico, Nevada</li>
+          <li><strong>West Coast</strong> — California, Washington, Oregon</li>
+          <li><strong>Puerto Rico</strong> — Full island coverage including rural municipalities</li>
+          <li><strong>All other states</strong> — Contact us to confirm scheduling availability</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials">
+  <div class="container">
+    <div class="testimonials-header">
+      <p class="section-label">Client Feedback</p>
+      <h2 class="section-title">What property owners say</h2>
+      <p class="section-sub">Our inspections give clients clarity, confidence, and the documentation they need to act.</p>
+    </div>
+    <div class="testimonials-grid">
+
+      <div class="testimonial-card">
+        <div class="star-row">★★★★★</div>
+        <div class="testimonial-quote">"</div>
+        <p class="testimonial-text">The inspection report was incredibly detailed — photos of every issue with clear explanations. We used it to negotiate $12,000 off the purchase price. Worth every penny.</p>
+        <div class="testimonial-author">
+          Home Buyer
+          <span>Orlando, Florida</span>
+        </div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="star-row">★★★★★</div>
+        <div class="testimonial-quote">"</div>
+        <p class="testimonial-text">As a property manager with 8 buildings, I needed an inspector who understands HUD standards. National ProHome knows exactly what federal inspectors look for. No one else comes close.</p>
+        <div class="testimonial-author">
+          Property Manager
+          <span>Multi-family portfolio — Florida &amp; Puerto Rico</span>
+        </div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="star-row">★★★★★</div>
+        <div class="testimonial-quote">"</div>
+        <p class="testimonial-text">The bilingual report was a huge advantage for our Spanish-speaking ownership team. We finally had a document our maintenance director could actually read and act on.</p>
+        <div class="testimonial-author">
+          Housing Authority Director
+          <span>Puerto Rico</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CTA BANNER -->
+<div class="cta-banner">
+  <div class="cta-banner-content">
+    <h2>Ready to inspect your <em>next property?</em></h2>
+    <p>Contact us to schedule an inspection or ask about pricing. We serve buyers, sellers, property managers, and housing authorities — in English or Spanish.</p>
+    <div class="cta-banner-btns">
+      <a href="#contact" class="btn-primary">Schedule an Inspection</a>
+      <a href="tel:4075165393" class="btn-ghost">📞 407-516-5393</a>
+    </div>
+  </div>
+</div>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="container">
+    <div class="contact-grid">
+      <div class="contact-info">
+        <p class="section-label">Get in Touch</p>
+        <h2 class="section-title">Let's schedule your inspection</h2>
+
+        <div class="contact-item">
+          <div class="contact-icon">📞</div>
+          <div>
+            <div class="contact-label">Phone</div>
+            <a href="tel:4075165393" class="contact-value">407-516-5393</a>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">✉️</div>
+          <div>
+            <div class="contact-label">Email</div>
+            <a href="mailto:kendra@reacnspire.com" class="contact-value">kendra@reacnspire.com</a>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">📍</div>
+          <div>
+            <div class="contact-label">Service Area</div>
+            <span class="contact-value">Nationwide · Puerto Rico</span>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">⏱️</div>
+          <div>
+            <div class="contact-label">Report Turnaround</div>
+            <span class="contact-value">Within 48 hours of inspection</span>
+          </div>
+        </div>
+
+        <div style="margin-top:28px;padding:20px;background:var(--gray-100);border-radius:12px;border:1px solid var(--gray-200);">
+          <div style="font-size:12px;font-weight:600;color:var(--gold);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:8px;">A Kendra REAC Company</div>
+          <p style="font-size:13px;color:var(--gray-600);line-height:1.6;">National ProHome Inspections is a service of Kendra REAC Consultant, Inc. — HUD REAC certified since 2009.</p>
+          <a href="index.html" style="display:inline-block;margin-top:10px;font-size:13px;font-weight:600;color:var(--navy);text-decoration:none;">Visit reacnspire.com →</a>
+        </div>
+      </div>
+
+      <div class="contact-form">
+        <h3>Request an Inspection</h3>
+        <div class="form-row">
+          <div class="form-group">
+            <label>First name</label>
+            <input type="text" placeholder="First name">
+          </div>
+          <div class="form-group">
+            <label>Last name</label>
+            <input type="text" placeholder="Last name">
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Email</label>
+          <input type="email" placeholder="Email address">
+        </div>
+        <div class="form-group">
+          <label>Phone</label>
+          <input type="tel" placeholder="Phone number">
+        </div>
+        <div class="form-group">
+          <label>Inspection type</label>
+          <select>
+            <option>Buyer's Home Inspection</option>
+            <option>Pre-Listing Inspection</option>
+            <option>Multi-Family / Commercial</option>
+            <option>HUD / NSPIRE Pre-Inspection</option>
+            <option>New Construction Inspection</option>
+            <option>Re-Inspection / Verification</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Property address</label>
+          <input type="text" placeholder="Street address, city, state">
+        </div>
+        <div class="form-group">
+          <label>Additional details</label>
+          <textarea placeholder="Property size, number of units, preferred inspection date, any specific concerns..."></textarea>
+        </div>
+        <button class="form-submit">Request Inspection →</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div style="display:flex;flex-direction:column;align-items:center;gap:20px;width:100%;">
+    <div style="width:100%;height:1px;background:rgba(255,255,255,0.07);"></div>
+    <div style="display:flex;align-items:center;justify-content:space-between;width:100%;flex-wrap:wrap;gap:12px;">
+      <div>
+        <div class="footer-copy">© 2025 National ProHome Inspections. All rights reserved.</div>
+        <div class="footer-parent" style="margin-top:6px;">
+          A service of <a href="index.html">Kendra REAC Consultant, Inc.</a>
+        </div>
+      </div>
+      <div class="footer-links">
+        <a href="index.html">Kendra REAC</a>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Use</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
