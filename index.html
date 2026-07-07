@@ -592,10 +592,39 @@
   .hero-stats { animation: fadeUp 0.6s 0.4s ease both; }
   .hero-card { animation: fadeUp 0.6s 0.3s ease both; }
 
+  /* ── MOBILE MENU ── */
+  .nav-burger {
+    display: none; background: none; border: none; cursor: pointer;
+    flex-direction: column; gap: 5px; padding: 8px;
+  }
+  .nav-burger span { display: block; width: 22px; height: 2px; background: var(--gold-light); border-radius: 2px; transition: all 0.25s; }
+  .mobile-menu {
+    display: none; position: fixed; top: 68px; left: 0; right: 0; z-index: 99;
+    background: var(--navy); border-bottom: 1px solid rgba(201,153,58,0.3);
+    flex-direction: column; padding: 12px 20px 20px;
+  }
+  .mobile-menu.open { display: flex; }
+  .mobile-menu a {
+    color: rgba(255,255,255,0.85); text-decoration: none;
+    padding: 14px 8px; font-size: 15px; border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+  .mobile-menu a:last-child { border-bottom: none; background: var(--gold); color: var(--navy); font-weight: 600; border-radius: 8px; text-align: center; margin-top: 10px; }
+
+  /* ── STICKY CALL (mobile) ── */
+  .sticky-call {
+    display: none; position: fixed; bottom: 20px; right: 20px; z-index: 98;
+    background: var(--gold); color: var(--navy); font-weight: 700; font-size: 15px;
+    padding: 14px 22px; border-radius: 50px; text-decoration: none;
+    box-shadow: 0 6px 24px rgba(13,31,60,0.35);
+  }
+
   /* ── RESPONSIVE ── */
   @media (max-width: 900px) {
     nav { padding: 0 20px; }
     .nav-links { display: none; }
+    .nav-burger { display: flex; }
+    .nav-cta { display: none; }
+    .sticky-call { display: block; }
     .hero { grid-template-columns: 1fr; }
     .hero-right { display: none; }
     .hero-left { padding: 120px 24px 60px; }
@@ -622,13 +651,28 @@
     <a href="#about">About</a>
     <a href="#clients">Clients</a>
     <a href="#shop">Shop</a>
+    <a href="#faq">FAQ</a>
     <a href="#contact">Contact</a>
   </div>
   <div style="display:flex;align-items:center;gap:12px;">
     <span class="nav-lang" onclick="toggleLang()">EN / ES</span>
     <a href="#contact" class="nav-cta">Book a Consultation</a>
+    <button class="nav-burger" onclick="toggleMenu()" aria-label="Menu"><span></span><span></span><span></span></button>
   </div>
 </nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#services" onclick="toggleMenu()">Services</a>
+  <a href="#training" onclick="toggleMenu()">Training</a>
+  <a href="#about" onclick="toggleMenu()">About</a>
+  <a href="#clients" onclick="toggleMenu()">Clients</a>
+  <a href="#shop" onclick="toggleMenu()">Shop</a>
+  <a href="#faq" onclick="toggleMenu()">FAQ</a>
+  <a href="#contact" onclick="toggleMenu()" data-lang="en">Book a Consultation</a>
+  <a href="#contact" onclick="toggleMenu()" data-lang="es">Reservar una Consulta</a>
+</div>
+
+<a href="tel:4075165393" class="sticky-call">📞 Call Now</a>
 
 <!-- HERO -->
 <section class="hero">
@@ -803,7 +847,8 @@
           <div style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 10px; padding: 12px 14px;">
             <div style="font-size: 10px; font-weight: 600; color: var(--gold); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 4px;" data-lang="en">Date</div>
             <div style="font-size: 10px; font-weight: 600; color: var(--gold); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 4px;" data-lang="es">Fecha</div>
-            <div style="font-size: 14px; font-weight: 600; color: #fff;">Miércoles, Junio 10</div>
+            <div style="font-size: 14px; font-weight: 600; color: #fff;" data-lang="en">Contact us for next date</div>
+            <div style="font-size: 14px; font-weight: 600; color: #fff;" data-lang="es">Contáctenos para la próxima fecha</div>
           </div>
           <div style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 10px; padding: 12px 14px;">
             <div style="font-size: 10px; font-weight: 600; color: var(--gold); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 4px;" data-lang="en">Time</div>
@@ -1161,6 +1206,67 @@
   </div>
 </section>
 
+<!-- FAQ -->
+<section id="faq" style="background:var(--gray-100);padding:100px 40px;">
+  <div class="container">
+    <p class="section-label" data-lang="en">Common Questions</p>
+    <p class="section-label" data-lang="es">Preguntas Frecuentes</p>
+    <h2 class="section-title" data-lang="en">REAC &amp; NSPIRE questions, answered</h2>
+    <h2 class="section-title" data-lang="es">Preguntas sobre REAC y NSPIRE, respondidas</h2>
+    <div style="max-width:820px;margin:40px auto 0;display:flex;flex-direction:column;gap:14px;">
+
+      <details class="faq-item" style="background:var(--white);border:1.5px solid var(--gray-200);border-radius:12px;padding:20px 24px;">
+        <summary style="font-weight:600;font-size:16px;color:var(--navy);cursor:pointer;" data-lang="en">What is the difference between REAC and NSPIRE?</summary>
+        <summary style="font-weight:600;font-size:16px;color:var(--navy);cursor:pointer;" data-lang="es">¿Cuál es la diferencia entre REAC y NSPIRE?</summary>
+        <p style="margin-top:12px;font-size:14px;color:var(--text-light);line-height:1.7;" data-lang="en">REAC (Real Estate Assessment Center) is the HUD office that conducts inspections. NSPIRE is the inspection standard that replaced UPCS in 2023. NSPIRE focuses on health and safety inside the units — where residents actually live — with new scoring, new deficiency definitions, and stricter affirmative requirements like smoke detectors in every unit.</p>
+        <p style="margin-top:12px;font-size:14px;color:var(--text-light);line-height:1.7;" data-lang="es">REAC (Real Estate Assessment Center) es la oficina de HUD que realiza las inspecciones. NSPIRE es el estándar de inspección que reemplazó a UPCS en 2023. NSPIRE se enfoca en la salud y seguridad dentro de las unidades, con nueva puntuación, nuevas definiciones de deficiencias y requisitos más estrictos como detectores de humo en cada unidad.</p>
+      </details>
+
+      <details class="faq-item" style="background:var(--white);border:1.5px solid var(--gray-200);border-radius:12px;padding:20px 24px;">
+        <summary style="font-weight:600;font-size:16px;color:var(--navy);cursor:pointer;" data-lang="en">How far in advance should I schedule a pre-inspection?</summary>
+        <summary style="font-weight:600;font-size:16px;color:var(--navy);cursor:pointer;" data-lang="es">¿Con cuánta anticipación debo programar una pre-inspección?</summary>
+        <p style="margin-top:12px;font-size:14px;color:var(--text-light);line-height:1.7;" data-lang="en">Ideally 30–60 days before your scheduled REAC inspection. That gives your maintenance team enough time to correct every deficiency we document. If your inspection is sooner, contact us anyway — we prioritize urgent timelines.</p>
+        <p style="margin-top:12px;font-size:14px;color:var(--text-light);line-height:1.7;" data-lang="es">Idealmente de 30 a 60 días antes de su inspección de REAC. Eso le da a su equipo de mantenimiento tiempo suficiente para corregir cada deficiencia que documentamos. Si su inspección es antes, contáctenos de todos modos — damos prioridad a plazos urgentes.</p>
+      </details>
+
+      <details class="faq-item" style="background:var(--white);border:1.5px solid var(--gray-200);border-radius:12px;padding:20px 24px;">
+        <summary style="font-weight:600;font-size:16px;color:var(--navy);cursor:pointer;" data-lang="en">Why does my REAC score matter?</summary>
+        <summary style="font-weight:600;font-size:16px;color:var(--navy);cursor:pointer;" data-lang="es">¿Por qué importa mi puntuación de REAC?</summary>
+        <p style="margin-top:12px;font-size:14px;color:var(--text-light);line-height:1.7;" data-lang="en">Your score determines how often HUD inspects you: 90+ means every 3 years, 80–89 every 2 years, and below 80 means annual inspections. Low scores can trigger enforcement action and put your HUD funding at risk.</p>
+        <p style="margin-top:12px;font-size:14px;color:var(--text-light);line-height:1.7;" data-lang="es">Su puntuación determina con qué frecuencia HUD lo inspecciona: 90+ significa cada 3 años, 80–89 cada 2 años, y menos de 80 significa inspecciones anuales. Las puntuaciones bajas pueden provocar acciones de cumplimiento y poner en riesgo su financiamiento de HUD.</p>
+      </details>
+
+      <details class="faq-item" style="background:var(--white);border:1.5px solid var(--gray-200);border-radius:12px;padding:20px 24px;">
+        <summary style="font-weight:600;font-size:16px;color:var(--navy);cursor:pointer;" data-lang="en">Do you really train maintenance staff in Spanish?</summary>
+        <summary style="font-weight:600;font-size:16px;color:var(--navy);cursor:pointer;" data-lang="es">¿Realmente entrenan al personal de mantenimiento en español?</summary>
+        <p style="margin-top:12px;font-size:14px;color:var(--text-light);line-height:1.7;" data-lang="en">Yes — we are the only REAC consultant with training materials written in Spanish (not translated). Many maintenance teams are Spanish-speaking, and training in their language means they actually retain and apply what they learn on inspection day.</p>
+        <p style="margin-top:12px;font-size:14px;color:var(--text-light);line-height:1.7;" data-lang="es">Sí — somos la única consultora de REAC con materiales de entrenamiento escritos en español (no traducidos). Muchos equipos de mantenimiento hablan español, y entrenar en su idioma significa que realmente retienen y aplican lo que aprenden.</p>
+      </details>
+
+      <details class="faq-item" style="background:var(--white);border:1.5px solid var(--gray-200);border-radius:12px;padding:20px 24px;">
+        <summary style="font-weight:600;font-size:16px;color:var(--navy);cursor:pointer;" data-lang="en">Where do you provide services?</summary>
+        <summary style="font-weight:600;font-size:16px;color:var(--navy);cursor:pointer;" data-lang="es">¿Dónde ofrecen servicios?</summary>
+        <p style="margin-top:12px;font-size:14px;color:var(--text-light);line-height:1.7;" data-lang="en">Nationwide across all 50 states and Puerto Rico. Training can be delivered on-site at your property, at a hotel venue, or virtually via Zoom or Microsoft Teams.</p>
+        <p style="margin-top:12px;font-size:14px;color:var(--text-light);line-height:1.7;" data-lang="es">En todo Estados Unidos — los 50 estados — y Puerto Rico. El entrenamiento puede ser en su propiedad, en un hotel, o virtual por Zoom o Microsoft Teams.</p>
+      </details>
+
+    </div>
+  </div>
+</section>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type": "Question", "name": "What is the difference between REAC and NSPIRE?", "acceptedAnswer": {"@type": "Answer", "text": "REAC (Real Estate Assessment Center) is the HUD office that conducts inspections. NSPIRE is the inspection standard that replaced UPCS in 2023, focusing on health and safety inside the units with new scoring and stricter requirements like smoke detectors in every unit."}},
+    {"@type": "Question", "name": "How far in advance should I schedule a pre-inspection?", "acceptedAnswer": {"@type": "Answer", "text": "Ideally 30-60 days before your scheduled REAC inspection, giving your maintenance team enough time to correct every documented deficiency. Urgent timelines are prioritized."}},
+    {"@type": "Question", "name": "Why does my REAC score matter?", "acceptedAnswer": {"@type": "Answer", "text": "Your score determines inspection frequency: 90+ means every 3 years, 80-89 every 2 years, below 80 means annual inspections. Low scores can trigger enforcement action and put HUD funding at risk."}},
+    {"@type": "Question", "name": "Do you train maintenance staff in Spanish?", "acceptedAnswer": {"@type": "Answer", "text": "Yes - Kendra REAC Consultant is the only REAC consultant with training materials written in Spanish (not translated), so Spanish-speaking maintenance teams retain and apply what they learn."}},
+    {"@type": "Question", "name": "Where do you provide services?", "acceptedAnswer": {"@type": "Answer", "text": "Nationwide across all 50 states and Puerto Rico. Training is delivered on-site, at hotel venues, or virtually via Zoom or Microsoft Teams."}}
+  ]
+}
+</script>
+
 <!-- CTA BANNER -->
 <div class="cta-banner">
   <div class="cta-banner-content">
@@ -1225,41 +1331,45 @@
         </div>
       </div>
 
-      <div class="contact-form">
+      <form class="contact-form" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/?success=true#contact">
+        <input type="hidden" name="form-name" value="contact">
+        <p style="display:none;"><label>Don't fill this out: <input name="bot-field"></label></p>
         <h3 data-lang="en">Book a consultation</h3>
         <h3 data-lang="es">Reserve su consulta</h3>
+        <p style="font-size:13px;color:var(--gray-400);margin-bottom:18px;" data-lang="en">We respond within 1 business day — in English or Spanish.</p>
+        <p style="font-size:13px;color:var(--gray-400);margin-bottom:18px;" data-lang="es">Respondemos dentro de 1 día hábil — en español o inglés.</p>
 
         <div class="form-row">
           <div class="form-group">
             <label data-lang="en">First name</label>
             <label data-lang="es">Nombre</label>
-            <input type="text" placeholder="First name" data-ph-en="First name" data-ph-es="Nombre">
+            <input type="text" name="first-name" required placeholder="First name" data-ph-en="First name" data-ph-es="Nombre">
           </div>
           <div class="form-group">
             <label data-lang="en">Last name</label>
             <label data-lang="es">Apellido</label>
-            <input type="text" placeholder="Last name" data-ph-en="Last name" data-ph-es="Apellido">
+            <input type="text" name="last-name" required placeholder="Last name" data-ph-en="Last name" data-ph-es="Apellido">
           </div>
         </div>
         <div class="form-group">
           <label>Email</label>
-          <input type="email" placeholder="Email address" data-ph-en="Email address" data-ph-es="Correo electrónico">
+          <input type="email" name="email" required placeholder="Email address" data-ph-en="Email address" data-ph-es="Correo electrónico">
         </div>
         <div class="form-group">
           <label data-lang="en">Phone</label>
           <label data-lang="es">Teléfono</label>
-          <input type="tel" placeholder="Phone number" data-ph-en="Phone number" data-ph-es="Número de teléfono">
+          <input type="tel" name="phone" placeholder="Phone number" data-ph-en="Phone number" data-ph-es="Número de teléfono">
         </div>
         <div class="form-group">
           <label data-lang="en">Service needed</label>
           <label data-lang="es">Servicio requerido</label>
-          <select data-lang="en">
+          <select name="service" data-lang="en">
             <option>Pre-Inspection</option>
             <option>Staff Training</option>
             <option>NSPIRE Consulting</option>
             <option>Conference Speaking</option>
           </select>
-          <select data-lang="es">
+          <select name="servicio" data-lang="es">
             <option>Pre-Inspección</option>
             <option>Capacitación del Personal</option>
             <option>Consultoría NSPIRE</option>
@@ -1269,11 +1379,13 @@
         <div class="form-group">
           <label data-lang="en">Tell us about your property</label>
           <label data-lang="es">Cuéntenos sobre su propiedad</label>
-          <textarea placeholder="Property type, number of units, recent REAC score..." data-ph-en="Property type, number of units, recent REAC score..." data-ph-es="Tipo de propiedad, número de unidades, puntuación REAC reciente..."></textarea>
+          <textarea name="message" placeholder="Property type, number of units, recent REAC score..." data-ph-en="Property type, number of units, recent REAC score..." data-ph-es="Tipo de propiedad, número de unidades, puntuación REAC reciente..."></textarea>
         </div>
-        <button class="form-submit" data-lang="en">Send message →</button>
-        <button class="form-submit" data-lang="es">Enviar mensaje →</button>
-      </div>
+        <button type="submit" class="form-submit" data-lang="en">Send message →</button>
+        <button type="submit" class="form-submit" data-lang="es">Enviar mensaje →</button>
+        <p id="form-success" style="display:none;background:#E8F5E9;border:1px solid #4CAF50;color:#256029;border-radius:8px;padding:14px;margin-top:14px;font-size:14px;font-weight:500;" data-lang="en">✓ Thank you! Your message was sent. We'll be in touch within 1 business day.</p>
+        <p id="form-success-es" style="display:none;background:#E8F5E9;border:1px solid #4CAF50;color:#256029;border-radius:8px;padding:14px;margin-top:14px;font-size:14px;font-weight:500;" data-lang="es">✓ ¡Gracias! Su mensaje fue enviado. Nos comunicaremos dentro de 1 día hábil.</p>
+      </form>
     </div>
   </div>
 </section>
@@ -1290,7 +1402,7 @@
     </div>
     <div style="width:100%;height:1px;background:rgba(255,255,255,0.07);"></div>
     <div style="display:flex;align-items:center;justify-content:space-between;width:100%;flex-wrap:wrap;gap:12px;">
-      <div class="footer-copy">© 2025 Kendra REAC Consultant, Inc. All rights reserved.</div>
+      <div class="footer-copy">© 2026 Kendra REAC Consultant, Inc. All rights reserved.</div>
       <div class="footer-links">
         <a href="#">Privacy Policy</a>
         <a href="#">Terms of Use</a>
@@ -1307,6 +1419,16 @@
     document.querySelectorAll('[data-ph-en]').forEach(el => {
       el.placeholder = isEs ? el.dataset.phEs : el.dataset.phEn;
     });
+  }
+  function toggleMenu() {
+    document.getElementById('mobileMenu').classList.toggle('open');
+  }
+  // Show success message after Netlify form submission redirect
+  if (new URLSearchParams(location.search).get('success') === 'true') {
+    const en = document.getElementById('form-success');
+    const es = document.getElementById('form-success-es');
+    if (en) en.style.display = 'block';
+    if (es) es.style.display = 'block';
   }
 </script>
 </body>
