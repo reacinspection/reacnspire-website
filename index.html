@@ -385,10 +385,20 @@
     font-size: 20px; color: var(--gold-light); margin-bottom: 24px;
   }
   .training-item {
-    padding: 16px 0; border-bottom: 1px solid rgba(255,255,255,0.07);
+    padding: 16px 10px; border-bottom: 1px solid rgba(255,255,255,0.07);
     display: flex; justify-content: space-between; align-items: flex-start;
+    gap: 12px; text-decoration: none; cursor: pointer;
+    border-radius: 8px; transition: background 0.2s;
   }
+  a.training-item:hover { background: rgba(201,153,58,0.1); }
+  a.training-item:hover .training-name { color: var(--gold-light); }
   .training-item:last-child { border-bottom: none; }
+  .training-cta {
+    margin-top: 22px; display: block; text-align: center;
+    background: var(--gold); color: var(--navy); font-weight: 600; font-size: 14px;
+    padding: 12px 20px; border-radius: 8px; text-decoration: none; transition: background 0.2s;
+  }
+  .training-cta:hover { background: var(--gold-light); }
   .training-name { font-size: 14px; color: var(--white); font-weight: 500; }
   .training-name span { display: block; font-size: 12px; color: rgba(255,255,255,0.45); font-weight: 300; margin-top: 2px; }
   .training-dur {
@@ -985,7 +995,7 @@
         <div class="why-right-title" data-lang="en">Training programs at a glance</div>
         <div class="why-right-title" data-lang="es">Programas de entrenamiento</div>
 
-        <div class="training-item">
+        <a href="#contact" class="training-item" onclick="bookTraining('NSPIRE Fundamentals')">
           <div class="training-name">
             NSPIRE Fundamentals
             <span data-lang="en">What is NSPIRE, the 3-3-3 rule, scoring methodology</span>
@@ -993,8 +1003,8 @@
           </div>
           <div class="training-dur" data-lang="en">1 Day</div>
           <div class="training-dur" data-lang="es">1 Día</div>
-        </div>
-        <div class="training-item">
+        </a>
+        <a href="#contact" class="training-item" onclick="bookTraining('Advanced REAC Workshop')">
           <div class="training-name">
             Advanced REAC Workshop
             <span data-lang="en">All deficiencies with real photos & point values</span>
@@ -1002,8 +1012,8 @@
           </div>
           <div class="training-dur" data-lang="en">1 Day</div>
           <div class="training-dur" data-lang="es">1 Día</div>
-        </div>
-        <div class="training-item">
+        </a>
+        <a href="#contact" class="training-item" onclick="bookTraining('NSPIRE Hands-On Training')">
           <div class="training-name">
             NSPIRE Hands-On Training
             <span data-lang="en">Theory + live mock inspection at your property</span>
@@ -1011,23 +1021,26 @@
           </div>
           <div class="training-dur" data-lang="en">2 Days</div>
           <div class="training-dur" data-lang="es">2 Días</div>
-        </div>
-        <div class="training-item">
+        </a>
+        <a href="#contact" class="training-item" onclick="bookTraining('Resident Council Workshop')">
           <div class="training-name">
             Resident Council Workshop
             <span data-lang="en">Help residents understand their role in inspections</span>
             <span data-lang="es">Ayuda a los residentes a entender su papel en las inspecciones</span>
           </div>
           <div class="training-dur">4 hrs</div>
-        </div>
-        <div class="training-item">
+        </a>
+        <a href="#contact" class="training-item" onclick="bookTraining('Live TEAMS Webinars')">
           <div class="training-name">
             Live TEAMS Webinars
             <span data-lang="en">Various NSPIRE topics — see upcoming events</span>
             <span data-lang="es">Varios temas de NSPIRE — ver próximos eventos</span>
           </div>
           <div class="training-dur">3 hrs</div>
-        </div>
+        </a>
+
+        <a href="#contact" class="training-cta" onclick="bookTraining('')" data-lang="en">Book a Consultation →</a>
+        <a href="#contact" class="training-cta" onclick="bookTraining('')" data-lang="es">Reservar una Consulta →</a>
       </div>
     </div>
   </div>
@@ -1470,6 +1483,15 @@
   }
   function toggleMenu() {
     document.getElementById('mobileMenu').classList.toggle('open');
+  }
+  // Pre-fill the booking form when a training program is clicked
+  function bookTraining(program) {
+    if (!program) return; // plain "Book a Consultation" — just scroll
+    const isEs = document.body.classList.contains('es');
+    const msg = document.querySelector('textarea[name="message"]');
+    if (msg) msg.value = (isEs ? 'Me gustaría reservar: ' : "I'd like to book: ") + program;
+    const sel = document.querySelector(isEs ? 'select[name="servicio"]' : 'select[name="service"]');
+    if (sel) sel.value = isEs ? 'Capacitación del Personal' : 'Staff Training';
   }
   // Show success message after Netlify form submission redirect
   if (new URLSearchParams(location.search).get('success') === 'true') {
