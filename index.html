@@ -657,6 +657,26 @@
     footer { flex-direction: column; text-align: center; }
   }
 
+  /* ── FLOATING 3D LOGO (decorative, whole site) ── */
+  .floating-logo {
+    position: fixed; top: 32%; left: 7%; width: 53px; height: auto;
+    z-index: 6; pointer-events: none; opacity: 0.9;
+    filter: drop-shadow(0 16px 26px rgba(0,0,0,0.5)) drop-shadow(0 2px 4px rgba(0,0,0,0.35));
+    transform-style: preserve-3d; will-change: transform;
+    animation: floatLogo 15s ease-in-out infinite;
+  }
+  @keyframes floatLogo {
+    0%   { transform: perspective(1000px) translate3d(0, 0, 0) rotateY(0deg) rotateX(0deg); }
+    20%  { transform: perspective(1000px) translate3d(70px, -55px, 40px) rotateY(90deg) rotateX(6deg); }
+    40%  { transform: perspective(1000px) translate3d(20px, -110px, 0) rotateY(180deg) rotateX(-6deg); }
+    60%  { transform: perspective(1000px) translate3d(-70px, -70px, 40px) rotateY(270deg) rotateX(6deg); }
+    80%  { transform: perspective(1000px) translate3d(-30px, -20px, 0) rotateY(330deg) rotateX(-4deg); }
+    100% { transform: perspective(1000px) translate3d(0, 0, 0) rotateY(360deg) rotateX(0deg); }
+  }
+  @media (max-width: 560px) {
+    .floating-logo { width: 34px; top: 28%; left: 4%; opacity: 0.8; }
+  }
+
   /* ── PROMO POP-UP ── */
   .promo-overlay {
     display: none; position: fixed; inset: 0; z-index: 1000;
@@ -1560,6 +1580,9 @@
     </div>
   </div>
 </section>
+
+<!-- FLOATING 3D LOGO (decorative) -->
+<img src="/kendra-logo-nobg.png" alt="" aria-hidden="true" class="floating-logo">
 
 <!-- PROMO POP-UP: NSPIRE 2026 Summer Special -->
 <div class="promo-overlay" id="promoOverlay" role="dialog" aria-modal="true" aria-labelledby="promoTitle">
