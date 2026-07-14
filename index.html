@@ -657,14 +657,16 @@
     footer { flex-direction: column; text-align: center; }
   }
 
-  /* ── FLOATING 3D LOGO (decorative, whole site) ── */
+  /* ── FLOATING 3D LOGO (hidden on landing/hero, shown on the rest) ── */
   .floating-logo {
-    position: fixed; top: 32%; left: 7%; width: 53px; height: auto;
-    z-index: 6; pointer-events: none; opacity: 0.9;
+    position: fixed; top: 32%; left: 7%; width: 69px; height: auto;
+    z-index: 6; pointer-events: none;
+    opacity: 0; visibility: hidden; transition: opacity 0.45s ease;
     filter: drop-shadow(0 16px 26px rgba(0,0,0,0.5)) drop-shadow(0 2px 4px rgba(0,0,0,0.35));
     transform-style: preserve-3d; will-change: transform;
     animation: floatLogo 15s ease-in-out infinite;
   }
+  .floating-logo.visible { opacity: 0.9; visibility: visible; }
   @keyframes floatLogo {
     0%   { transform: perspective(1000px) translate3d(0, 0, 0) rotateY(0deg) rotateX(0deg); }
     20%  { transform: perspective(1000px) translate3d(70px, -55px, 40px) rotateY(90deg) rotateX(6deg); }
@@ -674,7 +676,8 @@
     100% { transform: perspective(1000px) translate3d(0, 0, 0) rotateY(360deg) rotateX(0deg); }
   }
   @media (max-width: 560px) {
-    .floating-logo { width: 34px; top: 28%; left: 4%; opacity: 0.8; }
+    .floating-logo { width: 44px; top: 28%; left: 4%; }
+    .floating-logo.visible { opacity: 0.8; }
   }
 
   /* ── PROMO POP-UP ── */
@@ -1581,7 +1584,7 @@
   </div>
 </section>
 
-<!-- FLOATING 3D LOGO (decorative) -->
+<!-- FLOATING 3D LOGO (hidden on landing/hero, shown on the rest) -->
 <img src="/kendra-logo-nobg.png" alt="" aria-hidden="true" class="floating-logo">
 
 <!-- PROMO POP-UP: NSPIRE 2026 Summer Special -->
@@ -1708,6 +1711,20 @@
     if (en) en.style.display = 'block';
     if (es) es.style.display = 'block';
   }
+
+  // ── FLOATING LOGO: hide while the hero (landing view) is on screen, show on the rest ──
+  (function () {
+    const el = document.querySelector('.floating-logo');
+    const hero = document.querySelector('.hero');
+    if (!el || !hero) return;
+    function update() {
+      if (hero.getBoundingClientRect().bottom <= 60) el.classList.add('visible');
+      else el.classList.remove('visible');
+    }
+    window.addEventListener('scroll', update, { passive: true });
+    window.addEventListener('resize', update, { passive: true });
+    update();
+  })();
 
   // ── PROMO POP-UP ──
   const PROMO_KEY = 'nspire2026SummerPromoDismissed';
