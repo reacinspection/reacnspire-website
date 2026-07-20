@@ -663,8 +663,7 @@
     z-index: 6; pointer-events: none;
     opacity: 0; visibility: hidden; transition: opacity 0.45s ease;
     filter: drop-shadow(0 16px 26px rgba(0,0,0,0.5)) drop-shadow(0 2px 4px rgba(0,0,0,0.35));
-    transform-style: preserve-3d; will-change: transform;
-    animation: floatLogo 15s ease-in-out infinite;
+    transform-style: preserve-3d;
   }
   .floating-logo.visible { opacity: 0.9; visibility: visible; }
   @keyframes floatLogo {
@@ -835,8 +834,7 @@
   <div class="hero-grid-lines"></div>
 
   <div class="hero-left">
-    <style>@keyframes logo3d{0%{transform:perspective(900px) rotateY(0deg) translateY(0)}50%{transform:perspective(900px) rotateY(180deg) translateY(-16px)}100%{perspective:900px;transform:perspective(900px) rotateY(360deg) translateY(0)}}</style>
-    <img src="/kendra-logo-nobg.png" alt="Kendra REAC Consultant" style="width:min(90vw,470px);height:auto;object-fit:contain;align-self:flex-start;margin-bottom:24px;display:block;transform-style:preserve-3d;animation:logo3d 7s linear infinite;">
+    <img src="/kendra-logo-nobg.png" alt="Kendra REAC Consultant" style="width:min(90vw,470px);height:auto;object-fit:contain;align-self:flex-start;margin-bottom:24px;display:block;">
     <div class="hero-badge">HUD REAC Certified Since 2009</div>
 
     <h1 class="hero-headline" data-lang="en">
