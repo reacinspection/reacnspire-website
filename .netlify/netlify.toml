@@ -1,5 +1,4 @@
 plugins = []
-redirects = []
 
 [functions]
 
@@ -34,3 +33,51 @@ Referrer-Policy = "strict-origin-when-cross-origin"
 Permissions-Policy = "camera=(), microphone=(), geolocation=()"
 Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline' https://tracker.metricool.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://tracker.metricool.com https://*.metricool.com; frame-ancestors 'none'"
 Strict-Transport-Security = "max-age=31536000; includeSubDomains; preload"
+
+[[redirects]]
+from = "https://kendrareacconsultant.com/*"
+to = "https://reacnspire.com/:splat"
+status = 301.0
+force = true
+
+[redirects.query]
+
+[redirects.conditions]
+
+[redirects.headers]
+
+[[redirects]]
+from = "http://kendrareacconsultant.com/*"
+to = "https://reacnspire.com/:splat"
+status = 301.0
+force = true
+
+[redirects.query]
+
+[redirects.conditions]
+
+[redirects.headers]
+
+[[redirects]]
+from = "https://www.kendrareacconsultant.com/*"
+to = "https://reacnspire.com/:splat"
+status = 301.0
+force = true
+
+[redirects.query]
+
+[redirects.conditions]
+
+[redirects.headers]
+
+[[redirects]]
+from = "http://www.kendrareacconsultant.com/*"
+to = "https://reacnspire.com/:splat"
+status = 301.0
+force = true
+
+[redirects.query]
+
+[redirects.conditions]
+
+[redirects.headers]
