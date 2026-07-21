@@ -1,0 +1,9 @@
+# Consolidate ALL traffic onto the canonical domain: https://reacnspire.com
+# 301-redirect the old kendrareacconsultant.com domain (apex + www) so Google
+# treats reacnspire.com as the one true site and all link equity flows here.
+# The "!" forces the redirect even when the path exists.
+
+https://kendrareacconsultant.com/*      https://reacnspire.com/:splat   301!
+http://kendrareacconsultant.com/*        https://reacnspire.com/:splat   301!
+https://www.kendrareacconsultant.com/*   https://reacnspire.com/:splat   301!
+http://www.kendrareacconsultant.com/*    https://reacnspire.com/:splat   301!

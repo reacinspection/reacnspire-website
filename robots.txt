@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+
+# Block nothing — this is a public marketing site we want fully indexed.
+
+Sitemap: https://reacnspire.com/sitemap.xml
