@@ -1,0 +1,6 @@
+# Marketing site config. Publish dir is passed via `netlify deploy --dir=.`.
+# This file adds serverless functions (used for the workshop confirmation email).
+
+[functions]
+  directory = "netlify/functions"
+  node_bundler = "esbuild"
