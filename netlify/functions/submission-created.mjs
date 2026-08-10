@@ -43,13 +43,13 @@ export const handler = async (event) => {
     </div>
     <div style="border:1px solid #e5e7eb;border-top:none;border-radius:0 0 12px 12px;padding:24px 28px;">
       <p>${saludo}</p>
-      <p>Gracias por registrarse para nuestro <strong>Taller de Seguridad GRATIS</strong>. Aquí están los detalles:</p>
+      <p>Gracias por registrarse para nuestro <strong>Taller de Seguridad GRATIS — «Seguridad en el Lugar de Trabajo»</strong>. Aquí están los detalles:</p>
       <table style="border-collapse:collapse;margin:16px 0;font-size:15px;">
-        <tr><td style="padding:6px 14px 6px 0;color:#6b7280;">Fecha</td><td style="font-weight:700;">Lunes 18 de agosto de 2026</td></tr>
-        <tr><td style="padding:6px 14px 6px 0;color:#6b7280;">Hora</td><td style="font-weight:700;">10:00 AM – 11:30 AM</td></tr>
-        <tr><td style="padding:6px 14px 6px 0;color:#6b7280;">Plataforma</td><td style="font-weight:700;">Zoom (en línea)</td></tr>
+        <tr><td style="padding:6px 14px 6px 0;color:#6b7280;">Fecha</td><td style="font-weight:700;">Martes 18 de agosto de 2026</td></tr>
+        <tr><td style="padding:6px 14px 6px 0;color:#6b7280;">Hora</td><td style="font-weight:700;">10:00 AM – 11:30 AM (EST)</td></tr>
+        <tr><td style="padding:6px 14px 6px 0;color:#6b7280;">Plataforma</td><td style="font-weight:700;">Microsoft Teams (en línea)</td></tr>
       </table>
-      <p><strong>Le enviaremos el enlace de Zoom por este mismo correo antes del evento.</strong> No necesita hacer nada más por ahora.</p>
+      <p><strong>Le enviaremos el enlace de Microsoft Teams por este mismo correo antes del evento.</strong> No necesita hacer nada más por ahora.</p>
       <p style="font-size:13px;color:#6b7280;margin-top:22px;">Kendra REAC Consultant, Inc.<br>
       ¿Preguntas? Responda a este correo o llame al (407) 516-5393.</p>
     </div>

@@ -1,12 +1,11 @@
+functionsDirectory = "C:\\Users\\reaci\\OneDrive\\Documents\\Claude\\Projects\\Kendra REAC web\\netlify\\functions"
+functionsDirectoryOrigin = "config"
 plugins = []
-
-[functions]
-
-[functions."*"]
 
 [build]
 publish = "C:\\Users\\reaci\\OneDrive\\Documents\\Claude\\Projects\\Kendra REAC web"
 publishOrigin = "default"
+functions = "C:\\Users\\reaci\\OneDrive\\Documents\\Claude\\Projects\\Kendra REAC web\\netlify\\functions"
 
 [build.environment]
 
@@ -21,6 +20,11 @@ publishOrigin = "default"
 [build.processing.js]
 
 [build.services]
+
+[functions]
+
+[functions."*"]
+node_bundler = "esbuild"
 
 [[headers]]
 for = "/*"
