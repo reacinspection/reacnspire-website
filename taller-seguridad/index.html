@@ -107,13 +107,38 @@
 </footer>
 
 <script>
-  // Al regresar de Netlify tras enviar, muestra el mensaje de éxito y oculta el formulario.
-  if (new URLSearchParams(location.search).get('exito') === 'true') {
-    var ok = document.getElementById('ok-msg');
+  (function () {
     var form = document.getElementById('reg-form');
-    if (ok) ok.style.display = 'block';
-    if (form) form.style.display = 'none';
-  }
+    var ok = document.getElementById('ok-msg');
+    function showSuccess() {
+      if (ok) ok.style.display = 'block';
+      if (form) form.style.display = 'none';
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+    // Respaldo: si regresa con ?exito=true (sin JS), muestra el éxito.
+    if (new URLSearchParams(location.search).get('exito') === 'true') showSuccess();
+    if (!form) return;
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var fd = new FormData(form);
+      var btn = form.querySelector('.submit');
+      if (btn) { btn.disabled = true; btn.textContent = 'Enviando…'; }
+      // 1) Guardar la registración en Netlify Forms (registro + aviso a proposals@)
+      fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams(fd).toString()
+      }).catch(function () {});
+      // 2) Enviar el correo de confirmación con el enlace de Teams (función HTTP confiable)
+      fetch('/.netlify/functions/send-taller-confirmation', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email: fd.get('email'), nombre: fd.get('nombre') })
+      }).catch(function () {});
+      // 3) Mostrar el mensaje de éxito
+      setTimeout(showSuccess, 500);
+    });
+  })();
 </script>
 </body>
 </html>

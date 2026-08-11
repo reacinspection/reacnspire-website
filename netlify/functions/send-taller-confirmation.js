@@ -1,42 +1,33 @@
-/* Auto-confirmation email for the "Taller de Seguridad" registration form.
-   Netlify triggers this (special name "submission-created") on every form
-   submission. CommonJS is the canonical, reliably-triggered format for
-   Netlify event functions. Best-effort: always returns 200 so a mail issue
-   never affects the registration (already saved + emailed to proposals@).
+/* HTTP function: sends the workshop confirmation email via Resend.
+   Called directly by the registration page's JS on submit (POST with JSON
+   {email, nombre}). HTTP functions always run on request, so this is far more
+   reliable than the form event trigger. Best-effort: never throws; the
+   registration is recorded separately by Netlify Forms regardless.
 
-   Env vars: RESEND_API_KEY, FROM_EMAIL (e.g. "Kendra REAC <kendra@reacnspire.com>"). */
+   Env vars: RESEND_API_KEY, FROM_EMAIL. */
 
 const TEAMS_LINK = "https://teams.live.com/meet/9346999265279?p=WSyGq0U2C0HJiCjQrw";
 
 exports.handler = async (event) => {
-  let payload;
+  if (event.httpMethod !== "POST") {
+    return { statusCode: 405, body: "Method not allowed" };
+  }
+  let body;
   try {
-    const parsed = typeof event.body === "string" ? JSON.parse(event.body) : (event.body || {});
-    payload = parsed.payload || parsed;
-  } catch (e) {
-    console.log("submission-created: could not parse body:", e && e.message);
-    return { statusCode: 200, body: "no payload" };
+    body = JSON.parse(event.body || "{}");
+  } catch {
+    return { statusCode: 400, body: JSON.stringify({ ok: false, reason: "bad json" }) };
   }
 
-  const formName = payload && (payload.form_name || payload.formName || "");
-  console.log("submission-created fired for form:", formName);
-  if (formName !== "taller-registro") {
-    return { statusCode: 200, body: "ignored form: " + formName };
-  }
-
-  const data = (payload && payload.data) || {};
-  const email = String(data.email || payload.email || "").trim();
-  const nombre = String(data.nombre || "").trim();
-  if (!email) {
-    console.log("submission-created: no email in submission");
-    return { statusCode: 200, body: "no email" };
-  }
+  const email = String(body.email || "").trim();
+  const nombre = String(body.nombre || "").trim();
+  if (!email) return { statusCode: 200, body: JSON.stringify({ ok: false, reason: "no email" }) };
 
   const apiKey = process.env.RESEND_API_KEY;
   const from = process.env.FROM_EMAIL;
   if (!apiKey || !from) {
-    console.log("submission-created: RESEND_API_KEY/FROM_EMAIL not set");
-    return { statusCode: 200, body: "not configured" };
+    console.log("send-taller-confirmation: RESEND_API_KEY/FROM_EMAIL not set");
+    return { statusCode: 200, body: JSON.stringify({ ok: false, reason: "not configured" }) };
   }
 
   const saludo = nombre ? `Hola ${nombre},` : "Hola,";
@@ -73,10 +64,11 @@ exports.handler = async (event) => {
         html,
       }),
     });
-    const bodyText = await res.text().catch(() => "");
-    console.log("submission-created: Resend responded", res.status, bodyText.slice(0, 200));
+    const txt = await res.text().catch(() => "");
+    console.log("send-taller-confirmation: Resend", res.status, txt.slice(0, 160));
+    return { statusCode: 200, headers: { "content-type": "application/json" }, body: JSON.stringify({ ok: res.ok }) };
   } catch (e) {
-    console.log("submission-created: send failed", e && e.message);
+    console.log("send-taller-confirmation: send failed", e && e.message);
+    return { statusCode: 200, body: JSON.stringify({ ok: false, reason: "send failed" }) };
   }
-  return { statusCode: 200, body: "ok" };
 };
