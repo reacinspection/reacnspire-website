@@ -1,37 +1,41 @@
 /* Auto-confirmation email for the "Taller de Seguridad" registration form.
+   Netlify triggers this (special name "submission-created") on every form
+   submission. CommonJS is the canonical, reliably-triggered format for
+   Netlify event functions. Best-effort: always returns 200 so a mail issue
+   never affects the registration (already saved + emailed to proposals@).
 
-   Netlify triggers this function automatically whenever ANY form on the site
-   is submitted (the special name "submission-created"). We only act on the
-   workshop form, and send the registrant a Spanish confirmation via Resend.
+   Env vars: RESEND_API_KEY, FROM_EMAIL (e.g. "Kendra REAC <kendra@reacnspire.com>"). */
 
-   Sending is best-effort: if Resend isn't configured yet, or the send fails,
-   we still return 200 so the registration itself is never affected (it is
-   already saved by Netlify and emailed to proposals@reacnspire.com).
+const TEAMS_LINK = "https://teams.live.com/meet/9346999265279?p=WSyGq0U2C0HJiCjQrw";
 
-   Env vars (set in the Netlify site, not committed):
-     RESEND_API_KEY  - Resend API key
-     FROM_EMAIL      - e.g. "Kendra REAC Consultant <noreply@reacnspire.com>" (verified in Resend) */
-
-export const handler = async (event) => {
+exports.handler = async (event) => {
   let payload;
   try {
-    payload = JSON.parse(event.body).payload;
-  } catch {
+    const parsed = typeof event.body === "string" ? JSON.parse(event.body) : (event.body || {});
+    payload = parsed.payload || parsed;
+  } catch (e) {
+    console.log("submission-created: could not parse body:", e && e.message);
     return { statusCode: 200, body: "no payload" };
   }
-  if (!payload || payload.form_name !== "taller-registro") {
-    return { statusCode: 200, body: "ignored" };
+
+  const formName = payload && (payload.form_name || payload.formName || "");
+  console.log("submission-created fired for form:", formName);
+  if (formName !== "taller-registro") {
+    return { statusCode: 200, body: "ignored form: " + formName };
   }
 
-  const data = payload.data || {};
-  const email = (data.email || "").trim();
-  const nombre = (data.nombre || "").trim();
-  if (!email) return { statusCode: 200, body: "no email" };
+  const data = (payload && payload.data) || {};
+  const email = String(data.email || payload.email || "").trim();
+  const nombre = String(data.nombre || "").trim();
+  if (!email) {
+    console.log("submission-created: no email in submission");
+    return { statusCode: 200, body: "no email" };
+  }
 
   const apiKey = process.env.RESEND_API_KEY;
   const from = process.env.FROM_EMAIL;
   if (!apiKey || !from) {
-    console.log("submission-created: RESEND_API_KEY/FROM_EMAIL not set - skipping confirmation email");
+    console.log("submission-created: RESEND_API_KEY/FROM_EMAIL not set");
     return { statusCode: 200, body: "not configured" };
   }
 
@@ -50,9 +54,9 @@ export const handler = async (event) => {
         <tr><td style="padding:6px 14px 6px 0;color:#6b7280;">Plataforma</td><td style="font-weight:700;">Microsoft Teams (en línea)</td></tr>
       </table>
       <p style="text-align:center;margin:22px 0 8px;">
-        <a href="https://teams.live.com/meet/9346999265279?p=WSyGq0U2C0HJiCjQrw" style="background:#0D1F3C;color:#ffffff;text-decoration:none;font-weight:700;padding:15px 30px;border-radius:8px;display:inline-block;font-size:16px;">Unirse a la reunión de Teams →</a>
+        <a href="${TEAMS_LINK}" style="background:#0D1F3C;color:#ffffff;text-decoration:none;font-weight:700;padding:15px 30px;border-radius:8px;display:inline-block;font-size:16px;">Unirse a la reunión de Teams →</a>
       </p>
-      <p style="text-align:center;font-size:13px;color:#6b7280;margin-top:0;"><strong>Guarde este correo.</strong> El mismo enlace funcionará el día del evento (martes 18 de agosto, 10:00 AM EST).</p>
+      <p style="text-align:center;font-size:13px;color:#6b7280;margin-top:0;"><strong>Guarde este correo.</strong> El mismo enlace funcionará el día del evento.</p>
       <p style="font-size:13px;color:#6b7280;margin-top:22px;">Kendra REAC Consultant, Inc.<br>
       ¿Preguntas? Responda a este correo o llame al (407) 516-5393.</p>
     </div>
@@ -65,11 +69,12 @@ export const handler = async (event) => {
       body: JSON.stringify({
         from,
         to: [email],
-        subject: "Confirmación — Taller de Seguridad GRATIS (18 de agosto)",
+        subject: "Confirmación — Taller de Seguridad GRATIS (18 de agosto, Microsoft Teams)",
         html,
       }),
     });
-    if (!res.ok) console.log("submission-created: Resend error", res.status, await res.text().catch(() => ""));
+    const bodyText = await res.text().catch(() => "");
+    console.log("submission-created: Resend responded", res.status, bodyText.slice(0, 200));
   } catch (e) {
     console.log("submission-created: send failed", e && e.message);
   }
