@@ -49,7 +49,10 @@ export const handler = async (event) => {
         <tr><td style="padding:6px 14px 6px 0;color:#6b7280;">Hora</td><td style="font-weight:700;">10:00 AM – 11:30 AM (EST)</td></tr>
         <tr><td style="padding:6px 14px 6px 0;color:#6b7280;">Plataforma</td><td style="font-weight:700;">Microsoft Teams (en línea)</td></tr>
       </table>
-      <p><strong>Le enviaremos el enlace de Microsoft Teams por este mismo correo antes del evento.</strong> No necesita hacer nada más por ahora.</p>
+      <p style="text-align:center;margin:22px 0 8px;">
+        <a href="https://teams.live.com/meet/9346999265279?p=WSyGq0U2C0HJiCjQrw" style="background:#0D1F3C;color:#ffffff;text-decoration:none;font-weight:700;padding:15px 30px;border-radius:8px;display:inline-block;font-size:16px;">Unirse a la reunión de Teams →</a>
+      </p>
+      <p style="text-align:center;font-size:13px;color:#6b7280;margin-top:0;"><strong>Guarde este correo.</strong> El mismo enlace funcionará el día del evento (martes 18 de agosto, 10:00 AM EST).</p>
       <p style="font-size:13px;color:#6b7280;margin-top:22px;">Kendra REAC Consultant, Inc.<br>
       ¿Preguntas? Responda a este correo o llame al (407) 516-5393.</p>
     </div>
