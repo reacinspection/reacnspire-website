@@ -1,6 +1,6 @@
 User-agent: *
 Allow: /
 
-# Block nothing — this is a public marketing site we want fully indexed.
+# Public marketing site: all crawlable pages are available to search engines.
 
 Sitemap: https://reacnspire.com/sitemap.xml

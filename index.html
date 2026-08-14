@@ -6,12 +6,15 @@
 <title>HUD REAC &amp; NSPIRE Inspection Consulting &amp; Training | Kendra REAC</title>
 
 <!-- SEO Meta Tags -->
-<meta name="description" content="Prepare for HUD REAC &amp; NSPIRE inspections with expert pre-inspections, consulting, and bilingual English–Spanish training. HUD REAC certified since 2009, serving property managers &amp; housing authorities nationwide.">
+<meta name="description" content="HUD NSPIRE consulting, pre-inspections, and bilingual staff training for affordable housing teams nationwide. REAC certified since 2009.">
 <meta name="keywords" content="NSPIRE consulting, HUD NSPIRE consultant, NSPIRE inspection preparation, REAC consulting, NSPIRE training, Spanish NSPIRE training, REAC training, HUD REAC inspection, pre-REAC inspection, NSPIRE 2026 changes, affordable housing inspection, housing authority inspection, NSPIRE deficiencies, REAC score">
 <meta name="author" content="Kendra REAC Consultant, Inc.">
 <meta name="robots" content="index, follow">
 <meta name="googlebot" content="index, follow">
 <link rel="canonical" href="https://reacnspire.com/">
+<link rel="alternate" hreflang="en" href="https://reacnspire.com/">
+<link rel="alternate" hreflang="es" href="https://reacnspire.com/es/">
+<link rel="alternate" hreflang="x-default" href="https://reacnspire.com/">
 <meta name="google-site-verification" content="W5UxjHzc56isKyWcl8RhekXZRr_go4D5ARjPPoTDCWk">
 <meta name="msvalidate.01" content="6BE0C4E1D195BCB5B74F665E2DD4CC04">
 <link rel="sitemap" type="application/xml" href="/sitemap.xml">
@@ -20,7 +23,7 @@
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://reacnspire.com/">
 <meta property="og:title" content="HUD REAC &amp; NSPIRE Inspection Consulting &amp; Training">
-<meta property="og:description" content="Expert HUD REAC &amp; NSPIRE pre-inspections, consulting, and bilingual English–Spanish training. HUD REAC certified since 2009 — property managers &amp; housing authorities nationwide.">
+<meta property="og:description" content="HUD NSPIRE consulting, pre-inspections, and bilingual staff training for affordable housing teams nationwide.">
 <meta property="og:image" content="https://reacnspire.com/og-image.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -32,7 +35,7 @@
 <meta name="twitter:site" content="@ReacConsultant">
 <meta name="twitter:creator" content="@ReacConsultant">
 <meta name="twitter:title" content="HUD REAC &amp; NSPIRE Inspection Consulting &amp; Training">
-<meta name="twitter:description" content="Expert HUD REAC &amp; NSPIRE pre-inspections, consulting, and bilingual English–Spanish training. HUD REAC certified since 2009.">
+<meta name="twitter:description" content="HUD NSPIRE consulting, pre-inspections, and bilingual staff training for affordable housing teams nationwide.">
 <meta name="twitter:image" content="https://reacnspire.com/og-image.jpg">
 
 <!-- Schema.org Structured Data -->
@@ -46,7 +49,7 @@
   "description": "HUD REAC and NSPIRE inspection consulting, pre-inspection preparation, and bilingual English–Spanish training for property managers and housing authorities. HUD REAC certified since 2009.",
   "url": "https://reacnspire.com",
   "telephone": "+14075165393",
-  "email": "kendra@reacnspire.com",
+  "email": "proposals@reacnspire.com",
   "foundingDate": "2009",
   "founder": {
     "@type": "Person",
@@ -104,6 +107,7 @@
     background: var(--cream);
     color: var(--text);
     line-height: 1.6;
+    overflow-x: hidden;
   }
 
   /* ── NAV ── */
@@ -147,6 +151,7 @@
     transition: all 0.2s;
   }
   .nav-lang:hover { background: rgba(201,153,58,0.18); }
+  button.nav-lang { font-family: inherit; }
 
   .nav-cta {
     background: var(--gold); color: var(--navy);
@@ -166,6 +171,9 @@
     position: relative;
     overflow: hidden;
   }
+  .hero-left { min-width: 0; }
+  .hero-announcement { width: 100%; }
+  .hero-announcement > span { min-width: 0; overflow-wrap: anywhere; }
 
   .hero-bg-pattern {
     position: absolute; inset: 0;
@@ -177,7 +185,7 @@
 
   .hero-bg-photo {
     position: absolute; inset: 0;
-    background-image: url('https://static.wixstatic.com/media/e7c6f5_e3b1d3347c6e4566b8ab041887336a97~mv2.jpg/v1/fill/w_964,h_613,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/e7c6f5_e3b1d3347c6e4566b8ab041887336a97~mv2.jpg');
+    background-image: url('/images/hero-property.png');
     background-size: cover; background-position: center;
     opacity: 0.08; pointer-events: none;
   }
@@ -598,6 +606,16 @@
   }
   .form-submit:hover { background: var(--navy-light); }
 
+  .process-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:22px; margin-top:42px; }
+  .process-step { background:#fff; border:1px solid var(--gray-200); border-radius:16px; padding:28px; }
+  .process-number { width:42px; height:42px; border-radius:50%; display:grid; place-items:center; background:var(--gold); color:var(--navy); font-weight:800; margin-bottom:18px; }
+  .process-step h3 { color:var(--navy); margin-bottom:9px; font-family:'Playfair Display',serif; }
+  .process-step p { color:var(--gray-600); line-height:1.7; font-size:14px; }
+  .consent-row { display:flex; align-items:flex-start; gap:10px; margin:8px 0 18px; font-size:12px; color:var(--gray-600); line-height:1.5; }
+  .consent-row input { width:auto; margin-top:3px; }
+  .consent-row a { color:var(--navy); }
+  @media (max-width: 760px) { .process-grid { grid-template-columns:1fr; } }
+
   /* ── FOOTER ── */
   footer {
     background: #080F1C; padding: 40px;
@@ -606,7 +624,7 @@
     border-top: 1px solid rgba(201,153,58,0.15);
   }
   .footer-copy { font-size: 13px; color: rgba(255,255,255,0.35); }
-  .footer-links { display: flex; gap: 24px; }
+  .footer-links { display: flex; gap: 18px 24px; flex-wrap: wrap; justify-content: center; }
   .footer-links a { font-size: 13px; color: rgba(255,255,255,0.4); text-decoration: none; }
   .footer-links a:hover { color: var(--gold-light); }
 
@@ -667,6 +685,7 @@
     .hero { grid-template-columns: 1fr; }
     .hero-right { display: none; }
     .hero-left { padding: 120px 24px 60px; }
+    .hero-announcement { font-size: 13px !important; padding: 10px 12px !important; }
     .app-grid { grid-template-columns: 1fr !important; }
     #app .container { padding: 0 24px; }
     #app .app-grid > div { min-width: 0; }
@@ -680,28 +699,6 @@
     section { padding: 60px 24px; }
     .form-row { grid-template-columns: 1fr; }
     footer { flex-direction: column; text-align: center; }
-  }
-
-  /* ── FLOATING 3D LOGO (hidden on landing/hero, shown on the rest) ── */
-  .floating-logo {
-    position: fixed; top: 32%; left: 7%; width: 69px; height: auto;
-    z-index: 6; pointer-events: none;
-    opacity: 0; visibility: hidden; transition: opacity 0.45s ease;
-    filter: drop-shadow(0 16px 26px rgba(0,0,0,0.5)) drop-shadow(0 2px 4px rgba(0,0,0,0.35));
-    transform-style: preserve-3d;
-  }
-  .floating-logo.visible { opacity: 0.9; visibility: visible; }
-  @keyframes floatLogo {
-    0%   { transform: perspective(1000px) translate3d(0, 0, 0) rotateY(0deg) rotateX(0deg); }
-    20%  { transform: perspective(1000px) translate3d(70px, -55px, 40px) rotateY(90deg) rotateX(6deg); }
-    40%  { transform: perspective(1000px) translate3d(20px, -110px, 0) rotateY(180deg) rotateX(-6deg); }
-    60%  { transform: perspective(1000px) translate3d(-70px, -70px, 40px) rotateY(270deg) rotateX(6deg); }
-    80%  { transform: perspective(1000px) translate3d(-30px, -20px, 0) rotateY(330deg) rotateX(-4deg); }
-    100% { transform: perspective(1000px) translate3d(0, 0, 0) rotateY(360deg) rotateX(0deg); }
-  }
-  @media (max-width: 560px) {
-    .floating-logo { width: 44px; top: 28%; left: 4%; }
-    .floating-logo.visible { opacity: 0.8; }
   }
 
   /* ── PROMO POP-UP ── */
@@ -790,11 +787,22 @@
   .promo-contact .name { font-weight: 700; color: var(--navy); }
 
   @media (max-width: 560px) {
+    .promo-overlay { align-items: flex-end; padding: 0; }
+    .promo-card { max-height: 92vh; overflow-y: auto; border-radius: 18px 18px 0 0; margin: 0; }
     .promo-head { padding: 26px 22px 22px; }
     .promo-head h2 { font-size: 22px; }
     .promo-body { padding: 22px 22px 26px; }
     .promo-list { grid-template-columns: 1fr; }
     .promo-price .now { font-size: 34px; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
   }
 
   /* Persistent link left after the pop-up is closed */
@@ -818,7 +826,7 @@
 
 <!-- NAV -->
 <nav>
-  <a href="#" class="nav-logo">
+  <a href="/" class="nav-logo" aria-label="Kendra REAC home">
     <div class="nav-logo-text">Kendra REAC<span>Consultant, Inc.</span></div>
   </a>
   <div class="nav-links">
@@ -832,9 +840,9 @@
     <a href="#contact">Contact</a>
   </div>
   <div style="display:flex;align-items:center;gap:12px;">
-    <span class="nav-lang" onclick="toggleLang()">EN / ES</span>
+    <button type="button" class="nav-lang" id="languageToggle" onclick="toggleLang()" aria-label="Cambiar sitio a español" aria-pressed="false">EN / ES</button>
     <a href="#contact" class="nav-cta">Book a Consultation</a>
-    <button class="nav-burger" onclick="toggleMenu()" aria-label="Menu"><span></span><span></span><span></span></button>
+    <button class="nav-burger" id="menuToggle" onclick="toggleMenu()" aria-label="Open navigation menu" aria-controls="mobileMenu" aria-expanded="false"><span></span><span></span><span></span></button>
   </div>
 </nav>
 
@@ -859,19 +867,17 @@
   <div class="hero-grid-lines"></div>
 
   <div class="hero-left">
-    <a href="/taller-seguridad/" style="display:flex;align-items:center;gap:12px;background:var(--gold);color:var(--navy);text-decoration:none;font-weight:600;padding:12px 18px;border-radius:10px;margin-bottom:20px;font-size:14px;line-height:1.35;box-shadow:0 6px 20px rgba(0,0,0,0.28);align-self:flex-start;max-width:100%;">
+    <a href="/taller-seguridad/" class="hero-announcement" style="display:flex;align-items:center;gap:12px;background:var(--gold);color:var(--navy);text-decoration:none;font-weight:600;padding:12px 18px;border-radius:10px;margin-bottom:20px;font-size:14px;line-height:1.35;box-shadow:0 6px 20px rgba(0,0,0,0.28);align-self:flex-start;max-width:100%;">
       <span style="font-size:24px;flex-shrink:0;">🎓</span>
       <span data-lang="en"><strong>FREE Spanish Safety Workshop</strong> — Tue Aug 18, 10 AM on Microsoft Teams. <span style="text-decoration:underline;">Register free →</span></span>
       <span data-lang="es"><strong>Taller de Seguridad GRATIS</strong> — martes 18 de agosto, 10 AM por Microsoft Teams. <span style="text-decoration:underline;">Regístrese gratis →</span></span>
     </a>
-    <img src="/kendra-logo-nobg.png" alt="Kendra REAC Consultant" style="width:min(90vw,470px);height:auto;object-fit:contain;align-self:flex-start;margin-bottom:24px;display:block;">
+    <img src="/kendra-logo-nobg.png" alt="Kendra REAC Consultant" width="168" height="94" fetchpriority="high" style="width:min(90vw,470px);height:auto;object-fit:contain;align-self:flex-start;margin-bottom:24px;display:block;">
     <div class="hero-badge">HUD REAC Certified Since 2009</div>
 
-    <h1 class="hero-headline" data-lang="en">
-      The only REAC consultant who trains your team <em>in Spanish.</em>
-    </h1>
-    <h1 class="hero-headline" data-lang="es">
-      La única consultora de REAC que capacita a su equipo <em>en español.</em>
+    <h1 class="hero-headline">
+      <span data-lang="en">The only REAC consultant who trains your team <em>in Spanish.</em></span>
+      <span data-lang="es">La única consultora de REAC que capacita a su equipo <em>en español.</em></span>
     </h1>
 
     <p class="hero-sub" data-lang="en">
@@ -891,9 +897,9 @@
     <div style="display:flex;align-items:center;gap:10px;margin-bottom:20px;">
       <span style="font-size:12px;color:rgba(255,255,255,0.4);font-weight:300;" data-lang="en">Follow us:</span>
       <span style="font-size:12px;color:rgba(255,255,255,0.4);font-weight:300;" data-lang="es">Síguenos:</span>
-      <a href="http://Facebook.com/kendrareac" target="_blank" style="display:flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:8px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);color:rgba(255,255,255,0.75);text-decoration:none;font-size:13px;font-weight:700;transition:all 0.2s;" onmouseover="this.style.background='rgba(255,255,255,0.18)'" onmouseout="this.style.background='rgba(255,255,255,0.08)'">f</a>
-      <a href="https://www.instagram.com/kendrareac/" target="_blank" style="display:flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:8px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);color:rgba(255,255,255,0.75);text-decoration:none;font-size:12px;font-weight:700;transition:all 0.2s;" onmouseover="this.style.background='rgba(255,255,255,0.18)'" onmouseout="this.style.background='rgba(255,255,255,0.08)'">in</a>
-      <a href="http://twitter.com/@ReacConsultant" target="_blank" style="display:flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:8px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);color:rgba(255,255,255,0.75);text-decoration:none;font-size:13px;font-weight:700;transition:all 0.2s;" onmouseover="this.style.background='rgba(255,255,255,0.18)'" onmouseout="this.style.background='rgba(255,255,255,0.08)'">𝕏</a>
+      <a href="https://www.facebook.com/kendrareac" target="_blank" rel="noopener noreferrer" aria-label="Kendra REAC on Facebook" class="social-btn">f</a>
+      <a href="https://www.instagram.com/kendrareac/" target="_blank" rel="noopener noreferrer" aria-label="Kendra REAC on Instagram" class="social-btn">IG</a>
+      <a href="https://x.com/ReacConsultant" target="_blank" rel="noopener noreferrer" aria-label="Kendra REAC on X" class="social-btn">X</a>
     </div>
 
     <div class="hero-stats">
@@ -965,9 +971,9 @@
   <div class="trust-item" data-lang="en">Conference Speaker</div>
   <div class="trust-item" data-lang="es">Conferencista Reconocida</div>
   <div style="display:flex;align-items:center;gap:10px;margin-left:8px;">
-    <a href="http://Facebook.com/kendrareac" target="_blank" style="display:flex;align-items:center;justify-content:center;width:32px;height:32px;border-radius:6px;background:rgba(13,31,60,0.15);color:var(--navy);text-decoration:none;font-size:13px;font-weight:700;">f</a>
-    <a href="https://www.instagram.com/kendrareac/" target="_blank" style="display:flex;align-items:center;justify-content:center;width:32px;height:32px;border-radius:6px;background:rgba(13,31,60,0.15);color:var(--navy);text-decoration:none;font-size:12px;font-weight:700;">in</a>
-    <a href="http://twitter.com/@ReacConsultant" target="_blank" style="display:flex;align-items:center;justify-content:center;width:32px;height:32px;border-radius:6px;background:rgba(13,31,60,0.15);color:var(--navy);text-decoration:none;font-size:13px;font-weight:700;">𝕏</a>
+      <a href="https://www.facebook.com/kendrareac" target="_blank" rel="noopener noreferrer" aria-label="Kendra REAC on Facebook" style="display:flex;align-items:center;justify-content:center;width:32px;height:32px;border-radius:6px;background:rgba(13,31,60,0.15);color:var(--navy);text-decoration:none;font-size:13px;font-weight:700;">f</a>
+    <a href="https://www.instagram.com/kendrareac/" target="_blank" rel="noopener noreferrer" aria-label="Kendra REAC on Instagram" style="display:flex;align-items:center;justify-content:center;width:32px;height:32px;border-radius:6px;background:rgba(13,31,60,0.15);color:var(--navy);text-decoration:none;font-size:12px;font-weight:700;">IG</a>
+      <a href="https://x.com/ReacConsultant" target="_blank" rel="noopener noreferrer" aria-label="Kendra REAC on X" style="display:flex;align-items:center;justify-content:center;width:32px;height:32px;border-radius:6px;background:rgba(13,31,60,0.15);color:var(--navy);text-decoration:none;font-size:13px;font-weight:700;">X</a>
   </div>
 </div>
 
@@ -1129,7 +1135,7 @@
 
     <div class="services-grid" id="training">
       <div class="service-card">
-        <img src="https://static.wixstatic.com/media/e7c6f5_db7668f0e31d47aa9e8c235b33da535f~mv2.jpg/v1/fill/w_596,h_306,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/e7c6f5_db7668f0e31d47aa9e8c235b33da535f~mv2.jpg" alt="REAC inspection preparation" style="width:100%;height:160px;object-fit:cover;border-radius:10px;margin-bottom:20px;">
+        <img src="/images/pre-inspection.png" alt="REAC inspection preparation" loading="lazy" width="596" height="306" style="width:100%;height:160px;object-fit:cover;border-radius:10px;margin-bottom:20px;">
         <h3 data-lang="en">Pre-Inspection Service</h3>
         <h3 data-lang="es">Servicio de Pre-Inspección</h3>
         <p data-lang="en">We walk your property before the federal inspector arrives — identifying every deficiency, documenting it in detail, and giving your team a clear action plan to fix it in time.</p>
@@ -1139,7 +1145,7 @@
       </div>
 
       <div class="service-card">
-        <img src="https://static.wixstatic.com/media/e7c6f5_564c47f3fae247369518ec2c26164f09~mv2.jpg/v1/fill/w_596,h_306,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/e7c6f5_564c47f3fae247369518ec2c26164f09~mv2.jpg" alt="REAC staff training" style="width:100%;height:160px;object-fit:cover;border-radius:10px;margin-bottom:20px;">
+        <img src="/images/staff-training.png" alt="REAC staff training" loading="lazy" width="596" height="306" style="width:100%;height:160px;object-fit:cover;border-radius:10px;margin-bottom:20px;">
         <h3 data-lang="en">Staff Training Programs</h3>
         <h3 data-lang="es">Programas de Capacitación</h3>
         <p data-lang="en">From NSPIRE Fundamentals (1 day) to our signature Hands-On Training (2 days with a live mock inspection) — all programs include a training manual written in Spanish. On-site, hotel, or virtual via Zoom/Teams.</p>
@@ -1149,7 +1155,7 @@
       </div>
 
       <div class="service-card">
-        <img src="https://static.wixstatic.com/media/e7c6f5_fdc94bc7c0074d29bb8c606efa5c74ea~mv2.jpg/v1/fill/w_596,h_306,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/e7c6f5_fdc94bc7c0074d29bb8c606efa5c74ea~mv2.jpg" alt="NSPIRE consulting" style="width:100%;height:160px;object-fit:cover;border-radius:10px;margin-bottom:20px;">
+        <img src="/images/nspire-consulting.png" alt="NSPIRE consulting" loading="lazy" width="596" height="306" style="width:100%;height:160px;object-fit:cover;border-radius:10px;margin-bottom:20px;">
         <h3 data-lang="en">NSPIRE Consulting</h3>
         <h3 data-lang="es">Consultoría NSPIRE</h3>
         <p data-lang="en">Customized compliance strategies for property management companies, housing authorities, and HUD-subsidized owners. We adapt to your specific portfolio, scoring challenges, and inspection history.</p>
@@ -1197,7 +1203,7 @@
         <a href="#contact" class="btn-primary" data-lang="es" style="display: inline-block;">Reserve su Lugar →</a>
       </div>
       <div style="position: relative; overflow: hidden; min-height: 340px;">
-        <img src="https://static.wixstatic.com/media/e7c6f5_564c47f3fae247369518ec2c26164f09~mv2.jpg/v1/fill/w_596,h_306,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/e7c6f5_564c47f3fae247369518ec2c26164f09~mv2.jpg" alt="NSPIRE Workshop" style="width: 100%; height: 100%; object-fit: cover; position: absolute; inset: 0;">
+            <img src="/images/staff-training.png" alt="NSPIRE Workshop" loading="lazy" width="596" height="306" style="width: 100%; height: 100%; object-fit: cover; position: absolute; inset: 0;">
         <div style="position: absolute; inset: 0; background: linear-gradient(to right, rgba(13,31,60,0.4) 0%, transparent 60%);"></div>
         <div style="position: absolute; top: 20px; right: 20px; background: #E87474; color: #fff; font-size: 12px; font-weight: 700; padding: 6px 14px; border-radius: 20px;" data-lang="en">Limited Spots!</div>
         <div style="position: absolute; top: 20px; right: 20px; background: #E87474; color: #fff; font-size: 12px; font-weight: 700; padding: 6px 14px; border-radius: 20px;" data-lang="es">¡Cupos Limitados!</div>
@@ -1372,6 +1378,8 @@
         </div>
       </div>
     </div>
+    <p style="text-align:center;margin-top:28px;color:var(--gray-600);font-size:14px;" data-lang="en">Client references are available upon request during the proposal process.</p>
+    <p style="text-align:center;margin-top:28px;color:var(--gray-600);font-size:14px;" data-lang="es">Referencias de clientes disponibles a solicitud durante el proceso de propuesta.</p>
   </div>
 </section>
 
@@ -1420,7 +1428,7 @@
     <div class="about-grid">
       <div>
         <div class="about-img-wrap" style="background:none;">
-          <img src="/sandra.jpg" alt="Sandra Romero-Negron, President of Kendra REAC Consultant, Inc." style="width:100%;height:440px;object-fit:cover;object-position:center top;border-radius:16px;display:block;">
+        <img src="/sandra.jpg" alt="Sandra Romero-Negron, President of Kendra REAC Consultant, Inc." loading="lazy" width="1254" height="1254" style="width:100%;height:440px;object-fit:cover;object-position:center top;border-radius:16px;display:block;">
           <div class="about-img-badge">
             Sandra Romero-Negron
             <span data-lang="en">President, Kendra REAC Consultant, Inc.</span>
@@ -1473,6 +1481,36 @@
   </div>
 </section>
 
+<!-- PROCESS -->
+<section id="process" style="background:var(--cream);">
+  <div class="container">
+    <p class="section-label" data-lang="en">How it works</p>
+    <p class="section-label" data-lang="es">Cómo funciona</p>
+    <h2 class="section-title" data-lang="en">A clear path to inspection readiness</h2>
+    <h2 class="section-title" data-lang="es">Un camino claro hacia la preparación</h2>
+    <div class="process-grid">
+      <article class="process-step">
+        <div class="process-number">1</div>
+        <h3 data-lang="en">Tell us about your property</h3><h3 data-lang="es">Cuéntenos sobre su propiedad</h3>
+        <p data-lang="en">Share your property type, unit count, inspection date, and recent score so we can identify the right level of support.</p>
+        <p data-lang="es">Comparta el tipo de propiedad, número de unidades, fecha de inspección y puntuación reciente.</p>
+      </article>
+      <article class="process-step">
+        <div class="process-number">2</div>
+        <h3 data-lang="en">Receive a tailored plan</h3><h3 data-lang="es">Reciba un plan personalizado</h3>
+        <p data-lang="en">We recommend the right mix of consulting, pre-inspection work, and team training for your timeline.</p>
+        <p data-lang="es">Recomendamos la combinación adecuada de consultoría, preinspección y capacitación para su calendario.</p>
+      </article>
+      <article class="process-step">
+        <div class="process-number">3</div>
+        <h3 data-lang="en">Prepare with confidence</h3><h3 data-lang="es">Prepárese con confianza</h3>
+        <p data-lang="en">Your team gets practical priorities, clear explanations, and support focused on inspection-day performance.</p>
+        <p data-lang="es">Su equipo recibe prioridades prácticas, explicaciones claras y apoyo enfocado en el día de la inspección.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
 <!-- SHOP -->
 <section id="shop" style="background:var(--white);padding:100px 0;">
   <div class="container">
@@ -1480,8 +1518,8 @@
     <p class="section-label" data-lang="es">Tienda</p>
     <h2 class="section-title" data-lang="en">Services &amp; Training Programs</h2>
     <h2 class="section-title" data-lang="es">Servicios y Programas de Entrenamiento</h2>
-    <p class="section-sub" data-lang="en">Book a consultation, register for training, or purchase materials — all in one place.</p>
-    <p class="section-sub" data-lang="es">Reserve una consulta, regístrese para entrenamiento o compre materiales — todo en un solo lugar.</p>
+    <p class="section-sub" data-lang="en">Request consulting, training, workshops, or materials through one clear consultation form.</p>
+    <p class="section-sub" data-lang="es">Solicite consultoría, capacitación, talleres o materiales mediante un solo formulario.</p>
     <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:28px;margin-top:48px;">
 
       <!-- Pre-Inspection -->
@@ -1491,8 +1529,8 @@
         <h3 style="font-family:'Playfair Display',serif;font-size:20px;color:var(--navy);font-weight:700;" data-lang="es">Inspección Previa</h3>
         <p style="font-size:14px;color:var(--gray-600);line-height:1.7;flex:1;" data-lang="en">We walk your property before the federal inspector arrives — identifying every deficiency and giving your team a clear action plan.</p>
         <p style="font-size:14px;color:var(--gray-600);line-height:1.7;flex:1;" data-lang="es">Recorremos su propiedad antes de que llegue el inspector federal — identificando cada deficiencia y dando un plan de acción claro.</p>
-        <a href="https://square.link/u/FpQ5RMe4" target="_blank" style="display:block;text-align:center;background:var(--navy);color:#fff;padding:13px 24px;border-radius:8px;font-weight:600;font-size:14px;text-decoration:none;margin-top:8px;transition:background 0.2s;" onmouseover="this.style.background='var(--gold)'" onmouseout="this.style.background='var(--navy)'" data-lang="en">Book Now →</a>
-        <a href="https://square.link/u/FpQ5RMe4" target="_blank" style="display:block;text-align:center;background:var(--navy);color:#fff;padding:13px 24px;border-radius:8px;font-weight:600;font-size:14px;text-decoration:none;margin-top:8px;transition:background 0.2s;" onmouseover="this.style.background='var(--gold)'" onmouseout="this.style.background='var(--navy)'" data-lang="es">Reservar Ahora →</a>
+        <a href="#contact" onclick="bookTraining('Pre-Inspection Walkthrough')" style="display:block;text-align:center;background:var(--navy);color:#fff;padding:13px 24px;border-radius:8px;font-weight:600;font-size:14px;text-decoration:none;margin-top:8px;transition:background 0.2s;" data-lang="en">Book a Consultation →</a>
+        <a href="#contact" onclick="bookTraining('Pre-Inspection Walkthrough')" style="display:block;text-align:center;background:var(--navy);color:#fff;padding:13px 24px;border-radius:8px;font-weight:600;font-size:14px;text-decoration:none;margin-top:8px;transition:background 0.2s;" data-lang="es">Reservar una Consulta →</a>
       </div>
 
       <!-- Staff Training -->
@@ -1502,8 +1540,8 @@
         <h3 style="font-family:'Playfair Display',serif;font-size:20px;color:var(--navy);font-weight:700;" data-lang="es">Programas de Entrenamiento</h3>
         <p style="font-size:14px;color:var(--gray-600);line-height:1.7;flex:1;" data-lang="en">1-day NSPIRE Fundamentals or 2-day Hands-On Training with live mock inspection. On-site, hotel, or virtual. Materials in English &amp; Spanish.</p>
         <p style="font-size:14px;color:var(--gray-600);line-height:1.7;flex:1;" data-lang="es">Fundamentos NSPIRE de 1 día o Entrenamiento Práctico de 2 días con inspección simulada en vivo. Presencial o virtual. Materiales en inglés y español.</p>
-        <a href="https://square.link/u/FpQ5RMe4" target="_blank" style="display:block;text-align:center;background:var(--navy);color:#fff;padding:13px 24px;border-radius:8px;font-weight:600;font-size:14px;text-decoration:none;margin-top:8px;transition:background 0.2s;" onmouseover="this.style.background='var(--gold)'" onmouseout="this.style.background='var(--navy)'" data-lang="en">Register Now →</a>
-        <a href="https://square.link/u/FpQ5RMe4" target="_blank" style="display:block;text-align:center;background:var(--navy);color:#fff;padding:13px 24px;border-radius:8px;font-weight:600;font-size:14px;text-decoration:none;margin-top:8px;transition:background 0.2s;" onmouseover="this.style.background='var(--gold)'" onmouseout="this.style.background='var(--navy)'" data-lang="es">Registrarse Ahora →</a>
+        <a href="#contact" onclick="bookTraining('Staff Training Programs')" style="display:block;text-align:center;background:var(--navy);color:#fff;padding:13px 24px;border-radius:8px;font-weight:600;font-size:14px;text-decoration:none;margin-top:8px;transition:background 0.2s;" data-lang="en">Book a Consultation →</a>
+        <a href="#contact" onclick="bookTraining('Staff Training Programs')" style="display:block;text-align:center;background:var(--navy);color:#fff;padding:13px 24px;border-radius:8px;font-weight:600;font-size:14px;text-decoration:none;margin-top:8px;transition:background 0.2s;" data-lang="es">Reservar una Consulta →</a>
       </div>
 
       <!-- NSPIRE Workshop -->
@@ -1515,8 +1553,8 @@
         <h3 style="font-family:'Playfair Display',serif;font-size:20px;color:var(--navy);font-weight:700;" data-lang="es">Taller NSPIRE</h3>
         <p style="font-size:14px;color:var(--gray-600);line-height:1.7;flex:1;" data-lang="en">Live webinar for maintenance staff — taught entirely in Spanish. Everything your team needs to succeed on inspection day.</p>
         <p style="font-size:14px;color:var(--gray-600);line-height:1.7;flex:1;" data-lang="es">Seminario web en vivo para personal de mantenimiento — completamente en español. Todo lo que su equipo necesita para el día de inspección.</p>
-        <a href="https://square.link/u/FpQ5RMe4" target="_blank" style="display:block;text-align:center;background:var(--gold);color:#fff;padding:13px 24px;border-radius:8px;font-weight:600;font-size:14px;text-decoration:none;margin-top:8px;transition:background 0.2s;" onmouseover="this.style.background='var(--navy)'" onmouseout="this.style.background='var(--gold)'" data-lang="en">Buy Your Spot →</a>
-        <a href="https://square.link/u/FpQ5RMe4" target="_blank" style="display:block;text-align:center;background:var(--gold);color:#fff;padding:13px 24px;border-radius:8px;font-weight:600;font-size:14px;text-decoration:none;margin-top:8px;transition:background 0.2s;" onmouseover="this.style.background='var(--navy)'" onmouseout="this.style.background='var(--gold)'" data-lang="es">Comprar su Lugar →</a>
+        <a href="#contact" onclick="bookTraining('NSPIRE Workshop')" style="display:block;text-align:center;background:var(--gold);color:#fff;padding:13px 24px;border-radius:8px;font-weight:600;font-size:14px;text-decoration:none;margin-top:8px;transition:background 0.2s;" data-lang="en">Book a Consultation →</a>
+        <a href="#contact" onclick="bookTraining('NSPIRE Workshop')" style="display:block;text-align:center;background:var(--gold);color:#fff;padding:13px 24px;border-radius:8px;font-weight:600;font-size:14px;text-decoration:none;margin-top:8px;transition:background 0.2s;" data-lang="es">Reservar una Consulta →</a>
       </div>
 
       <!-- Training Manual -->
@@ -1526,8 +1564,8 @@
         <h3 style="font-family:'Playfair Display',serif;font-size:20px;color:var(--navy);font-weight:700;" data-lang="es">Manuales y Materiales</h3>
         <p style="font-size:14px;color:var(--gray-600);line-height:1.7;flex:1;" data-lang="en">The industry's only Spanish-language REAC/NSPIRE training materials. Written by Sandra Romero-Negron, not translated.</p>
         <p style="font-size:14px;color:var(--gray-600);line-height:1.7;flex:1;" data-lang="es">Los únicos materiales de entrenamiento REAC/NSPIRE en español de la industria. Escritos por Sandra Romero-Negron, no traducidos.</p>
-        <a href="https://square.link/u/FpQ5RMe4" target="_blank" style="display:block;text-align:center;background:var(--navy);color:#fff;padding:13px 24px;border-radius:8px;font-weight:600;font-size:14px;text-decoration:none;margin-top:8px;transition:background 0.2s;" onmouseover="this.style.background='var(--gold)'" onmouseout="this.style.background='var(--navy)'" data-lang="en">Purchase →</a>
-        <a href="https://square.link/u/FpQ5RMe4" target="_blank" style="display:block;text-align:center;background:var(--navy);color:#fff;padding:13px 24px;border-radius:8px;font-weight:600;font-size:14px;text-decoration:none;margin-top:8px;transition:background 0.2s;" onmouseover="this.style.background='var(--gold)'" onmouseout="this.style.background='var(--navy)'" data-lang="es">Comprar →</a>
+        <a href="#contact" onclick="bookTraining('Training Manuals &amp; Materials')" style="display:block;text-align:center;background:var(--navy);color:#fff;padding:13px 24px;border-radius:8px;font-weight:600;font-size:14px;text-decoration:none;margin-top:8px;transition:background 0.2s;" data-lang="en">Request Availability →</a>
+        <a href="#contact" onclick="bookTraining('Training Manuals &amp; Materials')" style="display:block;text-align:center;background:var(--navy);color:#fff;padding:13px 24px;border-radius:8px;font-weight:600;font-size:14px;text-decoration:none;margin-top:8px;transition:background 0.2s;" data-lang="es">Consultar Disponibilidad →</a>
       </div>
 
     </div>
@@ -1605,16 +1643,16 @@
     <p data-lang="en">Let's talk about your property, your score history, and how we can get your team inspection-ready — in English or Spanish.</p>
     <p data-lang="es">Hablemos sobre su propiedad, su historial de puntuaciones y cómo podemos preparar a su equipo para la inspección — en español o inglés.</p>
     <div class="cta-banner-btns">
-      <a href="#contact" class="btn-primary" data-lang="en">Book a Free Consultation</a>
-      <a href="#contact" class="btn-primary" data-lang="es">Reservar una Consulta Gratuita</a>
+      <a href="#contact" class="btn-primary" data-lang="en">Book a Consultation</a>
+      <a href="#contact" class="btn-primary" data-lang="es">Reservar una Consulta</a>
       <a href="tel:4075165393" class="btn-ghost">📞 407-516-5393</a>
     </div>
     <div style="display:flex;align-items:center;justify-content:center;gap:12px;margin-top:28px;">
       <span style="font-size:13px;color:rgba(255,255,255,0.35);" data-lang="en">Stay connected:</span>
       <span style="font-size:13px;color:rgba(255,255,255,0.35);" data-lang="es">Manténgase conectado:</span>
-      <a href="http://Facebook.com/kendrareac" target="_blank" style="display:flex;align-items:center;justify-content:center;width:38px;height:38px;border-radius:8px;background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.15);color:rgba(255,255,255,0.7);text-decoration:none;font-size:14px;font-weight:700;">f</a>
-      <a href="https://www.instagram.com/kendrareac/" target="_blank" style="display:flex;align-items:center;justify-content:center;width:38px;height:38px;border-radius:8px;background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.15);color:rgba(255,255,255,0.7);text-decoration:none;font-size:12px;font-weight:700;">in</a>
-      <a href="http://twitter.com/@ReacConsultant" target="_blank" style="display:flex;align-items:center;justify-content:center;width:38px;height:38px;border-radius:8px;background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.15);color:rgba(255,255,255,0.7);text-decoration:none;font-size:14px;font-weight:700;">𝕏</a>
+      <a href="https://www.facebook.com/kendrareac" target="_blank" rel="noopener noreferrer" aria-label="Kendra REAC on Facebook" class="social-btn">f</a>
+      <a href="https://www.instagram.com/kendrareac/" target="_blank" rel="noopener noreferrer" aria-label="Kendra REAC on Instagram" class="social-btn">IG</a>
+      <a href="https://x.com/ReacConsultant" target="_blank" rel="noopener noreferrer" aria-label="Kendra REAC on X" class="social-btn">X</a>
     </div>
   </div>
 </div>
@@ -1641,7 +1679,7 @@
           <div class="contact-icon">✉️</div>
           <div>
             <div class="contact-label">Email</div>
-            <a href="mailto:kendra@reacnspire.com" class="contact-value">kendra@reacnspire.com</a>
+            <a href="mailto:proposals@reacnspire.com" class="contact-value">proposals@reacnspire.com</a>
           </div>
         </div>
         <div class="contact-item">
@@ -1655,13 +1693,13 @@
         </div>
 
         <div class="contact-social">
-          <a href="http://Facebook.com/kendrareac" class="social-btn" title="Facebook">f</a>
-          <a href="https://www.instagram.com/kendrareac/" class="social-btn" title="Instagram">in</a>
-          <a href="http://twitter.com/@ReacConsultant" class="social-btn" title="Twitter">𝕏</a>
+          <a href="https://www.facebook.com/kendrareac" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Kendra REAC on Facebook">f</a>
+          <a href="https://www.instagram.com/kendrareac/" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Kendra REAC on Instagram">IG</a>
+          <a href="https://x.com/ReacConsultant" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Kendra REAC on X">X</a>
         </div>
       </div>
 
-      <form class="contact-form" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/?success=true#contact">
+      <form class="contact-form" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thank-you/">
         <input type="hidden" name="form-name" value="contact">
         <p style="display:none;"><label>Don't fill this out: <input name="bot-field"></label></p>
         <h3 data-lang="en">Book a consultation</h3>
@@ -1671,57 +1709,83 @@
 
         <div class="form-row">
           <div class="form-group">
-            <label data-lang="en">First name</label>
-            <label data-lang="es">Nombre</label>
-            <input type="text" name="first-name" required placeholder="First name" data-ph-en="First name" data-ph-es="Nombre">
+            <label for="first-name" data-lang="en">First name</label>
+            <label for="first-name" data-lang="es">Nombre</label>
+            <input id="first-name" type="text" name="first-name" autocomplete="given-name" required placeholder="First name" data-ph-en="First name" data-ph-es="Nombre">
           </div>
           <div class="form-group">
-            <label data-lang="en">Last name</label>
-            <label data-lang="es">Apellido</label>
-            <input type="text" name="last-name" required placeholder="Last name" data-ph-en="Last name" data-ph-es="Apellido">
+            <label for="last-name" data-lang="en">Last name</label>
+            <label for="last-name" data-lang="es">Apellido</label>
+            <input id="last-name" type="text" name="last-name" autocomplete="family-name" required placeholder="Last name" data-ph-en="Last name" data-ph-es="Apellido">
           </div>
         </div>
         <div class="form-group">
-          <label>Email</label>
-          <input type="email" name="email" required placeholder="Email address" data-ph-en="Email address" data-ph-es="Correo electrónico">
+          <label for="email">Email</label>
+          <input id="email" type="email" name="email" autocomplete="email" required placeholder="Email address" data-ph-en="Email address" data-ph-es="Correo electrónico">
         </div>
         <div class="form-group">
-          <label data-lang="en">Phone</label>
-          <label data-lang="es">Teléfono</label>
-          <input type="tel" name="phone" placeholder="Phone number" data-ph-en="Phone number" data-ph-es="Número de teléfono">
+          <label for="phone" data-lang="en">Phone</label>
+          <label for="phone" data-lang="es">Teléfono</label>
+          <input id="phone" type="tel" name="phone" autocomplete="tel" placeholder="Phone number" data-ph-en="Phone number" data-ph-es="Número de teléfono">
         </div>
         <div class="form-group">
-          <label data-lang="en">Service needed</label>
-          <label data-lang="es">Servicio requerido</label>
-          <select name="service" data-lang="en">
-            <option>Pre-Inspection</option>
-            <option>Staff Training</option>
-            <option>NSPIRE Consulting</option>
-            <option>Conference Speaking</option>
+          <label for="company" data-lang="en">Company or property</label>
+          <label for="company" data-lang="es">Empresa o propiedad</label>
+          <input id="company" type="text" name="company" autocomplete="organization" required placeholder="Organization or property name" data-ph-en="Organization or property name" data-ph-es="Nombre de empresa o propiedad">
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="city-state" data-lang="en">City and state</label>
+            <label for="city-state" data-lang="es">Ciudad y estado</label>
+            <input id="city-state" type="text" name="city-state" autocomplete="address-level2" placeholder="City, State" data-ph-en="City, State" data-ph-es="Ciudad, Estado">
+          </div>
+          <div class="form-group">
+            <label for="unit-count" data-lang="en">Number of units</label>
+            <label for="unit-count" data-lang="es">Número de unidades</label>
+            <input id="unit-count" type="number" name="unit-count" min="1" inputmode="numeric" placeholder="Units" data-ph-en="Units" data-ph-es="Unidades">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="inspection-date" data-lang="en">Inspection date</label>
+            <label for="inspection-date" data-lang="es">Fecha de inspección</label>
+            <input id="inspection-date" type="date" name="inspection-date">
+          </div>
+          <div class="form-group">
+            <label for="last-score" data-lang="en">Last REAC score</label>
+            <label for="last-score" data-lang="es">Última puntuación REAC</label>
+            <input id="last-score" type="number" name="last-score" min="0" max="100" inputmode="numeric" placeholder="If known" data-ph-en="If known" data-ph-es="Si la conoce">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="service" data-lang="en">Service needed</label>
+          <label for="service" data-lang="es">Servicio requerido</label>
+          <select id="service" name="service">
+            <option value="Pre-Inspection">Pre-Inspection / Pre-Inspección</option>
+            <option value="Staff Training">Staff Training / Capacitación del Personal</option>
+            <option value="NSPIRE Consulting">NSPIRE Consulting / Consultoría NSPIRE</option>
+            <option value="Conference Speaking">Conference Speaking / Ponente en Conferencia</option>
+            <option value="Training Manuals & Materials">Training Manuals &amp; Materials / Manuales y Materiales</option>
           </select>
-          <select name="servicio" data-lang="es">
-            <option>Pre-Inspección</option>
-            <option>Capacitación del Personal</option>
-            <option>Consultoría NSPIRE</option>
-            <option>Ponente en Conferencia</option>
-          </select>
         </div>
         <div class="form-group">
-          <label data-lang="en">Tell us about your property</label>
-          <label data-lang="es">Cuéntenos sobre su propiedad</label>
-          <textarea name="message" placeholder="Property type, number of units, recent REAC score..." data-ph-en="Property type, number of units, recent REAC score..." data-ph-es="Tipo de propiedad, número de unidades, puntuación REAC reciente..."></textarea>
+          <label for="preferred-contact" data-lang="en">Preferred contact</label>
+          <label for="preferred-contact" data-lang="es">Contacto preferido</label>
+          <select id="preferred-contact" name="preferred-contact"><option value="Email">Email</option><option value="Phone">Phone / Teléfono</option></select>
         </div>
+        <div class="form-group">
+          <label for="message" data-lang="en">Anything else we should know?</label>
+          <label for="message" data-lang="es">¿Algo más que debamos saber?</label>
+          <textarea id="message" name="message" placeholder="Timeline, concerns, or training goals..." data-ph-en="Timeline, concerns, or training goals..." data-ph-es="Calendario, inquietudes u objetivos de capacitación..."></textarea>
+        </div>
+        <label class="consent-row"><input type="checkbox" name="privacy-consent" required><span data-lang="en">I agree that Kendra REAC Consultant may use this information to respond to my request. See the <a href="/privacy/">Privacy Policy</a>.</span><span data-lang="es">Acepto que Kendra REAC Consultant use esta información para responder a mi solicitud. Consulte la <a href="/privacy/">Política de Privacidad</a>.</span></label>
         <button type="submit" class="form-submit" data-lang="en">Send message →</button>
         <button type="submit" class="form-submit" data-lang="es">Enviar mensaje →</button>
-        <p id="form-success" style="display:none;background:#E8F5E9;border:1px solid #4CAF50;color:#256029;border-radius:8px;padding:14px;margin-top:14px;font-size:14px;font-weight:500;" data-lang="en">✓ Thank you! Your message was sent. We'll be in touch within 1 business day.</p>
-        <p id="form-success-es" style="display:none;background:#E8F5E9;border:1px solid #4CAF50;color:#256029;border-radius:8px;padding:14px;margin-top:14px;font-size:14px;font-weight:500;" data-lang="es">✓ ¡Gracias! Su mensaje fue enviado. Nos comunicaremos dentro de 1 día hábil.</p>
+        <p style="text-align:center;font-size:12px;color:var(--gray-600);margin-top:12px;"><span data-lang="en">Prefer email?</span><span data-lang="es">¿Prefiere correo?</span> <a href="mailto:proposals@reacnspire.com" style="color:var(--navy);font-weight:600;">proposals@reacnspire.com</a></p>
       </form>
     </div>
   </div>
 </section>
-
-<!-- FLOATING 3D LOGO (hidden on landing/hero, shown on the rest) -->
-<img src="/kendra-logo-nobg.png" alt="" aria-hidden="true" class="floating-logo">
 
 <!-- PROMO POP-UP: NSPIRE 2026 Summer Special -->
 <div class="promo-overlay" id="promoOverlay" role="dialog" aria-modal="true" aria-labelledby="promoTitle">
@@ -1804,9 +1868,9 @@
     <div style="display:flex;align-items:center;gap:14px;">
       <span style="font-size:13px;color:rgba(255,255,255,0.4);" data-lang="en">Follow Kendra REAC:</span>
       <span style="font-size:13px;color:rgba(255,255,255,0.4);" data-lang="es">Síguenos:</span>
-      <a href="http://Facebook.com/kendrareac" target="_blank" style="display:flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:8px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);color:rgba(255,255,255,0.65);text-decoration:none;font-size:14px;font-weight:700;">f</a>
-      <a href="https://www.instagram.com/kendrareac/" target="_blank" style="display:flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:8px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);color:rgba(255,255,255,0.65);text-decoration:none;font-size:12px;font-weight:700;">in</a>
-      <a href="http://twitter.com/@ReacConsultant" target="_blank" style="display:flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:8px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);color:rgba(255,255,255,0.65);text-decoration:none;font-size:14px;font-weight:700;">𝕏</a>
+      <a href="https://www.facebook.com/kendrareac" target="_blank" rel="noopener noreferrer" aria-label="Kendra REAC on Facebook" class="social-btn">f</a>
+      <a href="https://www.instagram.com/kendrareac/" target="_blank" rel="noopener noreferrer" aria-label="Kendra REAC on Instagram" class="social-btn">IG</a>
+      <a href="https://x.com/ReacConsultant" target="_blank" rel="noopener noreferrer" aria-label="Kendra REAC on X" class="social-btn">X</a>
     </div>
     <div style="width:100%;height:1px;background:rgba(255,255,255,0.07);"></div>
     <div style="display:flex;align-items:center;justify-content:space-between;width:100%;flex-wrap:wrap;gap:12px;">
@@ -1816,10 +1880,10 @@
         <a href="/spanish-nspire-training/">Spanish NSPIRE Training</a>
         <a href="/reac-vs-nspire/">REAC vs. NSPIRE</a>
         <a href="/nspire-2026-changes/">NSPIRE 2026 Changes</a>
-        <a href="#">Privacy Policy</a>
-        <a href="#">Terms of Use</a>
-        <a href="#">Fulfillment Policy</a>
-        <a href="#">Cancellation Policy</a>
+        <a href="/privacy/">Privacy Policy</a>
+        <a href="/terms/">Terms of Use</a>
+        <a href="/fulfillment/">Fulfillment Policy</a>
+        <a href="/cancellation/">Cancellation Policy</a>
       </div>
     </div>
   </div>
@@ -1828,12 +1892,22 @@
 <script>
   function toggleLang() {
     const isEs = document.body.classList.toggle('es');
+    document.documentElement.lang = isEs ? 'es' : 'en';
+    const toggle = document.getElementById('languageToggle');
+    if (toggle) {
+      toggle.setAttribute('aria-pressed', String(isEs));
+      toggle.setAttribute('aria-label', isEs ? 'Change site to English' : 'Cambiar sitio a español');
+    }
     document.querySelectorAll('[data-ph-en]').forEach(el => {
       el.placeholder = isEs ? el.dataset.phEs : el.dataset.phEn;
     });
   }
   function toggleMenu() {
-    document.getElementById('mobileMenu').classList.toggle('open');
+    const menu = document.getElementById('mobileMenu');
+    const button = document.getElementById('menuToggle');
+    const open = menu.classList.toggle('open');
+    button.setAttribute('aria-expanded', String(open));
+    button.setAttribute('aria-label', open ? 'Close navigation menu' : 'Open navigation menu');
   }
   // Pre-fill the booking form when a training program is clicked
   function bookTraining(program) {
@@ -1841,38 +1915,19 @@
     const isEs = document.body.classList.contains('es');
     const msg = document.querySelector('textarea[name="message"]');
     if (msg) msg.value = (isEs ? 'Me gustaría reservar: ' : "I'd like to book: ") + program;
-    const sel = document.querySelector(isEs ? 'select[name="servicio"]' : 'select[name="service"]');
-    if (sel) sel.value = isEs ? 'Capacitación del Personal' : 'Staff Training';
+    const sel = document.querySelector('select[name="service"]');
+    if (sel) sel.value = program.includes('Pre-Inspection') ? 'Pre-Inspection' : program.includes('Manual') ? 'Training Manuals & Materials' : 'Staff Training';
   }
-  // Show success message after Netlify form submission redirect
-  if (new URLSearchParams(location.search).get('success') === 'true') {
-    const en = document.getElementById('form-success');
-    const es = document.getElementById('form-success-es');
-    if (en) en.style.display = 'block';
-    if (es) es.style.display = 'block';
-  }
-
-  // ── FLOATING LOGO: hide while the hero (landing view) is on screen, show on the rest ──
-  (function () {
-    const el = document.querySelector('.floating-logo');
-    const hero = document.querySelector('.hero');
-    if (!el || !hero) return;
-    function update() {
-      if (hero.getBoundingClientRect().bottom <= 60) el.classList.add('visible');
-      else el.classList.remove('visible');
-    }
-    window.addEventListener('scroll', update, { passive: true });
-    window.addEventListener('resize', update, { passive: true });
-    update();
-  })();
-
   // ── PROMO POP-UP ──
   const PROMO_KEY = 'nspire2026SummerPromoDismissed';
+  const PROMO_END = new Date('2026-10-01T00:00:00-04:00').getTime();
+  function promoIsActive() { return Date.now() < PROMO_END; }
   function showReopenLink() {
     const link = document.getElementById('promoReopen');
     if (link) link.classList.add('show');
   }
   function openPromo() {
+    if (!promoIsActive()) return;
     document.getElementById('promoOverlay').classList.add('open');
     document.body.style.overflow = 'hidden';
   }
@@ -1888,26 +1943,32 @@
     if (msg) msg.value = isEs
       ? 'Me gustaría reservar la Oferta de Verano NSPIRE 2026 — Entrenamiento Avanzado en el Sitio ($7,500 precio fijo).'
       : "I'd like to reserve the NSPIRE 2026 Summer Special — Advanced On-Site Training ($7,500 flat fee).";
-    const sel = document.querySelector(isEs ? 'select[name="servicio"]' : 'select[name="service"]');
-    if (sel) sel.value = isEs ? 'Capacitación del Personal' : 'Staff Training';
+    const sel = document.querySelector('select[name="service"]');
+    if (sel) sel.value = 'Staff Training';
     closePromo();
   }
   // Reveal shortly after load so it doesn't compete with the hero. Anyone who
   // already dismissed it (or just submitted the form) gets the persistent link
   // instead, so the offer is always reachable.
   (function () {
+    if (!promoIsActive()) {
+      document.getElementById('promoOverlay').remove();
+      document.getElementById('promoReopen').remove();
+      return;
+    }
     let dismissed = false;
     try { dismissed = localStorage.getItem(PROMO_KEY) === '1'; } catch (e) {}
-    const fromSuccess = new URLSearchParams(location.search).get('success') === 'true';
-    if (dismissed || fromSuccess) { showReopenLink(); return; }
-    setTimeout(openPromo, 2500);
+    if (dismissed) { showReopenLink(); return; }
+    setTimeout(openPromo, 5000);
   })();
   // Close on backdrop click or Escape
-  document.getElementById('promoOverlay').addEventListener('click', function (e) {
+  const promoOverlay = document.getElementById('promoOverlay');
+  if (promoOverlay) promoOverlay.addEventListener('click', function (e) {
     if (e.target === this) closePromo();
   });
   document.addEventListener('keydown', function (e) {
-    if (e.key === 'Escape' && document.getElementById('promoOverlay').classList.contains('open')) closePromo();
+    const overlay = document.getElementById('promoOverlay');
+    if (e.key === 'Escape' && overlay && overlay.classList.contains('open')) closePromo();
   });
 </script>
 
