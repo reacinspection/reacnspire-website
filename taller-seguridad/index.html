@@ -4,13 +4,13 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Registración — Taller de Seguridad GRATIS | Kendra REAC Consultant</title>
-<meta name="description" content="Taller de Seguridad gratis de Kendra REAC Consultant, 18 de agosto de 2026, por Microsoft Teams. Regístrese para recibir el enlace.">
+<meta name="description" content="Taller de Seguridad gratis de Kendra REAC Consultant, 9 de septiembre de 2026, por Zoom. Regístrese para recibir el enlace.">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://reacnspire.com/taller-seguridad/">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://reacnspire.com/taller-seguridad/">
 <meta property="og:title" content="Registración — Taller de Seguridad GRATIS">
-<meta property="og:description" content="18 de agosto de 2026, 10:00 AM–11:30 AM. Regístrese gratis y le enviaremos el enlace de Microsoft Teams.">
+<meta property="og:description" content="9 de septiembre de 2026, 10:00 AM Eastern Time (US and Canada). Regístrese gratis y le enviaremos el enlace de Zoom.">
 <meta property="og:image" content="https://reacnspire.com/og-image.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -60,16 +60,17 @@
 
 <header class="hero">
   <div class="wrap">
-    <span class="badge">🎓 Evento GRATIS por Microsoft Teams</span>
+    <span class="badge">🎓 Evento GRATIS por Zoom</span>
     <h1>Registración para el <span class="free">Taller de Seguridad GRATIS</span></h1>
     <p style="font-size:18px;color:rgba(255,255,255,.85);margin-bottom:4px;">«Seguridad en el Lugar de Trabajo»</p>
     <p style="font-size:14px;color:rgba(255,255,255,.6);">Presentado por Sandra Romero-Negron · Kendra REAC Consultant, Inc.</p>
     <div class="event">
-      <div class="card"><div class="lbl">Fecha</div><div class="val">Martes 18 de agosto, 2026</div></div>
-      <div class="card"><div class="lbl">Hora</div><div class="val">10:00 AM – 11:30 AM</div></div>
-      <div class="card"><div class="lbl">Plataforma</div><div class="val">Microsoft Teams (en línea)</div></div>
+      <div class="card"><div class="lbl">Fecha</div><div class="val">Miércoles 9 de septiembre, 2026</div></div>
+      <div class="card"><div class="lbl">Hora</div><div class="val">10:00 AM ET (US &amp; Canada)</div></div>
+      <div class="card"><div class="lbl">Plataforma</div><div class="val">Zoom (en línea)</div></div>
     </div>
-    <p class="note">📩 <strong>Una vez se registre, le enviaremos el enlace de Microsoft Teams</strong> a su correo electrónico.</p>
+    <p class="note">⚠️ <strong>Espacio limitado:</strong> solo para las <strong>primeras 100 personas</strong> que entren en la sala de espera.</p>
+    <p class="note">📩 <strong>Una vez se registre, le enviaremos el enlace de Zoom</strong> a su correo electrónico.</p>
   </div>
 </header>
 
@@ -77,12 +78,12 @@
   <div class="formcard">
     <div id="ok-msg" class="ok">
       <strong>¡Gracias por registrarse! ✅</strong>
-      Le acabamos de enviar un correo de confirmación con el <strong>enlace de Microsoft Teams</strong> para unirse al taller. Revise su bandeja de entrada (y la carpeta de spam, por si acaso).
+      Le acabamos de enviar un correo de confirmación con el <strong>enlace de Zoom</strong> para unirse al taller. Revise su bandeja de entrada (y la carpeta de spam, por si acaso).
     </div>
 
     <form id="reg-form" name="taller-registro" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/taller-seguridad/?exito=true#registro">
       <input type="hidden" name="form-name" value="taller-registro">
-      <input type="hidden" name="evento" value="Seguridad en el Lugar de Trabajo — martes 18 de agosto de 2026, 10:00–11:30 AM EST (Microsoft Teams)">
+      <input type="hidden" name="evento" value="Seguridad en el Lugar de Trabajo — miércoles 9 de septiembre de 2026, 10:00 AM Eastern Time (Zoom)">
       <p hidden><label>No llenar: <input name="bot-field"></label></p>
 
       <h2>Complete su registración</h2>
@@ -129,7 +130,7 @@
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
         body: new URLSearchParams(fd).toString()
       }).catch(function () {});
-      // 2) Enviar el correo de confirmación con el enlace de Teams
+      // 2) Enviar el correo de confirmación con el enlace de Zoom
       // (función alojada en NspirePro, donde Resend está comprobado que funciona)
       fetch('https://app.reacnspire.com/taller-confirm', {
         method: 'POST',
