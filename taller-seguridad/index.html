@@ -131,8 +131,9 @@
         body: new URLSearchParams(fd).toString()
       }).catch(function () {});
       // 2) Enviar el correo de confirmación con el enlace de Zoom
-      // (función alojada en NspirePro, donde Resend está comprobado que funciona)
-      fetch('https://app.reacnspire.com/taller-confirm', {
+      // (función en este mismo sitio — reacnspire.com/taller-confirm — para no
+      //  depender del sitio de la app; RESEND_API_KEY está configurada aquí)
+      fetch('/taller-confirm', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email: fd.get('email'), nombre: fd.get('nombre') })
