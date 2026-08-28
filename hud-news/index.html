@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HUD News &amp; Updates | ReacNspire — Official HUD, REAC &amp; NSPIRE Monitor</title>
+<meta name="description" content="Official HUD, REAC, NSPIRE, and public-housing updates monitored by ReacNspire. Every item links to the original HUD or Federal Register source — with date, category, and citation.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://reacnspire.com/hud-news/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="HUD News & Updates — monitored by ReacNspire">
+<meta property="og:description" content="Official HUD, REAC, NSPIRE & public-housing updates, each linked to its original official source.">
+<meta property="og:url" content="https://reacnspire.com/hud-news/">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{--navy:#0D1F3C;--navy-mid:#1A3358;--gold:#C9993A;--gold-light:#E8B85A;--gold-pale:#F5E8C8;--cream:#FAF7F2;--white:#fff;--line:#E5E0D5;--text:#1A1410;--text-light:#4A4339;--muted:#6b6459;}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text);line-height:1.6}
+  a{color:var(--navy)}
+  h1,h2,h3{font-family:'Playfair Display',serif}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+  nav{position:sticky;top:0;z-index:50;background:rgba(13,31,60,.98);backdrop-filter:blur(10px);border-bottom:1px solid rgba(201,153,58,.25)}
+  nav .wrap{display:flex;align-items:center;justify-content:space-between;padding:12px 20px}
+  nav .brand img{height:46px;background:#fff;padding:5px 9px;border-radius:8px;display:block}
+  nav .ncta{background:var(--gold);color:var(--navy);font-weight:600;font-size:14px;padding:9px 16px;border-radius:8px;text-decoration:none}
+  header.hero{background:linear-gradient(135deg,var(--navy),var(--navy-mid));color:#fff;padding:48px 20px 40px}
+  header.hero .badge{display:inline-block;background:rgba(201,153,58,.18);border:1px solid rgba(201,153,58,.45);color:var(--gold-light);font-size:12px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;padding:6px 13px;border-radius:20px;margin-bottom:16px}
+  header.hero h1{font-size:40px;line-height:1.12;font-weight:800;margin-bottom:12px}
+  header.hero .trust{max-width:720px;font-size:16px;color:rgba(255,255,255,.86)}
+  header.hero .trust strong{color:var(--gold-light)}
+  section{padding:34px 0}
+  .newsletter{background:var(--white);border:1.5px solid var(--gold-pale);border-radius:16px;padding:26px 26px 30px;box-shadow:0 10px 34px rgba(13,31,60,.07)}
+  .newsletter.top{margin-top:-30px;position:relative;z-index:5}
+  .newsletter h2{font-size:23px;color:var(--navy);margin-bottom:6px}
+  .newsletter p.sub{font-size:14.5px;color:var(--text-light);margin-bottom:16px;max-width:620px}
+  .nl-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  .field label{display:block;font-size:12.5px;font-weight:600;color:var(--navy);margin-bottom:5px}
+  .field input[type=email],.field input[type=text]{width:100%;padding:12px 13px;border:1.5px solid var(--line);border-radius:9px;font-size:15px;font-family:inherit;background:var(--cream)}
+  .field input:focus{outline:none;border-color:var(--gold);background:#fff}
+  .topics{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+  .topics label{display:inline-flex;align-items:center;gap:6px;font-size:13px;background:var(--cream);border:1px solid var(--line);border-radius:20px;padding:6px 12px;cursor:pointer}
+  .consent{display:flex;gap:9px;align-items:flex-start;font-size:13px;color:var(--text-light);margin-top:14px}
+  .consent input{margin-top:3px}
+  .nl-submit{margin-top:14px;background:var(--gold);color:var(--navy);font-weight:700;font-size:16px;padding:14px 22px;border:none;border-radius:10px;cursor:pointer}
+  .nl-submit:hover{background:var(--gold-light)}
+  .nl-msg{margin-top:12px;font-size:14px;display:none;padding:11px 14px;border-radius:9px}
+  .nl-msg.ok{display:block;background:#E8F5E9;border:1px solid #4CAF50;color:#256029}
+  .nl-msg.err{display:block;background:#FDECEA;border:1px solid #E57373;color:#B3261E}
+  .controls{display:flex;flex-wrap:wrap;gap:14px;align-items:center;justify-content:space-between;margin-bottom:18px}
+  .chips{display:flex;flex-wrap:wrap;gap:8px}
+  .chip{background:#fff;border:1.5px solid var(--line);color:var(--navy);font-size:13px;font-weight:600;padding:7px 14px;border-radius:20px;cursor:pointer}
+  .chip.active{background:var(--navy);border-color:var(--navy);color:#fff}
+  .search input{padding:10px 14px;border:1.5px solid var(--line);border-radius:9px;font-size:14px;min-width:230px;font-family:inherit}
+  .cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:16px}
+  .card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px 18px 16px;display:flex;flex-direction:column;box-shadow:0 2px 8px rgba(13,31,60,.05)}
+  .card .top{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:9px}
+  .cat{font-size:11px;font-weight:800;letter-spacing:.04em;text-transform:uppercase;color:var(--navy);background:var(--gold-pale);border-radius:6px;padding:3px 9px}
+  .date{font-size:12.5px;color:var(--muted)}
+  .card h3{font-size:17.5px;line-height:1.28;color:var(--navy);margin-bottom:8px}
+  .card .exc{font-size:14px;color:var(--text-light);flex:1;margin-bottom:14px}
+  .card .src{font-size:12px;color:var(--muted);margin-bottom:10px}
+  .card .src b{color:var(--text)}
+  .card .read{align-self:flex-start;background:var(--navy);color:#fff;text-decoration:none;font-weight:600;font-size:13.5px;padding:9px 15px;border-radius:8px}
+  .card .read:hover{background:var(--navy-mid)}
+  .state{text-align:center;padding:46px 20px;color:var(--muted);font-size:15px;background:#fff;border:1px dashed var(--line);border-radius:14px}
+  .banner{background:#FFF7E6;border:1px solid var(--gold);color:#7a5c00;border-radius:10px;padding:11px 15px;font-size:13.5px;margin-bottom:16px;display:none}
+  .disclaimer{margin-top:26px;font-size:12.5px;color:var(--muted);border-top:1px solid var(--line);padding-top:16px}
+  footer{background:#080F1C;color:rgba(255,255,255,.6);padding:30px 20px;text-align:center;font-size:13.5px;margin-top:20px}
+  footer a{color:var(--gold-light);text-decoration:none}
+  @media(max-width:640px){header.hero h1{font-size:30px}.nl-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<nav><div class="wrap">
+  <a href="/" class="brand" aria-label="ReacNspire home"><img src="/kendra-logo-nobg.png" alt="Kendra REAC Consultant"></a>
+  <a href="#signup" class="ncta">Get HUD updates</a>
+</div></nav>
+
+<header class="hero"><div class="wrap">
+  <span class="badge">🏛️ Official-source monitor · with citations</span>
+  <h1>HUD News &amp; Updates</h1>
+  <p class="trust"><strong>Official HUD, REAC, NSPIRE, and public-housing updates monitored by ReacNspire.</strong> We don't republish HUD's material as our own — every item below shows its official source, publication date, and category, and links directly to the original HUD or Federal Register page. We monitor approved official sources; this is not a complete feed of every HUD action.</p>
+</div></header>
+
+<div class="wrap">
+  <section class="newsletter top" id="signup">
+    <h2>Get HUD, REAC &amp; NSPIRE Updates</h2>
+    <p class="sub">Receive practical alerts when monitored official HUD sources publish relevant public-housing, REAC, or NSPIRE updates.</p>
+    <form id="nl-form" novalidate>
+      <div class="nl-grid">
+        <div class="field"><label for="nl-email">Email address *</label><input type="email" id="nl-email" name="email" required autocomplete="email" placeholder="you@agency.org"></div>
+        <div class="field"><label for="nl-name">First name (optional)</label><input type="text" id="nl-name" name="firstName" autocomplete="given-name"></div>
+      </div>
+      <div style="position:absolute;left:-9999px" aria-hidden="true"><label>Do not fill<input type="text" name="company_website" tabindex="-1" autocomplete="off"></label></div>
+      <div class="field" style="margin-top:12px"><label>Topics you care about (optional)</label>
+        <div class="topics" id="nl-topics">
+          <label><input type="checkbox" value="public_housing"> Public Housing</label>
+          <label><input type="checkbox" value="nspire"> NSPIRE</label>
+          <label><input type="checkbox" value="reac"> REAC</label>
+          <label><input type="checkbox" value="notices_rules"> Notices &amp; Rules</label>
+          <label><input type="checkbox" value="training"> Training &amp; Webinars</label>
+        </div>
+      </div>
+      <label class="consent"><input type="checkbox" id="nl-consent" required> <span>I agree to receive email updates and to the <a href="/privacy/">Privacy Policy</a> and <a href="/terms/">Terms of Use</a>. You can unsubscribe anytime.</span></label>
+      <button type="submit" class="nl-submit">Subscribe for updates →</button>
+      <div class="nl-msg" id="nl-msg" role="status" aria-live="polite"></div>
+    </form>
+  </section>
+
+  <section>
+    <div class="banner" id="src-banner">⚠️ One or more official sources were temporarily unavailable at the last check — the items below may not include the very latest updates. We preserve previously monitored items until sources return.</div>
+    <div class="controls">
+      <div class="chips" id="chips" role="tablist" aria-label="Filter by category">
+        <button class="chip active" data-cat="all" role="tab" aria-selected="true">All</button>
+        <button class="chip" data-cat="public_housing" role="tab">Public Housing</button>
+        <button class="chip" data-cat="nspire" role="tab">NSPIRE</button>
+        <button class="chip" data-cat="reac" role="tab">REAC</button>
+        <button class="chip" data-cat="notices_rules" role="tab">Notices &amp; Rules</button>
+        <button class="chip" data-cat="training" role="tab">Training &amp; Webinars</button>
+      </div>
+      <div class="search"><label for="q" style="position:absolute;left:-9999px">Search updates</label><input type="search" id="q" placeholder="Search title or summary…"></div>
+    </div>
+    <div id="cards" class="cards" aria-live="polite"></div>
+    <div id="state" class="state">Loading the latest official updates…</div>
+    <p class="disclaimer">All links open the original official source (HUD.gov, HUD Exchange, or the Federal Register). Summaries are brief and may be abbreviated; ReacNspire is not HUD and does not speak for HUD. Always confirm requirements, deadlines, and applicability directly with HUD and the official notice.</p>
+  </section>
+
+  <section class="newsletter" style="margin-bottom:8px">
+    <h2>Don't miss the next NSPIRE or REAC update</h2>
+    <p class="sub">Get practical alerts when monitored official HUD sources publish relevant updates. Double opt-in, unsubscribe anytime.</p>
+    <a href="#signup" class="nl-submit" style="display:inline-block;text-decoration:none">Subscribe at the top of the page ↑</a>
+  </section>
+</div>
+
+<footer>
+  <p><strong>Kendra REAC Consultant, Inc.</strong> · HUD REAC &amp; NSPIRE experts<br>
+  <a href="/">Home</a> · <a href="/nspire-consulting/">NSPIRE Consulting</a> · <a href="/reac-vs-nspire/">REAC vs. NSPIRE</a> · <a href="/privacy/">Privacy</a> · <a href="/terms/">Terms</a></p>
+  <p style="margin-top:10px;font-size:12px;color:rgba(255,255,255,.4)">Official-source monitor. Not affiliated with or endorsed by HUD. Links go to official government sources.</p>
+</footer>
+
+<script>
+  var API = "https://app.reacnspire.com/hudnews";
+  var CAT_LABEL = {public_housing:"Public Housing",nspire:"NSPIRE",reac:"REAC",notices_rules:"Notices & Rules",training:"Training & Webinars"};
+  var state = { all: [], cat: "all", q: "" };
+  function esc(s){return String(s==null?"":s).replace(/[&<>"']/g,function(c){return ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]);});}
+  function fmtDate(d){ if(!d)return""; try{return new Date(d+"T00:00:00").toLocaleDateString(undefined,{year:"numeric",month:"short",day:"numeric"});}catch(e){return d;} }
+
+  function render(){
+    var wrap=document.getElementById("cards"), st=document.getElementById("state");
+    var list=state.all.filter(function(i){ return state.cat==="all"||i.category===state.cat; });
+    if(state.q){ var q=state.q.toLowerCase(); list=list.filter(function(i){ return (i.title+" "+(i.excerpt||"")).toLowerCase().indexOf(q)>=0; }); }
+    if(!state.all.length){ wrap.innerHTML=""; st.style.display="block"; st.textContent="No monitored updates are available right now. Please check back soon."; return; }
+    if(!list.length){ wrap.innerHTML=""; st.style.display="block"; st.textContent="No updates match this filter."; return; }
+    st.style.display="none";
+    wrap.innerHTML=list.map(function(i){
+      return '<article class="card"><div class="top"><span class="cat">'+esc(i.categoryLabel||CAT_LABEL[i.category]||"Update")+'</span><span class="date">'+esc(fmtDate(i.publishedDate))+'</span></div>'
+        +'<h3>'+esc(i.title)+'</h3>'
+        +(i.excerpt?'<div class="exc">'+esc(i.excerpt)+'</div>':'<div class="exc"></div>')
+        +'<div class="src">Source: <b>'+esc(i.sourceName||"Official source")+'</b></div>'
+        +'<a class="read" href="'+esc(i.sourceUrl)+'" target="_blank" rel="noopener noreferrer">Read official update →</a></article>';
+    }).join("");
+  }
+
+  function load(){
+    fetch(API+"/list",{headers:{accept:"application/json"}})
+      .then(function(r){ return r.ok?r.json():null; })
+      .then(function(d){
+        if(!d){ document.getElementById("state").textContent="Updates are temporarily unavailable. Please try again shortly."; return; }
+        state.all=d.items||[];
+        if(d.sourceUnavailable||d.sourcesWithIssues){ document.getElementById("src-banner").style.display="block"; }
+        render();
+      })
+      .catch(function(){ document.getElementById("state").textContent="Can't reach the updates service right now. Please try again shortly."; });
+  }
+
+  document.getElementById("chips").addEventListener("click",function(e){
+    var b=e.target.closest("button[data-cat]"); if(!b)return;
+    state.cat=b.dataset.cat;
+    document.querySelectorAll("#chips .chip").forEach(function(c){ c.classList.toggle("active",c===b); c.setAttribute("aria-selected",c===b); });
+    render();
+  });
+  document.getElementById("q").addEventListener("input",function(e){ state.q=e.target.value.trim(); render(); });
+
+  document.getElementById("nl-form").addEventListener("submit",function(e){
+    e.preventDefault();
+    var msg=document.getElementById("nl-msg"); msg.className="nl-msg";
+    var email=document.getElementById("nl-email").value.trim();
+    var consent=document.getElementById("nl-consent").checked;
+    if(!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)){ msg.className="nl-msg err"; msg.textContent="Please enter a valid email address."; return; }
+    if(!consent){ msg.className="nl-msg err"; msg.textContent="Please agree to the Privacy Policy and Terms to subscribe."; return; }
+    var topics=[].slice.call(document.querySelectorAll("#nl-topics input:checked")).map(function(c){return c.value;});
+    var btn=e.target.querySelector(".nl-submit"); btn.disabled=true; btn.textContent="Subscribing…";
+    fetch(API+"/subscribe",{method:"POST",headers:{"content-type":"application/json"},body:JSON.stringify({email:email,firstName:document.getElementById("nl-name").value.trim(),topics:topics,consent:true,company_website:""})})
+      .then(function(r){ return r.json().then(function(b){return {status:r.status,b:b};}); })
+      .then(function(res){
+        btn.disabled=false; btn.textContent="Subscribe for updates →";
+        if(res.status===200){ msg.className="nl-msg ok"; msg.textContent="Thanks! Please check your email to confirm your subscription (double opt-in). You can unsubscribe anytime."; e.target.reset(); }
+        else { msg.className="nl-msg err"; msg.textContent=(res.b&&res.b.error)||"Something went wrong. Please try again."; }
+      })
+      .catch(function(){ btn.disabled=false; btn.textContent="Subscribe for updates →"; msg.className="nl-msg err"; msg.textContent="Can't reach the server. Please try again shortly."; });
+  });
+
+  load();
+</script>
+</body>
+</html>
