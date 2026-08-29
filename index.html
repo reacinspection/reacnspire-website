@@ -598,14 +598,18 @@
   .contact-social { display: flex; gap: 10px; margin-top: 36px; }
   .social-btn {
     width: 40px; height: 40px; border-radius: 8px;
-    border: 1px solid var(--gray-200); display: flex;
+    border: 1px solid rgba(255,255,255,0.28); display: flex;
     align-items: center; justify-content: center;
-    text-decoration: none; font-size: 16px; transition: all 0.2s;
-    color: var(--navy);
+    text-decoration: none; font-size: 16px; font-weight: 600; transition: all 0.2s;
+    background: rgba(255,255,255,0.12);
+    color: var(--white);
   }
-  .social-btn:hover { background: var(--navy); color: var(--white); border-color: var(--navy); }
+  .social-btn:hover { background: var(--white); color: var(--navy); border-color: var(--white); }
   .social-btn svg { width:18px; height:18px; display:block; fill:currentColor; }
   .social-btn .instagram-icon { fill:none; stroke:currentColor; stroke-width:2; }
+  /* Contact card sits on a light background — use dark icons there for contrast */
+  .contact-social .social-btn { border-color: var(--gray-200); background: transparent; color: var(--navy); }
+  .contact-social .social-btn:hover { background: var(--navy); color: var(--white); border-color: var(--navy); }
 
   .contact-form { background: var(--cream); border-radius: 20px; padding: 36px; }
   .contact-form h3 {
