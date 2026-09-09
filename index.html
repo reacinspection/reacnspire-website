@@ -1177,7 +1177,17 @@
         <a href="#contact" class="btn-primary" data-lang="es" style="display: inline-block;">Reservar una Consulta →</a>
       </div>
       <div style="position: relative; overflow: hidden; min-height: 340px;">
-            <img src="/images/staff-training.png" alt="NSPIRE Workshop" loading="lazy" width="596" height="306" style="width: 100%; height: 100%; object-fit: cover; position: absolute; inset: 0;">
+        <div id="workshop-reel" role="region" aria-label="Workshop photos / Fotos del taller" style="position:relative;background:#0d1f3c;padding:120px 0 190px;">
+          <img id="workshop-photo" src="/images/workshop/training-01.jpg" alt="Workshop photo / Foto del taller 1" loading="lazy" style="display:block;width:100%;height:340px;object-fit:contain;">
+          <div style="position:absolute;top:65px;left:12px;z-index:2;display:flex;gap:6px;align-items:center;color:white;">
+            <button type="button" id="workshop-prev" aria-label="Previous photo / Foto anterior">‹</button>
+            <button type="button" id="workshop-pause"><span data-lang="en">Pause</span><span data-lang="es">Pausar</span></button>
+            <button type="button" id="workshop-next" aria-label="Next photo / Siguiente foto">›</button>
+            <span id="workshop-count">1 / 19</span>
+          </div>
+        </div>
+        <style>#workshop-reel button{min-width:44px;min-height:44px;padding:6px 10px;border:1px solid #fff8;border-radius:8px;background:#163a50;color:white;cursor:pointer}#workshop-reel button:focus-visible{outline:3px solid #f4ca70;outline-offset:2px}#workshop-reel ~ div{pointer-events:none}@media(max-width:600px){#workshop-photo{height:280px!important}}</style>
+        <script src="/workshop-reel.js" defer></script>
         <div style="position: absolute; inset: 0; background: linear-gradient(to right, rgba(13,31,60,0.4) 0%, transparent 60%);"></div>
         <div style="position: absolute; top: 20px; right: 20px; background: #E87474; color: #fff; font-size: 12px; font-weight: 700; padding: 6px 14px; border-radius: 20px;" data-lang="en">Schedule Your Team</div>
         <div style="position: absolute; top: 20px; right: 20px; background: #E87474; color: #fff; font-size: 12px; font-weight: 700; padding: 6px 14px; border-radius: 20px;" data-lang="es">Programe Su Equipo</div>
