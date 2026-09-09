@@ -663,9 +663,18 @@
   .footer-links a:hover { color: var(--gold-light); }
 
   /* ── LANG TOGGLE ── */
-  [data-lang="es"] { display: none; }
+  /* Scoped to the body state rather than hiding [data-lang="es"] outright and
+     restoring it with `revert`. Two reasons: the hide rules then outrank any
+     display a utility class sets on the same element, and the visible side
+     keeps the display its own class gives it instead of reverting to inline. */
+  body:not(.es) [data-lang="es"] { display: none; }
   body.es [data-lang="en"] { display: none; }
-  body.es [data-lang="es"] { display: revert; }
+
+  /* Buttons that carry data-lang take their display from one of these classes,
+     never from an inline style: an inline `display` outranks the rules above
+     and the toggle can no longer hide the other language. */
+  .lang-block { display: block; }
+  .lang-inline-block { display: inline-block; }
 
   /* App-section feature chips: inline (default display) so the lang
      toggle above can hide/show them - never set display on a data-lang el. */
@@ -1172,8 +1181,8 @@
             <div style="font-size: 18px; font-weight: 700; color: var(--gold-light);" data-lang="en">Custom quote</div><div style="font-size: 18px; font-weight: 700; color: var(--gold-light);" data-lang="es">Cotización personalizada</div>
           </div>
         </div>
-        <a href="#contact" class="btn-primary" data-lang="en" style="display: inline-block;">Book a Consultation →</a>
-        <a href="#contact" class="btn-primary" data-lang="es" style="display: inline-block;">Reservar una Consulta →</a>
+        <a href="#contact" class="btn-primary lang-inline-block" data-lang="en">Book a Consultation →</a>
+        <a href="#contact" class="btn-primary lang-inline-block" data-lang="es">Reservar una Consulta →</a>
       </div>
       <div style="position: relative; overflow: hidden; min-height: 340px;">
             <img src="/images/staff-training.png" alt="NSPIRE Workshop" loading="lazy" width="596" height="306" style="width: 100%; height: 100%; object-fit: cover; position: absolute; inset: 0;">
@@ -1502,8 +1511,8 @@
         <h3 style="font-family:'Playfair Display',serif;font-size:20px;color:var(--navy);font-weight:700;" data-lang="es">Inspección Previa</h3>
         <p style="font-size:14px;color:var(--gray-600);line-height:1.7;flex:1;" data-lang="en">We walk your property before the federal inspector arrives — identifying every deficiency and giving your team a clear action plan.</p>
         <p style="font-size:14px;color:var(--gray-600);line-height:1.7;flex:1;" data-lang="es">Recorremos su propiedad antes de que llegue el inspector federal — identificando cada deficiencia y dando un plan de acción claro.</p>
-        <a href="#contact" onclick="bookTraining('Pre-Inspection Walkthrough')" style="display:block;text-align:center;background:var(--navy);color:#fff;padding:13px 24px;border-radius:8px;font-weight:600;font-size:14px;text-decoration:none;margin-top:8px;transition:background 0.2s;" data-lang="en">Book a Consultation →</a>
-        <a href="#contact" onclick="bookTraining('Pre-Inspection Walkthrough')" style="display:block;text-align:center;background:var(--navy);color:#fff;padding:13px 24px;border-radius:8px;font-weight:600;font-size:14px;text-decoration:none;margin-top:8px;transition:background 0.2s;" data-lang="es">Reservar una Consulta →</a>
+        <a class="lang-block" href="#contact" onclick="bookTraining('Pre-Inspection Walkthrough')" style="text-align:center;background:var(--navy);color:#fff;padding:13px 24px;border-radius:8px;font-weight:600;font-size:14px;text-decoration:none;margin-top:8px;transition:background 0.2s;" data-lang="en">Book a Consultation →</a>
+        <a class="lang-block" href="#contact" onclick="bookTraining('Pre-Inspection Walkthrough')" style="text-align:center;background:var(--navy);color:#fff;padding:13px 24px;border-radius:8px;font-weight:600;font-size:14px;text-decoration:none;margin-top:8px;transition:background 0.2s;" data-lang="es">Reservar una Consulta →</a>
       </div>
 
       <!-- Staff Training -->
@@ -1513,8 +1522,8 @@
         <h3 style="font-family:'Playfair Display',serif;font-size:20px;color:var(--navy);font-weight:700;" data-lang="es">Programas de Entrenamiento</h3>
         <p style="font-size:14px;color:var(--gray-600);line-height:1.7;flex:1;" data-lang="en">1-day NSPIRE Fundamentals or 2-day Hands-On Training with live mock inspection. On-site, hotel, or virtual. Materials in English &amp; Spanish.</p>
         <p style="font-size:14px;color:var(--gray-600);line-height:1.7;flex:1;" data-lang="es">Fundamentos NSPIRE de 1 día o Entrenamiento Práctico de 2 días con inspección simulada en vivo. Presencial o virtual. Materiales en inglés y español.</p>
-        <a href="#contact" onclick="bookTraining('Staff Training Programs')" style="display:block;text-align:center;background:var(--navy);color:#fff;padding:13px 24px;border-radius:8px;font-weight:600;font-size:14px;text-decoration:none;margin-top:8px;transition:background 0.2s;" data-lang="en">Book a Consultation →</a>
-        <a href="#contact" onclick="bookTraining('Staff Training Programs')" style="display:block;text-align:center;background:var(--navy);color:#fff;padding:13px 24px;border-radius:8px;font-weight:600;font-size:14px;text-decoration:none;margin-top:8px;transition:background 0.2s;" data-lang="es">Reservar una Consulta →</a>
+        <a class="lang-block" href="#contact" onclick="bookTraining('Staff Training Programs')" style="text-align:center;background:var(--navy);color:#fff;padding:13px 24px;border-radius:8px;font-weight:600;font-size:14px;text-decoration:none;margin-top:8px;transition:background 0.2s;" data-lang="en">Book a Consultation →</a>
+        <a class="lang-block" href="#contact" onclick="bookTraining('Staff Training Programs')" style="text-align:center;background:var(--navy);color:#fff;padding:13px 24px;border-radius:8px;font-weight:600;font-size:14px;text-decoration:none;margin-top:8px;transition:background 0.2s;" data-lang="es">Reservar una Consulta →</a>
       </div>
 
       <!-- NSPIRE Workshop -->
@@ -1526,8 +1535,8 @@
         <h3 style="font-family:'Playfair Display',serif;font-size:20px;color:var(--navy);font-weight:700;" data-lang="es">Taller NSPIRE</h3>
         <p style="font-size:14px;color:var(--gray-600);line-height:1.7;flex:1;" data-lang="en">Live webinar for maintenance staff — taught entirely in Spanish. Everything your team needs to succeed on inspection day.</p>
         <p style="font-size:14px;color:var(--gray-600);line-height:1.7;flex:1;" data-lang="es">Seminario web en vivo para personal de mantenimiento — completamente en español. Todo lo que su equipo necesita para el día de inspección.</p>
-        <a href="#contact" onclick="bookTraining('NSPIRE Workshop')" style="display:block;text-align:center;background:var(--gold);color:#fff;padding:13px 24px;border-radius:8px;font-weight:600;font-size:14px;text-decoration:none;margin-top:8px;transition:background 0.2s;" data-lang="en">Book a Consultation →</a>
-        <a href="#contact" onclick="bookTraining('NSPIRE Workshop')" style="display:block;text-align:center;background:var(--gold);color:#fff;padding:13px 24px;border-radius:8px;font-weight:600;font-size:14px;text-decoration:none;margin-top:8px;transition:background 0.2s;" data-lang="es">Reservar una Consulta →</a>
+        <a class="lang-block" href="#contact" onclick="bookTraining('NSPIRE Workshop')" style="text-align:center;background:var(--gold);color:#fff;padding:13px 24px;border-radius:8px;font-weight:600;font-size:14px;text-decoration:none;margin-top:8px;transition:background 0.2s;" data-lang="en">Book a Consultation →</a>
+        <a class="lang-block" href="#contact" onclick="bookTraining('NSPIRE Workshop')" style="text-align:center;background:var(--gold);color:#fff;padding:13px 24px;border-radius:8px;font-weight:600;font-size:14px;text-decoration:none;margin-top:8px;transition:background 0.2s;" data-lang="es">Reservar una Consulta →</a>
       </div>
 
       <!-- Training Manual -->
@@ -1537,8 +1546,21 @@
         <h3 style="font-family:'Playfair Display',serif;font-size:20px;color:var(--navy);font-weight:700;" data-lang="es">Manuales y Materiales</h3>
         <p style="font-size:14px;color:var(--gray-600);line-height:1.7;flex:1;" data-lang="en">The industry's only Spanish-language REAC/NSPIRE training materials. Written by Sandra Romero-Negron, not translated.</p>
         <p style="font-size:14px;color:var(--gray-600);line-height:1.7;flex:1;" data-lang="es">Los únicos materiales de entrenamiento REAC/NSPIRE en español de la industria. Escritos por Sandra Romero-Negron, no traducidos.</p>
-        <a href="#contact" onclick="bookTraining('Training Manuals &amp; Materials')" style="display:block;text-align:center;background:var(--navy);color:#fff;padding:13px 24px;border-radius:8px;font-weight:600;font-size:14px;text-decoration:none;margin-top:8px;transition:background 0.2s;" data-lang="en">Request Availability →</a>
-        <a href="#contact" onclick="bookTraining('Training Manuals &amp; Materials')" style="display:block;text-align:center;background:var(--navy);color:#fff;padding:13px 24px;border-radius:8px;font-weight:600;font-size:14px;text-decoration:none;margin-top:8px;transition:background 0.2s;" data-lang="es">Consultar Disponibilidad →</a>
+        <a class="lang-block" href="#contact" onclick="bookTraining('Training Manuals &amp; Materials')" style="text-align:center;background:var(--navy);color:#fff;padding:13px 24px;border-radius:8px;font-weight:600;font-size:14px;text-decoration:none;margin-top:8px;transition:background 0.2s;" data-lang="en">Request Availability →</a>
+        <a class="lang-block" href="#contact" onclick="bookTraining('Training Manuals &amp; Materials')" style="text-align:center;background:var(--navy);color:#fff;padding:13px 24px;border-radius:8px;font-weight:600;font-size:14px;text-decoration:none;margin-top:8px;transition:background 0.2s;" data-lang="es">Consultar Disponibilidad →</a>
+      </div>
+
+      <!-- NSPIRE Room Coach -->
+      <div style="border:1.5px solid var(--gold);border-radius:16px;padding:32px;display:flex;flex-direction:column;gap:12px;position:relative;background:var(--cream);" onmouseover="this.style.boxShadow='0 8px 32px rgba(13,31,60,0.10)'" onmouseout="this.style.boxShadow='none'">
+        <div style="position:absolute;top:-12px;left:24px;background:var(--gold);color:#fff;font-size:11px;font-weight:700;padding:4px 12px;border-radius:20px;letter-spacing:0.05em;" data-lang="en">FREE TOOL</div>
+        <div style="position:absolute;top:-12px;left:24px;background:var(--gold);color:#fff;font-size:11px;font-weight:700;padding:4px 12px;border-radius:20px;letter-spacing:0.05em;" data-lang="es">HERRAMIENTA GRATIS</div>
+        <div style="font-size:32px;">🧭</div>
+        <h3 style="font-family:'Playfair Display',serif;font-size:20px;color:var(--navy);font-weight:700;" data-lang="en">NSPIRE Room Coach</h3>
+        <h3 style="font-family:'Playfair Display',serif;font-size:20px;color:var(--navy);font-weight:700;" data-lang="es">Guía NSPIRE por Habitación</h3>
+        <p style="font-size:14px;color:var(--gray-600);line-height:1.7;flex:1;" data-lang="en">Pick any of 43 rooms and building areas and see every NSPIRE standard that applies there — what the inspector checks, what gets cited, and how it scores. Bilingual and printable for your crew.</p>
+        <p style="font-size:14px;color:var(--gray-600);line-height:1.7;flex:1;" data-lang="es">Elija entre 43 áreas y vea cada norma NSPIRE que aplica — qué revisa el inspector, qué se cita y cómo se califica. Bilingüe y listo para imprimir para su equipo.</p>
+        <a class="lang-block" href="/room-coach/" style="text-align:center;background:var(--gold);color:#fff;padding:13px 24px;border-radius:8px;font-weight:600;font-size:14px;text-decoration:none;margin-top:8px;transition:background 0.2s;" data-lang="en">Open the Room Coach →</a>
+        <a class="lang-block" href="/room-coach/" style="text-align:center;background:var(--gold);color:#fff;padding:13px 24px;border-radius:8px;font-weight:600;font-size:14px;text-decoration:none;margin-top:8px;transition:background 0.2s;" data-lang="es">Abrir la Guía →</a>
       </div>
 
     </div>
@@ -1739,6 +1761,7 @@
             <option value="NSPIRE Consulting">NSPIRE Consulting / Consultoría NSPIRE</option>
             <option value="Conference Speaking">Conference Speaking / Ponente en Conferencia</option>
             <option value="Training Manuals & Materials">Training Manuals &amp; Materials / Manuales y Materiales</option>
+            <option value="NSPIRE Room Coach">NSPIRE Room Coach / Guía por Habitación</option>
           </select>
         </div>
         <div class="form-group">

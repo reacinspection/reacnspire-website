@@ -1,0 +1,867 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NSPIRE Room Coach — Room-by-Room Inspection Prep (English &amp; Spanish) | Kendra REAC Consultant</title>
+
+<meta name="description" content="Free NSPIRE Room Coach: walk any room or building area and see exactly which HUD NSPIRE standards apply, what the inspector checks, and how each deficiency scores. English and Spanish.">
+<meta name="keywords" content="NSPIRE room by room, NSPIRE checklist, NSPIRE standards by room, HUD NSPIRE deficiencies, NSPIRE inspection prep, lista NSPIRE en espanol, NSPIRE life threatening deficiency, NSPIRE severe moderate low, NSPIRE bathroom kitchen standards">
+<meta name="author" content="Kendra REAC Consultant, Inc.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://reacnspire.com/room-coach/">
+<link rel="alternate" hreflang="en" href="https://reacnspire.com/room-coach/">
+<link rel="alternate" hreflang="es" href="https://reacnspire.com/room-coach/">
+<link rel="alternate" hreflang="x-default" href="https://reacnspire.com/room-coach/">
+<link rel="icon" type="image/png" href="/kendra-logo.png">
+<link rel="apple-touch-icon" href="/kendra-logo.png">
+
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://reacnspire.com/room-coach/">
+<meta property="og:title" content="NSPIRE Room Coach — Room-by-Room Inspection Prep">
+<meta property="og:description" content="Pick a room. See every HUD NSPIRE standard that applies, what the inspector checks, and how it scores. English and Spanish.">
+<meta property="og:image" content="https://reacnspire.com/og-image.jpg">
+<meta property="og:site_name" content="Kendra REAC Consultant">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@ReacConsultant">
+<meta name="twitter:title" content="NSPIRE Room Coach — Room-by-Room Inspection Prep">
+<meta name="twitter:description" content="Pick a room. See every HUD NSPIRE standard that applies and how it scores. English and Spanish.">
+<meta name="twitter:image" content="https://reacnspire.com/og-image.jpg">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "NSPIRE Room Coach",
+  "url": "https://reacnspire.com/room-coach/",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "Any",
+  "inLanguage": ["en", "es"],
+  "description": "Room-by-room HUD NSPIRE inspection preparation tool covering inspectable areas across Unit, Inside and Outside, with severity and correction timeframes.",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "publisher": { "@id": "https://reacnspire.com/#business" }
+}
+</script>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#0D1F3C; --navy-mid:#1A3358; --navy-light:#2B4A72;
+    --gold:#C9993A; --gold-light:#E8B85A; --gold-pale:#F5E8C8;
+    --cream:#FAF7F2; --white:#FFFFFF;
+    --gray-100:#F4F5F7; --gray-200:#E3E6EB; --gray-400:#98A1B0; --gray-600:#5A6675;
+    --lt:#B3261E; --sev:#C1571A; --mod:#8A6D1F; --low:#3C6B4F;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;font-family:'DM Sans',system-ui,-apple-system,sans-serif;color:var(--navy);background:var(--white);-webkit-font-smoothing:antialiased;}
+  .container{max-width:1180px;margin:0 auto;padding:0 40px;}
+  @media(max-width:640px){ .container{padding:0 20px;} }
+
+  /* Bilingual: scoped to the body state so these rules outrank any display a
+     later class sets on the same element (.btn below would otherwise win on
+     source order and show both languages at once). */
+  body:not(.es) [data-lang="es"]{display:none;}
+  body.es [data-lang="en"]{display:none;}
+
+  header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,0.96);backdrop-filter:blur(10px);border-bottom:1px solid var(--gray-200);}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:70px;}
+  .nav .brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--navy);font-weight:700;font-size:16px;}
+  .nav .brand img{height:34px;width:auto;}
+  .nav .links{display:flex;align-items:center;gap:22px;}
+  .nav .links a{color:var(--navy);text-decoration:none;font-size:14px;font-weight:500;}
+  .nav .links a:hover{color:var(--gold);}
+  .nav-lang{background:none;border:1.5px solid var(--gray-200);border-radius:6px;color:var(--navy);font-family:inherit;font-size:12px;font-weight:700;letter-spacing:.04em;padding:7px 12px;cursor:pointer;}
+  .nav-lang:hover{border-color:var(--gold);color:var(--gold);}
+  @media(max-width:820px){ .nav .links a.hide-sm{display:none;} }
+
+  .hero{background:linear-gradient(135deg,var(--navy) 0%,var(--navy-mid) 100%);color:#fff;padding:64px 0 72px;}
+  .eyebrow{display:inline-block;background:var(--gold);color:#fff;font-size:11px;font-weight:700;padding:5px 14px;border-radius:20px;letter-spacing:.06em;margin-bottom:18px;}
+  .hero h1{font-family:'Playfair Display',serif;font-size:44px;line-height:1.12;font-weight:800;margin:0 0 16px;max-width:20ch;}
+  .hero p{color:var(--gold-pale);font-size:17px;line-height:1.65;margin:0;max-width:62ch;}
+  @media(max-width:640px){ .hero h1{font-size:32px;} }
+
+  .tool{padding:40px 0 20px;}
+  .controls{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-bottom:24px;}
+  .search{flex:1 1 260px;position:relative;}
+  .search input{width:100%;padding:13px 16px;border:1.5px solid var(--gray-200);border-radius:10px;font-family:inherit;font-size:15px;color:var(--navy);}
+  .search input:focus{outline:none;border-color:var(--gold);}
+  .sevfilter{display:flex;gap:6px;flex-wrap:wrap;}
+  .sevfilter button{font-family:inherit;font-size:12px;font-weight:700;letter-spacing:.03em;padding:9px 13px;border-radius:20px;border:1.5px solid var(--gray-200);background:#fff;color:var(--gray-600);cursor:pointer;}
+  .sevfilter button[aria-pressed="true"]{background:var(--navy);border-color:var(--navy);color:#fff;}
+
+  .layout{display:grid;grid-template-columns:290px 1fr;gap:32px;align-items:start;}
+  @media(max-width:900px){ .layout{grid-template-columns:1fr;} }
+
+  .areas{border:1.5px solid var(--gray-200);border-radius:16px;padding:10px;position:sticky;top:86px;max-height:calc(100vh - 110px);overflow-y:auto;}
+  @media(max-width:900px){ .areas{position:static;max-height:none;} }
+  .areagroup{font-size:11px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--gold);padding:14px 12px 6px;}
+  .areas button{display:block;width:100%;text-align:left;background:none;border:none;font-family:inherit;font-size:14px;color:var(--navy);padding:9px 12px;border-radius:8px;cursor:pointer;line-height:1.35;}
+  .areas button:hover{background:var(--gray-100);}
+  .areas button[aria-current="true"]{background:var(--navy);color:#fff;font-weight:600;}
+  .areas .cnt{float:right;font-size:11px;color:var(--gray-400);font-weight:600;padding-top:2px;}
+  .areas button[aria-current="true"] .cnt{color:var(--gold-light);}
+
+  .panelhead{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:6px;}
+  .panelhead h2{font-family:'Playfair Display',serif;font-size:30px;font-weight:800;margin:0;line-height:1.15;}
+  .panelhead .zone{font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--gold);}
+  .panelsub{color:var(--gray-600);font-size:15px;line-height:1.65;margin:6px 0 22px;max-width:70ch;}
+
+  .std{border:1.5px solid var(--gray-200);border-radius:14px;padding:0;margin-bottom:12px;overflow:hidden;}
+  .std > summary{list-style:none;cursor:pointer;padding:18px 22px;display:flex;align-items:flex-start;gap:12px;}
+  .std > summary::-webkit-details-marker{display:none;}
+  .std > summary:hover{background:var(--gray-100);}
+  .std[open] > summary{background:var(--gray-100);border-bottom:1px solid var(--gray-200);}
+  .std .nm{font-weight:600;font-size:16px;flex:1;line-height:1.4;}
+  .chip{font-size:10px;font-weight:800;letter-spacing:.05em;padding:4px 9px;border-radius:20px;color:#fff;white-space:nowrap;margin-top:2px;}
+  .chip.LT{background:var(--lt);} .chip.SEV{background:var(--sev);} .chip.MOD{background:var(--mod);} .chip.LOW{background:var(--low);}
+  .body{padding:20px 22px 22px;}
+  .body h4{font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--gold);margin:0 0 7px;}
+  .body p{font-size:14.5px;line-height:1.7;color:var(--gray-600);margin:0 0 18px;}
+  .body ul{margin:0 0 18px;padding-left:20px;}
+  .body li{font-size:14.5px;line-height:1.7;color:var(--gray-600);margin-bottom:5px;}
+  .body .fix{background:var(--cream);border-left:3px solid var(--gold);padding:14px 16px;border-radius:0 8px 8px 0;}
+  .body .fix p{margin:0;color:var(--navy);}
+
+  .empty{border:1.5px dashed var(--gray-200);border-radius:14px;padding:40px 24px;text-align:center;color:var(--gray-400);font-size:15px;}
+
+  .cta{background:var(--cream);border-top:1px solid var(--gray-200);padding:72px 0;margin-top:56px;}
+  .cta h2{font-family:'Playfair Display',serif;font-size:32px;font-weight:800;margin:0 0 12px;}
+  .cta p{color:var(--gray-600);font-size:16px;line-height:1.7;margin:0 0 26px;max-width:62ch;}
+  .btn{display:inline-block;background:var(--gold);color:#fff;padding:14px 28px;border-radius:8px;font-weight:700;font-size:15px;text-decoration:none;margin:0 10px 10px 0;}
+  .btn:hover{background:var(--navy);}
+  .btn.alt{background:none;border:1.5px solid var(--navy);color:var(--navy);}
+  .btn.alt:hover{background:var(--navy);color:#fff;}
+
+  .note{font-size:12.5px;color:var(--gray-400);line-height:1.7;border-top:1px solid var(--gray-200);padding-top:20px;margin-top:36px;}
+
+  footer{background:var(--navy);color:rgba(255,255,255,0.75);padding:44px 0;font-size:13.5px;}
+  footer a{color:var(--gold-light);text-decoration:none;}
+  footer a:hover{text-decoration:underline;}
+  .fnav{display:flex;flex-wrap:wrap;gap:18px;margin-top:12px;}
+
+  @media print{
+    header,.cta,footer,.controls,.areas,.nav-lang{display:none !important;}
+    .layout{grid-template-columns:1fr;}
+    .std{break-inside:avoid;border-color:#ccc;}
+    .hero{background:none;color:var(--navy);padding:0 0 20px;}
+    .hero p{color:var(--gray-600);}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container nav">
+    <a class="brand" href="/">
+      <img src="/kendra-logo.png" alt="Kendra REAC Consultant">
+      <span>Kendra REAC</span>
+    </a>
+    <div class="links">
+      <a class="hide-sm" href="/" data-lang="en">Home</a>
+      <a class="hide-sm" href="/" data-lang="es">Inicio</a>
+      <a class="hide-sm" href="/#services" data-lang="en">Services</a>
+      <a class="hide-sm" href="/#services" data-lang="es">Servicios</a>
+      <a href="/#contact" data-lang="en">Contact</a>
+      <a href="/#contact" data-lang="es">Contacto</a>
+      <button type="button" class="nav-lang" id="languageToggle" onclick="toggleLang()" aria-label="Cambiar sitio a español" aria-pressed="false">EN / ES</button>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container">
+    <div class="eyebrow">NSPIRE ROOM COACH &middot; GU&Iacute;A POR HABITACI&Oacute;N</div>
+    <h1 data-lang="en">Walk any room. Know exactly what the inspector will score.</h1>
+    <h1 data-lang="es">Recorra cualquier &aacute;rea. Sepa exactamente qu&eacute; calificar&aacute; el inspector.</h1>
+    <p data-lang="en">Pick a room or building area below. The Coach shows every HUD NSPIRE standard that applies there, what the inspector actually looks at, the deficiencies teams miss most, and how each one scores &mdash; Life-Threatening through Low.</p>
+    <p data-lang="es">Elija un &aacute;rea abajo. La Gu&iacute;a muestra cada norma HUD NSPIRE que aplica, qu&eacute; revisa realmente el inspector, las deficiencias que m&aacute;s se pasan por alto y c&oacute;mo se califica cada una &mdash; de Potencialmente Mortal a Baja.</p>
+  </div>
+</section>
+
+<section class="tool">
+  <div class="container">
+    <div class="controls">
+      <div class="search">
+        <input type="search" id="q" autocomplete="off"
+               data-ph-en="Search a standard — smoke alarm, GFCI, handrail…"
+               data-ph-es="Buscar una norma — detector de humo, GFCI, pasamanos…"
+               placeholder="Search a standard — smoke alarm, GFCI, handrail…"
+               aria-label="Search standards">
+      </div>
+      <div class="sevfilter" id="sevfilter" role="group" aria-label="Filter by severity">
+        <button type="button" data-sev="ALL" aria-pressed="true"><span data-lang="en">All</span><span data-lang="es">Todas</span></button>
+        <button type="button" data-sev="LT" aria-pressed="false"><span data-lang="en">Life-Threatening</span><span data-lang="es">Mortal</span></button>
+        <button type="button" data-sev="SEV" aria-pressed="false"><span data-lang="en">Severe</span><span data-lang="es">Grave</span></button>
+        <button type="button" data-sev="MOD" aria-pressed="false"><span data-lang="en">Moderate</span><span data-lang="es">Moderada</span></button>
+        <button type="button" data-sev="LOW" aria-pressed="false"><span data-lang="en">Low</span><span data-lang="es">Baja</span></button>
+      </div>
+    </div>
+
+    <div class="layout">
+      <nav class="areas" id="areas" aria-label="Inspectable areas"></nav>
+      <div>
+        <div id="panel"></div>
+        <p class="note">
+          <span data-lang="en"><strong>How to use this with your team.</strong> Open the room you are about to walk, switch to Spanish if your crew reads Spanish, and print the page — the print view drops the navigation and expands every standard so it works as a clipboard sheet. Severity and correction windows reflect the NSPIRE framework: Life-Threatening is a 24-hour correction, Severe and Moderate are 30 days, and Low is 60 days. Always confirm against the current HUD NSPIRE Standards notice for your program, which is the controlling document.</span>
+          <span data-lang="es"><strong>C&oacute;mo usarlo con su equipo.</strong> Abra el &aacute;rea que va a recorrer, cambie a espa&ntilde;ol si su personal lee en espa&ntilde;ol, e imprima la p&aacute;gina — la vista de impresi&oacute;n quita la navegaci&oacute;n y expande cada norma para usarla en el portapapeles. La severidad y los plazos siguen el marco NSPIRE: Potencialmente Mortal se corrige en 24 horas, Grave y Moderada en 30 d&iacute;as, y Baja en 60 d&iacute;as. Confirme siempre con el aviso vigente de Normas HUD NSPIRE de su programa, que es el documento que rige.</span>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="container">
+    <h2 data-lang="en">Want your team coached through this in person?</h2>
+    <h2 data-lang="es">&iquest;Quiere que entrenemos a su equipo en persona?</h2>
+    <p data-lang="en">The Room Coach is the free companion to our training materials. Sandra Romero-Negron has been HUD REAC certified since 2009 and writes every manual in Spanish first &mdash; not translated. Bring the Coach to your staff as a printed workbook, a 1-day fundamentals class, or a 2-day hands-on with a live mock inspection.</p>
+    <p data-lang="es">La Gu&iacute;a por Habitaci&oacute;n es el complemento gratuito de nuestros materiales de entrenamiento. Sandra Romero-Negron es inspectora certificada HUD REAC desde 2009 y escribe cada manual directamente en espa&ntilde;ol &mdash; no traducido. Lleve la Gu&iacute;a a su personal como cuaderno impreso, clase de fundamentos de 1 d&iacute;a, o pr&aacute;ctica de 2 d&iacute;as con inspecci&oacute;n simulada en vivo.</p>
+    <a class="btn" href="/#contact" data-lang="en">Request the Training Materials &rarr;</a>
+    <a class="btn" href="/#contact" data-lang="es">Solicitar los Materiales &rarr;</a>
+    <a class="btn alt" href="https://app.reacnspire.com/buy" target="_blank" rel="noopener" data-lang="en">Score real inspections in NspirePro</a>
+    <a class="btn alt" href="https://app.reacnspire.com/buy" target="_blank" rel="noopener" data-lang="es">Califique inspecciones en NspirePro</a>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div>&copy; <span id="yr">2026</span> Kendra REAC Consultant, Inc.</div>
+    <div class="fnav">
+      <a href="/" data-lang="en">Home</a><a href="/" data-lang="es">Inicio</a>
+      <a href="/nspire-2026-changes/">NSPIRE 2026</a>
+      <a href="/reac-vs-nspire/">REAC vs NSPIRE</a>
+      <a href="/spanish-nspire-training/" data-lang="en">Spanish Training</a>
+      <a href="/spanish-nspire-training/" data-lang="es">Entrenamiento</a>
+      <a href="/privacy/">Privacy</a>
+      <a href="/terms/">Terms</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* ──────────────────────────────────────────────────────────────────────────
+   NSPIRE Room Coach — data
+   S  = standards, keyed. sev: LT | SEV | MOD | LOW
+        n = name, c = what the inspector checks, d = common deficiencies,
+        f = prep/fix guidance. Each standard carries full en + es copy.
+   L  = inspectable areas (locations), each listing the standard keys that
+        apply there. Adding an area is data-only — no markup changes.
+   ────────────────────────────────────────────────────────────────────────── */
+var S = {
+
+/* ── FIRE & LIFE SAFETY ─────────────────────────────────────────────── */
+smokeAlarm:{sev:"LT",
+ en:{n:"Smoke Alarm",c:"An approved smoke alarm must be installed, powered, and working in every sleeping room, outside each sleeping area, and on every level of the unit.",d:["Alarm missing, or removed and never reinstalled","Battery pulled out, dead, or chirping","Alarm past its 10-year manufacture date","Painted over, or mounted too close to a supply vent"],f:"Press and hold every test button before inspection day and listen for a full alarm. Check the date stamped on the back of the housing — a unit older than ten years fails even if it sounds."},
+ es:{n:"Detector de Humo",c:"Debe haber un detector de humo aprobado, con energía y funcionando en cada dormitorio, fuera de cada área de dormir, y en cada nivel de la unidad.",d:["Detector faltante, o retirado y nunca reinstalado","Batería removida, agotada o con pitido","Detector con más de 10 años desde su fabricación","Pintado encima, o instalado muy cerca de una rejilla de aire"],f:"Presione y sostenga el botón de prueba de cada detector y escuche la alarma completa. Revise la fecha impresa detrás del detector — más de diez años se reprueba aunque suene."}},
+
+coAlarm:{sev:"LT",
+ en:{n:"Carbon Monoxide Alarm",c:"A CO alarm is required in units with fuel-fired appliances or an attached garage, installed outside each separate sleeping area.",d:["No CO alarm where a gas range, furnace, or water heater is present","Alarm expired — most units have a 5 to 10 year life","Plugged into a switched or dead outlet","Combination smoke/CO unit that only chirps for one function"],f:"Any unit burning gas, oil, propane, or wood needs one. Test with the button and confirm the end-of-life date printed on the shell."},
+ es:{n:"Detector de Monóxido de Carbono",c:"Se requiere un detector de CO en unidades con aparatos que queman combustible o garaje adjunto, instalado fuera de cada área de dormir.",d:["Sin detector de CO donde hay estufa, caldera o calentador de gas","Detector vencido — la mayoría dura de 5 a 10 años","Conectado a un tomacorriente con interruptor o sin corriente","Unidad combinada humo/CO que solo pita para una función"],f:"Toda unidad que queme gas, aceite, propano o leña necesita uno. Pruébelo con el botón y confirme la fecha de vencimiento impresa en la carcasa."}},
+
+fireExtinguisher:{sev:"SEV",
+ en:{n:"Fire Extinguisher",c:"Where extinguishers are required or provided, they must be charged, accessible, unobstructed, and current on inspection tagging.",d:["Gauge reading in the red — discharged or overcharged","Inspection tag missing or more than a year old","Blocked by storage, or removed from its bracket","Pin or tamper seal missing"],f:"Walk every extinguisher, check the gauge needle sits in the green, and confirm the service tag is dated within twelve months."},
+ es:{n:"Extintor de Incendios",c:"Donde se requieran o se provean extintores, deben estar cargados, accesibles, sin obstrucción y con la etiqueta de inspección vigente.",d:["Manómetro en rojo — descargado o sobrecargado","Etiqueta de inspección faltante o de más de un año","Bloqueado por almacenamiento, o fuera de su soporte","Pasador o sello de seguridad faltante"],f:"Revise cada extintor, confirme que la aguja esté en verde, y que la etiqueta de servicio tenga menos de doce meses."}},
+
+fireDoor:{sev:"SEV",
+ en:{n:"Fire-Rated Door",c:"Fire-labeled doors must self-close, latch fully, and keep their label and rated hardware intact.",d:["Door propped, wedged, or held open with a hook","Fails to latch — closer too weak or strike misaligned","Label painted over, removed, or illegible","Holes cut through the door, or a non-rated vision panel installed"],f:"Open each rated door fully, release it, and confirm it swings shut and latches on its own without a push. Remove every wedge and prop before inspection day."},
+ es:{n:"Puerta con Clasificación de Fuego",c:"Las puertas clasificadas deben cerrarse solas, enganchar completamente, y conservar su etiqueta y herrajes clasificados.",d:["Puerta trabada, con cuña, o sostenida abierta con un gancho","No engancha — cierrapuertas débil o cerradero desalineado","Etiqueta pintada, removida o ilegible","Agujeros cortados en la puerta, o ventanilla no clasificada instalada"],f:"Abra cada puerta clasificada por completo, suéltela, y confirme que cierra y engancha sola sin empujarla. Quite toda cuña antes del día de inspección."}},
+
+egress:{sev:"LT",
+ en:{n:"Egress / Means of Escape",c:"Every unit and common path needs a clear, unobstructed route to the outside that opens without a key, tool, or special knowledge.",d:["Double-keyed deadbolt on an exit door","Exit path blocked by stored furniture, bikes, or boxes","Security bars on a bedroom window with no quick release","Exit door nailed, screwed, or painted shut"],f:"Walk the escape path from the farthest bedroom to the street. Anything you have to move, unlock with a key, or squeeze past is a finding."},
+ es:{n:"Salida de Emergencia",c:"Cada unidad y pasillo común necesita una ruta libre y sin obstrucciones hacia el exterior que abra sin llave, herramienta ni conocimiento especial.",d:["Cerrojo de doble llave en una puerta de salida","Ruta de salida bloqueada por muebles, bicicletas o cajas","Rejas de seguridad en ventana de dormitorio sin liberación rápida","Puerta de salida clavada, atornillada o sellada con pintura"],f:"Recorra la ruta de escape desde el dormitorio más lejano hasta la calle. Todo lo que deba mover, abrir con llave o esquivar es un hallazgo."}},
+
+auxLighting:{sev:"SEV",
+ en:{n:"Auxiliary / Emergency Lighting",c:"Emergency lighting and illuminated exit signs in common areas must activate on loss of power and stay lit for the required duration.",d:["Test button produces nothing — battery failed","Exit sign lamps burned out or the sign is dark","Fixture missing from a required stair or corridor location","Heads aimed at a wall instead of the egress path"],f:"Hold the test button on every emergency fixture for thirty seconds. A head that dims immediately has a dead battery and will fail."},
+ es:{n:"Iluminación de Emergencia",c:"La iluminación de emergencia y los letreros de salida iluminados en áreas comunes deben activarse al perder energía y permanecer encendidos el tiempo requerido.",d:["El botón de prueba no hace nada — batería agotada","Lámparas del letrero de salida quemadas o el letrero apagado","Falta la luminaria en una escalera o pasillo requerido","Cabezales apuntando a la pared en vez de la ruta de salida"],f:"Sostenga el botón de prueba de cada luminaria por treinta segundos. Un cabezal que se atenúa de inmediato tiene la batería muerta y se reprueba."}},
+
+callForAid:{sev:"SEV",
+ en:{n:"Call-for-Aid System",c:"Where a call-for-aid system is installed — common in elderly and accessible units — pull cords and buttons must be present, reachable, and functional.",d:["Pull cord cut short, tied up, or missing entirely","Station does not signal when activated","Cord looped over a grab bar out of reach from the floor","Panel or annunciator disabled to stop nuisance alarms"],f:"The cord has to reach a resident who has fallen — within about four inches of the floor. Activate each station and confirm the signal registers where staff will see it."},
+ es:{n:"Sistema de Llamada de Auxilio",c:"Donde exista un sistema de llamada de auxilio — común en unidades para adultos mayores y accesibles — los cordones y botones deben estar presentes, al alcance y funcionando.",d:["Cordón cortado, amarrado o completamente ausente","La estación no envía señal al activarse","Cordón enrollado sobre una barra fuera del alcance desde el piso","Panel o anunciador desactivado para evitar falsas alarmas"],f:"El cordón debe alcanzar a un residente caído — a unas cuatro pulgadas del piso. Active cada estación y confirme que la señal llegue donde el personal la vea."}},
+
+flammable:{sev:"SEV",
+ en:{n:"Flammable &amp; Combustible Storage",c:"Flammable liquids, gases, and combustible accumulation must not be stored near ignition sources or in egress paths and mechanical rooms.",d:["Gasoline, paint thinner, or propane stored indoors","Cardboard and paper stacked against a water heater or furnace","Storage in an electrical or boiler room","Cleaning chemicals stored on top of a gas appliance"],f:"Clear a three-foot radius around every water heater, furnace, and electrical panel. Nothing combustible belongs in a mechanical or electrical room."},
+ es:{n:"Almacenamiento de Inflamables",c:"Líquidos y gases inflamables, y acumulación de combustibles, no deben almacenarse cerca de fuentes de ignición ni en rutas de salida y cuartos mecánicos.",d:["Gasolina, disolvente o propano almacenados adentro","Cartón y papel apilados contra el calentador de agua o la caldera","Almacenamiento en cuarto eléctrico o de calderas","Químicos de limpieza sobre un aparato de gas"],f:"Despeje un radio de tres pies alrededor de cada calentador, caldera y panel eléctrico. Nada combustible pertenece a un cuarto mecánico o eléctrico."}},
+
+sprinkler:{sev:"SEV",
+ en:{n:"Sprinkler System",c:"Where sprinklers are installed, heads must be unobstructed, undamaged, unpainted, and have the required clearance below them.",d:["Head painted over during a unit turn","Storage stacked within 18 inches of a head","Escutcheon plate missing, leaving a gap at the ceiling","Corroded or physically damaged head, or a missing head in a closet"],f:"Look up in every closet and storage room. A painted head is one of the most common turn-related findings and cannot be cleaned — it must be replaced."},
+ es:{n:"Sistema de Rociadores",c:"Donde haya rociadores, los cabezales deben estar libres, sin daño, sin pintura, y con el espacio libre requerido debajo.",d:["Cabezal pintado durante la preparación de la unidad","Almacenamiento a menos de 18 pulgadas de un cabezal","Falta el embellecedor, dejando un hueco en el techo","Cabezal corroído o dañado, o faltante en un clóset"],f:"Mire hacia arriba en cada clóset y cuarto de almacenamiento. Un cabezal pintado es de los hallazgos más comunes y no se limpia — hay que reemplazarlo."}},
+
+/* ── ELECTRICAL ─────────────────────────────────────────────────────── */
+panelboard:{sev:"LT",
+ en:{n:"Electrical Distribution Panel",c:"Panelboards must be closed, labeled, free of open knockouts, and have 30 inches of clear working space in front.",d:["Missing breaker filler plates leaving open slots","Panel cover missing or hanging loose","Storage stacked against the panel blocking access","Double-tapped breakers or unlabeled circuits"],f:"Every empty breaker slot needs a filler plate — an open slot exposes energized parts and scores as life-threatening. Clear the floor in front of the panel."},
+ es:{n:"Panel Eléctrico de Distribución",c:"Los paneles deben estar cerrados, rotulados, sin aberturas, y con 30 pulgadas de espacio libre al frente.",d:["Faltan tapas de relleno dejando ranuras abiertas","Tapa del panel faltante o suelta","Almacenamiento contra el panel bloqueando el acceso","Interruptores con doble cable o circuitos sin rotular"],f:"Cada ranura vacía necesita su tapa — una abertura expone partes energizadas y califica como potencialmente mortal. Despeje el piso frente al panel."}},
+
+conductor:{sev:"LT",
+ en:{n:"Electrical Conductor",c:"Conductors must be properly sized, supported, insulated, and terminated inside an approved enclosure.",d:["Extension cord used as permanent wiring","Wire nuts and splices outside a junction box","Damaged or brittle insulation showing copper","Romex run exposed across a wall or ceiling surface"],f:"Any splice has to live inside a covered box. Extension cords running through walls, above ceilings, or under carpet are permanent wiring and score accordingly."},
+ es:{n:"Conductor Eléctrico",c:"Los conductores deben tener el calibre correcto, estar sujetados, aislados y terminados dentro de una caja aprobada.",d:["Extensión eléctrica usada como cableado permanente","Empalmes fuera de una caja de conexiones","Aislamiento dañado o quebradizo mostrando cobre","Cable expuesto corriendo sobre pared o techo"],f:"Todo empalme debe estar dentro de una caja con tapa. Las extensiones que cruzan paredes, techos o van bajo la alfombra son cableado permanente y se califican como tal."}},
+
+exposedWiring:{sev:"LT",
+ en:{n:"Exposed / Damaged Wiring",c:"No energized conductor, terminal, or splice may be accessible to touch.",d:["Open junction box with no cover","Light fixture removed leaving bare leads hanging","Broken outlet or switch with the yoke exposed","Chewed or crushed cable behind an appliance"],f:"Cover plates and box covers are cheap and this is the single most common life-threatening call. Walk every room looking for anything open."},
+ es:{n:"Cableado Expuesto o Dañado",c:"Ningún conductor, terminal o empalme energizado puede quedar accesible al tacto.",d:["Caja de conexiones abierta sin tapa","Luminaria retirada dejando cables desnudos colgando","Tomacorriente o interruptor roto con partes expuestas","Cable mordido o aplastado detrás de un electrodoméstico"],f:"Las tapas son baratas y este es el hallazgo mortal más común. Recorra cada cuarto buscando cualquier cosa abierta."}},
+
+gfci:{sev:"SEV",
+ en:{n:"GFCI / AFCI Protection",c:"Ground-fault protection is required at receptacles serving kitchens, bathrooms, laundry, garages, exteriors, and anywhere near water.",d:["Standard receptacle where GFCI protection is required","GFCI will not trip when the test button is pressed","Device trips but will not reset","Reversed line and load wiring so downstream outlets are unprotected"],f:"Press test then reset on every GFCI. A device that will not trip is failed protection even though the outlet still delivers power — a plug-in tester catches this in seconds."},
+ es:{n:"Protección GFCI / AFCI",c:"Se requiere protección contra falla a tierra en tomacorrientes de cocinas, baños, lavandería, garajes, exteriores y cerca del agua.",d:["Tomacorriente estándar donde se requiere GFCI","El GFCI no se dispara al presionar el botón de prueba","El dispositivo se dispara pero no se restablece","Cableado invertido dejando sin protección los tomacorrientes siguientes"],f:"Presione prueba y luego restablecer en cada GFCI. Un dispositivo que no se dispara es protección fallida aunque el tomacorriente dé corriente — un probador lo detecta en segundos."}},
+
+outletSwitch:{sev:"SEV",
+ en:{n:"Receptacle &amp; Switch",c:"Outlets and switches must be secure, undamaged, correctly wired, and deliver power as intended.",d:["Outlet loose in the wall or pulling out of the box","Cracked or burned face, scorch marks around the slots","Open ground or reversed polarity","Dead outlet with no power at all"],f:"A three-dollar plug-in tester checks polarity, ground, and GFCI in one pass. Test every outlet in the unit, not a sample."},
+ es:{n:"Tomacorriente e Interruptor",c:"Tomacorrientes e interruptores deben estar firmes, sin daño, bien cableados y entregar corriente.",d:["Tomacorriente flojo o saliéndose de la caja","Cara agrietada o quemada, marcas de calor alrededor","Sin tierra o polaridad invertida","Tomacorriente muerto sin corriente"],f:"Un probador de enchufe de tres dólares revisa polaridad, tierra y GFCI de una vez. Pruebe todos los tomacorrientes, no una muestra."}},
+
+coverPlate:{sev:"MOD",
+ en:{n:"Cover Plate",c:"Every outlet, switch, and junction box needs an intact cover plate securely fastened.",d:["Plate missing after painting and never replaced","Cracked or broken plate with a gap","Plate present but loose or missing its screw","Oversized gap between plate and wall board"],f:"This is the cheapest deficiency on the list to clear. Buy a box of plates and walk the unit before the inspector does."},
+ es:{n:"Tapa de Tomacorriente",c:"Cada tomacorriente, interruptor y caja de conexiones necesita una tapa intacta y bien asegurada.",d:["Tapa faltante después de pintar y nunca repuesta","Tapa agrietada o rota con hueco","Tapa presente pero floja o sin tornillo","Hueco grande entre la tapa y la pared"],f:"Es la deficiencia más barata de corregir. Compre una caja de tapas y recorra la unidad antes que el inspector."}},
+
+serviceEquipment:{sev:"LT",
+ en:{n:"Electrical Service Equipment",c:"Meter bases, service entrance conductors, and disconnects must be intact, weatherproof, and securely mounted.",d:["Meter base pulling away from the wall","Missing cover on the service disconnect","Frayed or exposed service entrance cable","Corroded enclosure with water intrusion"],f:"This is utility-adjacent work — schedule a licensed electrician early, since these repairs often need a power drop coordinated with the utility."},
+ es:{n:"Equipo de Acometida Eléctrica",c:"Las bases de medidor, conductores de acometida y desconectadores deben estar íntegros, a prueba de intemperie y bien montados.",d:["Base del medidor separándose de la pared","Falta la tapa del desconectador principal","Cable de acometida deshilachado o expuesto","Gabinete corroído con entrada de agua"],f:"Este trabajo involucra a la utilidad — programe un electricista con licencia temprano, ya que suele requerir coordinar un corte de energía."}},
+
+lighting:{sev:"MOD",
+ en:{n:"Lighting &amp; Fixtures",c:"Permanent lighting must be present and operable where required, with fixtures intact and lamps working.",d:["Burned-out lamp in a required fixture","Globe or diffuser missing, leaving the lamp exposed","Fixture hanging loose from its ceiling box","No permanent light source in a bathroom or kitchen"],f:"Replace every dead lamp the week of the inspection and confirm each fixture is secure to its box, not just hanging by the wires."},
+ es:{n:"Iluminación y Luminarias",c:"Debe haber iluminación permanente operable donde se requiera, con luminarias íntegras y bombillas funcionando.",d:["Bombilla quemada en una luminaria requerida","Globo o difusor faltante, dejando la bombilla expuesta","Luminaria colgando suelta de su caja de techo","Sin luz permanente en un baño o cocina"],f:"Cambie cada bombilla quemada la semana de la inspección y confirme que cada luminaria esté firme a su caja, no colgando de los cables."}},
+
+/* ── PLUMBING & WATER ───────────────────────────────────────────────── */
+waterSupply:{sev:"SEV",
+ en:{n:"Water Supply Line",c:"Supply piping must be intact, secured, and free of leaks, with adequate pressure at every fixture.",d:["Active drip or spray at a supply connection","Corroded or previously patched pipe","Weak flow or no hot water at a fixture","Unsupported pipe vibrating in the wall"],f:"Run every fixture for a full minute and look underneath while it runs. A slow drip that only shows under pressure is the one crews miss."},
+ es:{n:"Línea de Suministro de Agua",c:"La tubería de suministro debe estar íntegra, sujetada y sin fugas, con presión adecuada en cada accesorio.",d:["Goteo o rociado activo en una conexión de suministro","Tubería corroída o parchada previamente","Flujo débil o sin agua caliente en un accesorio","Tubería sin soporte vibrando en la pared"],f:"Deje correr cada accesorio un minuto completo y mire debajo mientras corre. Un goteo lento que solo aparece con presión es el que se escapa."}},
+
+drainWaste:{sev:"SEV",
+ en:{n:"Drain, Waste &amp; Vent",c:"Drain lines must carry waste away without leaking, backing up, or venting sewer gas into the living space.",d:["Standing water in a tub or sink that will not clear","Leak at a P-trap or slip joint under the cabinet","Missing trap allowing sewer odor into the room","Sewage backing up into a fixture or floor drain"],f:"Fill each basin and release it — a drain that empties slowly under a full load will fail even if a trickle runs fine. Sewage backup escalates to life-threatening."},
+ es:{n:"Drenaje, Desagüe y Ventilación",c:"Las líneas de drenaje deben conducir los desechos sin fugas, sin retroceso y sin permitir gas de alcantarilla en el espacio habitable.",d:["Agua estancada en tina o lavamanos que no drena","Fuga en el sifón o junta bajo el gabinete","Sifón faltante permitiendo olor de alcantarilla","Aguas negras retrocediendo a un accesorio o drenaje de piso"],f:"Llene cada lavamanos y suéltelo — un drenaje lento con carga completa se reprueba aunque un chorrito pase bien. El retroceso de aguas negras sube a potencialmente mortal."}},
+
+waterLeak:{sev:"MOD",
+ en:{n:"Water Leak &amp; Damage",c:"No active leak or resulting water damage may be present on ceilings, walls, floors, or around fixtures.",d:["Active drip staining a ceiling below a bathroom","Soft or spongy subfloor around a toilet base","Bubbled paint or swollen drywall at a wall base","Water pooling under a sink cabinet"],f:"Find the source before you patch the stain — an inspector who sees fresh paint over a wet ceiling will look for the leak, and repainting alone does not clear the finding."},
+ es:{n:"Fuga y Daño por Agua",c:"No debe haber fugas activas ni daño por agua en techos, paredes, pisos o alrededor de accesorios.",d:["Goteo activo manchando el techo bajo un baño","Subpiso blando o esponjoso alrededor del inodoro","Pintura burbujeada o panel de yeso hinchado en la base de la pared","Agua acumulada bajo el gabinete del fregadero"],f:"Encuentre la fuente antes de tapar la mancha — un inspector que vea pintura fresca sobre un techo mojado buscará la fuga, y pintar solo no elimina el hallazgo."}},
+
+potableWater:{sev:"LT",
+ en:{n:"Potable Water",c:"Safe drinking water must be available and protected from contamination or cross-connection.",d:["No running water to the unit","Cross-connection or missing backflow preventer","Hose bib without a vacuum breaker","Discolored or foul-smelling water at the tap"],f:"Every exterior hose bib needs an anti-siphon device. Loss of potable water to an occupied unit is an immediate 24-hour item."},
+ es:{n:"Agua Potable",c:"Debe haber agua potable segura, protegida de contaminación o conexión cruzada.",d:["Sin agua corriente en la unidad","Conexión cruzada o falta de válvula antirretorno","Llave de manguera sin rompevacío","Agua descolorida o con mal olor en el grifo"],f:"Toda llave de manguera exterior necesita un dispositivo antisifón. La pérdida de agua potable en una unidad ocupada es un asunto inmediato de 24 horas."}},
+
+toilet:{sev:"SEV",
+ en:{n:"Toilet",c:"Each unit needs at least one working toilet, securely mounted, flushing properly and sealed to the floor.",d:["Toilet rocks or is loose at the flange","Continuous run or will not flush","Cracked tank or bowl","Missing or broken seat, or a gap at the floor seal"],f:"Grip the bowl and try to rock it. Any movement means a failed wax ring and a floor that is likely damaged underneath."},
+ es:{n:"Inodoro",c:"Cada unidad necesita al menos un inodoro funcional, bien montado, que descargue correctamente y sellado al piso.",d:["El inodoro se mueve o está flojo en la brida","Corre continuamente o no descarga","Tanque o taza agrietados","Asiento faltante o roto, o hueco en el sello del piso"],f:"Sujete la taza e intente moverla. Cualquier movimiento indica un sello de cera fallido y un piso probablemente dañado debajo."}},
+
+lavatory:{sev:"SEV",
+ en:{n:"Bathroom Sink / Lavatory",c:"The lavatory must be present, secured, draining, and supplied with both hot and cold water.",d:["Basin cracked or chipped through the glaze","No hot water, or scalding water with no temper","Faucet loose at the deck or dripping constantly","Sink pulling away from the wall"],f:"Hot water should arrive within a reasonable wait and not exceed a safe temperature. Check the mounting — a wall-hung basin working loose is a common find."},
+ es:{n:"Lavamanos del Baño",c:"El lavamanos debe estar presente, asegurado, drenando y con agua caliente y fría.",d:["Lavamanos agrietado o desportillado atravesando el esmalte","Sin agua caliente, o agua hirviendo sin regulación","Grifo flojo en la base o goteando constantemente","Lavamanos separándose de la pared"],f:"El agua caliente debe llegar en una espera razonable y no exceder una temperatura segura. Revise el montaje — un lavamanos de pared soltándose es hallazgo común."}},
+
+tubShower:{sev:"MOD",
+ en:{n:"Bathtub &amp; Shower",c:"Tub and shower surfaces, drains, and surrounds must be intact, sealed, and free of deterioration.",d:["Missing or moldy caulk at the tub-to-wall joint","Cracked or spalling tub surface","Loose or missing surround tile letting water behind","Shower diverter or valve that will not hold"],f:"Re-caulk the tub joint the week before inspection. Open joints let water into the wall and turn a Low finding into structural damage."},
+ es:{n:"Tina y Ducha",c:"Las superficies, drenajes y recubrimientos de tina y ducha deben estar íntegros, sellados y sin deterioro.",d:["Sellador faltante o con moho en la unión tina-pared","Superficie de tina agrietada o descascarada","Azulejo suelto o faltante dejando pasar agua","Desviador o válvula de ducha que no sostiene"],f:"Vuelva a sellar la unión de la tina la semana antes de la inspección. Las juntas abiertas meten agua a la pared y convierten un hallazgo bajo en daño estructural."}},
+
+kitchenSink:{sev:"SEV",
+ en:{n:"Kitchen Sink",c:"A working kitchen sink with hot and cold water and a functioning drain is required.",d:["No hot water at the kitchen tap","Leak at the drain or supply under the cabinet","Basin cracked or the finish worn through","Faucet loose, or sprayer hose split"],f:"Open the cabinet, run the water, and put your hand on every joint. Cabinet-floor staining is the tell for a leak that only shows under flow."},
+ es:{n:"Fregadero de Cocina",c:"Se requiere un fregadero funcional con agua caliente y fría y drenaje operativo.",d:["Sin agua caliente en el grifo de la cocina","Fuga en el drenaje o suministro bajo el gabinete","Fregadero agrietado o con el acabado gastado","Grifo flojo, o manguera del rociador partida"],f:"Abra el gabinete, deje correr el agua y toque cada junta. Una mancha en el piso del gabinete delata una fuga que solo aparece con flujo."}},
+
+waterHeaterTPR:{sev:"LT",
+ en:{n:"Water Heater — Relief Valve &amp; Discharge",c:"The temperature and pressure relief valve must be present with a properly routed discharge pipe.",d:["No discharge pipe on the T&amp;P valve","Discharge pipe terminating more than six inches above the floor","Pipe reduced in diameter, threaded on the end, or turned upward","Valve capped, plugged, or visibly corroded"],f:"The discharge line must run downward, full size, and stop within six inches of the floor. A capped or missing discharge is one of the fastest life-threatening calls an inspector makes."},
+ es:{n:"Calentador — Válvula de Alivio y Descarga",c:"La válvula de alivio de temperatura y presión debe existir con tubo de descarga correctamente dirigido.",d:["Sin tubo de descarga en la válvula T y P","Tubo de descarga terminando a más de seis pulgadas del piso","Tubo reducido de diámetro, roscado en la punta, o dirigido hacia arriba","Válvula tapada, obstruida o visiblemente corroída"],f:"La línea de descarga debe ir hacia abajo, del mismo diámetro, y terminar a seis pulgadas del piso. Una descarga tapada o faltante es de las llamadas mortales más rápidas del inspector."}},
+
+waterHeaterVent:{sev:"LT",
+ en:{n:"Water Heater — Venting &amp; Combustion Air",c:"Fuel-fired water heaters need intact venting, proper draft, and adequate combustion air.",d:["Flue disconnected or separated at a joint","Vent pipe sloping downward toward the heater","Scorching or soot at the draft hood","Closet with no combustion air opening"],f:"Hold a lit match near the draft hood while the burner runs — smoke pulled in means good draft, smoke pushed out means spillage and a 24-hour item."},
+ es:{n:"Calentador — Ventilación y Aire de Combustión",c:"Los calentadores que queman combustible necesitan ventilación íntegra, tiro adecuado y suficiente aire de combustión.",d:["Chimenea desconectada o separada en una junta","Tubo de ventilación inclinado hacia abajo hacia el calentador","Quemaduras u hollín en la campana de tiro","Clóset sin abertura de aire de combustión"],f:"Acerque un fósforo encendido a la campana de tiro con el quemador prendido — si el humo entra, hay buen tiro; si sale, hay derrame y es asunto de 24 horas."}},
+
+/* ── GAS & MECHANICAL ───────────────────────────────────────────────── */
+gasLeak:{sev:"LT",
+ en:{n:"Gas / Fuel Leak",c:"No detectable gas or fuel oil leak may exist at any pipe, fitting, valve, or appliance connection.",d:["Gas odor at a range, dryer, or heater connection","Uncapped gas line left after an appliance was removed","Flexible connector run through a wall or cabinet","Corroded black pipe or a dripping oil line"],f:"Soap-test every joint you have disturbed. An uncapped line where a stove used to sit is a frequent and immediate failure."},
+ es:{n:"Fuga de Gas o Combustible",c:"No debe existir fuga detectable de gas o aceite en ninguna tubería, accesorio, válvula o conexión de aparato.",d:["Olor a gas en la conexión de estufa, secadora o calentador","Línea de gas sin tapar tras retirar un aparato","Conector flexible pasando por una pared o gabinete","Tubería negra corroída o línea de aceite goteando"],f:"Pruebe con agua jabonosa cada junta que haya movido. Una línea sin tapar donde estaba la estufa es una falla frecuente e inmediata."}},
+
+heating:{sev:"LT",
+ en:{n:"Heating System",c:"Permanent heating must be present and capable of maintaining a safe temperature in every habitable room during heating season.",d:["No heat, or the system will not fire","Habitable room with no heat source at all","Unvented portable or open-flame heater in use","Thermostat disconnected or inoperable"],f:"Test heat before cold weather, not during. A unit with no heat in season is a 24-hour item, and parts lead times are the usual reason a property misses the window."},
+ es:{n:"Sistema de Calefacción",c:"Debe haber calefacción permanente capaz de mantener una temperatura segura en cada cuarto habitable durante la temporada.",d:["Sin calefacción, o el sistema no enciende","Cuarto habitable sin ninguna fuente de calor","Calentador portátil sin ventilación o de llama abierta en uso","Termostato desconectado o inoperante"],f:"Pruebe la calefacción antes del frío, no durante. Una unidad sin calor en temporada es asunto de 24 horas, y la espera de piezas es la razón usual por la que se incumple el plazo."}},
+
+cooling:{sev:"MOD",
+ en:{n:"Cooling System",c:"Where cooling is provided or required by program or lease, it must be present and operable.",d:["Unit will not cool or the compressor does not start","Condensate line clogged and overflowing","Window unit unsecured or blocking required egress","Missing or filthy filter restricting airflow"],f:"Where a window unit sits in a bedroom, confirm it does not obstruct the escape opening — that turns a Moderate cooling item into an egress finding."},
+ es:{n:"Sistema de Enfriamiento",c:"Donde se provea o se requiera enfriamiento por programa o contrato, debe existir y funcionar.",d:["La unidad no enfría o el compresor no arranca","Línea de condensado tapada y desbordando","Unidad de ventana suelta o bloqueando la salida requerida","Filtro faltante o muy sucio restringiendo el aire"],f:"Donde haya una unidad de ventana en un dormitorio, confirme que no obstruya la abertura de escape — eso convierte un asunto moderado en un hallazgo de salida."}},
+
+hvacVent:{sev:"LT",
+ en:{n:"HVAC Venting &amp; Flue",c:"Combustion appliances must vent completely to the outside with intact, correctly pitched flue piping.",d:["Disconnected or rusted-through flue section","Flue terminating in an attic or crawlspace","Backdrafting with visible soot at the appliance","Single-wall vent pipe passing through combustible framing"],f:"Trace the flue from the appliance all the way outside. A separated joint above a ceiling is invisible from the floor and is a common life-threatening miss."},
+ es:{n:"Ventilación y Chimenea del HVAC",c:"Los aparatos de combustión deben ventilar completamente al exterior con tubería íntegra y con la inclinación correcta.",d:["Sección de chimenea desconectada u oxidada","Chimenea terminando en un ático o entrepiso","Contratiro con hollín visible en el aparato","Tubo de pared sencilla atravesando estructura combustible"],f:"Siga la chimenea desde el aparato hasta el exterior. Una junta separada sobre el cielo raso es invisible desde el piso y es un descuido mortal común."}},
+
+chimney:{sev:"SEV",
+ en:{n:"Chimney",c:"Chimneys must be structurally sound, properly capped, and clear of obstruction.",d:["Loose, missing, or spalling masonry and crown cracks","Cap or spark arrestor missing","Flue liner cracked, or the flue blocked by a nest","Chimney leaning or separating from the wall"],f:"Look at the crown and cap from the ground with binoculars before the inspection. Leaning masonry escalates into a structural call."},
+ es:{n:"Chimenea",c:"Las chimeneas deben estar estructuralmente firmes, con tapa adecuada y libres de obstrucción.",d:["Mampostería suelta, faltante o descascarada y grietas en la corona","Tapa o apagachispas faltante","Forro agrietado, o conducto bloqueado por un nido","Chimenea inclinada o separándose de la pared"],f:"Observe la corona y la tapa desde el suelo con binoculares antes de la inspección. La mampostería inclinada escala a un hallazgo estructural."}},
+
+dryerExhaust:{sev:"SEV",
+ en:{n:"Clothes Dryer Exhaust",c:"Dryers must exhaust to the exterior through an intact, unobstructed, non-combustible duct.",d:["Dryer venting into the unit, a crawlspace, or an attic","Crushed or disconnected duct behind the machine","Vinyl or foil accordion duct in place of rigid metal","Exterior damper stuck shut or packed with lint"],f:"Pull the dryer out and look. Lint packed in a flexible duct behind a machine is both a fire load and a failed exhaust path."},
+ es:{n:"Escape de la Secadora",c:"Las secadoras deben ventilar al exterior por un ducto íntegro, sin obstrucción y no combustible.",d:["Secadora ventilando adentro, a un entrepiso o al ático","Ducto aplastado o desconectado detrás de la máquina","Ducto de vinilo o aluminio flexible en vez de metal rígido","Compuerta exterior atascada o llena de pelusa"],f:"Saque la secadora y mire. La pelusa acumulada en un ducto flexible es carga de fuego y una ruta de escape fallida a la vez."}},
+
+ventilation:{sev:"MOD",
+ en:{n:"Ventilation",c:"Bathrooms and kitchens need working mechanical ventilation or an operable window to the exterior.",d:["Exhaust fan runs but moves no air","Fan ducted into the attic instead of outside","No fan and no operable window in a bathroom","Grille packed with dust and lint"],f:"Hold a tissue to the grille — if it does not hold, the fan is not moving air regardless of the noise it makes."},
+ es:{n:"Ventilación",c:"Baños y cocinas necesitan ventilación mecánica funcional o una ventana operable al exterior.",d:["El extractor gira pero no mueve aire","Extractor ventilando al ático en vez del exterior","Sin extractor y sin ventana operable en un baño","Rejilla saturada de polvo y pelusa"],f:"Sostenga un pañuelo en la rejilla — si no se pega, el extractor no mueve aire por más ruido que haga."}},
+
+/* ── KITCHEN & APPLIANCES ───────────────────────────────────────────── */
+cookingAppliance:{sev:"SEV",
+ en:{n:"Cooking Appliance",c:"A working range or cooktop with all burners and a functioning oven must be present where the unit is expected to provide one.",d:["Burner or oven element that will not heat","Missing knobs, or a door that will not seal","Excessive grease buildup creating a fire load","Range not secured with an anti-tip bracket"],f:"Run every burner and the oven together. The anti-tip bracket is the item crews forget after a stove swap and it is easy for an inspector to test."},
+ es:{n:"Aparato de Cocción",c:"Debe haber una estufa funcional con todas las hornillas y un horno operativo donde la unidad deba proveerla.",d:["Hornilla o resistencia del horno que no calienta","Perillas faltantes, o puerta que no cierra","Acumulación excesiva de grasa creando carga de fuego","Estufa sin soporte antivuelco"],f:"Encienda todas las hornillas y el horno a la vez. El soporte antivuelco es lo que se olvida tras cambiar una estufa y el inspector lo prueba fácilmente."}},
+
+refrigerator:{sev:"SEV",
+ en:{n:"Refrigerator",c:"Where provided, the refrigerator must cool to a safe food-storage temperature with intact seals and shelving.",d:["Not cooling, or freezer heavily iced over","Door gasket torn so the door will not seal","Missing shelves or crisper drawers","Interior damage or persistent odor"],f:"Put a thermometer inside the day before. Safe storage is at or below 40°F in the fresh compartment and 0°F in the freezer."},
+ es:{n:"Refrigerador",c:"Donde se provea, el refrigerador debe enfriar a temperatura segura de almacenamiento, con sellos y estantes íntegros.",d:["No enfría, o congelador con exceso de hielo","Empaque de puerta roto que impide el sellado","Estantes o gavetas faltantes","Daño interior u olor persistente"],f:"Coloque un termómetro adentro el día anterior. El almacenamiento seguro es a 40°F o menos en el refrigerador y 0°F en el congelador."}},
+
+cabinets:{sev:"LOW",
+ en:{n:"Cabinets, Counters &amp; Food Prep Surface",c:"Storage and food preparation surfaces must be present, secure, and cleanable.",d:["Cabinet door or drawer front missing or hanging","Countertop delaminating or with an open seam at the sink","Shelf collapsed or water-swollen","Cabinet pulling away from the wall"],f:"An open seam at the sink edge lets water into the substrate. Re-caulk and re-anchor loose boxes — this is low-scoring but easy to clear entirely."},
+ es:{n:"Gabinetes, Mostradores y Superficie de Preparación",c:"Las superficies de almacenamiento y preparación de alimentos deben existir, estar firmes y ser lavables.",d:["Puerta o frente de gaveta faltante o colgando","Mostrador despegándose o con junta abierta en el fregadero","Estante colapsado o hinchado por agua","Gabinete separándose de la pared"],f:"Una junta abierta junto al fregadero mete agua al material. Selle y reancle los gabinetes sueltos — puntúa bajo pero se elimina por completo con poco esfuerzo."}},
+
+/* ── HEALTH & SANITATION ────────────────────────────────────────────── */
+mold:{sev:"SEV",
+ en:{n:"Mold-Like Substance",c:"Visible mold-like growth and the moisture source feeding it are both cited.",d:["Growth on bathroom ceilings, window returns, or wall bases","Musty odor with staining behind furniture","Growth in a closet on an exterior wall","Damp basement or crawlspace with visible surface growth"],f:"Cleaning the surface without fixing the moisture guarantees a repeat finding. Correct the leak or ventilation deficiency first, then remediate."},
+ es:{n:"Sustancia Similar a Moho",c:"Se cita tanto el crecimiento visible similar a moho como la fuente de humedad que lo alimenta.",d:["Crecimiento en techos de baño, marcos de ventana o base de paredes","Olor a humedad con manchas detrás de los muebles","Crecimiento en un clóset sobre pared exterior","Sótano o entrepiso húmedo con crecimiento visible"],f:"Limpiar la superficie sin corregir la humedad garantiza que el hallazgo vuelva. Corrija primero la fuga o la ventilación, luego remedie."}},
+
+insects:{sev:"SEV",
+ en:{n:"Infestation — Insects",c:"Evidence of roaches, bed bugs, or other insect infestation is cited on observed evidence, not on resident report alone.",d:["Live roaches or egg casings in cabinets and under sinks","Bed bug evidence at mattress seams and headboards","Heavy fly or gnat activity at a drain","Visible droppings or shed skins"],f:"Keep dated pest-control service records on site. Evidence in a common area escalates faster than the same evidence inside a single unit."},
+ es:{n:"Infestación — Insectos",c:"La evidencia de cucarachas, chinches u otros insectos se cita por evidencia observada, no solo por reporte del residente.",d:["Cucarachas vivas o cápsulas de huevos en gabinetes y bajo fregaderos","Evidencia de chinches en costuras de colchón y cabeceras","Actividad fuerte de moscas o mosquitos en un drenaje","Excremento visible o mudas de piel"],f:"Mantenga registros fechados del control de plagas en el sitio. La evidencia en área común escala más rápido que la misma evidencia dentro de una unidad."}},
+
+rodents:{sev:"SEV",
+ en:{n:"Infestation — Rodents",c:"Rodent evidence and the entry points allowing access are both inspectable.",d:["Droppings under sinks, in cabinets, or along baseboards","Gnawed packaging, pipes, or wiring","Unsealed gaps at pipe penetrations and door sweeps","Burrows or runways along the foundation"],f:"Seal penetrations with material a rodent cannot chew — steel wool and sealant, not foam alone. Traps without exclusion do not clear the finding."},
+ es:{n:"Infestación — Roedores",c:"Tanto la evidencia de roedores como los puntos de entrada que permiten el acceso son inspeccionables.",d:["Excremento bajo fregaderos, en gabinetes o junto a zócalos","Empaques, tuberías o cables roídos","Huecos sin sellar en penetraciones y burletes de puerta","Madrigueras o senderos junto a los cimientos"],f:"Selle las penetraciones con material que el roedor no pueda roer — lana de acero y sellador, no solo espuma. Las trampas sin exclusión no eliminan el hallazgo."}},
+
+litterDebris:{sev:"LOW",
+ en:{n:"Litter, Debris &amp; Trash Storage",c:"Grounds and common areas must be free of accumulated litter, and trash must be contained in adequate, serviced enclosures.",d:["Overflowing dumpster with bags on the ground","Bulk items abandoned at the enclosure","Litter accumulated along fence lines and landscaping","Enclosure gate broken or missing"],f:"Schedule a pickup and a grounds sweep for the morning of the inspection — this is the deficiency most often created between your walk and the inspector arriving."},
+ es:{n:"Basura, Escombros y Almacenamiento de Desechos",c:"Los terrenos y áreas comunes deben estar libres de basura acumulada, y los desechos contenidos en depósitos adecuados y con servicio.",d:["Contenedor desbordado con bolsas en el suelo","Artículos voluminosos abandonados junto al depósito","Basura acumulada junto a cercas y jardinería","Portón del depósito roto o faltante"],f:"Programe la recolección y una limpieza de terrenos la mañana de la inspección — es la deficiencia que más se crea entre su recorrido y la llegada del inspector."}},
+
+sharpEdges:{sev:"MOD",
+ en:{n:"Sharp Edges",c:"No sharp edge capable of causing laceration may be present on any accessible surface or component.",d:["Torn or peeled metal edge on a stair nosing or threshold","Broken glass or a jagged mirror edge","Exposed screws, nails, or protruding hardware","Damaged metal siding or a bent fence rail at head height"],f:"Run your hand along thresholds, stair nosings, and handrail ends. Anything that catches your palm will be cited."},
+ es:{n:"Bordes Filosos",c:"No debe haber bordes filosos capaces de causar laceración en ninguna superficie o componente accesible.",d:["Borde metálico levantado en el filo de un escalón o umbral","Vidrio roto o borde dentado de espejo","Tornillos, clavos o herrajes salientes expuestos","Revestimiento metálico dañado o riel de cerca doblado a la altura de la cabeza"],f:"Pase la mano por umbrales, filos de escalones y extremos de pasamanos. Todo lo que enganche su palma será citado."}},
+
+/* ── STRUCTURE & SURFACES ───────────────────────────────────────────── */
+structuralMember:{sev:"LT",
+ en:{n:"Structural Member",c:"Load-bearing components must be sound, with no failure, displacement, or deterioration that threatens stability.",d:["Sagging or cracked joist, beam, or header","Rotted post or column at a porch or carport","Bowing wall or a floor that deflects underfoot","Fire or termite damage to framing"],f:"Anything you would not stand under is a 24-hour item. Shore it and get an engineer rather than patching cosmetically."},
+ es:{n:"Miembro Estructural",c:"Los componentes de carga deben estar firmes, sin fallas, desplazamiento ni deterioro que amenace la estabilidad.",d:["Vigueta, viga o dintel hundido o agrietado","Poste o columna podrida en un porche o cochera","Pared abombada o piso que cede al pisarlo","Daño de fuego o termitas en la estructura"],f:"Todo lo que usted no se pararía debajo es asunto de 24 horas. Apuntálelo y consulte a un ingeniero en vez de parchar cosméticamente."}},
+
+foundation:{sev:"SEV",
+ en:{n:"Foundation",c:"Foundation walls and piers must be intact, with no through-cracks, displacement, or missing sections.",d:["Step or horizontal cracking wider than a quarter inch","Crumbling or spalling concrete and mortar loss","Missing or displaced pier or block","Water entry through the foundation wall"],f:"Photograph and date every crack you intend to monitor. A crack that is widening reads differently to an inspector than one that has been stable for years."},
+ es:{n:"Cimientos",c:"Los muros y pilares de cimentación deben estar íntegros, sin grietas pasantes, desplazamiento ni secciones faltantes.",d:["Grietas escalonadas u horizontales de más de un cuarto de pulgada","Concreto descascarado y pérdida de mortero","Pilar o bloque faltante o desplazado","Entrada de agua por el muro de cimentación"],f:"Fotografíe y feche cada grieta que vaya a monitorear. Una grieta que se ensancha se interpreta distinto a una estable por años."}},
+
+roof:{sev:"SEV",
+ en:{n:"Roof",c:"Roof covering, flashing, and drainage must keep water out and be free of failure.",d:["Missing, lifted, or curling shingles","Ponding water on a flat roof","Flashing separated at a wall, vent, or chimney","Interior ceiling staining tracing back to the roof"],f:"Inspect after a hard rain rather than on a dry day. A ceiling stain inside is what leads the inspector to the roof, so chase every stain to its source."},
+ es:{n:"Techo",c:"La cubierta, los tapajuntas y el drenaje del techo deben impedir la entrada de agua y estar sin fallas.",d:["Tejas faltantes, levantadas o enrolladas","Agua estancada en un techo plano","Tapajuntas separado en una pared, ventilación o chimenea","Manchas en el cielo raso interior que vienen del techo"],f:"Inspeccione después de una lluvia fuerte, no en día seco. Una mancha interior es lo que lleva al inspector al techo, así que persiga cada mancha hasta su origen."}},
+
+exteriorWall:{sev:"MOD",
+ en:{n:"Exterior Wall &amp; Siding",c:"The exterior envelope must be intact and weather-resistant, with no holes, gaps, or missing cladding.",d:["Missing or broken siding panels","Failed or missing sealant at penetrations and trim","Holes allowing water or pest entry","Peeling paint exposing substrate to weather"],f:"Walk the full perimeter, not just the street elevation. Rear and side walls out of public view are where missing siding usually sits."},
+ es:{n:"Pared Exterior y Revestimiento",c:"La envolvente exterior debe estar íntegra y resistente a la intemperie, sin huecos, aberturas ni revestimiento faltante.",d:["Paneles de revestimiento faltantes o rotos","Sellador fallido o faltante en penetraciones y molduras","Huecos que permiten entrada de agua o plagas","Pintura descascarada exponiendo el material a la intemperie"],f:"Recorra todo el perímetro, no solo la fachada. Las paredes traseras y laterales fuera de vista son donde suele faltar revestimiento."}},
+
+wallInterior:{sev:"MOD",
+ en:{n:"Interior Wall",c:"Interior wall surfaces must be intact, without holes, significant damage, or deteriorated finish.",d:["Hole punched through drywall","Large cracks or previously patched areas left unfinished","Water-damaged or crumbling plaster","Deteriorated paint, which carries added weight in pre-1978 housing"],f:"Patch, sand, prime, and paint — an unfinished patch is still a finding. In pre-1978 buildings, treat deteriorated paint as a lead-safe work practice job."},
+ es:{n:"Pared Interior",c:"Las superficies interiores deben estar íntegras, sin huecos, daño significativo ni acabado deteriorado.",d:["Hueco perforado en el panel de yeso","Grietas grandes o parches previos sin terminar","Yeso dañado por agua o desmoronándose","Pintura deteriorada, con peso adicional en vivienda anterior a 1978"],f:"Parche, lije, imprima y pinte — un parche sin terminar sigue siendo hallazgo. En edificios anteriores a 1978, trate la pintura deteriorada con prácticas seguras de plomo."}},
+
+ceiling:{sev:"MOD",
+ en:{n:"Ceiling",c:"Ceilings must be intact and securely attached, with no sagging, holes, or active damage.",d:["Sagging or bulging section, which signals water above","Missing or displaced ceiling tiles in a common area","Water staining, whether active or historic","Cracks with visible separation at a seam"],f:"A bulge means water is being held above the surface. Do not paint over it — open it, find the source, and repair before the inspection."},
+ es:{n:"Cielo Raso",c:"Los cielos rasos deben estar íntegros y bien sujetados, sin hundimiento, huecos ni daño activo.",d:["Sección hundida o abombada, que indica agua arriba","Losetas de cielo faltantes o desplazadas en área común","Manchas de agua, activas o antiguas","Grietas con separación visible en una junta"],f:"Un abombamiento significa agua retenida sobre la superficie. No lo pinte — ábralo, encuentre la fuente y repare antes de la inspección."}},
+
+floor:{sev:"MOD",
+ en:{n:"Floor &amp; Floor Covering",c:"Floors must be structurally sound with covering that is intact and does not create a hazard.",d:["Soft or springy area indicating subfloor damage","Torn, curled, or missing covering that could trip a resident","Missing or loose tiles and transition strips","Deteriorated resilient flooring in pre-1978 buildings"],f:"Walk every square foot including inside closets. Soft spots at a toilet or tub tell you there is an unresolved leak above the subfloor."},
+ es:{n:"Piso y Recubrimiento",c:"Los pisos deben ser estructuralmente firmes con recubrimiento íntegro que no cree un peligro.",d:["Área blanda o que cede indicando daño en el subpiso","Recubrimiento roto, levantado o faltante que pueda causar tropiezos","Losetas y perfiles de transición sueltos o faltantes","Piso resiliente deteriorado en edificios anteriores a 1978"],f:"Camine cada pie cuadrado incluyendo dentro de los clósets. Los puntos blandos junto al inodoro o la tina indican una fuga sin resolver."}},
+
+tripHazard:{sev:"MOD",
+ en:{n:"Trip Hazard",c:"Walking surfaces must be free of abrupt vertical changes and obstructions that create a tripping risk.",d:["Heaved or settled sidewalk section","Raised threshold or transition strip","Uneven stair riser heights within a single flight","Cords, hoses, or mats crossing a walking path"],f:"A vertical displacement of about three-quarters of an inch is the usual trigger. Grind, ramp, or replace — a cone or paint marking does not clear it."},
+ es:{n:"Peligro de Tropiezo",c:"Las superficies de tránsito deben estar libres de cambios verticales abruptos y obstrucciones que causen tropiezos.",d:["Sección de acera levantada o hundida","Umbral o perfil de transición elevado","Alturas desiguales de contrahuellas en un mismo tramo","Cables, mangueras o tapetes cruzando el paso"],f:"Un desnivel de unas tres cuartas de pulgada suele activar el hallazgo. Desbaste, haga rampa o reemplace — un cono o pintura no lo elimina."}},
+
+stairs:{sev:"SEV",
+ en:{n:"Stairs &amp; Steps",c:"Treads, risers, landings, and stringers must be sound, uniform, and free of damage.",d:["Broken, cracked, or missing tread","Riser heights that vary within a flight","Rotted stringer or loose stair assembly","Missing non-slip surface on exterior steps"],f:"Stand on each tread and shift your weight. Movement means a fastener or stringer problem that will not pass a load check."},
+ es:{n:"Escaleras y Escalones",c:"Huellas, contrahuellas, descansos y largueros deben estar firmes, uniformes y sin daño.",d:["Huella rota, agrietada o faltante","Alturas de contrahuella que varían en un mismo tramo","Larguero podrido o conjunto de escalera flojo","Superficie antideslizante faltante en escalones exteriores"],f:"Párese en cada huella y mueva su peso. El movimiento indica un problema de sujeción o larguero que no pasará una prueba de carga."}},
+
+handrail:{sev:"SEV",
+ en:{n:"Handrail",c:"A graspable, securely mounted handrail is required where the run of stairs meets the threshold for one.",d:["No handrail on a flight of four or more risers","Rail loose at a bracket or pulling from the wall","Rail does not run the full length of the flight","Shape or size that cannot be gripped"],f:"Pull hard on every rail — an inspector will. Four risers is the usual trigger, and a rail that stops short of the bottom step still fails."},
+ es:{n:"Pasamanos",c:"Se requiere un pasamanos agarrable y bien montado donde el tramo de escalera alcance el umbral requerido.",d:["Sin pasamanos en un tramo de cuatro o más contrahuellas","Pasamanos flojo en un soporte o soltándose de la pared","No cubre el largo completo del tramo","Forma o tamaño que no permite agarrarlo"],f:"Jale fuerte cada pasamanos — el inspector lo hará. Cuatro contrahuellas es el umbral usual, y un pasamanos que no llega al último escalón se reprueba."}},
+
+guardrail:{sev:"LT",
+ en:{n:"Guardrail",c:"Guards are required at walking surfaces raised above the trigger height, with intermediate spacing that resists passage.",d:["No guard at an elevated walkway, landing, or balcony","Baluster spacing wide enough to pass a 4-inch sphere","Guard loose, leaning, or with missing sections","Guard height below the required minimum"],f:"Test spacing with a 4-inch ball and push on every section. A missing or failing guard above the trigger height is a 24-hour item."},
+ es:{n:"Baranda de Protección",c:"Se requieren barandas en superficies elevadas sobre la altura de activación, con espaciamiento que impida el paso.",d:["Sin baranda en pasillo, descanso o balcón elevado","Espaciamiento de balaustres que deja pasar una esfera de 4 pulgadas","Baranda floja, inclinada o con secciones faltantes","Altura de baranda por debajo del mínimo requerido"],f:"Pruebe el espaciamiento con una pelota de 4 pulgadas y empuje cada sección. Una baranda faltante o fallida sobre la altura de activación es asunto de 24 horas."}},
+
+/* ── OPENINGS ───────────────────────────────────────────────────────── */
+windowOperation:{sev:"SEV",
+ en:{n:"Window — Operation &amp; Security",c:"Windows required for egress or ventilation must open, close, stay open, and lock.",d:["Painted or nailed shut","Sash falls closed because the balance has failed","Lock broken or missing on an accessible window","Security bars with no interior quick release"],f:"Open and close every window and let go at the top of the travel. A sash that drops is a failure even though the window opens."},
+ es:{n:"Ventana — Operación y Seguridad",c:"Las ventanas requeridas para salida o ventilación deben abrir, cerrar, mantenerse abiertas y cerrar con seguro.",d:["Sellada con pintura o clavada","La hoja se cae porque falló el contrapeso","Seguro roto o faltante en una ventana accesible","Rejas de seguridad sin liberación rápida interior"],f:"Abra y cierre cada ventana y suéltela arriba del recorrido. Una hoja que cae es falla aunque la ventana abra."}},
+
+windowGlazing:{sev:"SEV",
+ en:{n:"Window — Glazing &amp; Frame",c:"Glazing must be intact and the frame weather-tight, with no broken panes or failed seals.",d:["Cracked or broken pane","Missing or deteriorated glazing compound","Failed insulated unit with permanent fogging","Rotted sill or frame with daylight visible"],f:"Broken glass in an occupied unit combines a sharp-edge finding with a weather finding — replace rather than tape."},
+ es:{n:"Ventana — Vidrio y Marco",c:"El vidrio debe estar íntegro y el marco hermético, sin paneles rotos ni sellos fallidos.",d:["Panel agrietado o roto","Masilla de vidrio faltante o deteriorada","Unidad aislada fallida con empañamiento permanente","Alféizar o marco podrido con luz visible"],f:"El vidrio roto en unidad ocupada combina un hallazgo de borde filoso con uno de intemperie — reemplace en vez de poner cinta."}},
+
+doorExterior:{sev:"SEV",
+ en:{n:"Exterior Door",c:"Exterior doors must be solid, weather-tight, correctly hung, and close and latch properly.",d:["Rotted or delaminated door bottom","Gap at the threshold or missing weatherstripping and sweep","Door binding, warped, or will not close","Damaged or missing frame and stop"],f:"Close the door and look for daylight around the full perimeter. Daylight is both a weather finding and a pest entry point."},
+ es:{n:"Puerta Exterior",c:"Las puertas exteriores deben ser sólidas, herméticas, bien colgadas, y cerrar y enganchar correctamente.",d:["Base de puerta podrida o despegada","Hueco en el umbral o burlete y barredera faltantes","Puerta que roza, alabeada o que no cierra","Marco y tope dañados o faltantes"],f:"Cierre la puerta y busque luz en todo el perímetro. La luz es hallazgo de intemperie y punto de entrada de plagas a la vez."}},
+
+doorHardware:{sev:"SEV",
+ en:{n:"Door Hardware &amp; Locks",c:"Entry doors need working, secure hardware that locks and releases from inside without a key.",d:["Deadbolt requiring a key from the inside","Lockset loose, broken, or will not latch","Strike plate missing or misaligned so the door does not secure","Hinges loose or a hinge pin missing"],f:"A double-keyed deadbolt is both a security item and an egress failure. Swap it for a thumb-turn before the inspection."},
+ es:{n:"Herrajes y Cerraduras",c:"Las puertas de entrada necesitan herrajes funcionales y seguros que cierren y liberen desde adentro sin llave.",d:["Cerrojo que requiere llave desde adentro","Cerradura floja, rota o que no engancha","Cerradero faltante o desalineado de modo que la puerta no asegura","Bisagras flojas o pasador de bisagra faltante"],f:"Un cerrojo de doble llave es a la vez asunto de seguridad y falla de salida. Cámbielo por uno de perilla antes de la inspección."}},
+
+/* ── SITE & COMMON SYSTEMS ──────────────────────────────────────────── */
+walkway:{sev:"MOD",
+ en:{n:"Walkway, Drive &amp; Parking Surface",c:"Paved surfaces must be maintained without failure that impedes safe passage.",d:["Potholes or broken pavement in a drive or lot","Sidewalk sections heaved, cracked, or missing","Accessible route obstructed or too steep","Faded or missing accessible parking markings and signage"],f:"Walk the accessible route from parking to the leasing office and to a ground-floor unit — that path draws attention beyond the general paving condition."},
+ es:{n:"Acera, Vía y Estacionamiento",c:"Las superficies pavimentadas deben mantenerse sin fallas que impidan el paso seguro.",d:["Baches o pavimento roto en una vía o estacionamiento","Secciones de acera levantadas, agrietadas o faltantes","Ruta accesible obstruida o con pendiente excesiva","Marcas y señales de estacionamiento accesible borradas o faltantes"],f:"Recorra la ruta accesible desde el estacionamiento hasta la oficina y hasta una unidad de planta baja — ese camino recibe más atención que el pavimento general."}},
+
+drainage:{sev:"MOD",
+ en:{n:"Site Drainage &amp; Erosion",c:"The site must drain away from buildings without ponding, erosion, or undermining.",d:["Standing water against a foundation after rain","Erosion exposing footings or utility lines","Gutter or downspout missing, or discharging at the wall","Storm inlet blocked by debris"],f:"Extend downspouts away from the building. Water dropped at the foundation shows up later as a foundation or basement finding."},
+ es:{n:"Drenaje del Sitio y Erosión",c:"El sitio debe drenar lejos de los edificios sin encharcamiento, erosión ni socavación.",d:["Agua estancada contra los cimientos tras la lluvia","Erosión exponiendo zapatas o líneas de servicio","Canalón o bajante faltante, o descargando en la pared","Boca de tormenta bloqueada por escombros"],f:"Extienda los bajantes lejos del edificio. El agua descargada en los cimientos aparece luego como hallazgo de cimentación o sótano."}},
+
+fenceGate:{sev:"LOW",
+ en:{n:"Fence &amp; Gate",c:"Where provided, fencing and gates must be intact, upright, and operable.",d:["Leaning or fallen fence sections","Missing pickets or torn chain-link fabric","Gate that will not close or latch","Protruding hardware or sharp wire at the top rail"],f:"Fencing that serves a required barrier function — a pool or a drop-off — is judged far more strictly than decorative fencing."},
+ es:{n:"Cerca y Portón",c:"Donde existan, las cercas y portones deben estar íntegros, verticales y operables.",d:["Secciones de cerca inclinadas o caídas","Tablillas faltantes o malla ciclónica rota","Portón que no cierra o no engancha","Herrajes salientes o alambre filoso en el riel superior"],f:"La cerca que cumple una función de barrera requerida — una piscina o un desnivel — se juzga con mucho más rigor que la decorativa."}},
+
+retainingWall:{sev:"SEV",
+ en:{n:"Retaining Wall",c:"Retaining walls must be stable, without displacement, bulging, or failure that threatens what sits above.",d:["Wall leaning, bulging, or rotating outward","Blocks or timbers displaced or missing","Weep holes blocked, building hydrostatic pressure","Soil loss or a void behind the wall"],f:"A retaining wall holding up a walkway or parking area escalates quickly, because failure puts the surface above it at risk."},
+ es:{n:"Muro de Contención",c:"Los muros de contención deben ser estables, sin desplazamiento, abombamiento ni falla que amenace lo que sostienen.",d:["Muro inclinado, abombado o girando hacia afuera","Bloques o vigas desplazados o faltantes","Drenajes bloqueados, acumulando presión hidrostática","Pérdida de suelo o vacío detrás del muro"],f:"Un muro que sostiene una acera o estacionamiento escala rápido, porque su falla pone en riesgo la superficie de arriba."}},
+
+siteLighting:{sev:"MOD",
+ en:{n:"Site &amp; Exterior Lighting",c:"Exterior lighting must be present and operable where required for safe passage at entries, walkways, stairs, and parking.",d:["Fixture out at a building entry or stairwell","Broken lens or a fixture hanging from its pole","Photocell failed so the light never comes on","Dark section of an accessible route or parking area"],f:"Check exterior lighting after dark, not during the day. A daytime walk cannot tell you which heads fail to strike at dusk."},
+ es:{n:"Iluminación Exterior y del Sitio",c:"Debe haber iluminación exterior operable donde se requiera para el paso seguro en entradas, aceras, escaleras y estacionamiento.",d:["Luminaria apagada en la entrada de un edificio o escalera","Lente roto o luminaria colgando de su poste","Fotocelda fallida y la luz nunca enciende","Tramo oscuro de una ruta accesible o del estacionamiento"],f:"Revise la iluminación exterior de noche, no de día. Un recorrido diurno no revela qué luminarias no encienden al anochecer."}},
+
+elevator:{sev:"SEV",
+ en:{n:"Elevator",c:"Elevators must be operational with a current inspection certificate and working emergency communication.",d:["Out of service, or car not level with the landing","Inspection certificate expired or not posted in the car","Emergency phone or intercom does not connect","Door reopening device not working"],f:"Post the current certificate inside the car and test the emergency phone by actually placing a call — a dead line is a common finding."},
+ es:{n:"Ascensor",c:"Los ascensores deben estar operativos con certificado de inspección vigente y comunicación de emergencia funcional.",d:["Fuera de servicio, o cabina desnivelada con el piso","Certificado vencido o no exhibido en la cabina","El teléfono o intercomunicador de emergencia no conecta","Dispositivo de reapertura de puerta no funciona"],f:"Exhiba el certificado vigente dentro de la cabina y pruebe el teléfono de emergencia haciendo una llamada real — una línea muerta es hallazgo común."}},
+
+playground:{sev:"MOD",
+ en:{n:"Playground Equipment",c:"Where provided, play equipment must be intact, anchored, and set over adequate protective surfacing.",d:["Broken, missing, or sharp components","Equipment loose at its footing or anchor","Protective surfacing displaced, compacted, or too shallow","Entrapment or head-entrapment openings"],f:"Rake and top up the fall-surface material to depth before inspection. Displaced mulch under a swing is the most common playground call."},
+ es:{n:"Equipo de Juegos",c:"Donde exista, el equipo de juegos debe estar íntegro, anclado y sobre una superficie protectora adecuada.",d:["Componentes rotos, faltantes o filosos","Equipo flojo en su base o anclaje","Superficie protectora desplazada, compactada o insuficiente","Aberturas con riesgo de atrapamiento"],f:"Rastrille y reponga el material amortiguante a la profundidad debida antes de la inspección. El mantillo desplazado bajo un columpio es el hallazgo más común."}},
+
+poolBarrier:{sev:"LT",
+ en:{n:"Pool &amp; Barrier",c:"Pools and spas require an intact enclosure with self-closing, self-latching gates and functioning safety equipment.",d:["Gate does not self-close or self-latch","Barrier height too low or a gap under the fence","Latch mounted within a child's reach","Missing life ring, shepherd hook, or depth markings"],f:"Open the gate and let go — it must swing shut and latch unaided every time. A pool gate that does not latch is an immediate item."},
+ es:{n:"Piscina y Barrera",c:"Las piscinas y spas requieren un cerramiento íntegro con portones de cierre y enganche automáticos y equipo de seguridad funcional.",d:["El portón no cierra ni engancha solo","Barrera de altura insuficiente o hueco bajo la cerca","Pestillo instalado al alcance de un niño","Salvavidas, gancho de rescate o marcas de profundidad faltantes"],f:"Abra el portón y suéltelo — debe cerrar y enganchar solo cada vez. Un portón de piscina que no engancha es asunto inmediato."}},
+
+doorInterior:{sev:"LOW",
+ en:{n:"Interior Door",c:"Interior doors must be present where required, hung correctly, and operate without binding.",d:["Door missing from a bedroom or bathroom","Hollow-core door punched through or delaminated","Door binds, drags the floor, or will not stay closed","Missing knob, latch, or privacy function on a bathroom door"],f:"A bathroom or bedroom with no door at all is the version of this that gets cited most — replace it rather than rehanging a damaged slab."},
+ es:{n:"Puerta Interior",c:"Las puertas interiores deben existir donde se requieran, estar bien colgadas y operar sin rozar.",d:["Puerta faltante en un dormitorio o baño","Puerta hueca perforada o despegada","La puerta roza, arrastra el piso o no permanece cerrada","Perilla, pestillo o seguro de privacidad faltante en un baño"],f:"Un baño o dormitorio sin puerta es la versión que más se cita — reemplácela en vez de recolgar una hoja dañada."}},
+
+addressSignage:{sev:"LOW",
+ en:{n:"Address, Signage &amp; Unit Identification",c:"Building addresses, unit numbers, and required directional or exit signage must be present and legible.",d:["Building or unit number missing, faded, or unreadable from the drive","Exit or directional signage missing in a corridor","Address numbers not contrasting or too small to read from the street","Required posted notices absent from the common area"],f:"Emergency responders and the inspector navigate by the same numbers. Replace faded numerals and confirm every corridor exit sign is present and lit."},
+ es:{n:"Dirección, Señalización e Identificación",c:"Las direcciones, números de unidad y la señalización de salida o direccional requerida deben existir y ser legibles.",d:["Número de edificio o unidad faltante, borrado o ilegible desde la vía","Señalización de salida o direccional faltante en un pasillo","Números sin contraste o muy pequeños para leerse desde la calle","Avisos requeridos ausentes del área común"],f:"Los servicios de emergencia y el inspector navegan con los mismos números. Reemplace los numerales borrados y confirme que cada letrero de salida esté presente e iluminado."}}
+
+};
+
+/* Inspectable areas. z = zone (unit | inside | outside), k = standard keys. */
+var L = [
+/* ── UNIT ────────────────────────────────────────────────────────────── */
+{id:"kitchen",z:"unit",en:"Kitchen",es:"Cocina",
+ be:"The highest-density room in the unit — appliances, water, and ground-fault protection all converge here.",
+ bs:"El cuarto de mayor densidad de la unidad — aparatos, agua y protección contra falla a tierra se juntan aquí.",
+ k:["cookingAppliance","refrigerator","kitchenSink","cabinets","potableWater","gfci","outletSwitch","coverPlate","lighting","waterSupply","drainWaste","waterLeak","gasLeak","ventilation","floor","wallInterior","ceiling","insects","rodents","smokeAlarm","exposedWiring"]},
+{id:"bathroom",z:"unit",en:"Bathroom",es:"Baño",
+ be:"Water, ventilation, and electrical safety in the smallest footprint — and the room where mold findings start.",
+ bs:"Agua, ventilación y seguridad eléctrica en el menor espacio — y el cuarto donde comienzan los hallazgos de moho.",
+ k:["toilet","lavatory","tubShower","gfci","outletSwitch","coverPlate","lighting","ventilation","waterSupply","potableWater","drainWaste","waterLeak","mold","floor","wallInterior","ceiling","doorInterior","doorHardware","callForAid","windowOperation","sharpEdges"]},
+{id:"bedroom",z:"unit",en:"Bedroom",es:"Dormitorio",
+ be:"Egress and alarms carry this room. Every sleeping room needs a way out and a working smoke alarm.",
+ bs:"La salida y las alarmas dominan este cuarto. Cada dormitorio necesita una salida y un detector de humo funcional.",
+ k:["smokeAlarm","coAlarm","egress","windowOperation","windowGlazing","outletSwitch","coverPlate","lighting","heating","cooling","floor","wallInterior","ceiling","doorInterior","callForAid","exposedWiring","mold"]},
+{id:"living",z:"unit",en:"Living &amp; Dining Room",es:"Sala y Comedor",
+ be:"Large surfaces and the heaviest outlet loads in the unit.",
+ bs:"Superficies grandes y las cargas eléctricas más altas de la unidad.",
+ k:["smokeAlarm","coAlarm","outletSwitch","coverPlate","exposedWiring","conductor","lighting","heating","cooling","windowOperation","windowGlazing","floor","wallInterior","ceiling","egress","waterLeak"]},
+{id:"unitHall",z:"unit",en:"Unit Hallway &amp; Interior Stairs",es:"Pasillo y Escalera Interior",
+ be:"The escape path inside the unit, plus the alarm location that covers the sleeping area.",
+ bs:"La ruta de escape dentro de la unidad, más la ubicación de alarma que cubre el área de dormir.",
+ k:["smokeAlarm","egress","stairs","handrail","guardrail","lighting","outletSwitch","coverPlate","floor","wallInterior","ceiling","tripHazard"]},
+{id:"unitEntry",z:"unit",en:"Unit Entry Door",es:"Puerta de Entrada de la Unidad",
+ be:"Security and egress meet here — and a double-keyed deadbolt fails both.",
+ bs:"Seguridad y salida se encuentran aquí — y un cerrojo de doble llave falla en ambas.",
+ k:["doorExterior","doorHardware","fireDoor","egress","addressSignage","lighting","sharpEdges","rodents"]},
+{id:"unitLaundry",z:"unit",en:"In-Unit Laundry",es:"Lavandería en la Unidad",
+ be:"Dryer exhaust and ground-fault protection are the two findings that dominate this space.",
+ bs:"El escape de la secadora y la protección GFCI dominan los hallazgos de este espacio.",
+ k:["dryerExhaust","gfci","outletSwitch","coverPlate","waterSupply","drainWaste","waterLeak","ventilation","gasLeak","floor","flammable"]},
+{id:"unitWaterHeater",z:"unit",en:"Water Heater Closet",es:"Clóset del Calentador",
+ be:"A small closet that produces some of the fastest life-threatening calls on the inspection.",
+ bs:"Un clóset pequeño que produce algunas de las llamadas mortales más rápidas de la inspección.",
+ k:["waterHeaterTPR","waterHeaterVent","gasLeak","flammable","waterLeak","exposedWiring","lighting","coAlarm","floor"]},
+{id:"unitFurnace",z:"unit",en:"Furnace / HVAC Closet",es:"Clóset de Calefacción / HVAC",
+ be:"Combustion, venting, and clearance — check all three before heating season.",
+ bs:"Combustión, ventilación y espacio libre — revise los tres antes de la temporada de calefacción.",
+ k:["heating","hvacVent","gasLeak","coAlarm","flammable","exposedWiring","ventilation","cooling","lighting"]},
+{id:"unitPanel",z:"unit",en:"Unit Electrical Panel",es:"Panel Eléctrico de la Unidad",
+ be:"Open breaker slots and blocked access are the two most cited items here.",
+ bs:"Las ranuras abiertas y el acceso bloqueado son lo más citado aquí.",
+ k:["panelboard","conductor","exposedWiring","coverPlate","flammable","lighting"]},
+{id:"unitWindows",z:"unit",en:"Unit Windows",es:"Ventanas de la Unidad",
+ be:"Operation, glazing, and locks — inspected on every accessible window, not a sample.",
+ bs:"Operación, vidrio y seguros — se inspeccionan en cada ventana accesible, no en una muestra.",
+ k:["windowOperation","windowGlazing","egress","sharpEdges","mold","waterLeak","wallInterior"]},
+{id:"unitBasement",z:"unit",en:"Unit Basement / Utility Area",es:"Sótano / Área de Servicio",
+ be:"Moisture, mechanicals, and storage habits collect in this space.",
+ bs:"Humedad, equipos mecánicos y hábitos de almacenamiento se concentran aquí.",
+ k:["mold","waterLeak","foundation","structuralMember","exposedWiring","panelboard","waterHeaterTPR","waterHeaterVent","potableWater","heating","hvacVent","flammable","rodents","stairs","handrail","lighting","egress"]},
+{id:"unitClosets",z:"unit",en:"Closets &amp; Storage",es:"Clósets y Almacenamiento",
+ be:"Easy to skip on a walkthrough, and where painted sprinkler heads and soft floors hide.",
+ bs:"Fácil de omitir en un recorrido, y donde se esconden rociadores pintados y pisos blandos.",
+ k:["sprinkler","lighting","exposedWiring","floor","wallInterior","ceiling","mold","doorInterior","flammable","rodents"]},
+{id:"unitPatio",z:"unit",en:"Private Balcony / Patio",es:"Balcón o Patio Privado",
+ be:"Guardrails and structure carry the weight here, plus whatever residents store outside.",
+ bs:"Las barandas y la estructura dominan aquí, más lo que los residentes almacenen afuera.",
+ k:["guardrail","structuralMember","floor","doorExterior","exteriorWall","lighting","litterDebris","flammable","sharpEdges","drainage"]},
+
+/* ── INSIDE (COMMON) ─────────────────────────────────────────────────── */
+{id:"commonHall",z:"inside",en:"Common Hallway / Corridor",es:"Pasillo Común",
+ be:"The primary egress path for every unit on the floor.",
+ bs:"La ruta principal de salida para cada unidad del piso.",
+ k:["egress","auxLighting","lighting","fireDoor","sprinkler","smokeAlarm","fireExtinguisher","floor","wallInterior","ceiling","tripHazard","litterDebris","coverPlate","outletSwitch"]},
+{id:"stairwell",z:"inside",en:"Building Stairwell",es:"Escalera del Edificio",
+ be:"Rails, treads, and emergency lighting — inspected flight by flight.",
+ bs:"Pasamanos, huellas e iluminación de emergencia — se inspecciona tramo por tramo.",
+ k:["stairs","handrail","guardrail","auxLighting","lighting","egress","fireDoor","sprinkler","tripHazard","sharpEdges","floor","wallInterior","litterDebris"]},
+{id:"lobby",z:"inside",en:"Building Entry &amp; Lobby",es:"Entrada y Vestíbulo",
+ be:"First impression for the inspector, and the start of the accessible route.",
+ bs:"La primera impresión del inspector, y el inicio de la ruta accesible.",
+ k:["doorExterior","doorHardware","auxLighting","lighting","egress","floor","tripHazard","ceiling","wallInterior","addressSignage","fireExtinguisher","sprinkler","elevator"]},
+{id:"communityRoom",z:"inside",en:"Community Room",es:"Salón Comunitario",
+ be:"An assembly space — egress capacity and extinguisher coverage matter more here.",
+ bs:"Un espacio de reunión — la capacidad de salida y la cobertura de extintores importan más aquí.",
+ k:["egress","auxLighting","lighting","fireExtinguisher","sprinkler","smokeAlarm","outletSwitch","coverPlate","floor","ceiling","wallInterior","ventilation","cooling","heating"]},
+{id:"commonLaundry",z:"inside",en:"Common Laundry Room",es:"Lavandería Común",
+ be:"Multiple dryers means multiple exhaust paths, each one inspectable.",
+ bs:"Varias secadoras significan varias rutas de escape, cada una inspeccionable.",
+ k:["dryerExhaust","gfci","outletSwitch","coverPlate","waterSupply","drainWaste","waterLeak","ventilation","gasLeak","floor","lighting","flammable","litterDebris","exposedWiring"]},
+{id:"mechanicalRoom",z:"inside",en:"Mechanical Room",es:"Cuarto Mecánico",
+ be:"Storage in a mechanical room is a finding on its own, before anything mechanical is checked.",
+ bs:"El almacenamiento en un cuarto mecánico es un hallazgo por sí mismo, antes de revisar los equipos.",
+ k:["flammable","heating","hvacVent","gasLeak","waterHeaterTPR","waterHeaterVent","exposedWiring","panelboard","lighting","ventilation","waterLeak","structuralMember","litterDebris"]},
+{id:"electricalRoom",z:"inside",en:"Electrical Room",es:"Cuarto Eléctrico",
+ be:"Working clearance in front of every panel is measured, not estimated.",
+ bs:"El espacio libre frente a cada panel se mide, no se estima.",
+ k:["panelboard","serviceEquipment","conductor","exposedWiring","coverPlate","flammable","lighting","litterDebris","doorHardware"]},
+{id:"boilerRoom",z:"inside",en:"Boiler Room",es:"Cuarto de Calderas",
+ be:"Combustion air, venting, and relief piping — the highest-consequence room in the building.",
+ bs:"Aire de combustión, ventilación y tubería de alivio — el cuarto de mayor consecuencia del edificio.",
+ k:["heating","hvacVent","gasLeak","chimney","waterHeaterTPR","waterHeaterVent","flammable","exposedWiring","panelboard","ventilation","coAlarm","lighting","structuralMember","waterLeak"]},
+{id:"elevatorArea",z:"inside",en:"Elevator &amp; Machine Room",es:"Ascensor y Cuarto de Máquinas",
+ be:"Certificate, leveling, and the emergency phone — test the phone by calling on it.",
+ bs:"Certificado, nivelación y teléfono de emergencia — pruebe el teléfono llamando de verdad.",
+ k:["elevator","auxLighting","lighting","flammable","exposedWiring","panelboard","doorHardware","floor","sharpEdges"]},
+{id:"trashRoom",z:"inside",en:"Trash Room &amp; Chute",es:"Cuarto de Basura y Ducto",
+ be:"Sanitation and fire separation in one space.",
+ bs:"Sanidad y separación contra fuego en un mismo espacio.",
+ k:["litterDebris","fireDoor","sprinkler","insects","rodents","ventilation","lighting","floor","wallInterior","flammable","drainWaste"]},
+{id:"buildingBasement",z:"inside",en:"Building Basement",es:"Sótano del Edificio",
+ be:"Where moisture, structure, and mechanicals all surface at once.",
+ bs:"Donde humedad, estructura y equipos mecánicos aparecen a la vez.",
+ k:["mold","waterLeak","foundation","structuralMember","drainage","exposedWiring","panelboard","serviceEquipment","heating","hvacVent","waterHeaterTPR","flammable","rodents","insects","stairs","handrail","auxLighting","lighting","egress","sprinkler"]},
+{id:"office",z:"inside",en:"Leasing / Management Office",es:"Oficina de Administración",
+ be:"Inspected like any other common interior space, and usually the first room entered.",
+ bs:"Se inspecciona como cualquier área común interior, y suele ser el primer cuarto que se entra.",
+ k:["egress","auxLighting","lighting","fireExtinguisher","smokeAlarm","outletSwitch","coverPlate","conductor","floor","ceiling","wallInterior","doorHardware","ventilation","cooling"]},
+{id:"commonRestroom",z:"inside",en:"Common Restroom",es:"Baño Común",
+ be:"Same standards as a unit bathroom, with heavier use and faster wear.",
+ bs:"Las mismas normas que un baño de unidad, con más uso y desgaste más rápido.",
+ k:["toilet","lavatory","gfci","outletSwitch","coverPlate","lighting","ventilation","waterSupply","potableWater","drainWaste","waterLeak","mold","floor","wallInterior","ceiling","doorHardware","callForAid","sharpEdges"]},
+{id:"storageRoom",z:"inside",en:"Common Storage Room",es:"Cuarto de Almacenamiento Común",
+ be:"Sprinkler clearance and combustible accumulation are the two things checked first.",
+ bs:"El espacio libre de rociadores y la acumulación de combustibles son lo primero que se revisa.",
+ k:["sprinkler","flammable","litterDebris","lighting","exposedWiring","fireDoor","rodents","insects","floor","doorHardware"]},
+{id:"corridorDoors",z:"inside",en:"Corridor &amp; Stairwell Fire Doors",es:"Puertas Cortafuego de Pasillo",
+ be:"Every rated door is opened, released, and watched to see whether it latches on its own.",
+ bs:"Cada puerta clasificada se abre, se suelta y se observa si engancha sola.",
+ k:["fireDoor","doorHardware","egress","sharpEdges","auxLighting","addressSignage"]},
+
+/* ── OUTSIDE ─────────────────────────────────────────────────────────── */
+{id:"roofArea",z:"outside",en:"Roof",es:"Techo",
+ be:"Inspected from the ground where access is limited — interior stains are what send the inspector up.",
+ bs:"Se inspecciona desde el suelo donde el acceso es limitado — las manchas interiores son lo que lleva al inspector arriba.",
+ k:["roof","chimney","structuralMember","drainage","exteriorWall","hvacVent","dryerExhaust","guardrail","sharpEdges"]},
+{id:"buildingExterior",z:"outside",en:"Building Exterior &amp; Siding",es:"Exterior del Edificio",
+ be:"Walk the full perimeter — rear elevations are where missing cladding sits.",
+ bs:"Recorra todo el perímetro — las fachadas traseras son donde falta revestimiento.",
+ k:["exteriorWall","roof","foundation","structuralMember","windowGlazing","windowOperation","doorExterior","serviceEquipment","exposedWiring","rodents","addressSignage","sharpEdges","drainage"]},
+{id:"foundationArea",z:"outside",en:"Foundation &amp; Crawlspace",es:"Cimientos y Entrepiso",
+ be:"Cracks, water entry, and anything undermining the footing.",
+ bs:"Grietas, entrada de agua y todo lo que socave la zapata.",
+ k:["foundation","structuralMember","drainage","mold","rodents","insects","exposedWiring","waterLeak","ventilation"]},
+{id:"exteriorStairs",z:"outside",en:"Exterior Stairs &amp; Landings",es:"Escaleras y Descansos Exteriores",
+ be:"Weather exposure makes these fail faster than interior stairs.",
+ bs:"La exposición a la intemperie las hace fallar más rápido que las interiores.",
+ k:["stairs","handrail","guardrail","structuralMember","tripHazard","sharpEdges","siteLighting","exteriorWall","drainage"]},
+{id:"exteriorDoorsArea",z:"outside",en:"Exterior &amp; Common Doors",es:"Puertas Exteriores y Comunes",
+ be:"Weather-tightness, hardware, and secure closure at every building opening.",
+ bs:"Hermeticidad, herrajes y cierre seguro en cada abertura del edificio.",
+ k:["doorExterior","doorHardware","fireDoor","egress","siteLighting","addressSignage","rodents","sharpEdges"]},
+{id:"balconies",z:"outside",en:"Balconies, Decks &amp; Walkway Rails",es:"Balcones, Terrazas y Barandas",
+ be:"Guardrail spacing and structural attachment — the highest-consequence exterior check.",
+ bs:"Espaciamiento de barandas y anclaje estructural — la revisión exterior de mayor consecuencia.",
+ k:["guardrail","structuralMember","handrail","floor","exteriorWall","drainage","litterDebris","sharpEdges","siteLighting"]},
+{id:"parkingLot",z:"outside",en:"Parking Lot &amp; Drives",es:"Estacionamiento y Vías",
+ be:"Paving condition plus the accessible parking markings and route.",
+ bs:"Condición del pavimento más las marcas y la ruta de estacionamiento accesible.",
+ k:["walkway","tripHazard","siteLighting","drainage","litterDebris","addressSignage","fenceGate","retainingWall"]},
+{id:"walkways",z:"outside",en:"Walkways &amp; Accessible Route",es:"Aceras y Ruta Accesible",
+ be:"The path from parking to the office and to a ground-floor unit gets extra attention.",
+ bs:"El camino del estacionamiento a la oficina y a una unidad de planta baja recibe atención extra.",
+ k:["walkway","tripHazard","handrail","guardrail","siteLighting","drainage","litterDebris","sharpEdges"]},
+{id:"playgroundArea",z:"outside",en:"Playground &amp; Recreation",es:"Área de Juegos y Recreación",
+ be:"Equipment condition and the depth of the protective surface beneath it.",
+ bs:"Condición del equipo y la profundidad de la superficie protectora debajo.",
+ k:["playground","sharpEdges","tripHazard","fenceGate","litterDebris","drainage","siteLighting","structuralMember"]},
+{id:"grounds",z:"outside",en:"Grounds &amp; Landscaping",es:"Terrenos y Jardinería",
+ be:"Erosion, overgrowth against the building, and accumulated litter.",
+ bs:"Erosión, vegetación contra el edificio y basura acumulada.",
+ k:["litterDebris","drainage","tripHazard","rodents","insects","fenceGate","retainingWall","siteLighting","exteriorWall"]},
+{id:"fencing",z:"outside",en:"Fencing, Gates &amp; Retaining Walls",es:"Cercas, Portones y Muros",
+ be:"Barrier fencing is judged far more strictly than decorative fencing.",
+ bs:"La cerca que sirve de barrera se juzga con mucho más rigor que la decorativa.",
+ k:["fenceGate","retainingWall","sharpEdges","tripHazard","drainage","structuralMember","siteLighting"]},
+{id:"dumpsterArea",z:"outside",en:"Dumpster &amp; Trash Enclosure",es:"Área de Contenedores",
+ be:"The deficiency most likely to appear between your walkthrough and the inspector arriving.",
+ bs:"La deficiencia que más probablemente aparezca entre su recorrido y la llegada del inspector.",
+ k:["litterDebris","fenceGate","insects","rodents","walkway","drainage","siteLighting","sharpEdges"]},
+{id:"siteLightingArea",z:"outside",en:"Site &amp; Exterior Lighting",es:"Iluminación del Sitio",
+ be:"Has to be verified after dark — a daytime walk tells you nothing.",
+ bs:"Debe verificarse de noche — un recorrido diurno no dice nada.",
+ k:["siteLighting","auxLighting","exposedWiring","conductor","serviceEquipment","sharpEdges","addressSignage"]},
+{id:"poolArea",z:"outside",en:"Pool &amp; Spa Area",es:"Área de Piscina",
+ be:"The gate is tested by opening it and letting go — every time.",
+ bs:"El portón se prueba abriéndolo y soltándolo — cada vez.",
+ k:["poolBarrier","fenceGate","gfci","siteLighting","tripHazard","sharpEdges","walkway","drainage","litterDebris","addressSignage"]}
+];
+
+/* ── UI ──────────────────────────────────────────────────────────────── */
+var SEV_ORDER = {LT:0, SEV:1, MOD:2, LOW:3};
+var SEV_TXT = {
+  en:{LT:"Life-Threatening &middot; 24 hours", SEV:"Severe &middot; 30 days", MOD:"Moderate &middot; 30 days", LOW:"Low &middot; 60 days"},
+  es:{LT:"Potencialmente Mortal &middot; 24 horas", SEV:"Grave &middot; 30 días", MOD:"Moderada &middot; 30 días", LOW:"Baja &middot; 60 días"}
+};
+var ZONE_TXT = {
+  en:{unit:"Inside the Unit", inside:"Common &amp; Building Interior", outside:"Building Exterior &amp; Site"},
+  es:{unit:"Dentro de la Unidad", inside:"Áreas Comunes e Interior", outside:"Exterior del Edificio y Terreno"}
+};
+var UI = {
+  en:{applies:"standards apply here", checks:"What the inspector checks", common:"Commonly cited", fix:"Prep guidance",
+      results:"Search results", matched:"standards match your search", none:"No standard matches that search.", back:"Clear search"},
+  es:{applies:"normas aplican aquí", checks:"Qué revisa el inspector", common:"Deficiencias comunes", fix:"Guía de preparación",
+      results:"Resultados de búsqueda", matched:"normas coinciden con su búsqueda", none:"Ninguna norma coincide con esa búsqueda.", back:"Limpiar búsqueda"}
+};
+
+var current = L[0].id;
+var sevFilter = "ALL";
+var query = "";
+
+function lang(){ return document.body.classList.contains("es") ? "es" : "en"; }
+function plain(s){ return String(s).replace(/&amp;/g,"&").replace(/&[a-z]+;/g," ").toLowerCase(); }
+
+function sortKeys(keys){
+  return keys.slice().sort(function(a,b){
+    var d = SEV_ORDER[S[a].sev] - SEV_ORDER[S[b].sev];
+    return d !== 0 ? d : plain(S[a][lang()].n).localeCompare(plain(S[b][lang()].n));
+  });
+}
+function passesSev(k){ return sevFilter === "ALL" || S[k].sev === sevFilter; }
+function matchesQuery(k){
+  if (!query) return true;
+  var t = S[k][lang()];
+  var hay = plain(t.n + " " + t.c + " " + t.d.join(" ") + " " + t.f);
+  return hay.indexOf(query) !== -1;
+}
+
+function renderAreas(){
+  var lg = lang(), out = "", zones = ["unit","inside","outside"];
+  zones.forEach(function(z){
+    out += '<div class="areagroup">' + ZONE_TXT[lg][z] + '</div>';
+    L.filter(function(l){ return l.z === z; }).forEach(function(l){
+      var n = l.k.filter(passesSev).length;
+      out += '<button type="button" data-area="' + l.id + '"' +
+             (l.id === current && !query ? ' aria-current="true"' : '') +
+             '>' + l[lg] + '<span class="cnt">' + n + '</span></button>';
+    });
+  });
+  var nav = document.getElementById("areas");
+  nav.innerHTML = out;
+  nav.querySelectorAll("button[data-area]").forEach(function(b){
+    b.addEventListener("click", function(){
+      current = b.getAttribute("data-area");
+      query = ""; document.getElementById("q").value = "";
+      if (history.replaceState) history.replaceState(null, "", "#" + current);
+      render();
+      document.getElementById("panel").scrollIntoView({behavior:"smooth", block:"start"});
+    });
+  });
+}
+
+function stdHTML(k){
+  var lg = lang(), t = S[k][lg];
+  return '<details class="std">' +
+    '<summary><span class="nm">' + t.n + '</span>' +
+    '<span class="chip ' + S[k].sev + '">' + SEV_TXT[lg][S[k].sev] + '</span></summary>' +
+    '<div class="body">' +
+      '<h4>' + UI[lg].checks + '</h4><p>' + t.c + '</p>' +
+      '<h4>' + UI[lg].common + '</h4><ul>' + t.d.map(function(x){ return '<li>' + x + '</li>'; }).join("") + '</ul>' +
+      '<h4>' + UI[lg].fix + '</h4><div class="fix"><p>' + t.f + '</p></div>' +
+    '</div></details>';
+}
+
+function renderPanel(){
+  var lg = lang(), el = document.getElementById("panel"), out = "";
+
+  if (query){
+    var hits = sortKeys(Object.keys(S).filter(function(k){ return passesSev(k) && matchesQuery(k); }));
+    out += '<div class="panelhead"><div><div class="zone">' + UI[lg].results + '</div>' +
+           '<h2>' + hits.length + ' ' + UI[lg].matched + '</h2></div></div>';
+    out += hits.length ? hits.map(stdHTML).join("")
+                       : '<div class="empty">' + UI[lg].none + '</div>';
+    el.innerHTML = out;
+    return;
+  }
+
+  var area = L.filter(function(l){ return l.id === current; })[0] || L[0];
+  var keys = sortKeys(area.k.filter(passesSev));
+  out += '<div class="panelhead"><div>' +
+         '<div class="zone">' + ZONE_TXT[lg][area.z] + '</div>' +
+         '<h2>' + area[lg] + '</h2></div></div>' +
+         '<p class="panelsub">' + (lg === "es" ? area.bs : area.be) + '</p>' +
+         '<p class="panelsub"><strong>' + keys.length + '</strong> ' + UI[lg].applies + '.</p>';
+  out += keys.length ? keys.map(stdHTML).join("")
+                     : '<div class="empty">' + UI[lg].none + '</div>';
+  el.innerHTML = out;
+}
+
+function render(){ renderAreas(); renderPanel(); }
+
+/* Language toggle — mirrors the pattern used across the site, and re-renders
+   the dynamic panel so the tool follows the same switch as the static copy. */
+function toggleLang(){
+  var isEs = document.body.classList.toggle("es");
+  document.documentElement.lang = isEs ? "es" : "en";
+  var t = document.getElementById("languageToggle");
+  if (t){
+    t.setAttribute("aria-pressed", String(isEs));
+    t.setAttribute("aria-label", isEs ? "Change site to English" : "Cambiar sitio a español");
+  }
+  document.querySelectorAll("[data-ph-en]").forEach(function(el){
+    el.placeholder = isEs ? el.dataset.phEs : el.dataset.phEn;
+  });
+  render();
+}
+
+document.getElementById("q").addEventListener("input", function(e){
+  query = plain(e.target.value.trim());
+  render();
+});
+
+document.getElementById("sevfilter").addEventListener("click", function(e){
+  var b = e.target.closest("button[data-sev]");
+  if (!b) return;
+  sevFilter = b.getAttribute("data-sev");
+  this.querySelectorAll("button[data-sev]").forEach(function(x){
+    x.setAttribute("aria-pressed", String(x === b));
+  });
+  render();
+});
+
+/* Print: expand every standard so the sheet works on a clipboard, then put
+   the page back the way the user had it. */
+var printReopen = [];
+window.addEventListener("beforeprint", function(){
+  printReopen = [];
+  document.querySelectorAll("details.std").forEach(function(d){
+    if (!d.open){ printReopen.push(d); d.open = true; }
+  });
+});
+window.addEventListener("afterprint", function(){
+  printReopen.forEach(function(d){ d.open = false; });
+  printReopen = [];
+});
+
+(function init(){
+  var h = (location.hash || "").replace("#", "");
+  if (h && L.some(function(l){ return l.id === h; })) current = h;
+  document.getElementById("yr").textContent = new Date().getFullYear();
+  render();
+})();
+</script>
+
+</body>
+</html>
