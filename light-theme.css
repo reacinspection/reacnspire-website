@@ -10,7 +10,7 @@
   --cream: #f8fbfc !important;
   --gray-100: #eff6f7 !important;
   --gray-200: #dbe8eb !important;
-  --gray-400: #71828a !important;
+  --gray-400: #526873 !important;
   --gray-600: #4b6069 !important;
   --text: #172b36 !important;
   --text-light: #405862 !important;
@@ -211,6 +211,40 @@ table.cmp th {
 .mobile-menu a:last-child { background: #0b7995 !important; color: #fff !important; }
 
 footer { background: #163a50 !important; color: #d9e8ec !important; }
+
+/* Explicit foregrounds for light and dark surfaces. */
+.score-range.green { color: #246536 !important; }
+.score-range.yellow { color: #785900 !important; }
+.score-range.red { color: #a63139 !important; }
+.np-chip { background: #e2f4f6 !important; color: #163a50 !important; }
+.diff-num, .proof strong { color: #0a6177 !important; }
+.about-img-badge, .about-img-badge span, .process-number { color: #fff !important; }
+nav .navlinks a:not(.button) { color: #163a50 !important; }
+.hero :where(.crumb, .crumbs, .crumb a, .crumbs a, .eyebrow) { color: #405862 !important; }
+.hero .badge { background: #fbe5e5 !important; color: #872830 !important; }
+.btn.btn-gold { background: #0b7995 !important; color: #fff !important; }
+.btn.btn-gold:hover { background: #075f76 !important; }
+.countdown span[style*="color:"] { color: #405862 !important; }
+.cta-band span[style*="color:"] { color: #405862 !important; }
+.language-switch button[aria-pressed="true"] { color: #fff !important; }
+.promo-close { background: #163a50 !important; color: #fff !important; }
+.promo-close:hover { background: #075f76 !important; }
+.flag { color: #d5f3f6 !important; }
+.workshop-banner { --gold: #a9e5ed !important; --gold-light: #d5f3f6 !important; }
+.workshop-banner [style*="background: #E87474"] { background: #a63139 !important; }
+.workshop-banner .btn-primary { color: #fff !important; }
+.cta-banner h2 em { color: #a9e5ed !important; }
+.cta-banner .btn-ghost { color: #fff !important; border-color: #a9e5ed !important; }
+.cta-banner .btn-ghost:hover { color: #163a50 !important; background: #fff !important; }
+.cta-banner span[style*="color:"] { color: #d9e8ec !important; }
+footer :where(a, p, span, .footer-copy) { color: #d9e8ec !important; }
+footer a:hover { color: #fff !important; text-decoration: underline; }
+.workshop-banner :focus-visible, .cta-banner :focus-visible, footer :focus-visible {
+  outline-color: #a9e5ed;
+}
+@media (max-width: 760px) {
+  .workshop-banner { grid-template-columns: minmax(0, 1fr) !important; }
+}
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto !important; }

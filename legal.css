@@ -20,5 +20,5 @@ a{color:#09647b}
 .contact-box{background:#e2f4f6;color:var(--navy);padding:22px;border:1px solid #c6e3e8;border-radius:12px;margin-top:34px}
 .contact-box p{color:var(--muted);margin:4px 0}.contact-box a{color:#09647b;margin:4px 0}
 :where(a,button,input,select,textarea,summary):focus-visible{outline:3px solid var(--gold);outline-offset:3px}
-footer{text-align:center;color:#777;padding:0 24px 38px;font-size:13px}
+footer{text-align:center;color:#526873;padding:0 24px 38px;font-size:13px}
 @media(max-width:600px){.legal-nav{align-items:flex-start;flex-direction:column}.legal-hero{padding-top:44px}.legal-main{margin:18px 14px 40px}}
