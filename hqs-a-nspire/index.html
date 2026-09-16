@@ -61,6 +61,23 @@
   .total .amt{font-size:24px;font-weight:700;}
   .total .brk{font-size:12px;color:rgba(255,255,255,.7);font-weight:500;}
   #grupo-campos,#factura-campos{padding-top:4px;}
+  .hook{position:relative;overflow:hidden;background:linear-gradient(135deg,#0D1F3C,#1A3358);border:2px solid #E8B85A;border-radius:14px;padding:20px 22px;margin-bottom:24px;}
+  .hook-tag{display:inline-block;background:#E8B85A;color:#0D1F3C;font-size:11px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;padding:5px 12px;border-radius:999px;margin-bottom:12px;}
+  .hook-row{display:flex;align-items:flex-start;gap:16px;}
+  .hook-num{font-family:'Playfair Display',serif;font-size:52px;line-height:1;font-weight:800;color:#E8B85A;flex-shrink:0;}
+  .hook-copy .t1{display:block;font-size:19px;font-weight:700;color:#fff;line-height:1.2;}
+  .hook-copy .t2{display:block;font-size:14px;color:rgba(255,255,255,.75);margin-top:3px;line-height:1.4;}
+  .hook-ej{margin-top:14px;padding-top:13px;border-top:1px dashed rgba(201,153,58,.45);font-size:14px;color:rgba(255,255,255,.8);}
+  .hook-ej s{color:rgba(255,255,255,.5);}
+  .hook-ej b{color:#E8B85A;font-size:16px;}
+  .hook::after{content:"";position:absolute;top:0;left:-60%;width:40%;height:100%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.13),transparent);animation:hookShine 4.5s ease-in-out infinite;}
+  @keyframes hookShine{0%{left:-60%;}45%{left:120%;}100%{left:120%;}}
+  .hook.on{border-color:#4CAF50;}
+  .hook.on .hook-tag{background:#4CAF50;color:#fff;}
+  .hook.on .hook-num,.hook.on .hook-ej b{color:#8FD694;}
+  .hook.on::after{display:none;}
+  @media(prefers-reduced-motion:reduce){.hook::after{animation:none;display:none;}}
+  @media(max-width:600px){.hook-num{font-size:42px;}.hook-copy .t1{font-size:17px;}}
   .promo{display:inline-block;background:var(--gold);color:var(--navy);font-weight:700;font-size:14px;border-radius:999px;padding:7px 18px;margin-top:14px;}
   .opt.off{opacity:.5;cursor:not-allowed;}
   .opt.off input{cursor:not-allowed;}
@@ -154,6 +171,18 @@
       <p hidden><label>No llenar: <input name="bot-field"></label></p>
 
       <h2><span data-en="Complete your registration" data-es="Complete su registro">Complete su registro</span></h2>
+      <div class="hook" id="hook">
+        <span class="hook-tag" id="hook-tag"><span data-en="Group special" data-es="Especial para grupos">Especial para grupos</span></span>
+        <div class="hook-row">
+          <span class="hook-num">10%</span>
+          <span class="hook-copy">
+            <span class="t1" id="hook-t1"><span data-en="off your whole group" data-es="de descuento para todo su grupo">de descuento para todo su grupo</span></span>
+            <span class="t2" id="hook-t2"><span data-en="Register 5 or more people from your agency and every seat drops to $355.50." data-es="Registre 5 o más personas de su agencia y cada cupo baja a $355.50.">Registre 5 o más personas de su agencia y cada cupo baja a $355.50.</span></span>
+          </span>
+        </div>
+        <div class="hook-ej" id="hook-ej"><span data-en="5 people: " data-es="5 personas: ">5 personas: </span><s>$1,975.00</s> → <b>$1,777.50</b><span data-en=" — you keep $197.50" data-es=" — se ahorra $197.50"> — se ahorra $197.50</span></div>
+      </div>
+
       <p class="sub"><span data-en="All fields are required. Your information will be used to manage your registration for this training." data-es="Todos los campos son requeridos. Su información se usará para gestionar su registro a este adiestramiento.">Todos los campos son requeridos. Su información se usará para gestionar su registro a este adiestramiento.</span></p>
 
       <label class="field"><span><span data-en="First name" data-es="Nombre">Nombre</span></span><input type="text" name="nombre" required autocomplete="given-name"></label>
@@ -224,6 +253,10 @@
     var totalWas = document.getElementById('total-was');
     var totalDesc = document.getElementById('total-desc');
     var bulkAviso;
+    var hook = document.getElementById('hook');
+    var hookTag = document.getElementById('hook-tag');
+    var hookT1 = document.getElementById('hook-t1');
+    var hookEj = document.getElementById('hook-ej');
     var language = 'es';
     var state = 'ready';
 
@@ -298,6 +331,22 @@
       document.getElementById('grupo-square-aviso').hidden = !(esGrupo() && !esFactura() && !conDescuento);
       bulkAviso = bulkAviso || document.getElementById('bulk-aviso');
       bulkAviso.hidden = !conDescuento;
+      hook.classList.toggle('on', conDescuento);
+      hookTag.textContent = conDescuento
+        ? (language === 'en' ? '\u2713 Discount applied' : '\u2713 Descuento aplicado')
+        : (language === 'en' ? 'Group special' : 'Especial para grupos');
+      hookT1.textContent = conDescuento
+        ? (language === 'en' ? 'off \u2014 applied to your ' + n + ' seats' : 'de descuento \u2014 aplicado a sus ' + n + ' cupos')
+        : (language === 'en' ? 'off your whole group' : 'de descuento para todo su grupo');
+      if (conDescuento) {
+        hookEj.innerHTML = (language === 'en' ? n + ' people: ' : n + ' personas: ')
+          + '<s>' + money(bruto) + '</s> \u2192 <b>' + money(total) + '</b>'
+          + (language === 'en' ? ' \u2014 you keep ' : ' \u2014 se ahorra ') + money(bruto - total);
+      } else {
+        hookEj.innerHTML = (language === 'en' ? '5 people: ' : '5 personas: ')
+          + '<s>$1,975.00</s> \u2192 <b>$1,777.50</b>'
+          + (language === 'en' ? ' \u2014 you keep $197.50' : ' \u2014 se ahorra $197.50');
+      }
       status.textContent = statusText();
     }
 
