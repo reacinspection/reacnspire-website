@@ -78,7 +78,21 @@
   .hook.on::after{display:none;}
   @media(prefers-reduced-motion:reduce){.hook::after{animation:none;display:none;}}
   @media(max-width:600px){.hook-num{font-size:42px;}.hook-copy .t1{font-size:17px;}}
-  .promo{display:inline-block;background:var(--gold);color:var(--navy);font-weight:700;font-size:14px;border-radius:999px;padding:7px 18px;margin-top:14px;}
+  .promo{display:inline-flex;align-items:center;gap:15px;position:relative;
+    background:linear-gradient(135deg,#FFE9AE 0%,#F5C95F 45%,#E0A93C 100%);
+    color:#14243F;text-decoration:none;border:2px solid #14243F;border-radius:16px;padding:13px 24px;margin-top:20px;
+    box-shadow:0 12px 34px rgba(0,0,0,.4);animation:promoPulse 2.8s ease-in-out infinite;
+    transition:transform .18s ease;}
+  .promo:hover,.promo:focus-visible{transform:translateY(-3px) scale(1.02);}
+  .promo .pn{font-family:'Playfair Display',serif;font-size:34px;font-weight:800;line-height:.95;white-space:nowrap;}
+  .promo .pc{text-align:left;}
+  .promo .pt{display:block;font-size:15px;font-weight:800;letter-spacing:.03em;line-height:1.15;text-transform:uppercase;}
+  .promo .ps{display:block;font-size:13px;font-weight:600;line-height:1.3;margin-top:2px;color:#3B3113;}
+  @keyframes promoPulse{
+    0%,100%{box-shadow:0 12px 34px rgba(0,0,0,.4),0 0 0 0 rgba(255,224,154,.6);}
+    55%{box-shadow:0 12px 34px rgba(0,0,0,.4),0 0 0 16px rgba(255,224,154,0);}}
+  @media(prefers-reduced-motion:reduce){.promo{animation:none;}.promo:hover{transform:none;}}
+  @media(max-width:600px){.promo{gap:12px;padding:12px 20px;}.promo .pn{font-size:29px;}.promo .pt{font-size:13.5px;}.promo .ps{font-size:12px;}}
   .opt.off{opacity:.5;cursor:not-allowed;}
   .opt.off input{cursor:not-allowed;}
   .total .desc{color:var(--gold-light);font-weight:700;display:block;margin-top:2px;}
@@ -118,7 +132,13 @@
       <div class="card"><div class="lbl"><span data-en="Format" data-es="Modalidad">Modalidad</span></div><div class="val"><span data-en="In person (Spanish)" data-es="Presencial (en español)">Presencial (en español)</span></div></div>
       <div class="card"><div class="lbl"><span data-en="Location" data-es="Lugar">Lugar</span></div><div class="val">TRYP by Wyndham</div><div style="font-size:13px;font-weight:500;opacity:.8;margin-top:2px;">Isla Verde, PR</div></div>
     </div>
-    <p><span class="promo"><span data-en="Special: register 5 or more people and get 10% off" data-es="Especial: registre 5 o más personas y obtenga 10% de descuento">Especial: registre 5 o más personas y obtenga 10% de descuento</span></span></p>
+    <p><a class="promo" href="#registro">
+      <span class="pn">10%</span>
+      <span class="pc">
+        <span class="pt"><span data-en="off for groups" data-es="de descuento para grupos">de descuento para grupos</span></span>
+        <span class="ps"><span data-en="Register 5 or more people — save $197.50 →" data-es="Registre 5 o más personas — ahorre $197.50 →">Registre 5 o más personas — ahorre $197.50 →</span></span>
+      </span>
+    </a></p>
     <p class="note"><strong><span data-en="The transition begins in February 2027 — prepare now." data-es="La transición comienza en Febrero de 2027 — ¡prepárate ahora!">La transición comienza en Febrero de 2027 — ¡prepárate ahora!</span></strong><br><span data-en="Full-day session, 9:00 AM to 4:00 PM. Check-in details are emailed after you register." data-es="Sesión de día completo, de 9:00 AM a 4:00 PM. Los detalles de registro se envían por correo electrónico."> Sesión de día completo, de 9:00 AM a 4:00 PM. Los detalles de registro se envían por correo electrónico.</span></p>
   </div>
 </header>
