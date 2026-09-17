@@ -7,3 +7,10 @@ https://kendrareacconsultant.com/*      https://reacnspire.com/:splat   301!
 http://kendrareacconsultant.com/*        https://reacnspire.com/:splat   301!
 https://www.kendrareacconsultant.com/*   https://reacnspire.com/:splat   301!
 http://www.kendrareacconsultant.com/*    https://reacnspire.com/:splat   301!
+
+# Belt-and-braces: the publish dir is the repo root, so repo tooling sits
+# alongside site content. .netlifyignore covers CLI deploys and Netlify skips
+# dot-directories by default, but neither is guaranteed for Git-triggered
+# builds — these rules are, so nothing under .claude/ is ever served.
+/.claude/*      /   404
+/AGENTS.md      /   404

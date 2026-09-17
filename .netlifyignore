@@ -1,0 +1,8 @@
+# Publish dir is the repo root (`netlify deploy --dir=.`), so anything here
+# that isn't part of the site would otherwise be uploaded to the CDN.
+
+# Claude Code skills/config — tooling for editing the site, not site content.
+.claude/
+
+# Repo docs and agent instructions.
+AGENTS.md
