@@ -34,6 +34,10 @@ html { color-scheme: light; }
 .event-spotlight--transition .event-action { background:#163a50; color:#fff; }
 .event-spotlight:focus-visible { outline:3px solid #0b7995; outline-offset:4px; }
 @media(max-width:1100px){.event-spotlights{grid-template-columns:1fr}.event-spotlight{padding:22px}.event-title{font-size:24px}}
+.hero-right .event-spotlights { grid-template-columns:1fr; margin-bottom:0; width:100%; max-width:400px; }
+.hero-card { animation:none !important; }
+.app2-shot .frame { height:460px; }
+@media(max-width:480px){.app2-shot .frame{height:380px;}}
 body { background: #f8fbfc; color: #172b36; }
 
 :where(a, button, input, select, textarea, summary):focus-visible {
@@ -171,6 +175,8 @@ header.hero,
 .app2 :where(.role, .price) { color: #164b60 !important; }
 .app2 a.o { color: #164b60 !important; border-color: #76aeba !important; }
 .app2 a.o:hover { background: #e2f4f6 !important; }
+.app2-shot .frame { background: rgba(255, 255, 255, 0.55) !important; border-color: #c2dfe5 !important; }
+.app2-shot figcaption { color: #405862 !important; }
 .differentiator,
 .training-item { border-color: #c9e2e7 !important; }
 .diff-num { color: rgba(11, 121, 149, 0.35) !important; }

@@ -228,7 +228,7 @@
 
   .hero-left {
     padding: 130px 60px 80px;
-    display: flex; flex-direction: column; justify-content: center;
+    display: flex; flex-direction: column; justify-content: flex-start;
     position: relative; z-index: 2;
   }
 
@@ -292,7 +292,8 @@
   .hero-stat-label { font-size: 12px; color: rgba(255,255,255,0.5); font-weight: 300; line-height: 1.4; }
 
   .hero-right {
-    display: flex; align-items: center; justify-content: center;
+    display: flex; flex-direction: column; align-items: center; justify-content: flex-start;
+    gap: 28px;
     padding: 130px 60px 80px 20px;
     position: relative; z-index: 2;
   }
@@ -717,7 +718,8 @@
     .nav-cta { display: none; }
     .sticky-call { display: block; }
     .hero { grid-template-columns: 1fr; }
-    .hero-right { display: none; }
+    .hero-right { padding: 0 24px 40px; gap: 20px; }
+    .hero-right .event-spotlights { order: -1; }
     .hero-left { padding: 120px 24px 60px; }
     .hero-announcement { font-size: 13px !important; padding: 10px 12px !important; }
     .app-grid { grid-template-columns: 1fr !important; }
@@ -904,10 +906,6 @@
   <div class="hero-grid-lines"></div>
 
   <div class="hero-left">
-<div class="event-spotlights" aria-label="Upcoming training / Próximos adiestramientos">
-<a class="event-spotlight event-spotlight--refresher" href="/taller-seguridad/"><span class="event-kicker" data-lang="en">LIVE ON ZOOM · OCT 28</span><span class="event-kicker" data-lang="es">EN VIVO POR ZOOM · 28 OCT</span><span class="event-title" data-lang="en">NSPIRE Workshop Refresher and New Employees</span><span class="event-title" data-lang="es">Taller NSPIRE: Repaso y Empleados Nuevos</span><span class="event-hook" data-lang="en">Refresh your skills. Get new team members ready.</span><span class="event-hook" data-lang="es">Refuerce sus conocimientos. Prepare a su personal nuevo.</span><span class="event-details" data-lang="en">October 28, 2026 · 1–4 p.m. ET · In Spanish</span><span class="event-details" data-lang="es">28 de octubre de 2026 · 1–4 p.m. ET · En español</span><span class="event-price" data-lang="en">$150 per person</span><span class="event-price" data-lang="es">$150 por persona</span><span class="event-action" data-lang="en">Reserve your spot →</span><span class="event-action" data-lang="es">Reserve su espacio →</span></a>
-<a class="event-spotlight event-spotlight--transition" href="/hqs-a-nspire/"><span class="event-kicker" data-lang="en">NEW VENUE · NEW RATE</span><span class="event-kicker" data-lang="es">NUEVA SEDE · NUEVA TARIFA</span><span class="event-title" data-lang="en">HQS to NSPIRE</span><span class="event-title" data-lang="es">De HQS a NSPIRE</span><span class="event-hook" data-lang="en">Section 8 is changing. Prepare your team.</span><span class="event-hook" data-lang="es">Sección 8 cambia. Prepare a su equipo.</span><span class="event-details" data-lang="en">November 17, 2026 · 9 a.m.–4 p.m. AST<br>Interamericana · Río Piedras, PR</span><span class="event-details" data-lang="es">17 de noviembre de 2026 · 9 a.m.–4 p.m. AST<br>Interamericana · Río Piedras, PR</span><span class="event-price" data-lang="en">$350 per person · $315 each for groups of 5+</span><span class="event-price" data-lang="es">$350 por persona · $315 por participante en grupos de 5+</span><span class="event-action" data-lang="en">See details & register →</span><span class="event-action" data-lang="es">Vea los detalles e inscríbase →</span></a>
-</div>
     <img src="/kendra-logo-nobg.png" alt="Kendra REAC Consultant" width="168" height="94" fetchpriority="high" style="width:min(90vw,470px);height:auto;object-fit:contain;align-self:flex-start;margin-bottom:24px;display:block;">
     <div class="hero-badge">HUD REAC Certified Since 2009</div>
 
@@ -991,6 +989,11 @@
         Nuestros clientes mejoran consistentemente sus puntuaciones — reduciendo la frecuencia de inspección y protegiendo su financiamiento de HUD.
       </div>
     </div>
+
+<div class="event-spotlights" aria-label="Upcoming training / Próximos adiestramientos">
+<a class="event-spotlight event-spotlight--refresher" href="/taller-seguridad/"><span class="event-kicker" data-lang="en">LIVE ON ZOOM · OCT 28</span><span class="event-kicker" data-lang="es">EN VIVO POR ZOOM · 28 OCT</span><span class="event-title" data-lang="en">NSPIRE Workshop Refresher and New Employees</span><span class="event-title" data-lang="es">Taller NSPIRE: Repaso y Empleados Nuevos</span><span class="event-hook" data-lang="en">Refresh your skills. Get new team members ready.</span><span class="event-hook" data-lang="es">Refuerce sus conocimientos. Prepare a su personal nuevo.</span><span class="event-details" data-lang="en">October 28, 2026 · 1–4 p.m. ET · In Spanish</span><span class="event-details" data-lang="es">28 de octubre de 2026 · 1–4 p.m. ET · En español</span><span class="event-price" data-lang="en">$150 per person</span><span class="event-price" data-lang="es">$150 por persona</span><span class="event-action" data-lang="en">Reserve your spot →</span><span class="event-action" data-lang="es">Reserve su espacio →</span></a>
+<a class="event-spotlight event-spotlight--transition" href="/hqs-a-nspire/"><span class="event-kicker" data-lang="en">NEW VENUE · NEW RATE</span><span class="event-kicker" data-lang="es">NUEVA SEDE · NUEVA TARIFA</span><span class="event-title" data-lang="en">HQS to NSPIRE</span><span class="event-title" data-lang="es">De HQS a NSPIRE</span><span class="event-hook" data-lang="en">Section 8 is changing. Prepare your team.</span><span class="event-hook" data-lang="es">Sección 8 cambia. Prepare a su equipo.</span><span class="event-details" data-lang="en">November 17, 2026 · 9 a.m.–4 p.m. AST<br>Interamericana · Río Piedras, PR</span><span class="event-details" data-lang="es">17 de noviembre de 2026 · 9 a.m.–4 p.m. AST<br>Interamericana · Río Piedras, PR</span><span class="event-price" data-lang="en">$350 per person · $315 each for groups of 5+</span><span class="event-price" data-lang="es">$350 por persona · $315 por participante en grupos de 5+</span><span class="event-action" data-lang="en">See details & register →</span><span class="event-action" data-lang="es">Vea los detalles e inscríbase →</span></a>
+</div>
   </div>
 </section>
 
@@ -1023,6 +1026,11 @@
     .app2 .role{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--gold-light);margin-bottom:7px;}
     .app2 h3{font-family:'Playfair Display',serif;font-size:26px;color:#fff;font-weight:800;margin:0 0 10px;line-height:1.15;}
     .app2 > p{color:var(--gold-pale);font-size:15px;line-height:1.65;margin:0 0 16px;}
+    .app2-shot{margin:0 0 18px;}
+    .app2-shot .frame{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.14);border-radius:14px;padding:14px;height:340px;display:flex;align-items:center;justify-content:center;overflow:hidden;}
+    .app2-shot img{max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain;display:block;border-radius:6px;}
+    .app2-shot figcaption{margin-top:10px;font-size:12px;color:var(--gold-pale);text-align:center;opacity:.85;}
+    @media(max-width:480px){ .app2-shot .frame{height:260px;} }
     .app2 .chips{margin-bottom:18px;line-height:2.3;}
     .app2 .price{color:#fff;font-size:14.5px;font-weight:600;margin:0 0 20px;}
     .app2 .price b{font-size:23px;}
@@ -1053,6 +1061,13 @@
         <h3>NspirePro Inspections</h3>
         <p data-lang="en">Score HUD NSPIRE inspections right on your phone. Document deficiencies with photos, run team inspections, and hand your client a professional report before you leave &mdash; all offline.</p>
         <p data-lang="es">Califique inspecciones HUD NSPIRE desde su tel&eacute;fono. Documente deficiencias con fotos, realice inspecciones en equipo y entregue un informe profesional antes de salir &mdash; todo sin conexi&oacute;n.</p>
+        <figure class="app2-shot">
+          <div class="frame">
+            <img src="/images/nspire-inspections-score.jpg" alt="NspirePro inspection score screen" width="750" height="1624" loading="lazy">
+          </div>
+          <figcaption data-lang="en">Inspection score preview</figcaption>
+          <figcaption data-lang="es">Vista previa de la puntuación</figcaption>
+        </figure>
         <div class="chips">
           <span class="np-chip" data-lang="en">63 NSPIRE standards</span> <span class="np-chip" data-lang="en">HUD-aligned scoring</span> <span class="np-chip" data-lang="en">Photos &amp; signatures</span> <span class="np-chip" data-lang="en">Works offline</span> <span class="np-chip" data-lang="en">AI photo assist</span>
           <span class="np-chip" data-lang="es">63 normas NSPIRE</span> <span class="np-chip" data-lang="es">Puntaje alineado con HUD</span> <span class="np-chip" data-lang="es">Fotos y firmas</span> <span class="np-chip" data-lang="es">Funciona sin conexi&oacute;n</span> <span class="np-chip" data-lang="es">Identifica con IA</span>
@@ -1075,6 +1090,13 @@
         <h3>NspirePro Maintenance</h3>
         <p data-lang="en">Tenants and technicians report work orders with a photo. Assign to your team, auto-translate every request to English, and keep tenants updated by email &mdash; start to finish.</p>
         <p data-lang="es">Inquilinos y t&eacute;cnicos reportan &oacute;rdenes de trabajo con una foto. Asigne a su equipo, traduzca cada solicitud al ingl&eacute;s autom&aacute;ticamente y mantenga informados a los inquilinos por correo &mdash; de principio a fin.</p>
+        <figure class="app2-shot">
+          <div class="frame">
+            <img src="/images/nspire-maintenance-preview.png" alt="NspirePro Maintenance workflow illustration" width="750" height="1100" loading="lazy">
+          </div>
+          <figcaption data-lang="en">Maintenance workflow illustration</figcaption>
+          <figcaption data-lang="es">Ejemplo del flujo de mantenimiento</figcaption>
+        </figure>
         <div class="chips">
           <span class="np-chip" data-lang="en">Tenant photo reports</span> <span class="np-chip" data-lang="en">Auto-translated</span> <span class="np-chip" data-lang="en">Technician app</span> <span class="np-chip" data-lang="en">Tenant status emails</span> <span class="np-chip" data-lang="en">Unlimited users</span>
           <span class="np-chip" data-lang="es">Reportes con foto</span> <span class="np-chip" data-lang="es">Traducci&oacute;n autom&aacute;tica</span> <span class="np-chip" data-lang="es">App para t&eacute;cnicos</span> <span class="np-chip" data-lang="es">Correos de estado</span> <span class="np-chip" data-lang="es">Usuarios ilimitados</span>
