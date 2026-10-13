@@ -791,10 +791,17 @@
     display: flex; align-items: center; justify-content: center; gap: 18px;
     margin-bottom: 20px; flex-wrap: wrap;
   }
+  body:not(.es) #promoOverlay [data-lang="es"],
+  body.es #promoOverlay [data-lang="en"],
+  body:not(.es) #promoReopen [data-lang="es"],
+  body.es #promoReopen [data-lang="en"] { display: none; }
+  #promoOverlay .promo-card { background: #fff; }
+  #promoOverlay .promo-alert { display: inline-block; }
+  #promoOverlay .promo-price .lbl,
+  #promoOverlay .promo-price .flat { display: block; }
   .promo-price { text-align: center; }
   .promo-price .lbl { display: block; font-size: 10px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--gray-400); margin-bottom: 2px; }
   .promo-price .now { font-family: 'Playfair Display', serif; font-size: 40px; font-weight: 800; color: var(--navy); line-height: 1; }
-  .promo-price .was { font-size: 26px; font-weight: 700; color: var(--gray-400); text-decoration: line-through; line-height: 1; }
   .promo-price .flat { display: block; font-size: 11px; color: var(--gold); font-weight: 700; margin-top: 4px; text-transform: uppercase; letter-spacing: 0.05em; }
 
   .promo-list { list-style: none; margin: 0 0 22px; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 8px 14px; }
@@ -1792,18 +1799,18 @@
   </div>
 </section>
 
-<!-- PROMO POP-UP: NSPIRE 2026 Summer Special -->
+<!-- NSPIRE advanced on-site training — current flat fee -->
 <div class="promo-overlay" id="promoOverlay" role="dialog" aria-modal="true" aria-labelledby="promoTitle">
   <div class="promo-card">
     <button class="promo-close" onclick="closePromo()" aria-label="Close">&times;</button>
 
     <div class="promo-head">
-      <span class="promo-alert" data-lang="en">🚨 NSPIRE 2026 Summer Special</span>
-      <span class="promo-alert" data-lang="es">🚨 Oferta de Verano NSPIRE 2026</span>
-      <h2 id="promoTitle" data-lang="en">Be Ready Before the October 1, 2026 HUD Changes</h2>
-      <h2 data-lang="es">Prepárese Antes de los Cambios de HUD del 1 de Octubre de 2026</h2>
-      <p data-lang="en">New affirmative NSPIRE requirements will begin affecting inspection scores — fire doors, GFCI protection, guardrails, and minimum electrical &amp; lighting.</p>
-      <p data-lang="es">Nuevos requisitos afirmativos de NSPIRE comenzarán a afectar los puntajes — puertas contra incendios, protección GFCI, barandas y requisitos mínimos de electricidad e iluminación.</p>
+      <span class="promo-alert" data-lang="en">NSPIRE Advanced On-Site Training</span>
+      <span class="promo-alert" data-lang="es">Entrenamiento avanzado NSPIRE</span>
+      <h2 id="promoTitle" data-lang="en">Prepare Your Team for NSPIRE Inspections</h2>
+      <h2 data-lang="es">Prepare a su equipo para las inspecciones NSPIRE</h2>
+      <p data-lang="en">Practical training to help your team identify deficiencies and prepare for an NSPIRE inspection.</p>
+      <p data-lang="es">Entrenamiento práctico para que su equipo identifique deficiencias y se prepare para una inspección NSPIRE.</p>
     </div>
 
     <div class="promo-body">
@@ -1814,16 +1821,11 @@
 
       <div class="promo-price-row">
         <div class="promo-price">
-          <span class="lbl" data-lang="en">Summer Special</span>
-          <span class="lbl" data-lang="es">Precio de Verano</span>
-          <span class="now">$7,500</span>
+          <span class="lbl" data-lang="en">On-site training</span>
+          <span class="lbl" data-lang="es">Entrenamiento en su propiedad</span>
+          <span class="now">$9,500</span>
           <span class="flat" data-lang="en">Flat fee — train your whole team</span>
           <span class="flat" data-lang="es">Precio fijo — entrene a todo su equipo</span>
-        </div>
-        <div class="promo-price">
-          <span class="lbl" data-lang="en">After Oct 1</span>
-          <span class="lbl" data-lang="es">Después del 1 Oct</span>
-          <span class="was">$9,500</span>
         </div>
       </div>
 
@@ -1832,8 +1834,8 @@
         <li data-lang="es">Deficiencias que amenazan la vida</li>
         <li data-lang="en">Most common severe &amp; moderate deficiencies</li>
         <li data-lang="es">Deficiencias severas y moderadas comunes</li>
-        <li data-lang="en">New affirmative requirements</li>
-        <li data-lang="es">Nuevos requisitos afirmativos</li>
+        <li data-lang="en">Affirmative NSPIRE requirements</li>
+        <li data-lang="es">Requisitos afirmativos de NSPIRE</li>
         <li data-lang="en">Latest HUD updates &amp; clarifications</li>
         <li data-lang="es">Últimas actualizaciones de HUD</li>
         <li data-lang="en">Digital PDF training manual</li>
@@ -1843,8 +1845,8 @@
       </ul>
 
       <div class="promo-urgency">
-        <span data-lang="en">⏰ <strong>Limited-time offer.</strong> Valid for sessions conducted August 2026 – September 30, 2026. Dates are limited and reserved on a first-confirmed basis.</span>
-        <span data-lang="es">⏰ <strong>Oferta por tiempo limitado.</strong> Válida para sesiones realizadas entre Agosto de 2026 y el 30 de Septiembre de 2026. Las fechas son limitadas y se reservan por orden de confirmación.</span>
+        <span data-lang="en"><strong>Plan your training.</strong> Contact us to confirm available dates for your team.</span>
+        <span data-lang="es"><strong>Coordine su entrenamiento.</strong> Contáctenos para confirmar las fechas disponibles para su equipo.</span>
       </div>
 
       <a href="#contact" class="promo-cta" onclick="reservePromo()" data-lang="en">Reserve Your Training Today →</a>
@@ -1861,10 +1863,10 @@
   </div>
 </div>
 
-<!-- Persistent link to reopen the Summer Special offer -->
-<button class="promo-reopen" id="promoReopen" onclick="openPromo()" aria-label="View NSPIRE 2026 Summer Special">
-  <span data-lang="en">🚨 Summer Special — <strong>$7,500</strong></span>
-  <span data-lang="es">🚨 Oferta de Verano — <strong>$7,500</strong></span>
+<!-- Persistent link to current on-site training details -->
+<button class="promo-reopen" id="promoReopen" onclick="openPromo()" aria-label="NSPIRE training $9,500 / Entrenamiento NSPIRE $9,500">
+  <span data-lang="en">On-site training — <strong>$9,500</strong></span>
+  <span data-lang="es">Entrenamiento en su propiedad — <strong>$9,500</strong></span>
 </button>
 
 <!-- FOOTER -->
@@ -1926,15 +1928,12 @@
     if (sel) sel.value = program.includes('Pre-Inspection') ? 'Pre-Inspection' : program.includes('Manual') ? 'Training Manuals & Materials' : 'Staff Training';
   }
   // ── PROMO POP-UP ──
-  const PROMO_KEY = 'nspire2026SummerPromoDismissed';
-  const PROMO_END = new Date('2026-10-01T00:00:00-04:00').getTime();
-  function promoIsActive() { return Date.now() < PROMO_END; }
+  const PROMO_KEY = 'nspireAdvancedTrainingDismissed';
   function showReopenLink() {
     const link = document.getElementById('promoReopen');
     if (link) link.classList.add('show');
   }
   function openPromo() {
-    if (!promoIsActive()) return;
     document.getElementById('promoOverlay').classList.add('open');
     document.body.style.overflow = 'hidden';
   }
@@ -1948,8 +1947,8 @@
     const isEs = document.body.classList.contains('es');
     const msg = document.querySelector('textarea[name="message"]');
     if (msg) msg.value = isEs
-      ? 'Me gustaría reservar la Oferta de Verano NSPIRE 2026 — Entrenamiento Avanzado en el Sitio ($7,500 precio fijo).'
-      : "I'd like to reserve the NSPIRE 2026 Summer Special — Advanced On-Site Training ($7,500 flat fee).";
+      ? 'Me gustaría coordinar el entrenamiento avanzado NSPIRE en mi propiedad ($9,500, precio fijo para todo el equipo).'
+      : "I'd like to book NSPIRE Advanced On-Site Training ($9,500 flat fee for the whole team).";
     const sel = document.querySelector('select[name="service"]');
     if (sel) sel.value = 'Staff Training';
     closePromo();
@@ -1958,11 +1957,6 @@
   // already dismissed it (or just submitted the form) gets the persistent link
   // instead, so the offer is always reachable.
   (function () {
-    if (!promoIsActive()) {
-      document.getElementById('promoOverlay').remove();
-      document.getElementById('promoReopen').remove();
-      return;
-    }
     let dismissed = false;
     try { dismissed = localStorage.getItem(PROMO_KEY) === '1'; } catch (e) {}
     if (dismissed) { showReopenLink(); return; }
