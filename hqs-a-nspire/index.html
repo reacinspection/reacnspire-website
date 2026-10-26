@@ -133,10 +133,10 @@
       <div class="card"><div class="lbl"><span data-en="Format" data-es="Modalidad">Modalidad</span></div><div class="val"><span data-en="Live on Zoom" data-es="En vivo por Zoom">En vivo por Zoom</span></div></div>
     </div>
     <p><a class="promo" href="#registro">
-      <span class="pn">$275</span>
+      <span class="pn" id="hero-price">$275</span>
       <span class="pc">
         <span class="pt"><span data-en="per person" data-es="por persona">por persona</span></span>
-        <span class="ps"><span data-en="Register by November 6 · $325 from November 7 →" data-es="Registro hasta el 6 de noviembre · $325 a partir del 7 de noviembre →">Registro hasta el 6 de noviembre · $325 a partir del 7 de noviembre →</span></span>
+        <span class="ps"><span id="hero-tier" data-en="Register by November 6 · $325 from November 7 →" data-es="Registro hasta el 6 de noviembre · $325 a partir del 7 de noviembre →">Registro hasta el 6 de noviembre · $325 a partir del 7 de noviembre →</span></span>
       </span>
     </a></p>
     <p class="note"><strong><span data-en="The transition to NSPIRE begins February 1, 2027 — prepare now." data-es="La transición a NSPIRE comienza el 1.º de febrero de 2027 — prepárese ahora.">La transición a NSPIRE comienza el 1.º de febrero de 2027 — prepárese ahora.</span></strong><br><span data-en="Live session with time for questions. The Zoom link is emailed to you after you register." data-es="Sesión en vivo con espacio para preguntas. El enlace de Zoom se envía por correo electrónico después de registrarse.">Sesión en vivo con espacio para preguntas. El enlace de Zoom se envía por correo electrónico después de registrarse.</span></p>
@@ -145,7 +145,7 @@
 
 <main class="wrap">
   <div class="panel" style="padding:18px;">
-    <img class="flyer" src="/images/hqs-a-nspire-v-zoom.jpg" width="727" height="916" alt="De HQS a NSPIRE-V — adiestramiento en vivo por Zoom, en español. Martes 17 de noviembre de 2026. 6 horas de capacitación práctica para programas HCV, PBV y Mod Rehab. Puerto Rico 10:00 a.m.–1:00 p.m. y 2:00–5:00 p.m.; Florida 9:00 a.m.–12:00 p.m. y 1:00–4:00 p.m. $275 por persona hasta el 6 de noviembre; $325 a partir del 7 de noviembre.">
+    <img class="flyer" src="/images/hqs-a-nspire-v-zoom.jpg" width="727" height="916" alt="De HQS a NSPIRE-V — adiestramiento en vivo por Zoom, en español. Martes 17 de noviembre de 2026. 6 horas de capacitación práctica para programas HCV, PBV y Mod Rehab. Puerto Rico 10:00 a.m.–1:00 p.m. y 2:00–5:00 p.m.; Florida 9:00 a.m.–12:00 p.m. y 1:00–4:00 p.m. $275 por persona hasta el 6 de noviembre; $325 a partir del 7 de noviembre." data-alt-en="HQS to NSPIRE-V — live Zoom training in Spanish. Tuesday, November 17, 2026. 6 hours of hands-on training for HCV, PBV and Mod Rehab programs. Puerto Rico 10:00 a.m.–1:00 p.m. and 2:00–5:00 p.m.; Florida 9:00 a.m.–12:00 p.m. and 1:00–4:00 p.m. $275 per person through November 6; $325 from November 7." data-alt-es="De HQS a NSPIRE-V — adiestramiento en vivo por Zoom, en español. Martes 17 de noviembre de 2026. 6 horas de capacitación práctica para programas HCV, PBV y Mod Rehab. Puerto Rico 10:00 a.m.–1:00 p.m. y 2:00–5:00 p.m.; Florida 9:00 a.m.–12:00 p.m. y 1:00–4:00 p.m. $275 por persona hasta el 6 de noviembre; $325 a partir del 7 de noviembre.">
   </div>
 
   <div class="panel">
@@ -281,12 +281,16 @@
     var REGULAR_PRICE = 325;
     var EARLY_ENDS = Date.parse('2026-11-07T00:00:00-04:00');
     var EVENT_ENDS = Date.parse('2026-11-17T17:00:00-04:00');
-    var now = Date.now();
-    var early = now < EARLY_ENDS;
-    var PRICE = early ? EARLY_PRICE : REGULAR_PRICE;
+    // Tier and closing are re-evaluated on every refresh, on a timer and at submit,
+    // so a tab left open across a cutoff never submits a stale price or a closed event.
+    function isEarly() { return Date.now() < EARLY_ENDS; }
+    function isClosed() { return Date.now() >= EVENT_ENDS; }
+    function price() { return isEarly() ? EARLY_PRICE : REGULAR_PRICE; }
+    var shownPrice = null;
+    var paidSeats = 0;
 
     var form = document.getElementById('reg-form');
-    var checkout = early ? form.dataset.squareEarly : form.dataset.squareRegular;
+    function checkout() { return isEarly() ? form.dataset.squareEarly : form.dataset.squareRegular; }
     var payNext = document.getElementById('payment-next');
     var invoiceNext = document.getElementById('invoice-next');
     var status = document.getElementById('payment-status');
@@ -301,8 +305,6 @@
     var language = 'es';
     var state = 'ready';
 
-    document.getElementById(early ? 'tier-early' : 'tier-regular').classList.add('now');
-    document.getElementById('pay-link').href = checkout;
 
     var messages = {
       ready: {
@@ -310,6 +312,7 @@
         factura: { en: 'We email the invoice to your billing contact, normally within one business day. Your seat is held while it is outstanding.', es: 'Enviamos la factura a su contacto de facturación, normalmente dentro de un día laborable. Su cupo queda reservado mientras esté pendiente.' }
       },
       saving: { en: 'Saving registration...', es: 'Guardando registro...' },
+      repriced: { en: 'The price changed to $325.00 on November 7. Please review the new total and submit again.', es: 'El precio cambió a $325.00 el 7 de noviembre. Revise el nuevo total y envíe de nuevo.' },
       error: { en: 'We could not save your registration. Please try again.', es: 'No pudimos guardar su registro. Intente de nuevo.' }
     };
 
@@ -332,20 +335,47 @@
     }
 
     function tierText() {
-      return early
+      return isEarly()
         ? (language === 'en' ? '  · Early rate through Nov 6' : '  · Tarifa hasta el 6 de noviembre')
         : (language === 'en' ? '  · Rate from Nov 7' : '  · Tarifa a partir del 7 de noviembre');
     }
 
+    function closeRegistration() {
+      form.hidden = true;
+      payNext.hidden = true;
+      invoiceNext.hidden = true;
+      document.getElementById('reg-closed').hidden = false;
+    }
+
     function refresh() {
+      var early = isEarly();
+      var PRICE = price();
       var n = seats();
       var total = n * PRICE;
+      shownPrice = PRICE;
+
+      document.getElementById('tier-early').classList.toggle('now', early);
+      document.getElementById('tier-regular').classList.toggle('now', !early);
+      document.getElementById('pay-link').href = checkout();
+      document.getElementById('hero-price').textContent = '$' + PRICE;
+      var heroTier = document.getElementById('hero-tier');
+      heroTier.dataset.en = early ? 'Register by November 6 · $325 from November 7 →' : 'Rate from November 7 · Register now →';
+      heroTier.dataset.es = early ? 'Registro hasta el 6 de noviembre · $325 a partir del 7 de noviembre →' : 'Tarifa a partir del 7 de noviembre · Regístrese ahora →';
+      heroTier.textContent = heroTier.dataset[language];
+
+      var q = document.getElementById('pay-qty');
+      q.hidden = paidSeats < 2;
+      q.textContent = paidSeats < 2 ? '' : (language === 'en' ? 'Set the quantity to ' : 'Ajuste la cantidad a ') + paidSeats
+        + (language === 'en' ? ' in Square to cover your whole group.' : ' en Square para cubrir todo su grupo.');
 
       grupoCampos.hidden = !esGrupo();
       facturaCampos.hidden = !esFactura();
 
       // Only require fields that are actually visible, or the form cannot submit.
       cantidad.required = esGrupo();
+      cantidad.disabled = !esGrupo();
+      form.elements.participantes.required = esGrupo();
+      form.elements.participantes.disabled = !esGrupo();
       ['facturar_a', 'facturacion_contacto', 'facturacion_email', 'facturacion_direccion'].forEach(function (name) {
         form.elements[name].required = esFactura();
       });
@@ -377,6 +407,9 @@
       document.querySelectorAll('[data-language]').forEach(function (element) {
         element.setAttribute('aria-pressed', String(element.dataset.language === language));
       });
+      document.querySelectorAll('[data-alt-en]').forEach(function (element) {
+        element.alt = element.getAttribute('data-alt-' + language);
+      });
       document.querySelectorAll('[data-meta-en]').forEach(function (element) {
         element.content = element.getAttribute('data-meta-' + language);
       });
@@ -395,11 +428,14 @@
     try { language = localStorage.getItem('workshop-language') || 'es'; } catch (error) {}
     setLanguage(language);
 
-    if (now >= EVENT_ENDS) {
-      form.hidden = true;
-      document.getElementById('reg-closed').hidden = false;
+    if (isClosed()) {
+      closeRegistration();
       return;
     }
+    var clock = setInterval(function () {
+      if (isClosed()) { clearInterval(clock); closeRegistration(); return; }
+      if (price() !== shownPrice) refresh();
+    }, 30000);
 
     if (new URLSearchParams(location.search).get('exito') === 'true') {
       form.hidden = true;
@@ -409,7 +445,19 @@
     form.addEventListener('submit', async function (event) {
       event.preventDefault();
       if (button.disabled) return;
+      if (isClosed()) { clearInterval(clock); closeRegistration(); return; }
+      if (price() !== shownPrice) {
+        refresh();
+        state = 'repriced';
+        status.textContent = statusText();
+        state = 'ready';
+        return;
+      }
+      refresh();
       var factura = esFactura();
+      var data = new FormData(form);
+      data.set('cantidad', String(seats()));
+      if (!esGrupo()) data.delete('participantes');
       button.disabled = true;
       state = 'saving';
       status.textContent = statusText();
@@ -417,20 +465,17 @@
         var response = await fetch('/', {
           method: 'POST',
           headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-          body: new URLSearchParams(new FormData(form)).toString()
+          body: new URLSearchParams(data).toString()
         });
         if (!response.ok) throw new Error('Registration failed');
         form.hidden = true;
         if (factura) {
           invoiceNext.hidden = false;
         } else {
-          var q = document.getElementById('pay-qty');
-          if (seats() > 1) {
-            q.textContent = (language === 'en' ? 'Set the quantity to ' : 'Ajuste la cantidad a ') + seats() + (language === 'en' ? ' in Square to cover your whole group.' : ' en Square para cubrir todo su grupo.');
-            q.hidden = false;
-          }
+          paidSeats = seats();
+          refresh();
           payNext.hidden = false;
-          location.assign(checkout);
+          location.assign(checkout());
         }
       } catch (error) {
         state = 'error';
