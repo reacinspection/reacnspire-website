@@ -85,3 +85,5 @@ Netlify's preview-only collaboration drawer intercepted pointer events during th
 Ready for owner review, not authorization to merge. Claude's code changes in a489c5a remain intact; this follow-up adds review documentation and screenshots only.
 
 Supplemental checks in both engines passed: automatic five-second promo opening and focus return to the persistent link after Escape; Enter-key activation of the new FAQ; FAQ anchor remains below the 72px sticky mobile nav. [Interaction results](review-a489c5a-interactions.json).
+
+App-section screenshots hide fixed navigation, skip link and floating controls only during capture so long element screenshots do not composite them across the section. Mobile bottom-row screenshots retain the actual site controls.
