@@ -1,0 +1,20 @@
+[
+  {
+    "browser": "chromium",
+    "autoOpenFocusReturn": true,
+    "keyboardFaq": true,
+    "anchor": {
+      "faqTop": 520.40625,
+      "navBottom": 72
+    }
+  },
+  {
+    "browser": "webkit",
+    "autoOpenFocusReturn": true,
+    "keyboardFaq": true,
+    "anchor": {
+      "faqTop": 80.390625,
+      "navBottom": 72
+    }
+  }
+]
