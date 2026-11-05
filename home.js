@@ -13,7 +13,12 @@
   let returnFocus;
   const originalOpen = window.openPromo, originalClose = window.closePromo;
   window.openPromo = function () { returnFocus = document.activeElement; originalOpen(); overlay.querySelector('.promo-close').focus(); };
-  window.closePromo = function () { originalClose(); if (returnFocus && returnFocus.isConnected) returnFocus.focus(); };
+  window.closePromo = function () {
+    originalClose();
+    // Auto-open leaves no trigger to return to; fall back to the persistent reopen link.
+    const target = returnFocus && returnFocus.isConnected && returnFocus !== document.body ? returnFocus : document.getElementById('promoReopen');
+    if (target) target.focus();
+  };
   overlay.addEventListener('keydown', event => {
     if (event.key !== 'Tab') return;
     const items = [...overlay.querySelectorAll('a,button')].filter(el => el.getClientRects().length);

@@ -38,3 +38,18 @@ Only `index.html` changes existing production code. `home.css` and `home.js` are
 Browser checks use desktop Edge/Chromium with emulated viewports, not a physical phone or Safari. No contact form was submitted, no payment was made, and Square pricing was not changed. Third-party analytics and Netlify email delivery were not acceptance-tested. This PR is a visual/interaction redesign, not a new validation of existing regulatory, testimonial or product claims. Google font loading still depends on the existing permitted Google Fonts endpoints.
 
 The homepage remains bilingual using the existing `body.es`, `toggleLang`, placeholder and image-alt behavior. Named clients and product names are retained rather than translated.
+
+## Independent review fixes (Claude, November 5, 2026)
+
+| Before | After | Why |
+| --- | --- | --- |
+| Apps section still said "Score HUD NSPIRE inspections", with no NSPIRE-V | NSPIRE + NSPIRE-V copy, "New · NSPIRE-V for HCV & PBV" tag, 63 standards / 206 deficiencies chips, compliance-date note linking to /hqs-a-nspire/, 6th FAQ plus FAQPage JSON-LD, two SEO terms | Requested NSPIRE-V update; facts checked against the NspirePro app code. HUD scoring is claimed for public/multifamily only |
+| Section eyebrows ran 01, 02, 02, 03, 04, 05, 07, 07, 08, 09, 10 | 01 to 11 in sequence | Duplicate and missing numbers read as a mistake |
+| `--warn` #A86A00 (4.08:1 on paper) | #8F5A00 (5.31:1) | "80–89" band label failed WCAG AA |
+| Mobile $9,500 pill stacked 76px above the Call button | Same bottom row, width-limited, safe-area aware | Two stacked floating controls covered form content on 375px phones |
+| Auto-opened promo left focus on its hidden close button after closing | Focus moves to the persistent $9,500 link | Keyboard and screen-reader users keep a visible focus point |
+| "View Training Programs ↗" | "→" | ↗ signals an external link; this is an in-page anchor |
+| Client-references note touched the last testimonial | 32px top margin | Spacing |
+| Mosaic repeated the hero photo as tile 19 | 18 tiles | Duplicate photo; mobile grid now ends on a full row |
+
+Retested after the fixes: form attributes and fields identical to main; no link destinations removed; all JSON-LD valid (only the intended FAQ and knowsAbout additions); EN/ES toggle shows no wrong-language text; all 10 booking prefills and the promo reserve prefill work; promo focus trap, Escape and backdrop close work; no page errors; no horizontal overflow at 1440, 390 or 375px.
