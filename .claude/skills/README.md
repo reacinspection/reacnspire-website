@@ -1,0 +1,18 @@
+# Claude Code skills for this repo
+
+Claude Code loads every folder here automatically when it works in this repo.
+
+| Skill | What it does |
+|---|---|
+| `emil-design-eng` | Emil Kowalski's design-engineering rules for motion, easing, timing and polish |
+| `animate` / `choreograph` | Add animations and sequence several animations together |
+| `improve-animations` / `review-animations` | Improve or review animation code you already have |
+| `find-animation-opportunities` | Find places where motion would help |
+| `animation-performance` / `animation-vocabulary` | Keep animations smooth and name them precisely |
+
+Source: https://github.com/emilkowalski/skills (MIT, see EMIL-KOWALSKI-LICENSE).
+
+The Taste skill (https://github.com/Leonxlnx/taste-skill) is ~40 MB with scripts, so it is
+installed per machine rather than committed:
+
+    npx -y skills add leonxlnx/taste-skill --skill design-taste-frontend --agent claude-code -g
