@@ -15,4 +15,4 @@ Source: https://github.com/emilkowalski/skills (MIT, see EMIL-KOWALSKI-LICENSE).
 The Taste skill (https://github.com/Leonxlnx/taste-skill) is ~40 MB with scripts, so it is
 installed per machine rather than committed:
 
-    npx -y skills add leonxlnx/taste-skill --skill design-taste-frontend --agent claude-code -g
+    npx skills add https://github.com/Leonxlnx/taste-skill --skill "design-taste-frontend"
