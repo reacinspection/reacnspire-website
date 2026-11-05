@@ -6,3 +6,6 @@
 
 # Repo docs and agent instructions.
 AGENTS.md
+
+# MCP server config for Claude Code.
+.mcp.json
