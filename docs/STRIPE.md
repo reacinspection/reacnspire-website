@@ -1,33 +1,40 @@
-# Stripe on reacnspire.com — Payments, Invoicing, Tax
+# Stripe — Software Department only
 
-Static site + Netlify Functions. Nothing here touches the live pages yet: the
-workshop pages still use their Square links until we switch them (step 7).
+Stripe is used **only by the Software Department** of Kendra REAC Consultant, Inc.
+It covers the NspirePro apps, software subscriptions, and software licenses and
+invoices.
 
-| Piece | File | What it does |
+**Workshops, trainings, consulting and inspections stay on Square.** They are
+billed by Kendra REAC Consultant, Inc. and must never be routed through Stripe.
+The workshop pages (`/hqs-a-nspire/`, `/taller-seguridad/`) keep their Square
+links.
+
+| Piece | Where | What it does |
 | --- | --- | --- |
-| Checkout | `netlify/functions/stripe-checkout.mjs` → `POST /api/checkout` | Creates a Stripe Checkout Session for a workshop seat. Price is set **server-side** (early/regular switch is automatic). |
-| Webhook | `netlify/functions/stripe-webhook.mjs` → `POST /api/stripe-webhook` | Verifies the Stripe signature, confirms paid registrations by email (buyer + owner), alerts on failed payments, paid invoices and disputes. |
-| Invoicing | `scripts/stripe-invoice.mjs` (`npm run invoice -- …`) | Owner-only CLI: creates and emails an invoice (group/agency billing, $9,500 on-site training). |
-| Tax | `STRIPE_AUTOMATIC_TAX` env flag | Turns on Stripe Tax for Checkout and invoices — only after a registration exists. |
+| Invoicing | `scripts/stripe-invoice.mjs` (`npm run invoice -- …`) | Owner-only CLI: creates and emails a software invoice (agency licenses, annual plans). |
+| Webhook | `netlify/functions/stripe-webhook.mjs` → `POST /api/stripe-webhook` | Verifies the Stripe signature; emails the owner when an invoice is paid or fails, and when a dispute opens. |
+| Disclosure | `netlify/lib/billing.mjs` + `/terms/` | The one source of the billing-disclosure wording. |
+| Tax | `STRIPE_AUTOMATIC_TAX` env flag | Turns on Stripe Tax for invoices, but only after a registration exists. |
+| Subscriptions | **app.reacnspire.com** (separate codebase) | The $49/mo Inspections and from-$29/mo Maintenance plans with 7-day trials. See the bottom of this page. |
 
 ## Billing disclosure (required)
-The Stripe account is **Kendra REAC Consultant, Inc.**; online charges are billed
-by its **Software Department** and paid out to the bank account of **National Pro
-Inspections**. Customers see this disclosure in four places, all from one source,
-`netlify/lib/billing.mjs`:
+The Stripe account is **Kendra REAC Consultant, Inc.**; charges are billed by its
+**Software Department** and paid out to the bank account of **National Pro
+Inspections**. Customers see this:
 
-- Stripe Checkout, directly above the Pay button (`custom_text.submit`), in the buyer's language
-- the payment confirmation email
-- every invoice footer (English + Spanish)
-- `/terms/` → "Payments and billing disclosure"
+- in every invoice footer (English + Spanish), from `netlify/lib/billing.mjs`
+- on `/terms/` → "Payments and billing disclosure" (which also says that trainings
+  and workshops are billed separately through Square)
+- in the app's checkout, which must show the same `DISCLOSURE` text (to be added in
+  the app codebase)
 
 Statement descriptor: in the Dashboard set **Settings → Business → Public details →
-Shortened descriptor (prefix)** to `KENDRA REAC`. Checkout adds the suffix
-`SOFTWARE` → card statements read `KENDRA REAC* SOFTWARE`. Invoices use
+Shortened descriptor** to `KENDRA REAC`. App card payments should pass the suffix
+`SOFTWARE`, which shows as `KENDRA REAC* SOFTWARE`. Invoices use
 `KENDRA REAC SOFTWARE`. If you change any of these, update `billing.mjs` and
 `/terms/` together.
 
-**Payout account — confirm with Stripe before going live.** Stripe requires the
+**Payout account: confirm with Stripe before going live.** Stripe requires the
 payout bank account to belong to the business on the Stripe account. If National
 Pro Inspections is a DBA / trade name of Kendra REAC Consultant, Inc. (same EIN),
 that is normally fine. Stripe may ask for proof, such as a bank letter or DBA
@@ -37,86 +44,59 @@ Kendra REAC Consultant, Inc. A mismatch can get payouts paused or the account
 under review.
 
 ## 1. Use a sandbox first
-Dashboard → account menu → **Sandboxes** → create `reacnspire-dev`. Everything
-below is done in the sandbox first, then repeated in live mode.
+Dashboard → account menu → **Sandboxes** → create `software-dev`. Do everything
+below in the sandbox, then repeat it in live mode.
 
-## 2. Create a restricted API key (not the full secret key)
-Developers → API keys → **Create restricted key**, name `reacnspire-website`:
-
-- Checkout Sessions: **Write**
-- Customers: **Write**
-- Invoices: **Write** (covers invoice items)
-- Products / Prices: **Write** (Checkout creates the inline product)
-- Everything else: None
-
-Keys never go in the repo or in chat.
+## 2. Restricted API key (not the full secret key)
+Developers → API keys → **Create restricted key** `reacnspire-website`:
+Customers **Write**, Invoices **Write**, everything else None. Keys never go in
+the repo or in chat.
 
 ## 3. Netlify environment variables (mark each as **secret**)
-Site configuration → Environment variables:
-
 | Name | Value |
 | --- | --- |
 | `STRIPE_SECRET_KEY` | the `rk_test_…` key (later `rk_live_…`) |
 | `STRIPE_WEBHOOK_SECRET` | `whsec_…` from step 4 |
 | `RESEND_API_KEY` | already set (used by `taller-confirm`) |
 | `OWNER_EMAIL` | optional, defaults to kendra@reacnspire.com |
-| `STRIPE_AUTOMATIC_TAX` | leave **unset** until step 5 is done |
-| `STRIPE_TAX_CODE` | optional `txcd_…`, see step 5 |
 
 ## 4. Webhook endpoint
-Developers → Webhooks → **Add endpoint** → `https://reacnspire.com/api/stripe-webhook`
-(use the deploy-preview URL while testing). Events:
-`checkout.session.completed`, `checkout.session.async_payment_succeeded`,
-`checkout.session.async_payment_failed`, `invoice.paid`,
-`invoice.payment_failed`, `charge.dispute.created`. Copy its signing secret
-into `STRIPE_WEBHOOK_SECRET`.
+Developers → Webhooks → **Add endpoint** → `https://reacnspire.com/api/stripe-webhook`.
+Events: `invoice.paid`, `invoice.payment_failed`, `charge.dispute.created`.
+Copy the endpoint's signing secret into `STRIPE_WEBHOOK_SECRET`.
 
-The webhook is required: it is the only place a payment is confirmed. The
-thank-you redirect is not reliable (people close the tab).
+## 5. Stripe Tax (before setting `STRIPE_AUTOMATIC_TAX=true`)
+1. Tax → Settings: set the **head office address**. Its status must be `active`.
+2. Pick the product tax code for your software (SaaS) from Stripe's official
+   list (<https://docs.stripe.com/tax/tax-codes>) and confirm it with your tax
+   advisor. Set it as the Tax default, or put it in `STRIPE_TAX_CODE` in the shell
+   that runs the invoice script.
+3. Tax → Registrations: add each place you are registered to collect.
+4. Only then set `STRIPE_AUTOMATIC_TAX=true`. With no active registration, Stripe
+   silently collects **$0 tax**.
 
-## 5. Stripe Tax — do this before turning the flag on
-1. Tax → Settings: set the **head office address** (status must be `active`).
-2. Pick a product tax code for live virtual training from Stripe's official list
-   (<https://docs.stripe.com/tax/tax-codes>) and confirm it with your tax advisor.
-   Set it as the default in Tax settings or in `STRIPE_TAX_CODE`.
-3. Tax → Registrations: add each place you are registered to collect (e.g.
-   Florida, Puerto Rico IVU — confirm with your advisor what applies to
-   training services).
-4. Only then set `STRIPE_AUTOMATIC_TAX=true`.
+## 6. Send a test invoice
+Run this in your own terminal, with a sandbox key:
 
-If the flag is on with no active registration, Stripe silently collects **$0
-tax**. Tax → Locations → *Needs attention* shows possible new obligations.
+```bash
+STRIPE_SECRET_KEY=rk_test_... npm run invoice -- --email you@example.com --name "Test Agency" --description "NspirePro Inspections — 12-month license" --qty 1 --unit 588 --draft
+```
 
-## 6. Test
-- Card `4242 4242 4242 4242`, any future date/CVC.
-- Test call:
+Remove `--draft` to finalize and email it. Pay it with card `4242 4242 4242 4242`,
+then confirm the owner email arrives and the webhook shows `200`.
 
-  ```bash
-  curl -s -X POST https://<deploy-preview>/api/checkout -H 'content-type: application/json' -d '{"product":"taller-seguridad","quantity":2,"email":"you@example.com","lang":"es"}'
-  ```
+## 7. Go live
+Repeat steps 2–5 in live mode, switch the env vars to the live values, and
+redeploy. Checklist: <https://docs.stripe.com/get-started/checklist/go-live>
 
-  Open the returned `url`, pay, and confirm both emails arrive and the event
-  shows `200` under Developers → Webhooks.
-- Invoice (sandbox key in your shell only):
-
-  ```bash
-  STRIPE_SECRET_KEY=rk_test_... npm run invoice -- --email you@example.com --name "Test Agency" --description "HQS to NSPIRE-V — Nov 17, 2026" --qty 3 --unit 275 --draft
-  ```
-
-## 7. Switch the workshop pages from Square (follow-up)
-`hqs-a-nspire/index.html` and `taller-seguridad/index.html` currently redirect to
-`square.link/...`. The switch is: `POST /api/checkout` with
-`{product, quantity, email, name, organization, lang}`, redirect to the returned
-`url`, fall back to the Square link if the response is not 200, and change the
-"Square" wording to "secure card checkout / pago seguro con tarjeta".
-
-## 8. Go live
-Repeat steps 2–5 in live mode, swap env vars to live values, redeploy, run one
-real low-value purchase and refund it. Checklist:
-<https://docs.stripe.com/get-started/checklist/go-live>
-
-## Not covered here
-The $49 and $29/month app subscriptions with 7-day trials run on `app.reacnspire.com`,
-which is a separate codebase. Use Stripe Billing (Checkout in `subscription`
-mode + `trial_period_days`, Customer Portal, and webhooks for
-`customer.subscription.*` and `invoice.payment_failed`) there.
+## App subscriptions (app.reacnspire.com)
+These belong in the app's codebase, not this site:
+- Checkout Sessions in `subscription` mode with `subscription_data.trial_period_days: 7`.
+- `payment_intent_data` doesn't apply to subscriptions. Set the statement
+  descriptor suffix `SOFTWARE` on the account or the subscription, as Stripe
+  allows.
+- `custom_text.submit.message` = the `DISCLOSURE` wording from `netlify/lib/billing.mjs`.
+- Customer Portal for plan changes and cancellations.
+- Webhooks: `checkout.session.completed`, `customer.subscription.created/updated/deleted`,
+  `invoice.paid`, `invoice.payment_failed`, `customer.subscription.trial_will_end`.
+- Do not set `payment_method_types`. Use a restricted key.

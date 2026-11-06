@@ -1,5 +1,9 @@
-/* Billing disclosure shown to every customer who pays through Stripe:
-   on the Checkout page, in the confirmation email, and on invoices.
+/* Billing disclosure for everything charged through Stripe.
+   Stripe is used ONLY by the Software Department (NspirePro apps, software
+   licenses/invoices). Workshops and trainings stay on Square, billed by
+   Kendra REAC Consultant, Inc. — never route them through Stripe.
+   Used today by invoice footers; DISCLOSURE / STATEMENT_SUFFIX are the exact
+   wording and suffix the app's Stripe checkout should use too.
    Keep this text in sync with the "Payments and billing disclosure" section of
    /terms/ and with the statement descriptor configured in the Stripe Dashboard
    (Settings → Business → Public details: prefix "KENDRA REAC"). */

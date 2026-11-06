@@ -1,10 +1,11 @@
 #!/usr/bin/env node
-/* Create and email a Stripe invoice (owner-only; run from your own computer).
+/* Create and email a Software Department invoice through Stripe (owner-only;
+   run from your own computer). Workshops/trainings are NOT invoiced here — Square.
 
    Usage:
      STRIPE_SECRET_KEY=rk_test_... npm run invoice -- \
        --email billing@agency.org --name "Housing Authority of X" \
-       --description "HQS to NSPIRE-V — Nov 17, 2026 (Zoom)" --qty 8 --unit 275 \
+       --description "NspirePro Inspections — 12-month license" --qty 3 --unit 588 \
        [--days 15] [--memo "PO 1234"] [--line1 "..." --city "..." --state FL --postal 32801 --country US] \
        [--draft]
 
