@@ -16,6 +16,7 @@
 
 import Stripe from "stripe";
 import { parseArgs } from "node:util";
+import { INVOICE_FOOTER, INVOICE_STATEMENT } from "../netlify/lib/billing.mjs";
 
 const { values: a } = parseArgs({
   options: {
@@ -49,6 +50,9 @@ const invoice = await stripe.invoices.create({
   days_until_due: parseInt(a.days, 10),
   pending_invoice_items_behavior: "exclude",
   automatic_tax: { enabled: automaticTax },
+  footer: INVOICE_FOOTER, // billed by the Software Department; deposited to National Pro Inspections
+  statement_descriptor: INVOICE_STATEMENT,
+  metadata: { billed_by: "Software Department" },
   ...(a.memo ? { description: a.memo } : {}),
 });
 

@@ -15,6 +15,7 @@
    so a page can fall back to its old payment link. */
 
 import Stripe from "stripe";
+import { DISCLOSURE, STATEMENT_SUFFIX } from "../lib/billing.mjs";
 
 export const config = {
   path: "/api/checkout",
@@ -97,6 +98,10 @@ export default async (req) => {
       // Receipt-style invoice (PDF) for agencies that need one for their records.
       invoice_creation: { enabled: true },
       locale: lang,
+      // Disclose who bills the charge and where funds are deposited, right above the Pay button.
+      custom_text: { submit: { message: DISCLOSURE[lang] } },
+      // Card statement reads "KENDRA REAC* SOFTWARE" (prefix set in the Dashboard).
+      payment_intent_data: { statement_descriptor_suffix: STATEMENT_SUFFIX, description: `${item.name.en} — Software Department` },
       metadata: {
         product: body.product,
         quantity: String(quantity),
@@ -104,6 +109,7 @@ export default async (req) => {
         lang,
         name: clean(body.name, 200),
         organization: clean(body.organization, 200),
+        billed_by: "Software Department",
       },
       integration_identifier: INTEGRATION_ID,
       success_url: `${site}${item.page}?pagado=1&session_id={CHECKOUT_SESSION_ID}#registro`,

@@ -10,6 +10,32 @@ workshop pages still use their Square links until we switch them (step 7).
 | Invoicing | `scripts/stripe-invoice.mjs` (`npm run invoice -- …`) | Owner-only CLI: creates and emails an invoice (group/agency billing, $9,500 on-site training). |
 | Tax | `STRIPE_AUTOMATIC_TAX` env flag | Turns on Stripe Tax for Checkout and invoices — only after a registration exists. |
 
+## Billing disclosure (required)
+The Stripe account is **Kendra REAC Consultant, Inc.**; online charges are billed
+by its **Software Department** and paid out to the bank account of **National Pro
+Inspections**. Customers see this disclosure in four places, all from one source,
+`netlify/lib/billing.mjs`:
+
+- Stripe Checkout, directly above the Pay button (`custom_text.submit`), in the buyer's language
+- the payment confirmation email
+- every invoice footer (English + Spanish)
+- `/terms/` → "Payments and billing disclosure"
+
+Statement descriptor: in the Dashboard set **Settings → Business → Public details →
+Shortened descriptor (prefix)** to `KENDRA REAC`. Checkout adds the suffix
+`SOFTWARE` → card statements read `KENDRA REAC* SOFTWARE`. Invoices use
+`KENDRA REAC SOFTWARE`. If you change any of these, update `billing.mjs` and
+`/terms/` together.
+
+**Payout account — confirm with Stripe before going live.** Stripe requires the
+payout bank account to belong to the business on the Stripe account. If National
+Pro Inspections is a DBA / trade name of Kendra REAC Consultant, Inc. (same EIN),
+that is normally fine. Stripe may ask for proof, such as a bank letter or DBA
+filing. If National Pro Inspections is a separate company with its own EIN, open
+the Stripe account under that company instead, or have the bank account titled to
+Kendra REAC Consultant, Inc. A mismatch can get payouts paused or the account
+under review.
+
 ## 1. Use a sandbox first
 Dashboard → account menu → **Sandboxes** → create `reacnspire-dev`. Everything
 below is done in the sandbox first, then repeated in live mode.

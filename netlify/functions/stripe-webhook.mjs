@@ -21,6 +21,7 @@
    object id, so a retry never emails the buyer twice. */
 
 import Stripe from "stripe";
+import { DISCLOSURE } from "../lib/billing.mjs";
 
 export const config = { path: "/api/stripe-webhook" };
 
@@ -77,7 +78,8 @@ async function fulfillCheckout(session) {
           <tr><td style="padding:5px 14px 5px 0;color:#6b7280;">${t.paid}</td><td style="font-weight:700;">${total}</td></tr>
         </table>
         <p>${t.zoom}</p>
-        <p style="font-size:13px;color:#6b7280;margin-top:20px;">Kendra REAC Consultant, Inc.<br>${t.q}</p>
+        <p style="font-size:13px;color:#4b5563;margin-top:18px;padding:12px 14px;background:#f3f4f6;border-radius:8px;">${esc(DISCLOSURE[lang])}</p>
+        <p style="font-size:13px;color:#6b7280;margin-top:20px;">Kendra REAC Consultant, Inc. — Software Department<br>${t.q}</p>
       </div></div>`,
   });
 
