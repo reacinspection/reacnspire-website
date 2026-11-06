@@ -25,8 +25,8 @@ inspections through **Square**. Those never go through Stripe. The workshop page
 - **Bank account:** the National Pro Inspections business account, titled to that
   company. Stripe may ask for the DBA filing (fictitious name registration) to
   match the DBA to the legal name.
-- **Statement descriptor:** `NATL PRO INSPECTIONS`; shortened descriptor
-  `NATL PRO INSP`. These must match `STATEMENT` in `billing.mjs`.
+- **Statement descriptor:** `NATL PROINSPECTIONS`; shortened descriptor
+  `PROINSPECT`. These must match `STATEMENT` in `billing.mjs`.
 - **Support email / phone:** administration@reacnspire.com · (407) 744-2644 (same as `billing.mjs` and `/terms/`).
 - Product description: NspirePro inspection and maintenance software (SaaS),
   website reacnspire.com. reacnspire.com is Kendra REAC's site, so the Terms
@@ -88,7 +88,7 @@ redeploy. Checklist: <https://docs.stripe.com/get-started/checklist/go-live>
 ## App subscriptions (app.reacnspire.com)
 These belong in the app's codebase, not this site:
 - Checkout Sessions in `subscription` mode with `subscription_data.trial_period_days: 7`.
-- The statement descriptor comes from the account settings (`NATL PRO INSPECTIONS`).
+- The statement descriptor comes from the account settings (`NATL PROINSPECTIONS`).
 - `custom_text.submit.message` = the `DISCLOSURE` wording from `netlify/lib/billing.mjs`.
 - Customer Portal for plan changes and cancellations.
 - Webhooks: `checkout.session.completed`, `customer.subscription.created/updated/deleted`,

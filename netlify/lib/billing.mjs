@@ -18,8 +18,8 @@ export const SELLER = `${LEGAL_NAME} d/b/a ${DBA}`;
 export const IS_CONFIGURED = !LEGAL_NAME.startsWith("[");
 
 // Full statement descriptor (max 22 chars, letters/numbers/spaces).
-// Set the same value in the Dashboard; shortened descriptor: "NATL PRO INSP".
-export const STATEMENT = "NATL PRO INSPECTIONS";
+// Set the same value in the Dashboard; shortened descriptor: "PROINSPECT".
+export const STATEMENT = "NATL PROINSPECTIONS";
 
 export const DISCLOSURE = {
   en: `Seller disclosure: NspirePro software is sold and billed by ${SELLER}, a company separate from Kendra REAC Consultant, Inc. Your bank or card statement will show "${STATEMENT}". Billing questions: administration@reacnspire.com · (407) 744-2644.`,
