@@ -1,4 +1,6 @@
-/* Stripe webhook for the Software Department's invoices (scripts/stripe-invoice.mjs).
+/* Stripe webhook for NspirePro software invoices (scripts/stripe-invoice.mjs).
+   The Stripe account belongs to <legal name> d/b/a National Pro Inspections, a
+   company separate from Kendra REAC Consultant, Inc.
    Workshops and trainings are NOT sold through Stripe — they stay on Square.
    App subscriptions (NspirePro) are handled by app.reacnspire.com, not here.
 
@@ -22,7 +24,7 @@ import Stripe from "stripe";
 
 export const config = { path: "/api/stripe-webhook" };
 
-const FROM = "Kendra REAC Consultant — Software Department <kendra@reacnspire.com>";
+const FROM = "National Pro Inspections — Stripe alerts <kendra@reacnspire.com>";
 
 const esc = (s) => String(s == null ? "" : s).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
 const money = (cents, cur = "usd") => new Intl.NumberFormat("en-US", { style: "currency", currency: cur.toUpperCase() }).format((cents || 0) / 100);
@@ -36,7 +38,7 @@ async function notifyOwner(subject, lines, idempotencyKey) {
     body: JSON.stringify({
       from: FROM,
       to: [process.env.OWNER_EMAIL || "kendra@reacnspire.com"],
-      subject: `[Stripe · Software Dept] ${subject}`,
+      subject: `[Stripe · National Pro Inspections] ${subject}`,
       html: `<ul>${lines.map((l) => `<li>${esc(l)}</li>`).join("")}</ul>`,
     }),
   });

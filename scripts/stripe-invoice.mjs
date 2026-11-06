@@ -1,6 +1,7 @@
 #!/usr/bin/env node
-/* Create and email a Software Department invoice through Stripe (owner-only;
-   run from your own computer). Workshops/trainings are NOT invoiced here — Square.
+/* Create and email an NspirePro software invoice through Stripe, sold by
+   <legal name> d/b/a National Pro Inspections (owner-only; run from your own
+   computer). Workshops/trainings are NOT invoiced here — they use Square.
 
    Usage:
      STRIPE_SECRET_KEY=rk_test_... npm run invoice -- \
@@ -17,7 +18,7 @@
 
 import Stripe from "stripe";
 import { parseArgs } from "node:util";
-import { INVOICE_FOOTER, INVOICE_STATEMENT } from "../netlify/lib/billing.mjs";
+import { INVOICE_FOOTER, STATEMENT, IS_CONFIGURED } from "../netlify/lib/billing.mjs";
 
 const { values: a } = parseArgs({
   options: {
@@ -29,6 +30,7 @@ const { values: a } = parseArgs({
 });
 
 const die = (m) => { console.error(`Error: ${m}`); process.exit(1); };
+if (!IS_CONFIGURED) die("set LEGAL_NAME in netlify/lib/billing.mjs before sending invoices (the footer names the seller).");
 if (!process.env.STRIPE_SECRET_KEY) die("set STRIPE_SECRET_KEY (use a test-mode/sandbox key first).");
 if (!a.email || !a.name || !a.description || !a.unit) die("--email, --name, --description and --unit are required.");
 const qty = parseInt(a.qty, 10);
@@ -51,9 +53,9 @@ const invoice = await stripe.invoices.create({
   days_until_due: parseInt(a.days, 10),
   pending_invoice_items_behavior: "exclude",
   automatic_tax: { enabled: automaticTax },
-  footer: INVOICE_FOOTER, // billed by the Software Department; deposited to National Pro Inspections
-  statement_descriptor: INVOICE_STATEMENT,
-  metadata: { billed_by: "Software Department" },
+  footer: INVOICE_FOOTER, // names the seller: <legal name> d/b/a National Pro Inspections
+  statement_descriptor: STATEMENT,
+  metadata: { seller: "National Pro Inspections" },
   ...(a.memo ? { description: a.memo } : {}),
 });
 

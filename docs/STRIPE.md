@@ -1,47 +1,48 @@
-# Stripe — Software Department only
+# Stripe — NspirePro software, sold by National Pro Inspections
 
-Stripe is used **only by the Software Department** of Kendra REAC Consultant, Inc.
-It covers the NspirePro apps, software subscriptions, and software licenses and
-invoices.
+**Seller:** `[LEGAL COMPANY NAME]` d/b/a **National Pro Inspections**. This company
+is **separate from Kendra REAC Consultant, Inc.** It owns the Stripe account, the
+bank account Stripe pays out to, and the software sales-tax registrations.
+Stripe is used only for NspirePro software: the apps, subscriptions, and
+software licenses and invoices.
 
-**Workshops, trainings, consulting and inspections stay on Square.** They are
-billed by Kendra REAC Consultant, Inc. and must never be routed through Stripe.
-The workshop pages (`/hqs-a-nspire/`, `/taller-seguridad/`) keep their Square
-links.
+**Kendra REAC Consultant, Inc.** sells workshops, trainings, consulting and
+inspections through **Square**. Those never go through Stripe. The workshop pages
+(`/hqs-a-nspire/`, `/taller-seguridad/`) keep their Square links.
+
+> **Before merging:** set `LEGAL_NAME` in `netlify/lib/billing.mjs` and replace
+> `[LEGAL COMPANY NAME]` in `terms/index.html` (both paragraphs) and in this file.
+> The invoice script refuses to run until `LEGAL_NAME` is set.
 
 | Piece | Where | What it does |
 | --- | --- | --- |
 | Invoicing | `scripts/stripe-invoice.mjs` (`npm run invoice -- …`) | Owner-only CLI: creates and emails a software invoice (agency licenses, annual plans). |
 | Webhook | `netlify/functions/stripe-webhook.mjs` → `POST /api/stripe-webhook` | Verifies the Stripe signature; emails the owner when an invoice is paid or fails, and when a dispute opens. |
-| Disclosure | `netlify/lib/billing.mjs` + `/terms/` | The one source of the billing-disclosure wording. |
+| Disclosure | `netlify/lib/billing.mjs` + `/terms/` | The one source of the seller-disclosure wording. |
 | Tax | `STRIPE_AUTOMATIC_TAX` env flag | Turns on Stripe Tax for invoices, but only after a registration exists. |
 | Subscriptions | **app.reacnspire.com** (separate codebase) | The $49/mo Inspections and from-$29/mo Maintenance plans with 7-day trials. See the bottom of this page. |
 
-## Billing disclosure (required)
-The Stripe account is **Kendra REAC Consultant, Inc.**; charges are billed by its
-**Software Department** and paid out to the bank account of **National Pro
-Inspections**. Customers see this:
+## Opening the Stripe account
+- **Business type:** the company that owns the DBA, with its own EIN. Enter that
+  company's legal name and EIN. Do **not** use Kendra REAC Consultant, Inc.
+- **Public business name / DBA:** `National Pro Inspections`.
+- **Bank account:** the National Pro Inspections business account, titled to that
+  company. Stripe may ask for the DBA filing (fictitious name registration) to
+  match the DBA to the legal name.
+- **Statement descriptor:** `NATL PRO INSPECTIONS`; shortened descriptor
+  `NATL PRO INSP`. These must match `STATEMENT` in `billing.mjs`.
+- **Support email / phone:** whatever that company wants customers to use. If it's
+  not kendra@reacnspire.com / (407) 516-5393, update `billing.mjs` and `/terms/`.
+- Product description: NspirePro inspection and maintenance software (SaaS),
+  website reacnspire.com. reacnspire.com is Kendra REAC's site, so the Terms
+  disclosure explains that the software is sold by a separate company.
 
-- in every invoice footer (English + Spanish), from `netlify/lib/billing.mjs`
-- on `/terms/` → "Payments and billing disclosure" (which also says that trainings
-  and workshops are billed separately through Square)
-- in the app's checkout, which must show the same `DISCLOSURE` text (to be added in
+## Seller disclosure (required)
+Customers see the seller named in:
+- every invoice footer (English + Spanish), from `netlify/lib/billing.mjs`
+- `/terms/` → "Payments and billing disclosure"
+- the app's checkout, which must show the same `DISCLOSURE` text (to be added in
   the app codebase)
-
-Statement descriptor: in the Dashboard set **Settings → Business → Public details →
-Shortened descriptor** to `KENDRA REAC`. App card payments should pass the suffix
-`SOFTWARE`, which shows as `KENDRA REAC* SOFTWARE`. Invoices use
-`KENDRA REAC SOFTWARE`. If you change any of these, update `billing.mjs` and
-`/terms/` together.
-
-**Payout account: confirm with Stripe before going live.** Stripe requires the
-payout bank account to belong to the business on the Stripe account. If National
-Pro Inspections is a DBA / trade name of Kendra REAC Consultant, Inc. (same EIN),
-that is normally fine. Stripe may ask for proof, such as a bank letter or DBA
-filing. If National Pro Inspections is a separate company with its own EIN, open
-the Stripe account under that company instead, or have the bank account titled to
-Kendra REAC Consultant, Inc. A mismatch can get payouts paused or the account
-under review.
 
 ## 1. Use a sandbox first
 Dashboard → account menu → **Sandboxes** → create `software-dev`. Do everything
@@ -92,9 +93,7 @@ redeploy. Checklist: <https://docs.stripe.com/get-started/checklist/go-live>
 ## App subscriptions (app.reacnspire.com)
 These belong in the app's codebase, not this site:
 - Checkout Sessions in `subscription` mode with `subscription_data.trial_period_days: 7`.
-- `payment_intent_data` doesn't apply to subscriptions. Set the statement
-  descriptor suffix `SOFTWARE` on the account or the subscription, as Stripe
-  allows.
+- The statement descriptor comes from the account settings (`NATL PRO INSPECTIONS`).
 - `custom_text.submit.message` = the `DISCLOSURE` wording from `netlify/lib/billing.mjs`.
 - Customer Portal for plan changes and cancellations.
 - Webhooks: `checkout.session.completed`, `customer.subscription.created/updated/deleted`,
