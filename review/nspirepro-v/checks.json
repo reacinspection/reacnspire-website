@@ -1,0 +1,178 @@
+[
+  {
+    "width": 1440,
+    "height": 900,
+    "lang": "en",
+    "errors": [],
+    "overflow": false,
+    "contactIdentical": true,
+    "brokenImages": [],
+    "jsonValid": true,
+    "voucherScoring": false,
+    "licenseLinks": [
+      {
+        "href": "#contact",
+        "target": ""
+      },
+      {
+        "href": "#contact",
+        "target": ""
+      }
+    ],
+    "inspectionMentionsV": false
+  },
+  {
+    "width": 1440,
+    "height": 900,
+    "lang": "es",
+    "errors": [],
+    "overflow": false,
+    "contactIdentical": true,
+    "brokenImages": [],
+    "jsonValid": true,
+    "voucherScoring": false,
+    "licenseLinks": [
+      {
+        "href": "#contact",
+        "target": ""
+      },
+      {
+        "href": "#contact",
+        "target": ""
+      }
+    ],
+    "inspectionMentionsV": false
+  },
+  {
+    "width": 1024,
+    "height": 768,
+    "lang": "en",
+    "errors": [],
+    "overflow": false,
+    "contactIdentical": true,
+    "brokenImages": [],
+    "jsonValid": true,
+    "voucherScoring": false,
+    "licenseLinks": [
+      {
+        "href": "#contact",
+        "target": ""
+      },
+      {
+        "href": "#contact",
+        "target": ""
+      }
+    ],
+    "inspectionMentionsV": false
+  },
+  {
+    "width": 1024,
+    "height": 768,
+    "lang": "es",
+    "errors": [],
+    "overflow": false,
+    "contactIdentical": true,
+    "brokenImages": [],
+    "jsonValid": true,
+    "voucherScoring": false,
+    "licenseLinks": [
+      {
+        "href": "#contact",
+        "target": ""
+      },
+      {
+        "href": "#contact",
+        "target": ""
+      }
+    ],
+    "inspectionMentionsV": false
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "lang": "en",
+    "errors": [],
+    "overflow": false,
+    "contactIdentical": true,
+    "brokenImages": [],
+    "jsonValid": true,
+    "voucherScoring": false,
+    "licenseLinks": [
+      {
+        "href": "#contact",
+        "target": ""
+      },
+      {
+        "href": "#contact",
+        "target": ""
+      }
+    ],
+    "inspectionMentionsV": false
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "lang": "es",
+    "errors": [],
+    "overflow": false,
+    "contactIdentical": true,
+    "brokenImages": [],
+    "jsonValid": true,
+    "voucherScoring": false,
+    "licenseLinks": [
+      {
+        "href": "#contact",
+        "target": ""
+      },
+      {
+        "href": "#contact",
+        "target": ""
+      }
+    ],
+    "inspectionMentionsV": false
+  },
+  {
+    "width": 375,
+    "height": 667,
+    "lang": "en",
+    "errors": [],
+    "overflow": false,
+    "contactIdentical": true,
+    "brokenImages": [],
+    "jsonValid": true,
+    "voucherScoring": false,
+    "licenseLinks": [
+      {
+        "href": "#contact",
+        "target": ""
+      },
+      {
+        "href": "#contact",
+        "target": ""
+      }
+    ],
+    "inspectionMentionsV": false
+  },
+  {
+    "width": 375,
+    "height": 667,
+    "lang": "es",
+    "errors": [],
+    "overflow": false,
+    "contactIdentical": true,
+    "brokenImages": [],
+    "jsonValid": true,
+    "voucherScoring": false,
+    "licenseLinks": [
+      {
+        "href": "#contact",
+        "target": ""
+      },
+      {
+        "href": "#contact",
+        "target": ""
+      }
+    ],
+    "inspectionMentionsV": false
+  }
+]
