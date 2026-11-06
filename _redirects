@@ -9,10 +9,12 @@ https://www.kendrareacconsultant.com/*   https://reacnspire.com/:splat   301!
 http://www.kendrareacconsultant.com/*    https://reacnspire.com/:splat   301!
 
 # Never serve repo tooling from the live site. The publish dir is the repo
-# root, so Claude Code skills, MCP config and agent instructions sit alongside
+# root, so Claude Code skills, MCP config, agent instructions and review/QA
+# artifacts sit alongside
 # site content. .netlifyignore only covers CLI deploys, so these rules are what
 # protect Git-triggered builds. The "!" is required: without it Netlify skips
 # the rule whenever a real file exists at the path.
 /.claude/*   /404   404!
 /.mcp.json   /404   404!
 /AGENTS.md   /404   404!
+/review/*    /404   404!

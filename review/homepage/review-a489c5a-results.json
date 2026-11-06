@@ -1,0 +1,200 @@
+[
+  {
+    "browser": "chromium",
+    "width": 1440,
+    "lang": "en",
+    "overflow": false,
+    "newTag": "New · NSPIRE-V for HCV & PBVNuevo · NSPIRE-V para HCV y PBV",
+    "faq": true,
+    "mosaic": 18,
+    "form": "/thank-you/",
+    "errors": []
+  },
+  {
+    "browser": "chromium",
+    "width": 1440,
+    "lang": "es",
+    "overflow": false,
+    "newTag": "New · NSPIRE-V for HCV & PBVNuevo · NSPIRE-V para HCV y PBV",
+    "faq": true,
+    "mosaic": 18,
+    "form": "/thank-you/",
+    "errors": []
+  },
+  {
+    "browser": "chromium",
+    "width": 390,
+    "lang": "en",
+    "overflow": false,
+    "newTag": "New · NSPIRE-V for HCV & PBVNuevo · NSPIRE-V para HCV y PBV",
+    "faq": true,
+    "mosaic": 18,
+    "form": "/thank-you/",
+    "errors": []
+  },
+  {
+    "browser": "chromium",
+    "width": 390,
+    "lang": "es",
+    "overflow": false,
+    "newTag": "New · NSPIRE-V for HCV & PBVNuevo · NSPIRE-V para HCV y PBV",
+    "faq": true,
+    "mosaic": 18,
+    "form": "/thank-you/",
+    "errors": []
+  },
+  {
+    "browser": "chromium",
+    "width": 375,
+    "lang": "en",
+    "overflow": false,
+    "newTag": "New · NSPIRE-V for HCV & PBVNuevo · NSPIRE-V para HCV y PBV",
+    "faq": true,
+    "mosaic": 18,
+    "form": "/thank-you/",
+    "errors": []
+  },
+  {
+    "browser": "chromium",
+    "width": 375,
+    "lang": "es",
+    "overflow": false,
+    "newTag": "New · NSPIRE-V for HCV & PBVNuevo · NSPIRE-V para HCV y PBV",
+    "faq": true,
+    "mosaic": 18,
+    "form": "/thank-you/",
+    "errors": []
+  },
+  {
+    "browser": "chromium",
+    "row": {
+      "promo": {
+        "x": 16,
+        "y": 600.40625,
+        "width": 219,
+        "height": 50.59375,
+        "bottom": 651
+      },
+      "call": {
+        "x": 246.921875,
+        "y": 603,
+        "width": 112.078125,
+        "height": 48,
+        "bottom": 651
+      },
+      "overlap": false
+    },
+    "modal": {
+      "internalScroll": true,
+      "cardHeight": 600.296875,
+      "scrollTop": 321,
+      "reserveReachable": true,
+      "contactReachable": true
+    }
+  },
+  {
+    "browser": "webkit",
+    "width": 1440,
+    "lang": "en",
+    "supportsDvh": true,
+    "scrollPadding": "100px",
+    "overflow": false,
+    "newTag": "New · NSPIRE-V for HCV & PBVNuevo · NSPIRE-V para HCV y PBV",
+    "faq": true,
+    "mosaic": 18,
+    "form": "/thank-you/",
+    "errors": []
+  },
+  {
+    "browser": "webkit",
+    "width": 1440,
+    "lang": "es",
+    "supportsDvh": true,
+    "scrollPadding": "100px",
+    "overflow": false,
+    "newTag": "New · NSPIRE-V for HCV & PBVNuevo · NSPIRE-V para HCV y PBV",
+    "faq": true,
+    "mosaic": 18,
+    "form": "/thank-you/",
+    "errors": []
+  },
+  {
+    "browser": "webkit",
+    "width": 390,
+    "lang": "en",
+    "supportsDvh": true,
+    "scrollPadding": "80px",
+    "overflow": false,
+    "newTag": "New · NSPIRE-V for HCV & PBVNuevo · NSPIRE-V para HCV y PBV",
+    "faq": true,
+    "mosaic": 18,
+    "form": "/thank-you/",
+    "errors": []
+  },
+  {
+    "browser": "webkit",
+    "width": 390,
+    "lang": "es",
+    "supportsDvh": true,
+    "scrollPadding": "80px",
+    "overflow": false,
+    "newTag": "New · NSPIRE-V for HCV & PBVNuevo · NSPIRE-V para HCV y PBV",
+    "faq": true,
+    "mosaic": 18,
+    "form": "/thank-you/",
+    "errors": []
+  },
+  {
+    "browser": "webkit",
+    "width": 375,
+    "lang": "en",
+    "supportsDvh": true,
+    "scrollPadding": "80px",
+    "overflow": false,
+    "newTag": "New · NSPIRE-V for HCV & PBVNuevo · NSPIRE-V para HCV y PBV",
+    "faq": true,
+    "mosaic": 18,
+    "form": "/thank-you/",
+    "errors": []
+  },
+  {
+    "browser": "webkit",
+    "width": 375,
+    "lang": "es",
+    "supportsDvh": true,
+    "scrollPadding": "80px",
+    "overflow": false,
+    "newTag": "New · NSPIRE-V for HCV & PBVNuevo · NSPIRE-V para HCV y PBV",
+    "faq": true,
+    "mosaic": 18,
+    "form": "/thank-you/",
+    "errors": []
+  },
+  {
+    "browser": "webkit",
+    "row": {
+      "promo": {
+        "x": 16,
+        "y": 600.40625,
+        "width": 219,
+        "height": 50.59375,
+        "bottom": 651
+      },
+      "call": {
+        "x": 246.921875,
+        "y": 603,
+        "width": 112.078125,
+        "height": 48,
+        "bottom": 651
+      },
+      "overlap": false
+    },
+    "modal": {
+      "internalScroll": true,
+      "cardHeight": 600.296875,
+      "scrollTop": 321,
+      "reserveReachable": true,
+      "contactReachable": true
+    }
+  }
+]

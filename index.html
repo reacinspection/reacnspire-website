@@ -7,7 +7,7 @@
 
 <!-- SEO Meta Tags -->
 <meta name="description" content="HUD NSPIRE consulting, pre-inspections, and bilingual staff training for affordable housing teams nationwide. REAC certified since 2009.">
-<meta name="keywords" content="NSPIRE consulting, HUD NSPIRE consultant, NSPIRE inspection preparation, REAC consulting, NSPIRE training, Spanish NSPIRE training, REAC training, HUD REAC inspection, pre-REAC inspection, NSPIRE 2026 changes, affordable housing inspection, housing authority inspection, NSPIRE deficiencies, REAC score">
+<meta name="keywords" content="NSPIRE consulting, HUD NSPIRE consultant, NSPIRE inspection preparation, REAC consulting, NSPIRE training, Spanish NSPIRE training, REAC training, HUD REAC inspection, pre-REAC inspection, NSPIRE 2026 changes, affordable housing inspection, housing authority inspection, NSPIRE deficiencies, REAC score, NSPIRE-V, NSPIRE-V inspection app">
 <meta name="author" content="Kendra REAC Consultant, Inc.">
 <meta name="application-name" content="Kendra REAC Consultant">
 <meta name="robots" content="index, follow">
@@ -89,7 +89,7 @@
     { "@type": "Country", "name": "United States" },
     { "@type": "Place", "name": "Puerto Rico" }
   ],
-  "knowsAbout": ["HUD REAC inspection", "NSPIRE standards", "NSPIRE inspection preparation", "NSPIRE deficiencies", "NSPIRE 2026 affirmative requirements", "affordable housing compliance"],
+  "knowsAbout": ["HUD REAC inspection", "NSPIRE standards", "NSPIRE inspection preparation", "NSPIRE deficiencies", "NSPIRE 2026 affirmative requirements", "NSPIRE-V (HCV/PBV voucher inspections)", "affordable housing compliance"],
   "hasOfferCatalog": {
     "@type": "OfferCatalog",
     "name": "REAC & NSPIRE Services",
@@ -107,818 +107,67 @@
 }
 </script>
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
-<style>
-  :root {
-    --navy: #0D1F3C;
-    --navy-mid: #1A3358;
-    --navy-light: #2B4A72;
-    --gold: #C9993A;
-    --gold-light: #E8B85A;
-    --gold-pale: #F5E8C8;
-    --cream: #FAF7F2;
-    --white: #FFFFFF;
-    --gray-100: #F4F1EC;
-    --gray-200: #E5E0D5;
-    --gray-400: #9A9486;
-    --gray-600: #5C5548;
-    --text: #1A1410;
-    --text-light: #4A4339;
-  }
 
-  * { margin: 0; padding: 0; box-sizing: border-box; }
 
-  html { scroll-behavior: smooth; }
 
-  body {
-    font-family: 'DM Sans', sans-serif;
-    background: var(--cream);
-    color: var(--text);
-    line-height: 1.6;
-    overflow-x: hidden;
-  }
-
-  /* ── NAV ── */
-  nav {
-    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-    background: rgba(13,31,60,0.97);
-    backdrop-filter: blur(12px);
-    border-bottom: 1px solid rgba(201,153,58,0.2);
-    padding: 0 40px;
-    display: flex; align-items: center; justify-content: space-between;
-    height: 68px;
-  }
-
-  .nav-logo {
-    display: flex; align-items: center; gap: 12px;
-    text-decoration: none;
-  }
-  .nav-logo-mark {
-    width: 38px; height: 38px; border-radius: 8px;
-    background: var(--gold);
-    display: flex; align-items: center; justify-content: center;
-    font-family: 'Playfair Display', serif;
-    font-size: 18px; font-weight: 700; color: var(--navy);
-  }
-  .nav-logo-text { font-size: 14px; font-weight: 500; color: var(--white); line-height: 1.2; }
-  .nav-logo-text span { display: block; font-size: 11px; font-weight: 300; color: var(--gold-light); letter-spacing: 0.05em; }
-
-  .nav-links { display: flex; align-items: center; gap: 4px; }
-  .nav-links a {
-    font-size: 13px; font-weight: 400; color: rgba(255,255,255,0.75);
-    text-decoration: none; padding: 8px 14px; border-radius: 6px;
-    transition: all 0.2s;
-  }
-  .nav-links a:hover { color: var(--white); background: rgba(255,255,255,0.08); }
-
-  .nav-lang {
-    font-size: 12px; font-weight: 500; color: var(--gold-light);
-    border: 1px solid rgba(201,153,58,0.4); border-radius: 20px;
-    padding: 4px 12px; cursor: pointer;
-    background: rgba(201,153,58,0.08);
-    transition: all 0.2s;
-  }
-  .nav-lang:hover { background: rgba(201,153,58,0.18); }
-  button.nav-lang { font-family: inherit; }
-
-  .nav-cta {
-    background: var(--gold); color: var(--navy);
-    font-size: 13px; font-weight: 600;
-    padding: 9px 20px; border-radius: 6px;
-    text-decoration: none; white-space: nowrap;
-    transition: all 0.2s;
-  }
-  .nav-cta:hover { background: var(--gold-light); }
-
-  /* ── HERO ── */
-  .hero {
-    min-height: 100vh;
-    background: var(--navy);
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    position: relative;
-    overflow: hidden;
-  }
-  .hero-left { min-width: 0; }
-  .hero-announcement { width: 100%; }
-  .hero-announcement > span { min-width: 0; overflow-wrap: anywhere; }
-
-  .hero-bg-pattern {
-    position: absolute; inset: 0;
-    background-image:
-      radial-gradient(circle at 70% 50%, rgba(201,153,58,0.08) 0%, transparent 60%),
-      radial-gradient(circle at 20% 80%, rgba(43,74,114,0.6) 0%, transparent 50%);
-    pointer-events: none;
-  }
-
-  .hero-bg-photo {
-    position: absolute; inset: 0;
-    background-image: url('/images/hero-property.png');
-    background-size: cover; background-position: center;
-    opacity: 0.08; pointer-events: none;
-  }
-
-  .hero-grid-lines {
-    position: absolute; inset: 0; pointer-events: none;
-    background-image:
-      linear-gradient(rgba(201,153,58,0.04) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(201,153,58,0.04) 1px, transparent 1px);
-    background-size: 60px 60px;
-  }
-
-  .hero-left {
-    padding: 130px 60px 80px;
-    display: flex; flex-direction: column; justify-content: flex-start;
-    position: relative; z-index: 2;
-  }
-
-  .hero-badge {
-    display: inline-flex; align-items: center; gap: 8px;
-    background: rgba(201,153,58,0.15);
-    border: 1px solid rgba(201,153,58,0.35);
-    border-radius: 20px; padding: 6px 14px;
-    font-size: 12px; font-weight: 500; color: var(--gold-light);
-    letter-spacing: 0.06em; text-transform: uppercase;
-    margin-bottom: 28px; width: fit-content;
-  }
-  .hero-badge::before {
-    content: ''; width: 6px; height: 6px; border-radius: 50%;
-    background: var(--gold); display: block;
-  }
-
-  .hero-headline {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(36px, 4vw, 54px);
-    font-weight: 700; line-height: 1.15;
-    color: var(--white); margin-bottom: 20px;
-  }
-  .hero-headline em { font-style: normal; color: var(--gold-light); }
-
-  .hero-sub {
-    font-size: 16px; font-weight: 300; line-height: 1.7;
-    color: rgba(255,255,255,0.65); margin-bottom: 36px;
-    max-width: 460px;
-  }
-
-  .hero-cta-row { display: flex; gap: 14px; align-items: center; flex-wrap: wrap; margin-bottom: 52px; }
-
-  .btn-primary {
-    background: var(--gold); color: var(--navy);
-    font-size: 15px; font-weight: 600;
-    padding: 14px 28px; border-radius: 8px;
-    text-decoration: none; transition: all 0.2s;
-    border: 2px solid var(--gold);
-  }
-  .btn-primary:hover { background: var(--gold-light); border-color: var(--gold-light); transform: translateY(-1px); }
-
-  .btn-ghost {
-    color: rgba(255,255,255,0.8); font-size: 15px; font-weight: 400;
-    padding: 14px 28px; border-radius: 8px;
-    text-decoration: none; transition: all 0.2s;
-    border: 1px solid rgba(255,255,255,0.2);
-  }
-  .btn-ghost:hover { border-color: rgba(255,255,255,0.5); color: var(--white); }
-
-  .hero-stats {
-    display: flex; gap: 36px; flex-wrap: wrap;
-    padding-top: 36px;
-    border-top: 1px solid rgba(255,255,255,0.1);
-  }
-  .hero-stat-num {
-    font-family: 'Playfair Display', serif;
-    font-size: 28px; font-weight: 600; color: var(--gold-light);
-    display: block;
-  }
-  .hero-stat-label { font-size: 12px; color: rgba(255,255,255,0.5); font-weight: 300; line-height: 1.4; }
-
-  .hero-right {
-    display: flex; flex-direction: column; align-items: center; justify-content: flex-start;
-    gap: 28px;
-    padding: 130px 60px 80px 20px;
-    position: relative; z-index: 2;
-  }
-
-  .hero-card {
-    background: rgba(255,255,255,0.05);
-    border: 1px solid rgba(201,153,58,0.2);
-    border-radius: 16px;
-    padding: 36px;
-    width: 100%; max-width: 400px;
-  }
-
-  .hero-card-title {
-    font-family: 'Playfair Display', serif;
-    font-size: 18px; color: var(--white); margin-bottom: 20px;
-  }
-
-  .score-item {
-    display: flex; align-items: center; justify-content: space-between;
-    padding: 12px 0;
-    border-bottom: 1px solid rgba(255,255,255,0.07);
-  }
-  .score-item:last-of-type { border-bottom: none; }
-  .score-freq { font-size: 13px; color: rgba(255,255,255,0.7); }
-  .score-range {
-    font-family: 'Playfair Display', serif;
-    font-size: 15px; font-weight: 600;
-  }
-  .score-range.green { color: #7BC67E; }
-  .score-range.yellow { color: #F5C842; }
-  .score-range.red { color: #E87474; }
-
-  .hero-card-note {
-    margin-top: 20px; padding: 14px;
-    background: rgba(201,153,58,0.1);
-    border-radius: 8px; border-left: 3px solid var(--gold);
-    font-size: 13px; color: rgba(255,255,255,0.7); line-height: 1.6;
-  }
-
-  /* ── TRUST BAR ── */
-  .trust-bar {
-    background: var(--gold);
-    padding: 16px 40px;
-    display: flex; align-items: center; justify-content: center;
-    gap: 48px; flex-wrap: wrap;
-  }
-  .trust-item {
-    font-size: 13px; font-weight: 600; color: var(--navy);
-    display: flex; align-items: center; gap: 8px;
-  }
-  .trust-item::before {
-    content: '✓'; width: 18px; height: 18px;
-    background: var(--navy); color: var(--gold);
-    border-radius: 50%; display: flex; align-items: center; justify-content: center;
-    font-size: 10px; font-weight: 700; flex-shrink: 0;
-  }
-
-  /* ── SECTION COMMONS ── */
-  section { padding: 90px 40px; }
-  .container { max-width: 1100px; margin: 0 auto; }
-
-  .section-label {
-    font-size: 11px; font-weight: 600; letter-spacing: 0.1em;
-    text-transform: uppercase; color: var(--gold);
-    margin-bottom: 12px;
-  }
-  .section-title {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(28px, 3vw, 40px);
-    font-weight: 700; line-height: 1.2;
-    color: var(--navy); margin-bottom: 16px;
-  }
-  .section-sub {
-    font-size: 16px; color: var(--gray-600); line-height: 1.7;
-    max-width: 580px;
-  }
-
-  /* ── SERVICES ── */
-  .services { background: var(--white); }
-  .services-header { text-align: center; margin-bottom: 56px; }
-  .services-header .section-sub { margin: 0 auto; }
-
-  .services-grid {
-    display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
-  }
-
-  .service-card {
-    background: var(--cream); border: 1px solid var(--gray-200);
-    border-radius: 16px; padding: 32px 28px;
-    position: relative; overflow: hidden;
-    transition: all 0.3s;
-  }
-  .service-card:hover {
-    border-color: var(--gold); transform: translateY(-4px);
-    box-shadow: 0 12px 40px rgba(13,31,60,0.1);
-  }
-  .service-card::before {
-    content: ''; position: absolute; top: 0; left: 0; right: 0;
-    height: 3px; background: var(--gold);
-    transform: scaleX(0); transform-origin: left;
-    transition: transform 0.3s;
-  }
-  .service-card:hover::before { transform: scaleX(1); }
-
-  .service-icon {
-    width: 48px; height: 48px; border-radius: 12px;
-    background: var(--gold-pale); display: flex; align-items: center;
-    justify-content: center; font-size: 22px; margin-bottom: 20px;
-  }
-  .service-card h3 {
-    font-family: 'Playfair Display', serif;
-    font-size: 20px; font-weight: 700; color: var(--navy);
-    margin-bottom: 10px;
-  }
-  .service-card p {
-    font-size: 14px; color: var(--gray-600); line-height: 1.7; margin-bottom: 20px;
-  }
-  .service-link {
-    font-size: 13px; font-weight: 600; color: var(--gold);
-    text-decoration: none; display: flex; align-items: center; gap: 6px;
-  }
-  .service-link::after { content: '→'; transition: transform 0.2s; }
-  .service-link:hover::after { transform: translateX(4px); }
-
-  /* ── WHY US ── */
-  .why { background: var(--navy); }
-  .why .section-title { color: var(--white); }
-  .why .section-sub { color: rgba(255,255,255,0.6); }
-  .why-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; margin-top: 56px; }
-
-  .differentiator {
-    display: flex; gap: 18px; margin-bottom: 32px;
-    padding-bottom: 32px; border-bottom: 1px solid rgba(255,255,255,0.08);
-  }
-  .differentiator:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
-  .diff-num {
-    font-family: 'Playfair Display', serif;
-    font-size: 32px; font-weight: 700; color: rgba(201,153,58,0.3);
-    line-height: 1; flex-shrink: 0; width: 40px;
-  }
-  .diff-title { font-size: 16px; font-weight: 600; color: var(--white); margin-bottom: 6px; }
-  .diff-body { font-size: 14px; color: rgba(255,255,255,0.55); line-height: 1.7; }
-
-  .why-right {
-    background: rgba(255,255,255,0.04);
-    border: 1px solid rgba(201,153,58,0.2);
-    border-radius: 20px; padding: 36px;
-  }
-  .why-right-title {
-    font-family: 'Playfair Display', serif;
-    font-size: 20px; color: var(--gold-light); margin-bottom: 24px;
-  }
-  .training-item {
-    padding: 16px 10px; border-bottom: 1px solid rgba(255,255,255,0.07);
-    display: flex; justify-content: space-between; align-items: flex-start;
-    gap: 12px; text-decoration: none; cursor: pointer;
-    border-radius: 8px; transition: background 0.2s;
-  }
-  a.training-item:hover { background: rgba(201,153,58,0.1); }
-  a.training-item:hover .training-name { color: var(--gold-light); }
-  .training-item:last-child { border-bottom: none; }
-  .training-cta {
-    margin-top: 22px; display: block; text-align: center;
-    background: var(--gold); color: var(--navy); font-weight: 600; font-size: 14px;
-    padding: 12px 20px; border-radius: 8px; text-decoration: none; transition: background 0.2s;
-  }
-  .training-cta:hover { background: var(--gold-light); }
-  .training-name { font-size: 14px; color: var(--white); font-weight: 500; }
-  .training-name span { display: block; font-size: 12px; color: rgba(255,255,255,0.45); font-weight: 300; margin-top: 2px; }
-  .training-dur {
-    font-size: 12px; font-weight: 600; color: var(--gold);
-    background: rgba(201,153,58,0.12);
-    padding: 3px 10px; border-radius: 20px;
-    white-space: nowrap; flex-shrink: 0;
-  }
-
-  /* ── TESTIMONIALS ── */
-  .testimonials { background: var(--gray-100); }
-  .testimonials-header { text-align: center; margin-bottom: 52px; }
-  .testimonials-header .section-sub { margin: 0 auto; }
-
-  .testimonials-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-
-  .testimonial-card {
-    background: var(--white); border: 1px solid var(--gray-200);
-    border-radius: 16px; padding: 28px;
-  }
-  .testimonial-quote {
-    font-size: 32px; color: var(--gold); line-height: 1; margin-bottom: 14px;
-    font-family: 'Playfair Display', serif;
-  }
-  .testimonial-text {
-    font-size: 14px; color: var(--text-light); line-height: 1.75;
-    margin-bottom: 20px; font-style: italic;
-  }
-  .testimonial-score {
-    display: flex; align-items: center; gap: 10px; margin-bottom: 16px;
-  }
-  .score-before, .score-after {
-    font-family: 'Playfair Display', serif;
-    font-size: 22px; font-weight: 700;
-  }
-  .score-before { color: var(--gray-400); }
-  .score-after { color: #3A8A3A; }
-  .score-arrow { color: var(--gold); font-size: 18px; }
-  .testimonial-author {
-    font-size: 13px; font-weight: 600; color: var(--navy);
-  }
-  .testimonial-author span { display: block; font-weight: 400; font-size: 12px; color: var(--gray-400); }
-
-  /* ── CLIENTS ── */
-  .clients { background: var(--white); }
-  .clients-header { text-align: center; margin-bottom: 48px; }
-
-  .clients-grid {
-    display: grid; grid-template-columns: repeat(4, 1fr);
-    gap: 0; border: 1px solid var(--gray-200); border-radius: 12px;
-    overflow: hidden;
-  }
-  .client-item {
-    padding: 18px 20px; font-size: 13px; font-weight: 500;
-    color: var(--gray-600); border-right: 1px solid var(--gray-200);
-    border-bottom: 1px solid var(--gray-200);
-    transition: all 0.2s;
-  }
-  .client-item:hover { background: var(--gold-pale); color: var(--navy); }
-  .client-item:nth-child(4n) { border-right: none; }
-
-  /* ── ABOUT ── */
-  .about { background: var(--cream); }
-  .about-grid { display: grid; grid-template-columns: 1fr 1.5fr; gap: 80px; align-items: start; }
-  .about-img-wrap {
-    border-radius: 20px;
-    overflow: hidden;
-    position: relative;
-  }
-  .about-img-placeholder {
-    font-family: 'Playfair Display', serif;
-    font-size: 80px; color: rgba(201,153,58,0.3);
-    text-align: center;
-  }
-  .about-img-badge {
-    position: absolute; bottom: 24px; left: 24px; right: 24px;
-    background: var(--gold); border-radius: 10px;
-    padding: 14px 18px;
-    font-size: 13px; font-weight: 600; color: var(--navy);
-  }
-  .about-img-badge span { display: block; font-size: 11px; font-weight: 400; opacity: 0.7; margin-top: 2px; }
-
-  .about-content { padding-top: 8px; }
-  .about-content .section-title { margin-bottom: 20px; }
-  .about-content p { font-size: 15px; color: var(--gray-600); line-height: 1.8; margin-bottom: 16px; }
-
-  .about-highlights {
-    display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 32px;
-  }
-  .highlight {
-    background: var(--white); border: 1px solid var(--gray-200);
-    border-radius: 10px; padding: 16px;
-  }
-  .highlight-icon { font-size: 20px; margin-bottom: 8px; }
-  .highlight-label { font-size: 13px; font-weight: 600; color: var(--navy); margin-bottom: 4px; }
-  .highlight-text { font-size: 12px; color: var(--gray-400); line-height: 1.5; }
-
-  /* ── CTA BANNER ── */
-  .cta-banner {
-    background: var(--navy);
-    padding: 80px 40px;
-    text-align: center;
-    position: relative; overflow: hidden;
-  }
-  .cta-banner::before {
-    content: ''; position: absolute; inset: 0;
-    background: radial-gradient(ellipse at 50% 0%, rgba(201,153,58,0.15) 0%, transparent 70%);
-  }
-  .cta-banner-content { position: relative; z-index: 2; }
-  .cta-banner h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(28px, 3.5vw, 44px); font-weight: 700;
-    color: var(--white); margin-bottom: 14px;
-  }
-  .cta-banner h2 em { font-style: normal; color: var(--gold-light); }
-  .cta-banner p { font-size: 16px; color: rgba(255,255,255,0.6); margin-bottom: 36px; }
-  .cta-banner-btns { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
-
-  /* ── CONTACT ── */
-  .contact { background: var(--white); }
-  .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; }
-  .contact-info { padding-top: 8px; }
-  .contact-item {
-    display: flex; align-items: flex-start; gap: 16px;
-    margin-bottom: 28px;
-  }
-  .contact-icon {
-    width: 44px; height: 44px; border-radius: 10px;
-    background: var(--gold-pale); display: flex; align-items: center;
-    justify-content: center; font-size: 18px; flex-shrink: 0;
-  }
-  .contact-label { font-size: 12px; font-weight: 600; color: var(--gray-400); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 2px; }
-  .contact-value { font-size: 15px; color: var(--navy); font-weight: 500; text-decoration: none; }
-  .contact-value:hover { color: var(--gold); }
-
-  .contact-social { display: flex; gap: 10px; margin-top: 36px; }
-  .social-btn {
-    width: 40px; height: 40px; border-radius: 8px;
-    border: 1px solid rgba(255,255,255,0.28); display: flex;
-    align-items: center; justify-content: center;
-    text-decoration: none; font-size: 16px; font-weight: 600; transition: all 0.2s;
-    background: rgba(255,255,255,0.12);
-    color: var(--white);
-  }
-  .social-btn:hover { background: var(--white); color: var(--navy); border-color: var(--white); }
-  .social-btn svg { width:18px; height:18px; display:block; fill:currentColor; }
-  .social-btn .instagram-icon { fill:none; stroke:currentColor; stroke-width:2; }
-  /* Contact card sits on a light background — use dark icons there for contrast */
-  .contact-social .social-btn { border-color: var(--gray-200); background: transparent; color: var(--navy); }
-  .contact-social .social-btn:hover { background: var(--navy); color: var(--white); border-color: var(--navy); }
-
-  .contact-form { background: var(--cream); border-radius: 20px; padding: 36px; }
-  .contact-form h3 {
-    font-family: 'Playfair Display', serif;
-    font-size: 22px; color: var(--navy); margin-bottom: 24px;
-  }
-  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 14px; }
-  .form-group { margin-bottom: 14px; }
-  .form-group label { display: block; font-size: 12px; font-weight: 600; color: var(--gray-600); margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.04em; }
-  .form-group input, .form-group select, .form-group textarea {
-    width: 100%; padding: 11px 14px;
-    border: 1px solid var(--gray-200); border-radius: 8px;
-    font-family: 'DM Sans', sans-serif; font-size: 14px; color: var(--text);
-    background: var(--white); transition: border-color 0.2s;
-    outline: none;
-  }
-  .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
-    border-color: var(--gold);
-  }
-  .form-group textarea { resize: vertical; min-height: 100px; }
-  .form-submit {
-    width: 100%; padding: 13px;
-    background: var(--navy); color: var(--white);
-    font-family: 'DM Sans', sans-serif;
-    font-size: 14px; font-weight: 600;
-    border: none; border-radius: 8px; cursor: pointer;
-    transition: background 0.2s;
-  }
-  .form-submit:hover { background: var(--navy-light); }
-
-  .process-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:22px; margin-top:42px; }
-  .process-step { background:#fff; border:1px solid var(--gray-200); border-radius:16px; padding:28px; }
-  .process-number { width:42px; height:42px; border-radius:50%; display:grid; place-items:center; background:var(--gold); color:var(--navy); font-weight:800; margin-bottom:18px; }
-  .process-step h3 { color:var(--navy); margin-bottom:9px; font-family:'Playfair Display',serif; }
-  .process-step p { color:var(--gray-600); line-height:1.7; font-size:14px; }
-  .consent-row { display:flex; align-items:flex-start; gap:10px; margin:8px 0 18px; font-size:12px; color:var(--gray-600); line-height:1.5; }
-  .consent-row input { width:auto; margin-top:3px; }
-  .consent-row a { color:var(--navy); }
-  @media (max-width: 760px) { .process-grid { grid-template-columns:1fr; } }
-
-  /* ── FOOTER ── */
-  footer {
-    background: #080F1C; padding: 40px;
-    display: flex; align-items: center; justify-content: space-between;
-    flex-wrap: wrap; gap: 16px;
-    border-top: 1px solid rgba(201,153,58,0.15);
-  }
-  .footer-copy { font-size: 13px; color: rgba(255,255,255,0.35); }
-  .footer-links { display: flex; gap: 18px 24px; flex-wrap: wrap; justify-content: center; }
-  .footer-links a { font-size: 13px; color: rgba(255,255,255,0.4); text-decoration: none; }
-  .footer-links a:hover { color: var(--gold-light); }
-
-  /* ── LANG TOGGLE ── */
-  [data-lang="es"] { display: none; }
-  body.es [data-lang="en"] { display: none; }
-  body.es [data-lang="es"] { display: revert; }
-
-  /* App-section feature chips: inline (default display) so the lang
-     toggle above can hide/show them - never set display on a data-lang el. */
-  .np-chip { background: rgba(255,255,255,0.10); color: #fff; font-size: 13px; padding: 6px 12px; border-radius: 8px; margin: 0 6px 8px 0; white-space: nowrap; }
-
-  /* ── ANIMATIONS ── */
-  @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(24px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-  .hero-badge { animation: fadeUp 0.6s ease both; }
-  .hero-headline { animation: fadeUp 0.6s 0.1s ease both; }
-  .hero-sub { animation: fadeUp 0.6s 0.2s ease both; }
-  .hero-cta-row { animation: fadeUp 0.6s 0.3s ease both; }
-  .hero-stats { animation: fadeUp 0.6s 0.4s ease both; }
-  .hero-card { animation: fadeUp 0.6s 0.3s ease both; }
-
-  /* ── MOBILE MENU ── */
-  .nav-burger {
-    display: none; background: none; border: none; cursor: pointer;
-    flex-direction: column; gap: 5px; padding: 8px;
-  }
-  .nav-burger span { display: block; width: 22px; height: 2px; background: var(--gold-light); border-radius: 2px; transition: all 0.25s; }
-  .mobile-menu {
-    display: none; position: fixed; top: 68px; left: 0; right: 0; z-index: 99;
-    background: var(--navy); border-bottom: 1px solid rgba(201,153,58,0.3);
-    flex-direction: column; padding: 12px 20px 20px;
-  }
-  .mobile-menu.open { display: flex; }
-  .mobile-menu a {
-    color: rgba(255,255,255,0.85); text-decoration: none;
-    padding: 14px 8px; font-size: 15px; border-bottom: 1px solid rgba(255,255,255,0.08);
-  }
-  .mobile-menu a:last-child { border-bottom: none; background: var(--gold); color: var(--navy); font-weight: 600; border-radius: 8px; text-align: center; margin-top: 10px; }
-
-  /* ── STICKY CALL (mobile) ── */
-  .sticky-call {
-    display: none; position: fixed; bottom: 20px; right: 20px; z-index: 98;
-    background: var(--gold); color: var(--navy); font-weight: 700; font-size: 15px;
-    padding: 14px 22px; border-radius: 50px; text-decoration: none;
-    box-shadow: 0 6px 24px rgba(13,31,60,0.35);
-  }
-
-  /* ── RESPONSIVE ── */
-  @media (max-width: 900px) {
-    nav { padding: 0 20px; }
-    .nav-links { display: none; }
-    .nav-burger { display: flex; }
-    .nav-cta { display: none; }
-    .sticky-call { display: block; }
-    .hero { grid-template-columns: 1fr; }
-    .hero-right { padding: 0 24px 40px; gap: 20px; }
-    .hero-right .event-spotlights { order: -1; }
-    .hero-left { padding: 120px 24px 60px; }
-    .hero-announcement { font-size: 13px !important; padding: 10px 12px !important; }
-    .app-grid { grid-template-columns: 1fr !important; }
-    #app .container { padding: 0 24px; }
-    #app .app-grid > div { min-width: 0; }
-    #app .app-grid > div:last-child { order: -1; margin-bottom: 32px; }
-    #app .app-grid img { max-width: 240px !important; }
-    #app h2 { font-size: 30px !important; }
-    .services-grid, .testimonials-grid { grid-template-columns: 1fr; }
-    .why-grid, .about-grid, .contact-grid { grid-template-columns: 1fr; gap: 40px; }
-    .clients-grid { grid-template-columns: repeat(2, 1fr); }
-    .trust-bar { gap: 20px; padding: 14px 20px; }
-    section { padding: 60px 24px; }
-    .form-row { grid-template-columns: 1fr; }
-    footer { flex-direction: column; text-align: center; }
-  }
-
-  /* ── PROMO POP-UP ── */
-  .promo-overlay {
-    display: none; position: fixed; inset: 0; z-index: 1000;
-    background: rgba(13,31,60,0.72); backdrop-filter: blur(6px);
-    align-items: center; justify-content: center; padding: 24px;
-    overflow-y: auto;
-  }
-  .promo-overlay.open { display: flex; animation: promoFade 0.35s ease both; }
-  @keyframes promoFade { from { opacity: 0; } to { opacity: 1; } }
-
-  .promo-card {
-    position: relative; width: 100%; max-width: 560px;
-    background: var(--white); border-radius: 20px; overflow: hidden;
-    box-shadow: 0 30px 80px rgba(13,31,60,0.45);
-    border: 1px solid rgba(201,153,58,0.35);
-    margin: auto; animation: promoRise 0.45s cubic-bezier(.16,1,.3,1) both;
-  }
-  @keyframes promoRise { from { opacity: 0; transform: translateY(28px) scale(0.97); } to { opacity: 1; transform: translateY(0) scale(1); } }
-
-  .promo-close {
-    position: absolute; top: 14px; right: 14px; z-index: 2;
-    width: 34px; height: 34px; border-radius: 50%; cursor: pointer;
-    background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.35);
-    color: #fff; font-size: 18px; line-height: 1; font-weight: 400;
-    display: flex; align-items: center; justify-content: center; transition: all 0.2s;
-  }
-  .promo-close:hover { background: rgba(255,255,255,0.3); transform: rotate(90deg); }
-
-  .promo-head {
-    background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 100%);
-    padding: 30px 34px 26px; text-align: center; position: relative;
-  }
-  .promo-alert {
-    display: inline-flex; align-items: center; gap: 7px;
-    background: rgba(201,153,58,0.18); border: 1px solid rgba(201,153,58,0.45);
-    color: var(--gold-light); font-size: 11px; font-weight: 700;
-    letter-spacing: 0.1em; text-transform: uppercase;
-    padding: 6px 14px; border-radius: 20px; margin-bottom: 16px;
-  }
-  .promo-alert::before { content: ''; width: 7px; height: 7px; border-radius: 50%; background: var(--gold); animation: promoPulse 1.4s ease infinite; }
-  @keyframes promoPulse { 0%,100% { opacity: 1; } 50% { opacity: 0.3; } }
-
-  .promo-head h2 {
-    font-family: 'Playfair Display', serif; font-size: 27px; line-height: 1.2;
-    color: #fff; font-weight: 700; margin: 0 0 8px;
-  }
-  .promo-head p { font-size: 14px; color: rgba(255,255,255,0.72); line-height: 1.55; margin: 0; }
-
-  .promo-body { padding: 26px 34px 30px; }
-
-  .promo-price-row {
-    display: flex; align-items: center; justify-content: center; gap: 18px;
-    margin-bottom: 20px; flex-wrap: wrap;
-  }
-  body:not(.es) #promoOverlay [data-lang="es"],
-  body.es #promoOverlay [data-lang="en"],
-  body:not(.es) #promoReopen [data-lang="es"],
-  body.es #promoReopen [data-lang="en"] { display: none; }
-  #promoOverlay .promo-card { background: #fff; }
-  #promoOverlay .promo-alert { display: inline-block; }
-  #promoOverlay .promo-price .lbl,
-  #promoOverlay .promo-price .flat { display: block; }
-  .promo-price { text-align: center; }
-  .promo-price .lbl { display: block; font-size: 10px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--gray-400); margin-bottom: 2px; }
-  .promo-price .now { font-family: 'Playfair Display', serif; font-size: 40px; font-weight: 800; color: var(--navy); line-height: 1; }
-  .promo-price .flat { display: block; font-size: 11px; color: var(--gold); font-weight: 700; margin-top: 4px; text-transform: uppercase; letter-spacing: 0.05em; }
-
-  .promo-list { list-style: none; margin: 0 0 22px; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 8px 14px; }
-  .promo-list li { font-size: 13px; color: var(--text-light); display: flex; align-items: flex-start; gap: 8px; line-height: 1.4; }
-  .promo-list li::before { content: '✔'; color: var(--gold); font-weight: 700; flex-shrink: 0; }
-
-  .promo-urgency {
-    background: var(--gray-100); border: 1px dashed var(--gold);
-    border-radius: 10px; padding: 12px 16px; margin-bottom: 22px;
-    font-size: 12.5px; color: var(--text-light); text-align: center; line-height: 1.5;
-  }
-  .promo-urgency strong { color: var(--navy); }
-
-  .promo-cta {
-    display: block; width: 100%; text-align: center;
-    background: var(--gold); color: var(--navy);
-    font-size: 16px; font-weight: 700; padding: 16px; border-radius: 10px;
-    text-decoration: none; border: 2px solid var(--gold); transition: all 0.2s;
-    cursor: pointer;
-  }
-  .promo-cta:hover { background: var(--gold-light); border-color: var(--gold-light); transform: translateY(-1px); }
-
-  .promo-contact { text-align: center; margin-top: 16px; font-size: 12.5px; color: var(--gray-600); line-height: 1.6; }
-  .promo-contact a { color: var(--navy); font-weight: 600; text-decoration: none; }
-  .promo-contact a:hover { color: var(--gold); }
-  .promo-contact .name { font-weight: 700; color: var(--navy); }
-
-  @media (max-width: 560px) {
-    .promo-overlay { align-items: flex-end; padding: 0; }
-    .promo-card { max-height: 92vh; overflow-y: auto; border-radius: 18px 18px 0 0; margin: 0; }
-    .promo-head { padding: 26px 22px 22px; }
-    .promo-head h2 { font-size: 22px; }
-    .promo-body { padding: 22px 22px 26px; }
-    .promo-list { grid-template-columns: 1fr; }
-    .promo-price .now { font-size: 34px; }
-  }
-
-  @media (prefers-reduced-motion: reduce) {
-    html { scroll-behavior: auto; }
-    *, *::before, *::after {
-      animation-duration: 0.01ms !important;
-      animation-iteration-count: 1 !important;
-      transition-duration: 0.01ms !important;
-    }
-  }
-
-  /* Persistent link left after the pop-up is closed */
-  .promo-reopen {
-    display: none; position: fixed; bottom: 20px; left: 20px; z-index: 998;
-    align-items: center; gap: 8px; cursor: pointer;
-    background: var(--navy); color: #fff; font-weight: 600; font-size: 13px;
-    padding: 12px 18px; border-radius: 50px; text-decoration: none;
-    border: 1px solid var(--gold); box-shadow: 0 6px 24px rgba(13,31,60,0.35);
-    transition: transform 0.2s, box-shadow 0.2s;
-  }
-  .promo-reopen.show { display: inline-flex; animation: promoRise 0.4s ease both; }
-  .promo-reopen:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(13,31,60,0.45); }
-  .promo-reopen strong { color: var(--gold-light); }
-  @media (max-width: 560px) {
-    .promo-reopen { bottom: 16px; left: 16px; font-size: 12px; padding: 11px 15px; }
-  }
-</style>
-<link rel="stylesheet" href="/light-theme.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/home.css">
 </head>
-<body>
+<body><a class="skip-link" href="#main-content"><span data-lang="en">Skip to content</span><span data-lang="es">Ir al contenido</span></a>
 
 <!-- NAV -->
-<nav>
-  <a href="/" class="nav-logo" aria-label="Kendra REAC home">
+<nav class="site-nav">
+  <a href="/" class="nav-logo" aria-label="Kendra REAC home"><span class="nav-mark"><img src="/kendra-logo-nobg.png" width="168" height="94" alt="Kendra REAC Consultant" loading="lazy" data-alt-en="Kendra REAC Consultant" data-alt-es="Kendra REAC Consultant"></span>
     <div class="nav-logo-text">Kendra REAC<span>Consultant, Inc.</span></div>
   </a>
   <div class="nav-links">
-    <a href="#services">Services</a>
-    <a href="#training">Training</a>
-    <a href="#app">Apps</a>
-    <a href="#about">About</a>
-    <a href="#clients">Clients</a>
-    <a href="#shop">Shop</a>
-    <a href="#faq">FAQ</a>
-    <a href="/hud-news/">HUD News</a>
-    <a href="#contact">Contact</a>
+    <a href="#services"><span data-lang="en">Services</span><span data-lang="es">Servicios</span></a>
+    <a href="#training"><span data-lang="en">Training</span><span data-lang="es">Adiestramientos</span></a>
+    <a href="#app"><span data-lang="en">Apps</span><span data-lang="es">Apps</span></a>
+    <a href="#about"><span data-lang="en">About</span><span data-lang="es">Nosotros</span></a>
+    <a href="#clients"><span data-lang="en">Clients</span><span data-lang="es">Clientes</span></a>
+
+    <a href="#faq"><span data-lang="en">FAQ</span><span data-lang="es">Preguntas</span></a>
+    <a href="/hud-news/"><span data-lang="en">HUD News</span><span data-lang="es">Noticias HUD</span></a>
+
   </div>
-  <div style="display:flex;align-items:center;gap:12px;">
+  <div class="nav-actions">
     <button type="button" class="nav-lang" id="languageToggle" onclick="toggleLang()" aria-label="Cambiar sitio a español" aria-pressed="false">EN / ES</button>
-    <a href="#contact" class="nav-cta">Book a Consultation</a>
+    <a href="#contact" class="nav-cta"><span data-lang="en">Book a Consultation</span><span data-lang="es">Reserve una consulta</span></a>
     <button class="nav-burger" id="menuToggle" onclick="toggleMenu()" aria-label="Open navigation menu" aria-controls="mobileMenu" aria-expanded="false"><span></span><span></span><span></span></button>
   </div>
 </nav>
 
 <div class="mobile-menu" id="mobileMenu">
-  <a href="#services" onclick="toggleMenu()">Services</a>
-  <a href="#training" onclick="toggleMenu()">Training</a>
-  <a href="#app" onclick="toggleMenu()">Apps</a>
-  <a href="#about" onclick="toggleMenu()">About</a>
-  <a href="#clients" onclick="toggleMenu()">Clients</a>
-  <a href="#shop" onclick="toggleMenu()">Shop</a>
-  <a href="#faq" onclick="toggleMenu()">FAQ</a>
-  <a href="/hud-news/" onclick="toggleMenu()">HUD News</a>
+  <a href="#services" onclick="toggleMenu()"><span data-lang="en">Services</span><span data-lang="es">Servicios</span></a>
+  <a href="#training" onclick="toggleMenu()"><span data-lang="en">Training</span><span data-lang="es">Adiestramientos</span></a>
+  <a href="#app" onclick="toggleMenu()"><span data-lang="en">Apps</span><span data-lang="es">Apps</span></a>
+  <a href="#about" onclick="toggleMenu()"><span data-lang="en">About</span><span data-lang="es">Nosotros</span></a>
+  <a href="#clients" onclick="toggleMenu()"><span data-lang="en">Clients</span><span data-lang="es">Clientes</span></a>
+  <a href="#shop" onclick="toggleMenu()"><span data-lang="en">Shop</span><span data-lang="es">Servicios</span></a>
+  <a href="#faq" onclick="toggleMenu()"><span data-lang="en">FAQ</span><span data-lang="es">Preguntas</span></a>
+  <a href="/hud-news/" onclick="toggleMenu()"><span data-lang="en">HUD News</span><span data-lang="es">Noticias HUD</span></a>
   <a href="#contact" onclick="toggleMenu()" data-lang="en">Book a Consultation</a>
   <a href="#contact" onclick="toggleMenu()" data-lang="es">Reservar una Consulta</a>
 </div>
 
-<a href="tel:4075165393" class="sticky-call">📞 Call Now</a>
+<a href="tel:4075165393" class="sticky-call"><svg class="line-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M7 3H4a1 1 0 0 0-1 1c0 9.4 7.6 17 17 17a1 1 0 0 0 1-1v-3l-5-2-2 2a14 14 0 0 1-7-7l2-2-2-5Z"></path></svg><span data-lang="en">Call</span><span data-lang="es">Llamar</span></a>
 
 <!-- HERO -->
-<section class="hero">
-  <div class="hero-bg-photo"></div>
-  <div class="hero-bg-pattern"></div>
-  <div class="hero-grid-lines"></div>
+<section class="hero" id="main-content">
+
+
+
 
   <div class="hero-left">
-    <img src="/kendra-logo-nobg.png" alt="Kendra REAC Consultant" width="168" height="94" fetchpriority="high" style="width:min(90vw,470px);height:auto;object-fit:contain;align-self:flex-start;margin-bottom:24px;display:block;">
-    <div class="hero-badge">HUD REAC Certified Since 2009</div>
+
+    <div class="hero-badge"><span data-lang="en">HUD REAC certified since 2009</span><span data-lang="es">Certificada HUD REAC desde 2009</span></div>
 
     <h1 class="hero-headline">
       <span data-lang="en">The REAC/NSPIRE consultant who trains your team <em>in English or Spanish.</em></span>
-      <span data-lang="es">La consultora de REAC/NSPIRE que capacita a su equipo <em>en español.</em></span>
+      <span data-lang="es">La consultora de REAC/NSPIRE que capacita a su equipo <em>en inglés o español.</em></span>
     </h1>
 
     <p class="hero-sub" data-lang="en">
@@ -935,13 +184,7 @@
       <a href="#services" class="btn-ghost" data-lang="es">Ver Programas de Entrenamiento</a>
     </div>
 
-    <div style="display:flex;align-items:center;gap:10px;margin-bottom:20px;">
-      <span style="font-size:12px;color:rgba(255,255,255,0.4);font-weight:300;" data-lang="en">Follow us:</span>
-      <span style="font-size:12px;color:rgba(255,255,255,0.4);font-weight:300;" data-lang="es">Síguenos:</span>
-      <a href="https://www.facebook.com/kendrareac" target="_blank" rel="noopener noreferrer" aria-label="Kendra REAC on Facebook" class="social-btn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 21v-8h2.7l.4-3h-3.1V8.1c0-.9.3-1.6 1.7-1.6h1.8V3.8c-.3 0-1.4-.1-2.6-.1-2.6 0-4.4 1.6-4.4 4.5V10H7v3h3v8h3.5Z"/></svg></a>
-      <a href="https://www.instagram.com/kendrareac/" target="_blank" rel="noopener noreferrer" aria-label="Kendra REAC on Instagram" class="social-btn"><svg class="instagram-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.8" r="1" fill="currentColor" stroke="none"/></svg></a>
-      <a href="https://x.com/ReacConsultant" target="_blank" rel="noopener noreferrer" aria-label="Kendra REAC on X" class="social-btn">X</a>
-    </div>
+
 
     <div class="hero-stats">
       <div>
@@ -962,34 +205,34 @@
     </div>
   </div>
 
-  <div class="hero-right">
+  <div class="hero-right"><figure class="hero-photo"><img src="/images/staff-training-group.jpg" width="2048" height="1536" fetchpriority="high" alt="On-site NSPIRE training at Res. Raúl Castellón, Puerto Rico" data-alt-en="On-site NSPIRE training at Res. Raúl Castellón, Puerto Rico" data-alt-es="Adiestramiento NSPIRE en el Residencial Raúl Castellón, Puerto Rico"><figcaption><span data-lang="en">On-site NSPIRE training · Puerto Rico</span><span data-lang="es">Adiestramiento NSPIRE en sitio · Puerto Rico</span></figcaption></figure>
     <div class="hero-card">
-      <h3 class="hero-card-title" data-lang="en">Your REAC score determines inspection frequency</h3>
-      <h3 class="hero-card-title" data-lang="es">Su puntuación de REAC determina la frecuencia de inspección</h3>
+      <h3 class="hero-card-title" data-lang="en">Your REAC score sets your inspection cycle</h3>
+      <h3 class="hero-card-title" data-lang="es">Su puntuación REAC determina el ciclo de inspección</h3>
 
-      <div class="score-item">
+      <div class="score-bands"><span></span><span></span><span></span></div><div class="score-scale"><span>0</span><span>80</span><span>90</span><span>100</span></div>
+
+
+
+      <div class="score-list"><div class="score-item">
         <div>
           <div class="score-range green">90 – 100</div>
           <div class="score-freq" data-lang="en">Every 3 years</div>
           <div class="score-freq" data-lang="es">Cada 3 años</div>
         </div>
-      </div>
-      <div class="score-item">
+      </div><div class="score-item">
         <div>
           <div class="score-range yellow">80 – 89</div>
           <div class="score-freq" data-lang="en">Every 2 years</div>
           <div class="score-freq" data-lang="es">Cada 2 años</div>
         </div>
-      </div>
-      <div class="score-item">
+      </div><div class="score-item">
         <div>
-          <div class="score-range red">79 or below</div>
+          <div class="score-range red"><span data-lang="en">79 or below</span><span data-lang="es">79 o menos</span></div>
           <div class="score-freq" data-lang="en">Annual inspection</div>
           <div class="score-freq" data-lang="es">Inspección anual</div>
         </div>
-      </div>
-
-      <div class="hero-card-note" data-lang="en">
+      </div></div><div class="hero-card-note" data-lang="en">
         Our clients consistently improve their scores — reducing inspection frequency and protecting their HUD funding.
       </div>
       <div class="hero-card-note" data-lang="es">
@@ -997,147 +240,34 @@
       </div>
     </div>
 
-<div class="event-spotlights" aria-label="Upcoming training / Próximos adiestramientos">
-<a class="event-spotlight event-spotlight--transition" href="/hqs-a-nspire/"><img src="/images/hqs-a-nspire-v-zoom.jpg" width="727" height="916" alt="HQS to NSPIRE-V — live Zoom training, November 17, 2026" data-alt-en="HQS to NSPIRE-V — live Zoom training, November 17, 2026" data-alt-es="De HQS a NSPIRE-V — adiestramiento por Zoom, 17 de noviembre de 2026" style="display:block;width:100%;height:auto;border-radius:10px;margin-bottom:16px;" loading="lazy"><span class="event-kicker" data-lang="en">LIVE ON ZOOM · NOV 17</span><span class="event-kicker" data-lang="es">EN VIVO POR ZOOM · 17 NOV</span><span class="event-title" data-lang="en">HQS to NSPIRE-V</span><span class="event-title" data-lang="es">De HQS a NSPIRE-V</span><span class="event-hook" data-lang="en">Section 8 is changing. Prepare your team.</span><span class="event-hook" data-lang="es">Sección 8 cambia. Prepare a su equipo.</span><span class="event-details" data-lang="en">November 17, 2026 · 6 hours · In Spanish<br>PR 10 a.m.–1 p.m. &amp; 2–5 p.m. AST · FL 9 a.m.–12 p.m. &amp; 1–4 p.m. EST</span><span class="event-details" data-lang="es">17 de noviembre de 2026 · 6 horas · En español<br>PR 10 a.m.–1 p.m. y 2–5 p.m. AST · FL 9 a.m.–12 p.m. y 1–4 p.m. EST</span><span class="event-price" data-lang="en">$275 per person through Nov 6 · $325 from Nov 7</span><span class="event-price" data-lang="es">$275 por persona hasta el 6 de nov. · $325 a partir del 7 de nov.</span><span class="event-action" data-lang="en">See details &amp; register →</span><span class="event-action" data-lang="es">Vea los detalles e inscríbase →</span></a>
-<a class="event-spotlight event-spotlight--refresher" href="/taller-seguridad/"><span class="event-kicker" data-lang="en">LIVE ON ZOOM · NOV 25</span><span class="event-kicker" data-lang="es">EN VIVO POR ZOOM · 25 NOV</span><span class="event-title" data-lang="en">NSPIRE Workshop Refresher and New Employees</span><span class="event-title" data-lang="es">Taller NSPIRE: Repaso y Empleados Nuevos</span><span class="event-hook" data-lang="en">Refresh your skills. Get new team members ready.</span><span class="event-hook" data-lang="es">Refuerce sus conocimientos. Prepare a su personal nuevo.</span><span class="event-details" data-lang="en">November 25, 2026 · 1–4 p.m. ET · In Spanish</span><span class="event-details" data-lang="es">25 de noviembre de 2026 · 1–4 p.m. ET · En español</span><span class="event-price" data-lang="en">$150 per person</span><span class="event-price" data-lang="es">$150 por persona</span><span class="event-action" data-lang="en">Reserve your spot →</span><span class="event-action" data-lang="es">Reserve su espacio →</span></a>
-</div>
+
   </div>
-</section>
+</section><section class="events"><div class="container"><p class="section-label"><span data-lang="en">Live training / November 2026</span><span data-lang="es">Adiestramientos en vivo / Noviembre 2026</span></p><div class="event-spotlights" aria-label="Upcoming training / Próximos adiestramientos">
+<a class="event-spotlight event-spotlight--transition" href="/hqs-a-nspire/"><div class="event-date"><span>NOV</span><strong>17</strong></div><div class="event-copy"><span class="event-kicker" data-lang="en">LIVE ON ZOOM · NOV 17</span><span class="event-kicker" data-lang="es">EN VIVO POR ZOOM · 17 NOV</span><span class="event-title" data-lang="en">HQS to NSPIRE-V</span><span class="event-title" data-lang="es">De HQS a NSPIRE-V</span><span class="event-hook" data-lang="en">Section 8 is changing. Prepare your team.</span><span class="event-hook" data-lang="es">Sección 8 cambia. Prepare a su equipo.</span><span class="event-details" data-lang="en">November 17, 2026 · 6 hours · In Spanish<br>PR 10 a.m.–1 p.m. &amp; 2–5 p.m. AST · FL 9 a.m.–12 p.m. &amp; 1–4 p.m. EST</span><span class="event-details" data-lang="es">17 de noviembre de 2026 · 6 horas · En español<br>PR 10 a.m.–1 p.m. y 2–5 p.m. AST · FL 9 a.m.–12 p.m. y 1–4 p.m. EST</span><span class="event-price" data-lang="en">$275 per person through Nov 6 · $325 from Nov 7</span><span class="event-price" data-lang="es">$275 por persona hasta el 6 de nov. · $325 a partir del 7 de nov.</span><span class="event-action" data-lang="en">See details &amp; register →</span><span class="event-action" data-lang="es">Vea los detalles e inscríbase →</span></div></a>
+<a class="event-spotlight event-spotlight--refresher" href="/taller-seguridad/"><div class="event-date"><span>NOV</span><strong>25</strong></div><div class="event-copy"><span class="event-kicker" data-lang="en">LIVE ON ZOOM · NOV 25</span><span class="event-kicker" data-lang="es">EN VIVO POR ZOOM · 25 NOV</span><span class="event-title" data-lang="en">NSPIRE Workshop Refresher and New Employees</span><span class="event-title" data-lang="es">Taller NSPIRE: Repaso y Empleados Nuevos</span><span class="event-hook" data-lang="en">Refresh your skills. Get new team members ready.</span><span class="event-hook" data-lang="es">Refuerce sus conocimientos. Prepare a su personal nuevo.</span><span class="event-details" data-lang="en">November 25, 2026 · 1–4 p.m. ET · In Spanish</span><span class="event-details" data-lang="es">25 de noviembre de 2026 · 1–4 p.m. ET · En español</span><span class="event-price" data-lang="en">$150 per person</span><span class="event-price" data-lang="es">$150 por persona</span><span class="event-action" data-lang="en">Reserve your spot →</span><span class="event-action" data-lang="es">Reserve su espacio →</span></div></a>
+</div></div></section><section class="proof"><div class="container"><p><span data-lang="en">Trusted by housing authorities and property managers across the U.S. &amp; Puerto Rico</span><span data-lang="es">La confianza de autoridades de vivienda y administradores en EE. UU. y Puerto Rico</span></p><div class="proof-names"><a href="#clients">A &amp; M Contract, Inc.</a><a href="#clients">Administración de Vivienda Pública de Puerto Rico</a><a href="#clients">Catholic Housing Management</a><a href="#clients">Cost Control Company</a><a href="#clients">Lakeland Housing Authority</a></div></div></section>
 
 <!-- TRUST BAR -->
-<div class="trust-bar">
-  <div class="trust-item" data-lang="en">HUD REAC Certified Since 2009</div>
-  <div class="trust-item" data-lang="es">Certificada HUD REAC desde 2009</div>
-  <div class="trust-item" data-lang="en">Training in English & Spanish</div>
-  <div class="trust-item" data-lang="es">Capacitación en español e inglés</div>
-  <div class="trust-item" data-lang="en">NSPIRE · UPCS · HQS</div>
-  <div class="trust-item" data-lang="es">NSPIRE · UPCS · HQS</div>
-  <div class="trust-item" data-lang="en">Nationwide Pre-Inspections</div>
-  <div class="trust-item" data-lang="es">Pre-Inspecciones en todo el país</div>
-  <div class="trust-item" data-lang="en">Conference Speaker</div>
-  <div class="trust-item" data-lang="es">Conferencista Reconocida</div>
-  <div style="display:flex;align-items:center;gap:10px;margin-left:8px;">
-      <a href="https://www.facebook.com/kendrareac" target="_blank" rel="noopener noreferrer" aria-label="Kendra REAC on Facebook" style="display:flex;align-items:center;justify-content:center;width:32px;height:32px;border-radius:6px;background:rgba(13,31,60,0.15);color:var(--navy);text-decoration:none;font-size:13px;font-weight:700;"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 21v-8h2.7l.4-3h-3.1V8.1c0-.9.3-1.6 1.7-1.6h1.8V3.8c-.3 0-1.4-.1-2.6-.1-2.6 0-4.4 1.6-4.4 4.5V10H7v3h3v8h3.5Z"/></svg></a>
-    <a href="https://www.instagram.com/kendrareac/" target="_blank" rel="noopener noreferrer" aria-label="Kendra REAC on Instagram" style="display:flex;align-items:center;justify-content:center;width:32px;height:32px;border-radius:6px;background:rgba(13,31,60,0.15);color:var(--navy);text-decoration:none;font-size:12px;font-weight:700;"><svg class="instagram-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.8" r="1" fill="currentColor" stroke="none"/></svg></a>
-      <a href="https://x.com/ReacConsultant" target="_blank" rel="noopener noreferrer" aria-label="Kendra REAC on X" style="display:flex;align-items:center;justify-content:center;width:32px;height:32px;border-radius:6px;background:rgba(13,31,60,0.15);color:var(--navy);text-decoration:none;font-size:13px;font-weight:700;">X</a>
-  </div>
-</div>
+
 
 <!-- NSPIRE PRO APP -->
-<section id="app" style="background:linear-gradient(135deg,var(--navy) 0%,var(--navy-mid) 100%);padding:90px 0;overflow:hidden;">
-  <style>
-    .apps2-head{text-align:center;max-width:660px;margin:0 auto 44px;}
-    .apps2-grid{display:grid;grid-template-columns:1fr 1fr;gap:26px;align-items:stretch;}
-    .app2{background:rgba(255,255,255,0.055);border:1px solid rgba(255,255,255,0.14);border-radius:20px;padding:34px 30px;display:flex;flex-direction:column;}
-    .app2 .ic{font-size:38px;line-height:1;margin-bottom:14px;}
-    .app2 .role{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--gold-light);margin-bottom:7px;}
-    .app2 h3{font-family:'Playfair Display',serif;font-size:26px;color:#fff;font-weight:800;margin:0 0 10px;line-height:1.15;}
-    .app2 > p{color:var(--gold-pale);font-size:15px;line-height:1.65;margin:0 0 16px;}
-    .app2-shot{margin:0 0 18px;}
-    .app2-shot .frame{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.14);border-radius:14px;padding:14px;height:340px;display:flex;align-items:center;justify-content:center;overflow:hidden;}
-    .app2-shot img{max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain;display:block;border-radius:6px;}
-    .app2-shot figcaption{margin-top:10px;font-size:12px;color:var(--gold-pale);text-align:center;opacity:.85;}
-    @media(max-width:480px){ .app2-shot .frame{height:260px;} }
-    .app2 .chips{margin-bottom:18px;line-height:2.3;}
-    .app2 .price{color:#fff;font-size:14.5px;font-weight:600;margin:0 0 20px;}
-    .app2 .price b{font-size:23px;}
-    .app2 .ctas{margin-top:auto;display:flex;flex-wrap:wrap;gap:10px;}
-    .app2 a.g{background:var(--gold);color:#fff;padding:13px 24px;border-radius:8px;font-weight:700;font-size:14.5px;text-decoration:none;transition:.2s;}
-    .app2 a.g:hover{background:#fff;color:var(--navy);}
-    .app2 a.o{border:1.5px solid rgba(255,255,255,0.5);color:#fff;padding:13px 24px;border-radius:8px;font-weight:600;font-size:14.5px;text-decoration:none;transition:.2s;}
-    .app2 a.o:hover{background:rgba(255,255,255,0.12);}
-    .app2.on{border-color:var(--gold);box-shadow:0 18px 50px rgba(0,0,0,0.35);}
-    @media(max-width:760px){ .apps2-grid{grid-template-columns:1fr;} }
-  </style>
-  <div class="container">
-    <div class="apps2-head">
-      <div style="display:inline-block;background:var(--gold);color:#fff;font-size:11px;font-weight:700;padding:5px 14px;border-radius:20px;letter-spacing:0.06em;margin-bottom:16px;">OUR APPS &middot; NUESTRAS APPS</div>
-      <h2 style="font-family:'Playfair Display',serif;font-size:36px;line-height:1.15;color:#fff;font-weight:800;margin:0 0 12px;" data-lang="en">Two apps, built by our team</h2>
-      <h2 style="font-family:'Playfair Display',serif;font-size:36px;line-height:1.15;color:#fff;font-weight:800;margin:0 0 12px;" data-lang="es">Dos apps, creadas por nuestro equipo</h2>
-      <p style="color:var(--gold-pale);font-size:16px;line-height:1.6;margin:0;" data-lang="en">Inspect properties and manage maintenance. Each is its own app, sold separately &mdash; with a free 7-day trial.</p>
-      <p style="color:var(--gold-pale);font-size:16px;line-height:1.6;margin:0;" data-lang="es">Inspeccione propiedades y administre el mantenimiento. Cada una es su propia app, se vende por separado &mdash; con prueba gratis de 7 d&iacute;as.</p>
-    </div>
 
-    <div class="apps2-grid">
-
-      <!-- LEFT: NspirePro (inspections) -->
-      <div class="app2 on">
-        <div class="ic">&#127968;</div>
-        <div class="role" data-lang="en">For inspectors</div>
-        <div class="role" data-lang="es">Para inspectores</div>
-        <h3>NspirePro Inspections</h3>
-        <p data-lang="en">Score HUD NSPIRE inspections right on your phone. Document deficiencies with photos, run team inspections, and hand your client a professional report before you leave &mdash; all offline.</p>
-        <p data-lang="es">Califique inspecciones HUD NSPIRE desde su tel&eacute;fono. Documente deficiencias con fotos, realice inspecciones en equipo y entregue un informe profesional antes de salir &mdash; todo sin conexi&oacute;n.</p>
-        <figure class="app2-shot">
-          <div class="frame">
-            <img src="/images/nspire-inspections-score.jpg" alt="NspirePro inspection score screen" width="750" height="1624" loading="lazy">
-          </div>
-          <figcaption data-lang="en">Inspection score preview</figcaption>
-          <figcaption data-lang="es">Vista previa de la puntuación</figcaption>
-        </figure>
-        <div class="chips">
-          <span class="np-chip" data-lang="en">63 NSPIRE standards</span> <span class="np-chip" data-lang="en">HUD-aligned scoring</span> <span class="np-chip" data-lang="en">Photos &amp; signatures</span> <span class="np-chip" data-lang="en">Works offline</span> <span class="np-chip" data-lang="en">AI photo assist</span>
-          <span class="np-chip" data-lang="es">63 normas NSPIRE</span> <span class="np-chip" data-lang="es">Puntaje alineado con HUD</span> <span class="np-chip" data-lang="es">Fotos y firmas</span> <span class="np-chip" data-lang="es">Funciona sin conexi&oacute;n</span> <span class="np-chip" data-lang="es">Identifica con IA</span>
-        </div>
-        <div class="price" data-lang="en"><b>$49</b>/month &middot; 7-day free trial</div>
-        <div class="price" data-lang="es"><b>$49</b>/mes &middot; prueba gratis de 7 d&iacute;as</div>
-        <div class="ctas">
-          <a class="g" href="https://app.reacnspire.com/buy" target="_blank" data-lang="en">Start Free Trial &rarr;</a>
-          <a class="g" href="https://app.reacnspire.com/buy" target="_blank" data-lang="es">Prueba Gratis &rarr;</a>
-          <a class="o" href="https://app.reacnspire.com" target="_blank" data-lang="en">Open the App</a>
-          <a class="o" href="https://app.reacnspire.com" target="_blank" data-lang="es">Abrir la App</a>
-        </div>
-      </div>
-
-      <!-- RIGHT: NspirePro Maintenance (work orders) -->
-      <div class="app2">
-        <div class="ic">&#128296;</div>
-        <div class="role" data-lang="en">For property managers</div>
-        <div class="role" data-lang="es">Para administradores</div>
-        <h3>NspirePro Maintenance</h3>
-        <p data-lang="en">Tenants and technicians report work orders with a photo. Assign to your team, auto-translate every request to English, and keep tenants updated by email &mdash; start to finish.</p>
-        <p data-lang="es">Inquilinos y t&eacute;cnicos reportan &oacute;rdenes de trabajo con una foto. Asigne a su equipo, traduzca cada solicitud al ingl&eacute;s autom&aacute;ticamente y mantenga informados a los inquilinos por correo &mdash; de principio a fin.</p>
-        <figure class="app2-shot">
-          <div class="frame">
-            <img src="/images/nspire-maintenance-preview.png" alt="NspirePro Maintenance workflow illustration" width="750" height="1100" loading="lazy">
-          </div>
-          <figcaption data-lang="en">Maintenance workflow illustration</figcaption>
-          <figcaption data-lang="es">Ejemplo del flujo de mantenimiento</figcaption>
-        </figure>
-        <div class="chips">
-          <span class="np-chip" data-lang="en">Tenant photo reports</span> <span class="np-chip" data-lang="en">Auto-translated</span> <span class="np-chip" data-lang="en">Technician app</span> <span class="np-chip" data-lang="en">Tenant status emails</span> <span class="np-chip" data-lang="en">Unlimited users</span>
-          <span class="np-chip" data-lang="es">Reportes con foto</span> <span class="np-chip" data-lang="es">Traducci&oacute;n autom&aacute;tica</span> <span class="np-chip" data-lang="es">App para t&eacute;cnicos</span> <span class="np-chip" data-lang="es">Correos de estado</span> <span class="np-chip" data-lang="es">Usuarios ilimitados</span>
-        </div>
-        <div class="price" data-lang="en">from <b>$29</b>/month &middot; 7-day free trial</div>
-        <div class="price" data-lang="es">desde <b>$29</b>/mes &middot; prueba gratis de 7 d&iacute;as</div>
-        <div class="ctas">
-          <a class="g" href="https://app.reacnspire.com/wo" target="_blank" data-lang="en">See Plans &rarr;</a>
-          <a class="g" href="https://app.reacnspire.com/wo" target="_blank" data-lang="es">Ver Planes &rarr;</a>
-          <a class="o" href="https://app.reacnspire.com/maintenance.html" target="_blank" data-lang="en">Manager Sign-in</a>
-          <a class="o" href="https://app.reacnspire.com/maintenance.html" target="_blank" data-lang="es">Acceso Gerente</a>
-        </div>
-      </div>
-
-    </div>
-
-  </div>
-</section>
 
 <!-- SERVICES -->
 <section class="services" id="services">
   <div class="container">
     <div class="services-header">
-      <p class="section-label" data-lang="en">What We Do</p>
-      <p class="section-label" data-lang="es">Lo Que Hacemos</p>
-      <h2 class="section-title" data-lang="en">Expert REAC services — in English & Spanish</h2>
+      <p class="section-label" data-lang="en">01 — What We Do</p>
+      <p class="section-label" data-lang="es">01 — Lo Que Hacemos</p>
+      <h2 class="section-title" data-lang="en">Expert REAC services — in English &amp; Spanish</h2>
       <h2 class="section-title" data-lang="es">Servicios expertos de REAC — en español e inglés</h2>
       <p class="section-sub" data-lang="en">From pre-inspection walkthroughs to hands-on staff training, we give your team everything they need to score higher and stay compliant.</p>
       <p class="section-sub" data-lang="es">Desde recorridos de pre-inspección hasta capacitación práctica del personal, le damos a su equipo todo lo que necesitan para obtener una puntuación más alta y cumplir con las normas.</p>
     </div>
 
-    <div class="services-grid" id="training">
-      <div class="service-card">
-        <img src="/images/pre-inspection-calendar.jpg" alt="REAC inspection preparation" loading="lazy" width="1408" height="704" style="width:100%;height:160px;object-fit:cover;border-radius:10px;margin-bottom:20px;">
+    <div class="services-grid">
+      <div class="service-card reveal"><div class="service-number">01</div>
+
         <h3 data-lang="en">Pre-Inspection Service</h3>
         <h3 data-lang="es">Servicio de Pre-Inspección</h3>
         <p data-lang="en">We walk your property before the federal inspector arrives — identifying every deficiency, documenting it in detail, and giving your team a clear action plan to fix it in time.</p>
@@ -1146,8 +276,8 @@
         <a href="/nspire-pre-inspection/" class="service-link" data-lang="es">Conozca las pre-inspecciones NSPIRE →</a>
       </div>
 
-      <div class="service-card">
-        <img src="/images/staff-training-group.jpg" alt="REAC staff training group" loading="lazy" width="2048" height="1536" style="width:100%;height:160px;object-fit:cover;object-position:center 45%;border-radius:10px;margin-bottom:20px;">
+      <div class="service-card reveal"><div class="service-number">02</div>
+
         <h3 data-lang="en">Staff Training Programs</h3>
         <h3 data-lang="es">Programas de Capacitación</h3>
         <p data-lang="en">From NSPIRE Fundamentals (1 day) to our signature Hands-On Training (2 days with a live mock inspection) — all programs include a training manual written in Spanish. On-site, hotel, or virtual via Zoom/Teams.</p>
@@ -1156,8 +286,8 @@
         <a href="#contact" class="service-link" data-lang="es">Reservar un programa de entrenamiento</a>
       </div>
 
-      <div class="service-card">
-        <img src="/images/nspire-consulting-sandra.png" alt="NSPIRE consulting" loading="lazy" width="1774" height="887" style="width:100%;height:160px;object-fit:cover;border-radius:10px;margin-bottom:20px;">
+      <div class="service-card reveal"><div class="service-number">03</div>
+
         <h3 data-lang="en">NSPIRE Consulting</h3>
         <h3 data-lang="es">Consultoría NSPIRE</h3>
         <p data-lang="en">Customized compliance strategies for property management companies, housing authorities, and HUD-subsidized owners. We adapt to your specific portfolio, scoring challenges, and inspection history.</p>
@@ -1168,89 +298,73 @@
     </div>
 
     <!-- UPCOMING TRAINING BANNER -->
-    <div class="workshop-banner" style="margin-top: 40px; background: var(--navy); border-radius: 16px; overflow: hidden; display: grid; grid-template-columns: 1fr 1fr; border: 2px solid var(--gold);">
-      <div style="padding: 32px 36px;">
-        <div style="display: inline-flex; align-items: center; gap: 8px; background: rgba(201,153,58,0.2); border: 1px solid rgba(201,153,58,0.4); border-radius: 20px; padding: 5px 14px; margin-bottom: 16px;">
-          <span style="width: 8px; height: 8px; background: #E87474; border-radius: 50%; display: inline-block; animation: pulse 1.5s infinite;"></span>
-          <span style="font-size: 11px; font-weight: 600; color: var(--gold-light); text-transform: uppercase; letter-spacing: 0.08em;" data-lang="en">Team Training — By Request</span>
-          <span style="font-size: 11px; font-weight: 600; color: var(--gold-light); text-transform: uppercase; letter-spacing: 0.08em;" data-lang="es">Capacitación para Equipos — A Solicitud</span>
+
+
+
+  <div class="programs" id="training"><p class="section-label"><span data-lang="en">02 — Training programs</span><span data-lang="es">02 — Programas de adiestramiento</span></p><h2><span data-lang="en">Training programs at a glance</span><span data-lang="es">Programas de adiestramiento</span></h2><table class="program-table"><thead><tr><th><span data-lang="en">Program</span><span data-lang="es">Programa</span></th><th><span data-lang="en">What it covers</span><span data-lang="es">Contenido</span></th><th><span data-lang="en">Duration</span><span data-lang="es">Duración</span></th></tr></thead><tbody><tr><td><a href="#contact" onclick="bookTraining('NSPIRE Fundamentals')"><span data-lang="en">NSPIRE Fundamentals</span><span data-lang="es">Fundamentos de NSPIRE</span></a></td><td><span data-lang="en">What is NSPIRE, the 3-3-3 rule, scoring methodology</span><span data-lang="es">Qué es NSPIRE, la regla 3-3-3, metodología de puntuación</span></td><td><div class="training-dur" data-lang="en">1 Day</div><div class="training-dur" data-lang="es">1 Día</div></td></tr><tr><td><a href="#contact" onclick="bookTraining('Advanced REAC Workshop')"><span data-lang="en">Advanced REAC Workshop</span><span data-lang="es">Taller avanzado de REAC</span></a></td><td><span data-lang="en">All deficiencies with real photos &amp; point values</span><span data-lang="es">Todas las deficiencias con fotos reales y valores de puntos</span></td><td><div class="training-dur" data-lang="en">1 Day</div><div class="training-dur" data-lang="es">1 Día</div></td></tr><tr><td><a href="#contact" onclick="bookTraining('NSPIRE Hands-On Training')"><span data-lang="en">NSPIRE Hands-On Training</span><span data-lang="es">Adiestramiento práctico de NSPIRE</span></a></td><td><span data-lang="en">Theory + live mock inspection at your property</span><span data-lang="es">Teoría + simulacro de inspección en vivo en su propiedad</span></td><td><div class="training-dur" data-lang="en">2 Days</div><div class="training-dur" data-lang="es">2 Días</div></td></tr><tr><td><a href="#contact" onclick="bookTraining('Resident Council Workshop')"><span data-lang="en">Resident Council Workshop</span><span data-lang="es">Taller para consejos de residentes</span></a></td><td><span data-lang="en">Help residents understand their role in inspections</span><span data-lang="es">Ayuda a los residentes a entender su papel en las inspecciones</span></td><td><div class="training-dur">4 hrs</div></td></tr><tr><td><a href="#contact" onclick="bookTraining('Live TEAMS Webinars')"><span data-lang="en">Live TEAMS Webinars</span><span data-lang="es">Seminarios en vivo por TEAMS</span></a></td><td><span data-lang="en">Various NSPIRE topics — see upcoming events</span><span data-lang="es">Varios temas de NSPIRE — ver próximos eventos</span></td><td><div class="training-dur">3 hrs</div></td></tr></tbody></table><a href="#contact" class="training-cta" onclick="bookTraining('')" data-lang="en">Book a Consultation →</a><a href="#contact" class="training-cta" onclick="bookTraining('')" data-lang="es">Reservar una Consulta →</a></div></div>
+</section><section class="team-training"><div class="container"><div class="workshop-banner">
+      <div class="workshop-copy">
+        <div class="section-label">
+
+          <span data-lang="en">Team Training — By Request</span>
+          <span data-lang="es">Capacitación para Equipos — A Solicitud</span>
         </div>
-        <h3 style="font-family: 'Playfair Display', serif; font-size: 28px; font-weight: 700; color: #fff; margin-bottom: 8px; line-height: 1.2;" data-lang="en">NSPIRE Workshop Refresher and New Employees<br><em style="color: var(--gold-light); font-style: normal;">for Maintenance Staff</em></h3>
-        <h3 style="font-family: 'Playfair Display', serif; font-size: 28px; font-weight: 700; color: #fff; margin-bottom: 8px; line-height: 1.2;" data-lang="es">Taller NSPIRE: Repaso y Empleados Nuevos<br><em style="color: var(--gold-light); font-style: normal;">para Personal de Mantenimiento</em></h3>
-        <p style="font-size: 14px; color: rgba(255,255,255,0.6); margin-bottom: 24px; line-height: 1.6;" data-lang="en">Everything your maintenance team needs to know to succeed on inspection day — taught entirely in Spanish.</p>
-        <p style="font-size: 14px; color: rgba(255,255,255,0.6); margin-bottom: 24px; line-height: 1.6;" data-lang="es">Todo lo que su personal de mantenimiento necesita saber para tener éxito el día de la inspección.</p>
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 28px;">
-          <div style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 10px; padding: 12px 14px;">
-            <div style="font-size: 10px; font-weight: 600; color: var(--gold); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 4px;" data-lang="en">Format</div>
-            <div style="font-size: 10px; font-weight: 600; color: var(--gold); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 4px;" data-lang="es">Modalidad</div>
-            <div style="font-size: 14px; font-weight: 600; color: #fff;" data-lang="en">On-site or virtual</div>
-            <div style="font-size: 14px; font-weight: 600; color: #fff;" data-lang="es">Presencial o virtual</div>
+        <h3 data-lang="en">NSPIRE Workshop Refresher and New Employees<br><em>for Maintenance Staff</em></h3>
+        <h3 data-lang="es">Taller NSPIRE: Repaso y Empleados Nuevos<br><em>para Personal de Mantenimiento</em></h3>
+        <p data-lang="en">Everything your maintenance team needs to know to succeed on inspection day — taught entirely in Spanish.</p>
+        <p data-lang="es">Todo lo que su personal de mantenimiento necesita saber para tener éxito el día de la inspección.</p>
+        <div class="workshop-facts">
+          <div>
+            <div data-lang="en">Format</div>
+            <div data-lang="es">Modalidad</div>
+            <div data-lang="en">On-site or virtual</div>
+            <div data-lang="es">Presencial o virtual</div>
           </div>
-          <div style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 10px; padding: 12px 14px;">
-            <div style="font-size: 10px; font-weight: 600; color: var(--gold); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 4px;" data-lang="en">Duration</div>
-            <div style="font-size: 10px; font-weight: 600; color: var(--gold); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 4px;" data-lang="es">Duración</div>
-            <div style="font-size: 14px; font-weight: 600; color: #fff;" data-lang="en">Customized for your team</div><div style="font-size: 14px; font-weight: 600; color: #fff;" data-lang="es">Personalizada para su equipo</div>
+          <div>
+            <div data-lang="en">Duration</div>
+            <div data-lang="es">Duración</div>
+            <div data-lang="en">Customized for your team</div><div data-lang="es">Personalizada para su equipo</div>
           </div>
-          <div style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 10px; padding: 12px 14px;">
-            <div style="font-size: 10px; font-weight: 600; color: var(--gold); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 4px;">Languages</div>
-            <div style="font-size: 14px; font-weight: 600; color: #fff;">English &amp; Spanish</div>
+          <div>
+            <div><span data-lang="en">Languages</span><span data-lang="es">Idiomas</span></div>
+            <div><span data-lang="en">English &amp; Spanish</span><span data-lang="es">Inglés y español</span></div>
           </div>
-          <div style="background: rgba(201,153,58,0.15); border: 1px solid rgba(201,153,58,0.4); border-radius: 10px; padding: 12px 14px;">
-            <div style="font-size: 10px; font-weight: 600; color: var(--gold); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 4px;" data-lang="en">Pricing</div>
-            <div style="font-size: 10px; font-weight: 600; color: var(--gold); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 4px;" data-lang="es">Precio</div>
-            <div style="font-size: 18px; font-weight: 700; color: var(--gold-light);" data-lang="en">Custom quote</div><div style="font-size: 18px; font-weight: 700; color: var(--gold-light);" data-lang="es">Cotización personalizada</div>
-          </div>
-        </div>
-        <a href="#contact" class="btn-primary" data-lang="en" style="display: inline-block;">Book a Consultation →</a>
-        <a href="#contact" class="btn-primary" data-lang="es" style="display: inline-block;">Reservar una Consulta →</a>
-      </div>
-      <div style="position: relative; overflow: hidden; min-height: 340px;">
-        <div id="workshop-reel" role="region" aria-label="Workshop photos / Fotos del taller" style="position:relative;background:#0d1f3c;padding:120px 0 190px;">
-          <img id="workshop-photo" src="/images/workshop/training-01.jpg" alt="Workshop photo / Foto del taller 1" loading="lazy" style="display:block;width:100%;height:340px;object-fit:contain;">
-          <div style="position:absolute;top:65px;left:12px;z-index:2;display:flex;gap:6px;align-items:center;color:white;">
-            <button type="button" id="workshop-prev" aria-label="Previous photo / Foto anterior">‹</button>
-            <button type="button" id="workshop-pause"><span data-lang="en">Pause</span><span data-lang="es">Pausar</span></button>
-            <button type="button" id="workshop-next" aria-label="Next photo / Siguiente foto">›</button>
-            <span id="workshop-count">1 / 19</span>
+          <div>
+            <div data-lang="en">Pricing</div>
+            <div data-lang="es">Precio</div>
+            <div data-lang="en">Custom quote</div><div data-lang="es">Cotización personalizada</div>
           </div>
         </div>
-        <style>#workshop-reel button{min-width:44px;min-height:44px;padding:6px 10px;border:1px solid #fff8;border-radius:8px;background:#163a50;color:white;cursor:pointer}#workshop-reel button:focus-visible{outline:3px solid #f4ca70;outline-offset:2px}#workshop-reel ~ div{pointer-events:none}@media(max-width:600px){#workshop-photo{height:280px!important}}</style>
-        <script src="/workshop-reel.js" defer></script>
-        <div style="position: absolute; inset: 0; background: linear-gradient(to right, rgba(13,31,60,0.4) 0%, transparent 60%);"></div>
-        <div style="position: absolute; top: 20px; right: 20px; background: #E87474; color: #fff; font-size: 12px; font-weight: 700; padding: 6px 14px; border-radius: 20px;" data-lang="en">Schedule Your Team</div>
-        <div style="position: absolute; top: 20px; right: 20px; background: #E87474; color: #fff; font-size: 12px; font-weight: 700; padding: 6px 14px; border-radius: 20px;" data-lang="es">Programe Su Equipo</div>
-        <div style="position: absolute; bottom: 20px; left: 20px; right: 20px;">
-          <div style="background: rgba(13,31,60,0.85); border-radius: 10px; padding: 14px; border: 1px solid rgba(201,153,58,0.3);">
-            <p style="font-size: 11px; font-weight: 600; color: var(--gold); margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.06em;" data-lang="en">You'll learn:</p>
-            <p style="font-size: 11px; font-weight: 600; color: var(--gold); margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.06em;" data-lang="es">Aprenderá:</p>
-            <div style="display: flex; flex-direction: column; gap: 4px;">
-              <div style="font-size: 12px; color: rgba(255,255,255,0.8);" data-lang="en">✓ What is NSPIRE &amp; inspection areas</div>
-              <div style="font-size: 12px; color: rgba(255,255,255,0.8);" data-lang="es">✓ Qué es NSPIRE y áreas de inspección</div>
-              <div style="font-size: 12px; color: rgba(255,255,255,0.8);" data-lang="en">✓ Your role &amp; common deficiencies</div>
-              <div style="font-size: 12px; color: rgba(255,255,255,0.8);" data-lang="es">✓ Su rol y problemas comunes</div>
-              <div style="font-size: 12px; color: rgba(255,255,255,0.8);" data-lang="en">✓ Best practices to stay inspection-ready</div>
-              <div style="font-size: 12px; color: rgba(255,255,255,0.8);" data-lang="es">✓ Mejores prácticas para mantenerse listo</div>
+        <a href="#contact" class="btn-primary" data-lang="en">Book a Consultation →</a>
+        <a href="#contact" class="btn-primary" data-lang="es">Reservar una Consulta →</a>
+      <div class="workshop-learning">
+          <div>
+            <p data-lang="en">You'll learn:</p>
+            <p data-lang="es">Aprenderá:</p>
+            <div>
+              <div data-lang="en"> What is NSPIRE &amp; inspection areas</div>
+              <div data-lang="es"> Qué es NSPIRE y áreas de inspección</div>
+              <div data-lang="en"> Your role &amp; common deficiencies</div>
+              <div data-lang="es"> Su rol y problemas comunes</div>
+              <div data-lang="en"> Best practices to stay inspection-ready</div>
+              <div data-lang="es"> Mejores prácticas para mantenerse listo</div>
             </div>
           </div>
-        </div>
-      </div>
-    </div>
-    <style>@keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }</style>
+        </div></div>
 
-  </div>
-</section>
+    <figure class="workshop-mosaic"><img src="/images/workshop/training-01.jpg" width="206" height="206" loading="lazy" alt="NSPIRE training photo 1" data-alt-en="NSPIRE training photo 1" data-alt-es="Foto de adiestramiento NSPIRE 1"><img src="/images/workshop/training-02.jpg" width="206" height="206" loading="lazy" alt="NSPIRE training photo 2" data-alt-en="NSPIRE training photo 2" data-alt-es="Foto de adiestramiento NSPIRE 2"><img src="/images/workshop/training-03.jpg" width="206" height="206" loading="lazy" alt="NSPIRE training photo 3" data-alt-en="NSPIRE training photo 3" data-alt-es="Foto de adiestramiento NSPIRE 3"><img src="/images/workshop/training-04.jpg" width="206" height="206" loading="lazy" alt="NSPIRE training photo 4" data-alt-en="NSPIRE training photo 4" data-alt-es="Foto de adiestramiento NSPIRE 4"><img src="/images/workshop/training-05.jpg" width="206" height="206" loading="lazy" alt="NSPIRE training photo 5" data-alt-en="NSPIRE training photo 5" data-alt-es="Foto de adiestramiento NSPIRE 5"><img src="/images/workshop/training-06.jpg" width="206" height="206" loading="lazy" alt="NSPIRE training photo 6" data-alt-en="NSPIRE training photo 6" data-alt-es="Foto de adiestramiento NSPIRE 6"><img src="/images/workshop/training-07.jpg" width="206" height="206" loading="lazy" alt="NSPIRE training photo 7" data-alt-en="NSPIRE training photo 7" data-alt-es="Foto de adiestramiento NSPIRE 7"><img src="/images/workshop/training-08.jpg" width="206" height="206" loading="lazy" alt="NSPIRE training photo 8" data-alt-en="NSPIRE training photo 8" data-alt-es="Foto de adiestramiento NSPIRE 8"><img src="/images/workshop/training-09.jpg" width="206" height="206" loading="lazy" alt="NSPIRE training photo 9" data-alt-en="NSPIRE training photo 9" data-alt-es="Foto de adiestramiento NSPIRE 9"><img src="/images/workshop/training-10.jpg" width="206" height="206" loading="lazy" alt="NSPIRE training photo 10" data-alt-en="NSPIRE training photo 10" data-alt-es="Foto de adiestramiento NSPIRE 10"><img src="/images/workshop/training-11.jpg" width="206" height="206" loading="lazy" alt="NSPIRE training photo 11" data-alt-en="NSPIRE training photo 11" data-alt-es="Foto de adiestramiento NSPIRE 11"><img src="/images/workshop/training-12.jpg" width="206" height="206" loading="lazy" alt="NSPIRE training photo 12" data-alt-en="NSPIRE training photo 12" data-alt-es="Foto de adiestramiento NSPIRE 12"><img src="/images/workshop/training-13.jpg" width="206" height="206" loading="lazy" alt="NSPIRE training photo 13" data-alt-en="NSPIRE training photo 13" data-alt-es="Foto de adiestramiento NSPIRE 13"><img src="/images/workshop/training-14.jpg" width="206" height="206" loading="lazy" alt="NSPIRE training photo 14" data-alt-en="NSPIRE training photo 14" data-alt-es="Foto de adiestramiento NSPIRE 14"><img src="/images/workshop/training-15.jpg" width="206" height="206" loading="lazy" alt="NSPIRE training photo 15" data-alt-en="NSPIRE training photo 15" data-alt-es="Foto de adiestramiento NSPIRE 15"><img src="/images/workshop/training-16.jpg" width="206" height="206" loading="lazy" alt="NSPIRE training photo 16" data-alt-en="NSPIRE training photo 16" data-alt-es="Foto de adiestramiento NSPIRE 16"><img src="/images/workshop/training-17.jpg" width="206" height="206" loading="lazy" alt="NSPIRE training photo 17" data-alt-en="NSPIRE training photo 17" data-alt-es="Foto de adiestramiento NSPIRE 17"><img src="/images/workshop/training-18.jpg" width="206" height="206" loading="lazy" alt="NSPIRE training photo 18" data-alt-en="NSPIRE training photo 18" data-alt-es="Foto de adiestramiento NSPIRE 18"><figcaption><span data-lang="en">From recent trainings</span><span data-lang="es">De nuestros adiestramientos recientes</span></figcaption></figure></div></div></section>
 
 <!-- WHY US -->
 <section class="why">
   <div class="container">
-    <p class="section-label" data-lang="en">Why Choose Us</p>
-    <p class="section-label" data-lang="es">Por Qué Elegirnos</p>
+    <p class="section-label" data-lang="en">03 — Why Choose Us</p>
+    <p class="section-label" data-lang="es">03 — Por Qué Elegirnos</p>
     <h2 class="section-title" data-lang="en">Your unfair advantage on inspection day</h2>
     <h2 class="section-title" data-lang="es">Su ventaja decisiva el día de la inspección</h2>
 
     <div class="why-grid">
-      <div>
-        <div class="differentiator">
+      <div class="differentiators">
+        <div class="differentiator reveal">
           <div class="diff-num">01</div>
           <div>
             <div class="diff-title" data-lang="en">The only bilingual REAC training in the industry</div>
@@ -1259,7 +373,7 @@
             <div class="diff-body" data-lang="es">Nuestros materiales de entrenamiento están escritos en español — no traducidos, escritos. Su personal de mantenimiento de habla hispana realmente comprenderá y aplicará lo que aprende.</div>
           </div>
         </div>
-        <div class="differentiator">
+        <div class="differentiator reveal">
           <div class="diff-num">02</div>
           <div>
             <div class="diff-title" data-lang="en">Certified inspector — so you know what HUD is looking for</div>
@@ -1268,7 +382,7 @@
             <div class="diff-body" data-lang="es">Sandra Romero-Negron ha sido inspectora certificada de HUD REAC desde 2009 — realizando inspecciones NSPIRE, UPCS y HQS. Enseñamos desde adentro hacia afuera.</div>
           </div>
         </div>
-        <div class="differentiator">
+        <div class="differentiator reveal">
           <div class="diff-num">03</div>
           <div>
             <div class="diff-title" data-lang="en">5,600+ FEMA inspections — real-world experience</div>
@@ -1279,57 +393,7 @@
         </div>
       </div>
 
-      <div class="why-right">
-        <div class="why-right-title" data-lang="en">Training programs at a glance</div>
-        <div class="why-right-title" data-lang="es">Programas de entrenamiento</div>
 
-        <a href="#contact" class="training-item" onclick="bookTraining('NSPIRE Fundamentals')">
-          <div class="training-name">
-            NSPIRE Fundamentals
-            <span data-lang="en">What is NSPIRE, the 3-3-3 rule, scoring methodology</span>
-            <span data-lang="es">Qué es NSPIRE, la regla 3-3-3, metodología de puntuación</span>
-          </div>
-          <div class="training-dur" data-lang="en">1 Day</div>
-          <div class="training-dur" data-lang="es">1 Día</div>
-        </a>
-        <a href="#contact" class="training-item" onclick="bookTraining('Advanced REAC Workshop')">
-          <div class="training-name">
-            Advanced REAC Workshop
-            <span data-lang="en">All deficiencies with real photos & point values</span>
-            <span data-lang="es">Todas las deficiencias con fotos reales y valores de puntos</span>
-          </div>
-          <div class="training-dur" data-lang="en">1 Day</div>
-          <div class="training-dur" data-lang="es">1 Día</div>
-        </a>
-        <a href="#contact" class="training-item" onclick="bookTraining('NSPIRE Hands-On Training')">
-          <div class="training-name">
-            NSPIRE Hands-On Training
-            <span data-lang="en">Theory + live mock inspection at your property</span>
-            <span data-lang="es">Teoría + simulacro de inspección en vivo en su propiedad</span>
-          </div>
-          <div class="training-dur" data-lang="en">2 Days</div>
-          <div class="training-dur" data-lang="es">2 Días</div>
-        </a>
-        <a href="#contact" class="training-item" onclick="bookTraining('Resident Council Workshop')">
-          <div class="training-name">
-            Resident Council Workshop
-            <span data-lang="en">Help residents understand their role in inspections</span>
-            <span data-lang="es">Ayuda a los residentes a entender su papel en las inspecciones</span>
-          </div>
-          <div class="training-dur">4 hrs</div>
-        </a>
-        <a href="#contact" class="training-item" onclick="bookTraining('Live TEAMS Webinars')">
-          <div class="training-name">
-            Live TEAMS Webinars
-            <span data-lang="en">Various NSPIRE topics — see upcoming events</span>
-            <span data-lang="es">Varios temas de NSPIRE — ver próximos eventos</span>
-          </div>
-          <div class="training-dur">3 hrs</div>
-        </a>
-
-        <a href="#contact" class="training-cta" onclick="bookTraining('')" data-lang="en">Book a Consultation →</a>
-        <a href="#contact" class="training-cta" onclick="bookTraining('')" data-lang="es">Reservar una Consulta →</a>
-      </div>
     </div>
   </div>
 </section>
@@ -1338,8 +402,8 @@
 <section class="testimonials">
   <div class="container">
     <div class="testimonials-header">
-      <p class="section-label" data-lang="en">Client Results</p>
-      <p class="section-label" data-lang="es">Resultados de Clientes</p>
+      <p class="section-label" data-lang="en">04 — Client Results</p>
+      <p class="section-label" data-lang="es">04 — Resultados de Clientes</p>
       <h2 class="section-title" data-lang="en">Real scores. Real results.</h2>
       <h2 class="section-title" data-lang="es">Puntuaciones reales. Resultados reales.</h2>
       <p class="section-sub" data-lang="en">Our clients don't just pass — they improve. Here's what property managers across the country say about working with Kendra REAC.</p>
@@ -1347,7 +411,7 @@
     </div>
 
     <div class="testimonials-grid">
-      <div class="testimonial-card">
+      <div class="testimonial-card reveal">
         <div class="testimonial-quote">"</div>
         <p class="testimonial-text" data-lang="en">Sandra's training transformed how our maintenance team prepares for inspections. Her Spanish materials made all the difference — our team actually understood the process for the first time.</p>
         <p class="testimonial-text" data-lang="es">El entrenamiento de Sandra transformó la manera en que nuestro equipo de mantenimiento se prepara para las inspecciones. Sus materiales en español marcaron la diferencia.</p>
@@ -1357,13 +421,13 @@
           <span class="score-after">91</span>
         </div>
         <div class="testimonial-author">
-          Property Manager
+          <span data-lang="en">Property Manager</span><span data-lang="es">Administración de propiedad</span>
           <span data-lang="en">Housing Authority — Florida</span>
           <span data-lang="es">Autoridad de Vivienda — Florida</span>
         </div>
       </div>
 
-      <div class="testimonial-card">
+      <div class="testimonial-card reveal">
         <div class="testimonial-quote">"</div>
         <p class="testimonial-text" data-lang="en">We had been failing our REAC inspections for two years running. After Kendra REAC's pre-inspection and two-day training, we scored an 88 and moved to a 2-year inspection cycle. Life-changing for our team.</p>
         <p class="testimonial-text" data-lang="es">Habíamos estado fallando nuestras inspecciones de REAC durante dos años consecutivos. Después de la pre-inspección y el entrenamiento de dos días de Kendra REAC, obtuvimos 88 puntos.</p>
@@ -1373,25 +437,25 @@
           <span class="score-after">88</span>
         </div>
         <div class="testimonial-author">
-          Executive Director
+          <span data-lang="en">Executive Director</span><span data-lang="es">Dirección ejecutiva</span>
           <span data-lang="en">Public Housing Authority — Puerto Rico</span>
           <span data-lang="es">Autoridad de Vivienda Pública — Puerto Rico</span>
         </div>
       </div>
 
-      <div class="testimonial-card">
+      <div class="testimonial-card reveal">
         <div class="testimonial-quote">"</div>
         <p class="testimonial-text" data-lang="en">As a conference organizer, Sandra is one of the most sought-after speakers we've had on REAC updates. Knowledgeable, engaging, and always current on NSPIRE changes.</p>
         <p class="testimonial-text" data-lang="es">Como organizadora de conferencias, Sandra es una de las ponentes más solicitadas que hemos tenido en actualizaciones de REAC. Conocedora, dinámica y siempre al día en los cambios de NSPIRE.</p>
         <div class="testimonial-author">
-          Conference Director
+          <span data-lang="en">Conference Director</span><span data-lang="es">Dirección de conferencias</span>
           <span data-lang="en">LeadingAge Florida Annual Conference</span>
           <span data-lang="es">Conferencia Anual LeadingAge Florida</span>
         </div>
       </div>
     </div>
-    <p style="text-align:center;margin-top:28px;color:var(--gray-600);font-size:14px;" data-lang="en">Client references are available upon request during the proposal process.</p>
-    <p style="text-align:center;margin-top:28px;color:var(--gray-600);font-size:14px;" data-lang="es">Referencias de clientes disponibles a solicitud durante el proceso de propuesta.</p>
+    <p class="refs-note" data-lang="en">Client references are available upon request during the proposal process.</p>
+    <p class="refs-note" data-lang="es">Referencias de clientes disponibles a solicitud durante el proceso de propuesta.</p>
   </div>
 </section>
 
@@ -1399,37 +463,37 @@
 <section class="clients" id="clients">
   <div class="container">
     <div class="clients-header">
-      <p class="section-label" data-lang="en">Past & Present Clients</p>
-      <p class="section-label" data-lang="es">Clientes Pasados y Presentes</p>
-      <h2 class="section-title" data-lang="en">Trusted by property managers across the U.S. & Puerto Rico</h2>
+      <p class="section-label" data-lang="en">05 — Past &amp; Present Clients</p>
+      <p class="section-label" data-lang="es">05 — Clientes Pasados y Presentes</p>
+      <h2 class="section-title" data-lang="en">Trusted by property managers across the U.S. &amp; Puerto Rico</h2>
       <h2 class="section-title" data-lang="es">Con la confianza de administradores de propiedades en EE.UU. y Puerto Rico</h2>
     </div>
 
     <div class="clients-grid">
-      <div class="client-item">A & M Contract, Inc.</div>
+      <div class="client-item">A &amp; M Contract, Inc.</div>
       <div class="client-item">Administración de Vivienda Pública de Puerto Rico</div>
       <div class="client-item">Catholic Charities Community Development Corp.</div>
       <div class="client-item">Catholic Housing Management</div>
-      <div class="client-item">Combined Building & Housing Consultants Inc.</div>
+      <div class="client-item">Combined Building &amp; Housing Consultants Inc.</div>
       <div class="client-item">Cost Control Company</div>
       <div class="client-item">Delonix Management LLC</div>
       <div class="client-item">Égida Del Buen Samaritano</div>
       <div class="client-item">Égida del Colegio de Ingenieros</div>
       <div class="client-item">Excellence Management</div>
-      <div class="client-item">Fernando L. Sumaza & Company, LLC</div>
+      <div class="client-item">Fernando L. Sumaza &amp; Company, LLC</div>
       <div class="client-item">GR Management Corp.</div>
       <div class="client-item">Housing Promoters Inc.</div>
       <div class="client-item">Lakeland Housing Authority</div>
       <div class="client-item">Las Américas Housing</div>
-      <div class="client-item">MJ Consulting & Dev., Inc.</div>
+      <div class="client-item">MJ Consulting &amp; Dev., Inc.</div>
       <div class="client-item">Municipio de Aguadilla</div>
       <div class="client-item">Municipio de Barceloneta</div>
       <div class="client-item">Municipio de Carolina</div>
       <div class="client-item">Partners Business Services, LLC</div>
       <div class="client-item">Sandalwood Management</div>
       <div class="client-item">Inn Capital Housing Division</div>
-      <div class="client-item">J A Machuca & Associates</div>
-      <div class="client-item">Individual Management & Consulting</div>
+      <div class="client-item">J A Machuca &amp; Associates</div>
+      <div class="client-item">Individual Management &amp; Consulting</div>
     </div>
   </div>
 </section>
@@ -1439,8 +503,8 @@
   <div class="container">
     <div class="about-grid">
       <div>
-        <div class="about-img-wrap" style="background:none;">
-        <img src="/sandra.jpg" alt="Sandra Romero-Negron, President of Kendra REAC Consultant, Inc." loading="lazy" width="1254" height="1254" style="width:100%;height:440px;object-fit:cover;object-position:center top;border-radius:16px;display:block;">
+        <div class="about-img-wrap">
+        <img src="/sandra.jpg" alt="Sandra Romero-Negron, President of Kendra REAC Consultant, Inc." loading="lazy" width="1254" height="1254" data-alt-en="Sandra Romero-Negron, President of Kendra REAC Consultant, Inc." data-alt-es="Sandra Romero-Negron, presidenta de Kendra REAC Consultant, Inc.">
           <div class="about-img-badge">
             Sandra Romero-Negron
             <span data-lang="en">President, Kendra REAC Consultant, Inc.</span>
@@ -1449,8 +513,8 @@
         </div>
       </div>
       <div class="about-content">
-        <p class="section-label" data-lang="en">About Sandra</p>
-        <p class="section-label" data-lang="es">Sobre Sandra</p>
+        <p class="section-label" data-lang="en">06 — About Sandra</p>
+        <p class="section-label" data-lang="es">06 — Sobre Sandra</p>
         <h2 class="section-title" data-lang="en">15+ years as a certified HUD REAC inspector</h2>
         <h2 class="section-title" data-lang="es">Más de 15 años como inspectora certificada de HUD REAC</h2>
         <p data-lang="en">Sandra Romero-Negron founded Kendra REAC Consultant, Inc. in 2009 after years of experience with Osceola County government in construction, planning, and emergency management — plus her work as a Century 21 real estate broker overseeing Section 8 housing.</p>
@@ -1462,27 +526,27 @@
 
         <div class="about-highlights">
           <div class="highlight">
-            <div class="highlight-icon">🎤</div>
+            <div class="highlight-icon"><svg class="line-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="9" y="2" width="6" height="13" rx="3"></rect><path d="M5 10v2a7 7 0 0 0 14 0v-2M12 19v3M8 22h8"></path></svg></div>
             <div class="highlight-label" data-lang="en">Conference Speaker</div>
             <div class="highlight-label" data-lang="es">Conferencista</div>
             <div class="highlight-text" data-lang="en">LeadingAge FL, SPM Conference, EHDOC and more</div>
             <div class="highlight-text" data-lang="es">LeadingAge FL, Conferencia SPM, EHDOC y más</div>
           </div>
           <div class="highlight">
-            <div class="highlight-icon">📋</div>
+            <div class="highlight-icon"><svg class="line-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="5" y="4" width="14" height="18" rx="2"></rect><path d="M9 2h6v4H9ZM8 11h8M8 16h6"></path></svg></div>
             <div class="highlight-label">NSPIRE · UPCS · HQS</div>
             <div class="highlight-text" data-lang="en">Certified in all three HUD inspection protocols</div>
             <div class="highlight-text" data-lang="es">Certificada en los tres protocolos de inspección de HUD</div>
           </div>
           <div class="highlight">
-            <div class="highlight-icon">🌎</div>
+            <div class="highlight-icon"><svg class="line-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><ellipse cx="12" cy="12" rx="4" ry="9"></ellipse><path d="M3 12h18"></path></svg></div>
             <div class="highlight-label" data-lang="en">Nationwide reach</div>
             <div class="highlight-label" data-lang="es">Alcance nacional</div>
             <div class="highlight-text" data-lang="en">On-site, virtual, and hotel training available</div>
             <div class="highlight-text" data-lang="es">Entrenamiento en sitio, virtual y en hotel</div>
           </div>
           <div class="highlight">
-            <div class="highlight-icon">🇺🇸</div>
+            <div class="highlight-icon"><svg class="line-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="m12 2 8 4v6c0 5-8 10-8 10S4 17 4 12V6Z"></path><path d="m8 11 3 3 5-5"></path></svg></div>
             <div class="highlight-label">FEMA</div>
             <div class="highlight-text" data-lang="en">5,600+ disaster relief inspections under DHS</div>
             <div class="highlight-text" data-lang="es">Más de 5,600 inspecciones de ayuda por desastre bajo DHS</div>
@@ -1491,29 +555,106 @@
       </div>
     </div>
   </div>
+</section><section id="app">
+
+  <div class="container">
+    <div class="apps2-head">
+      <div class="section-label"><span data-lang="en">07 — Our apps</span><span data-lang="es">07 — Nuestras apps</span></div>
+      <h2 data-lang="en">Two apps, built by our team</h2>
+      <h2 data-lang="es">Dos apps, creadas por nuestro equipo</h2>
+      <p data-lang="en">Inspect public, multifamily, and voucher units — then manage the repairs. Each app is sold separately, with a free 7-day trial.</p>
+      <p data-lang="es">Inspeccione unidades públicas, multifamiliares y de vales — y luego administre las reparaciones. Cada app se vende por separado, con prueba gratis de 7 días.</p>
+    </div>
+
+    <div class="apps2-grid">
+
+      <!-- LEFT: NspirePro (inspections) -->
+      <div class="app2 on reveal">
+        <div class="ic"><svg class="line-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="m3 10 9-7 9 7M5 9v12h14V9M9 21v-8h6v8"></path></svg></div>
+        <div class="role" data-lang="en">For inspectors</div>
+        <div class="role" data-lang="es">Para inspectores</div>
+        <p class="app-new"><span data-lang="en">New · NSPIRE-V for HCV &amp; PBV</span><span data-lang="es">Nuevo · NSPIRE-V para HCV y PBV</span></p>
+        <h3>NspirePro Inspections</h3>
+        <p data-lang="en">Inspect to both HUD protocols from your phone: NSPIRE for public and multifamily housing, and NSPIRE-V for Housing Choice Voucher and Project-Based Voucher units. Document deficiencies with photos, run team inspections, and hand your client a professional report before you leave — all offline.</p>
+        <p data-lang="es">Inspeccione con ambos protocolos de HUD desde su teléfono: NSPIRE para vivienda pública y multifamiliar, y NSPIRE-V para unidades de Vales de Elección de Vivienda (HCV) y Vales Basados en Proyectos (PBV). Documente deficiencias con fotos, realice inspecciones en equipo y entregue un informe profesional antes de salir — todo sin conexión.</p>
+        <figure class="app2-shot">
+          <div class="frame">
+            <img src="/images/nspire-inspections-score.jpg" alt="NspirePro inspection score screen" width="750" height="1624" loading="lazy" data-alt-en="NspirePro inspection score screen" data-alt-es="Pantalla de puntuación de NspirePro">
+          </div>
+          <figcaption data-lang="en">Inspection score preview</figcaption>
+          <figcaption data-lang="es">Vista previa de la puntuación</figcaption>
+        </figure>
+        <div class="chips">
+          <span class="np-chip" data-lang="en">NSPIRE + NSPIRE-V</span> <span class="np-chip" data-lang="en">63 standards · 206 deficiencies</span> <span class="np-chip" data-lang="en">HUD-aligned scoring (public &amp; multifamily)</span> <span class="np-chip" data-lang="en">2026 affirmative requirements</span> <span class="np-chip" data-lang="en">Photos &amp; signatures</span> <span class="np-chip" data-lang="en">Works offline</span> <span class="np-chip" data-lang="en">AI photo assist</span>
+          <span class="np-chip" data-lang="es">NSPIRE + NSPIRE-V</span> <span class="np-chip" data-lang="es">63 normas · 206 deficiencias</span> <span class="np-chip" data-lang="es">Puntaje alineado con HUD (público y multifamiliar)</span> <span class="np-chip" data-lang="es">Requisitos afirmativos 2026</span> <span class="np-chip" data-lang="es">Fotos y firmas</span> <span class="np-chip" data-lang="es">Funciona sin conexión</span> <span class="np-chip" data-lang="es">Identifica con IA</span>
+        </div>
+        <div class="price" data-lang="en"><b>$49</b>/month · 7-day free trial</div>
+        <div class="price" data-lang="es"><b>$49</b>/mes · prueba gratis de 7 días</div>
+        <div class="ctas">
+          <a class="g" href="https://app.reacnspire.com/buy" target="_blank" data-lang="en">Start Free Trial →</a>
+          <a class="g" href="https://app.reacnspire.com/buy" target="_blank" data-lang="es">Prueba Gratis →</a>
+          <a class="o" href="https://app.reacnspire.com" target="_blank" data-lang="en">Open the App</a>
+          <a class="o" href="https://app.reacnspire.com" target="_blank" data-lang="es">Abrir la App</a>
+        </div>
+      </div>
+
+      <!-- RIGHT: NspirePro Maintenance (work orders) -->
+      <div class="app2 reveal">
+        <div class="ic"><svg class="line-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="m14 6 4 4 4-4a7 7 0 0 1-9 9l-7 7-4-4 7-7a7 7 0 0 1 9-9Z"></path></svg></div>
+        <div class="role" data-lang="en">For property managers</div>
+        <div class="role" data-lang="es">Para administradores</div>
+        <h3>NspirePro Maintenance</h3>
+        <p data-lang="en">Tenants and technicians report work orders with a photo. Assign to your team, auto-translate every request to English, and keep tenants updated by email — start to finish.</p>
+        <p data-lang="es">Inquilinos y técnicos reportan órdenes de trabajo con una foto. Asigne a su equipo, traduzca cada solicitud al inglés automáticamente y mantenga informados a los inquilinos por correo — de principio a fin.</p>
+        <figure class="app2-shot">
+          <div class="frame">
+            <img src="/images/nspire-maintenance-preview.png" alt="NspirePro Maintenance workflow illustration" width="750" height="1100" loading="lazy" data-alt-en="NspirePro Maintenance workflow illustration" data-alt-es="Ilustración del flujo de mantenimiento de NspirePro">
+          </div>
+          <figcaption data-lang="en">Maintenance workflow illustration</figcaption>
+          <figcaption data-lang="es">Ejemplo del flujo de mantenimiento</figcaption>
+        </figure>
+        <div class="chips">
+          <span class="np-chip" data-lang="en">Tenant photo reports</span> <span class="np-chip" data-lang="en">Auto-translated</span> <span class="np-chip" data-lang="en">Technician app</span> <span class="np-chip" data-lang="en">Tenant status emails</span> <span class="np-chip" data-lang="en">Unlimited users</span>
+          <span class="np-chip" data-lang="es">Reportes con foto</span> <span class="np-chip" data-lang="es">Traducción automática</span> <span class="np-chip" data-lang="es">App para técnicos</span> <span class="np-chip" data-lang="es">Correos de estado</span> <span class="np-chip" data-lang="es">Usuarios ilimitados</span>
+        </div>
+        <div class="price" data-lang="en">from <b>$29</b>/month · 7-day free trial</div>
+        <div class="price" data-lang="es">desde <b>$29</b>/mes · prueba gratis de 7 días</div>
+        <div class="ctas">
+          <a class="g" href="https://app.reacnspire.com/wo" target="_blank" data-lang="en">See Plans →</a>
+          <a class="g" href="https://app.reacnspire.com/wo" target="_blank" data-lang="es">Ver Planes →</a>
+          <a class="o" href="https://app.reacnspire.com/maintenance.html" target="_blank" data-lang="en">Manager Sign-in</a>
+          <a class="o" href="https://app.reacnspire.com/maintenance.html" target="_blank" data-lang="es">Acceso Gerente</a>
+        </div>
+      </div>
+
+    </div>
+
+    <p class="nspire-v-note"><span data-lang="en">NSPIRE-V compliance date for HCV &amp; PBV: February 1, 2027. Smoke and carbon-monoxide alarm requirements already apply. <a href="/hqs-a-nspire/">Get your voucher team ready → HQS to NSPIRE-V training</a></span><span data-lang="es">Fecha de cumplimiento de NSPIRE-V para HCV y PBV: 1 de febrero de 2027. Los requisitos de alarmas de humo y monóxido de carbono ya aplican. <a href="/hqs-a-nspire/">Prepare a su equipo de vales → Adiestramiento De HQS a NSPIRE-V</a></span></p>
+
+  </div>
 </section>
 
 <!-- PROCESS -->
-<section id="process" style="background:var(--cream);">
+<section id="process">
   <div class="container">
-    <p class="section-label" data-lang="en">How it works</p>
-    <p class="section-label" data-lang="es">Cómo funciona</p>
+    <p class="section-label" data-lang="en">08 — How it works</p>
+    <p class="section-label" data-lang="es">08 — Cómo funciona</p>
     <h2 class="section-title" data-lang="en">A clear path to inspection readiness</h2>
     <h2 class="section-title" data-lang="es">Un camino claro hacia la preparación</h2>
     <div class="process-grid">
-      <article class="process-step">
+      <article class="process-step reveal">
         <div class="process-number">1</div>
         <h3 data-lang="en">Tell us about your property</h3><h3 data-lang="es">Cuéntenos sobre su propiedad</h3>
         <p data-lang="en">Share your property type, unit count, inspection date, and recent score so we can identify the right level of support.</p>
         <p data-lang="es">Comparta el tipo de propiedad, número de unidades, fecha de inspección y puntuación reciente.</p>
       </article>
-      <article class="process-step">
+      <article class="process-step reveal">
         <div class="process-number">2</div>
         <h3 data-lang="en">Receive a tailored plan</h3><h3 data-lang="es">Reciba un plan personalizado</h3>
         <p data-lang="en">We recommend the right mix of consulting, pre-inspection work, and team training for your timeline.</p>
         <p data-lang="es">Recomendamos la combinación adecuada de consultoría, preinspección y capacitación para su calendario.</p>
       </article>
-      <article class="process-step">
+      <article class="process-step reveal">
         <div class="process-number">3</div>
         <h3 data-lang="en">Prepare with confidence</h3><h3 data-lang="es">Prepárese con confianza</h3>
         <p data-lang="en">Your team gets practical priorities, clear explanations, and support focused on inspection-day performance.</p>
@@ -1524,110 +665,115 @@
 </section>
 
 <!-- SHOP -->
-<section id="shop" style="background:var(--white);padding:100px 0;">
+<section id="shop">
   <div class="container">
-    <p class="section-label" data-lang="en">Shop</p>
-    <p class="section-label" data-lang="es">Tienda</p>
-    <h2 class="section-title" data-lang="en">Services &amp; Training Programs</h2>
-    <h2 class="section-title" data-lang="es">Servicios y Programas de Entrenamiento</h2>
+    <p class="section-label" data-lang="en">09 — Shop</p>
+    <p class="section-label" data-lang="es">09 — Tienda</p>
+    <h2 class="section-title" data-lang="en">Ways to work with us</h2>
+    <h2 class="section-title" data-lang="es">Cómo podemos ayudarle</h2>
     <p class="section-sub" data-lang="en">Request consulting, training, workshops, or materials through one clear consultation form.</p>
     <p class="section-sub" data-lang="es">Solicite consultoría, capacitación, talleres o materiales mediante un solo formulario.</p>
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:28px;margin-top:48px;">
+    <div class="offers">
 
       <!-- Pre-Inspection -->
-      <div style="border:1.5px solid var(--gray-200);border-radius:16px;padding:32px;display:flex;flex-direction:column;gap:12px;transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='0 8px 32px rgba(13,31,60,0.10)'" onmouseout="this.style.boxShadow='none'">
-        <div style="font-size:32px;">🏠</div>
-        <h3 style="font-family:'Playfair Display',serif;font-size:20px;color:var(--navy);font-weight:700;" data-lang="en">Pre-Inspection Walkthrough</h3>
-        <h3 style="font-family:'Playfair Display',serif;font-size:20px;color:var(--navy);font-weight:700;" data-lang="es">Inspección Previa</h3>
-        <p style="font-size:14px;color:var(--gray-600);line-height:1.7;flex:1;" data-lang="en">We walk your property before the federal inspector arrives — identifying every deficiency and giving your team a clear action plan.</p>
-        <p style="font-size:14px;color:var(--gray-600);line-height:1.7;flex:1;" data-lang="es">Recorremos su propiedad antes de que llegue el inspector federal — identificando cada deficiencia y dando un plan de acción claro.</p>
-        <a href="#contact" onclick="bookTraining('Pre-Inspection Walkthrough')" style="display:block;text-align:center;background:var(--navy);color:#fff;padding:13px 24px;border-radius:8px;font-weight:600;font-size:14px;text-decoration:none;margin-top:8px;transition:background 0.2s;" data-lang="en">Book a Consultation →</a>
-        <a href="#contact" onclick="bookTraining('Pre-Inspection Walkthrough')" style="display:block;text-align:center;background:var(--navy);color:#fff;padding:13px 24px;border-radius:8px;font-weight:600;font-size:14px;text-decoration:none;margin-top:8px;transition:background 0.2s;" data-lang="es">Reservar una Consulta →</a>
+      <div class="offer">
+        <div></div>
+        <h3 data-lang="en">Pre-Inspection Walkthrough</h3>
+        <h3 data-lang="es">Inspección Previa</h3>
+        <p data-lang="en">We walk your property before the federal inspector arrives — identifying every deficiency and giving your team a clear action plan.</p>
+        <p data-lang="es">Recorremos su propiedad antes de que llegue el inspector federal — identificando cada deficiencia y dando un plan de acción claro.</p>
+        <a href="#contact" onclick="bookTraining('Pre-Inspection Walkthrough')" data-lang="en" class="offer-link">Book a Consultation →</a>
+        <a href="#contact" onclick="bookTraining('Pre-Inspection Walkthrough')" data-lang="es" class="offer-link">Reservar una Consulta →</a>
       </div>
 
       <!-- Staff Training -->
-      <div style="border:1.5px solid var(--gray-200);border-radius:16px;padding:32px;display:flex;flex-direction:column;gap:12px;transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='0 8px 32px rgba(13,31,60,0.10)'" onmouseout="this.style.boxShadow='none'">
-        <div style="font-size:32px;">📋</div>
-        <h3 style="font-family:'Playfair Display',serif;font-size:20px;color:var(--navy);font-weight:700;" data-lang="en">Staff Training Programs</h3>
-        <h3 style="font-family:'Playfair Display',serif;font-size:20px;color:var(--navy);font-weight:700;" data-lang="es">Programas de Entrenamiento</h3>
-        <p style="font-size:14px;color:var(--gray-600);line-height:1.7;flex:1;" data-lang="en">1-day NSPIRE Fundamentals or 2-day Hands-On Training with live mock inspection. On-site, hotel, or virtual. Materials in English &amp; Spanish.</p>
-        <p style="font-size:14px;color:var(--gray-600);line-height:1.7;flex:1;" data-lang="es">Fundamentos NSPIRE de 1 día o Entrenamiento Práctico de 2 días con inspección simulada en vivo. Presencial o virtual. Materiales en inglés y español.</p>
-        <a href="#contact" onclick="bookTraining('Staff Training Programs')" style="display:block;text-align:center;background:var(--navy);color:#fff;padding:13px 24px;border-radius:8px;font-weight:600;font-size:14px;text-decoration:none;margin-top:8px;transition:background 0.2s;" data-lang="en">Book a Consultation →</a>
-        <a href="#contact" onclick="bookTraining('Staff Training Programs')" style="display:block;text-align:center;background:var(--navy);color:#fff;padding:13px 24px;border-radius:8px;font-weight:600;font-size:14px;text-decoration:none;margin-top:8px;transition:background 0.2s;" data-lang="es">Reservar una Consulta →</a>
+      <div class="offer">
+        <div></div>
+        <h3 data-lang="en">Staff Training Programs</h3>
+        <h3 data-lang="es">Programas de Entrenamiento</h3>
+        <p data-lang="en">1-day NSPIRE Fundamentals or 2-day Hands-On Training with live mock inspection. On-site, hotel, or virtual. Materials in English &amp; Spanish.</p>
+        <p data-lang="es">Fundamentos NSPIRE de 1 día o Entrenamiento Práctico de 2 días con inspección simulada en vivo. Presencial o virtual. Materiales en inglés y español.</p>
+        <a href="#contact" onclick="bookTraining('Staff Training Programs')" data-lang="en" class="offer-link">Book a Consultation →</a>
+        <a href="#contact" onclick="bookTraining('Staff Training Programs')" data-lang="es" class="offer-link">Reservar una Consulta →</a>
       </div>
 
       <!-- NSPIRE Workshop -->
-      <div style="border:1.5px solid var(--gold);border-radius:16px;padding:32px;display:flex;flex-direction:column;gap:12px;position:relative;background:var(--cream);" onmouseover="this.style.boxShadow='0 8px 32px rgba(13,31,60,0.10)'" onmouseout="this.style.boxShadow='none'">
-        <div style="position:absolute;top:-12px;left:24px;background:var(--gold);color:#fff;font-size:11px;font-weight:700;padding:4px 12px;border-radius:20px;letter-spacing:0.05em;" data-lang="en">MOST POPULAR</div>
-        <div style="position:absolute;top:-12px;left:24px;background:var(--gold);color:#fff;font-size:11px;font-weight:700;padding:4px 12px;border-radius:20px;letter-spacing:0.05em;" data-lang="es">MÁS POPULAR</div>
-        <div style="font-size:32px;">🎓</div>
-        <h3 style="font-family:'Playfair Display',serif;font-size:20px;color:var(--navy);font-weight:700;" data-lang="en">NSPIRE Workshop Refresher and New Employees</h3>
-        <h3 style="font-family:'Playfair Display',serif;font-size:20px;color:var(--navy);font-weight:700;" data-lang="es">Taller NSPIRE: Repaso y Empleados Nuevos</h3>
-        <p style="font-size:14px;color:var(--gray-600);line-height:1.7;flex:1;" data-lang="en">Live webinar for maintenance staff — taught entirely in Spanish. Everything your team needs to succeed on inspection day.</p>
-        <p style="font-size:14px;color:var(--gray-600);line-height:1.7;flex:1;" data-lang="es">Seminario web en vivo para personal de mantenimiento — completamente en español. Todo lo que su equipo necesita para el día de inspección.</p>
-        <a href="#contact" onclick="bookTraining('NSPIRE Workshop')" style="display:block;text-align:center;background:var(--gold);color:#fff;padding:13px 24px;border-radius:8px;font-weight:600;font-size:14px;text-decoration:none;margin-top:8px;transition:background 0.2s;" data-lang="en">Book a Consultation →</a>
-        <a href="#contact" onclick="bookTraining('NSPIRE Workshop')" style="display:block;text-align:center;background:var(--gold);color:#fff;padding:13px 24px;border-radius:8px;font-weight:600;font-size:14px;text-decoration:none;margin-top:8px;transition:background 0.2s;" data-lang="es">Reservar una Consulta →</a>
+      <div class="offer">
+        <div data-lang="en" class="popular">MOST POPULAR</div>
+        <div data-lang="es" class="popular">MÁS POPULAR</div>
+        <div></div>
+        <h3 data-lang="en">NSPIRE Workshop Refresher and New Employees</h3>
+        <h3 data-lang="es">Taller NSPIRE: Repaso y Empleados Nuevos</h3>
+        <p data-lang="en">Live webinar for maintenance staff — taught entirely in Spanish. Everything your team needs to succeed on inspection day.</p>
+        <p data-lang="es">Seminario web en vivo para personal de mantenimiento — completamente en español. Todo lo que su equipo necesita para el día de inspección.</p>
+        <a href="#contact" onclick="bookTraining('NSPIRE Workshop')" data-lang="en" class="offer-link">Book a Consultation →</a>
+        <a href="#contact" onclick="bookTraining('NSPIRE Workshop')" data-lang="es" class="offer-link">Reservar una Consulta →</a>
       </div>
 
       <!-- Training Manual -->
-      <div style="border:1.5px solid var(--gray-200);border-radius:16px;padding:32px;display:flex;flex-direction:column;gap:12px;" onmouseover="this.style.boxShadow='0 8px 32px rgba(13,31,60,0.10)'" onmouseout="this.style.boxShadow='none'">
-        <div style="font-size:32px;">📚</div>
-        <h3 style="font-family:'Playfair Display',serif;font-size:20px;color:var(--navy);font-weight:700;" data-lang="en">Training Manuals &amp; Materials</h3>
-        <h3 style="font-family:'Playfair Display',serif;font-size:20px;color:var(--navy);font-weight:700;" data-lang="es">Manuales y Materiales</h3>
-        <p style="font-size:14px;color:var(--gray-600);line-height:1.7;flex:1;" data-lang="en">The industry's only Spanish-language REAC/NSPIRE training materials. Written by Sandra Romero-Negron, not translated.</p>
-        <p style="font-size:14px;color:var(--gray-600);line-height:1.7;flex:1;" data-lang="es">Los únicos materiales de entrenamiento REAC/NSPIRE en español de la industria. Escritos por Sandra Romero-Negron, no traducidos.</p>
-        <a href="#contact" onclick="bookTraining('Training Manuals &amp; Materials')" style="display:block;text-align:center;background:var(--navy);color:#fff;padding:13px 24px;border-radius:8px;font-weight:600;font-size:14px;text-decoration:none;margin-top:8px;transition:background 0.2s;" data-lang="en">Request Availability →</a>
-        <a href="#contact" onclick="bookTraining('Training Manuals &amp; Materials')" style="display:block;text-align:center;background:var(--navy);color:#fff;padding:13px 24px;border-radius:8px;font-weight:600;font-size:14px;text-decoration:none;margin-top:8px;transition:background 0.2s;" data-lang="es">Consultar Disponibilidad →</a>
+      <div class="offer">
+        <div></div>
+        <h3 data-lang="en">Training Manuals &amp; Materials</h3>
+        <h3 data-lang="es">Manuales y Materiales</h3>
+        <p data-lang="en">The industry's only Spanish-language REAC/NSPIRE training materials. Written by Sandra Romero-Negron, not translated.</p>
+        <p data-lang="es">Los únicos materiales de entrenamiento REAC/NSPIRE en español de la industria. Escritos por Sandra Romero-Negron, no traducidos.</p>
+        <a href="#contact" onclick="bookTraining('Training Manuals &amp; Materials')" data-lang="en" class="offer-link">Request Availability →</a>
+        <a href="#contact" onclick="bookTraining('Training Manuals &amp; Materials')" data-lang="es" class="offer-link">Consultar Disponibilidad →</a>
       </div>
 
     </div>
-    <p style="text-align:center;margin-top:32px;font-size:13px;color:var(--gray-400);" data-lang="en">🔒 Secure checkout powered by Square · All major credit cards accepted</p>
-    <p style="text-align:center;margin-top:32px;font-size:13px;color:var(--gray-400);" data-lang="es">🔒 Pago seguro procesado por Square · Se aceptan todas las tarjetas de crédito principales</p>
+    <p data-lang="en"><svg class="line-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="5" y="10" width="14" height="12" rx="2"></rect><path d="M8 10V6a4 4 0 0 1 8 0v4"></path></svg>  Secure checkout powered by Square · All major credit cards accepted</p>
+    <p data-lang="es"><svg class="line-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="5" y="10" width="14" height="12" rx="2"></rect><path d="M8 10V6a4 4 0 0 1 8 0v4"></path></svg>  Pago seguro procesado por Square · Se aceptan todas las tarjetas de crédito principales</p>
   </div>
 </section>
 
 <!-- FAQ -->
-<section id="faq" style="background:var(--gray-100);padding:100px 40px;">
+<section id="faq">
   <div class="container">
-    <p class="section-label" data-lang="en">Common Questions</p>
-    <p class="section-label" data-lang="es">Preguntas Frecuentes</p>
+    <p class="section-label" data-lang="en">10 — Common Questions</p>
+    <p class="section-label" data-lang="es">10 — Preguntas Frecuentes</p>
     <h2 class="section-title" data-lang="en">REAC &amp; NSPIRE questions, answered</h2>
     <h2 class="section-title" data-lang="es">Preguntas sobre REAC y NSPIRE, respondidas</h2>
-    <div style="max-width:820px;margin:40px auto 0;display:flex;flex-direction:column;gap:14px;">
+    <div class="faq-list">
 
-      <details class="faq-item" style="background:var(--white);border:1.5px solid var(--gray-200);border-radius:12px;padding:20px 24px;">
-        <summary style="font-weight:600;font-size:16px;color:var(--navy);cursor:pointer;" data-lang="en">What is the difference between REAC and NSPIRE?</summary>
-        <summary style="font-weight:600;font-size:16px;color:var(--navy);cursor:pointer;" data-lang="es">¿Cuál es la diferencia entre REAC y NSPIRE?</summary>
-        <p style="margin-top:12px;font-size:14px;color:var(--text-light);line-height:1.7;" data-lang="en">REAC (Real Estate Assessment Center) is the HUD office that conducts inspections. NSPIRE is the inspection standard that replaced UPCS in 2023. NSPIRE focuses on health and safety inside the units — where residents actually live — with new scoring, new deficiency definitions, and stricter affirmative requirements like smoke detectors in every unit. <a href="/reac-vs-nspire/" style="color:var(--gold);font-weight:600;">Read our full REAC vs. NSPIRE guide →</a></p>
-        <p style="margin-top:12px;font-size:14px;color:var(--text-light);line-height:1.7;" data-lang="es">REAC (Real Estate Assessment Center) es la oficina de HUD que realiza las inspecciones. NSPIRE es el estándar de inspección que reemplazó a UPCS en 2023. NSPIRE se enfoca en la salud y seguridad dentro de las unidades, con nueva puntuación, nuevas definiciones de deficiencias y requisitos más estrictos como detectores de humo en cada unidad.</p>
+      <details class="faq-item" aria-labelledby="faq-question-0"><summary id="faq-question-0"><span data-lang="en">What is the difference between REAC and NSPIRE?</span><span data-lang="es">¿Cuál es la diferencia entre REAC y NSPIRE?</span><svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg></summary>
+
+
+        <p data-lang="en">REAC (Real Estate Assessment Center) is the HUD office that conducts inspections. NSPIRE is the inspection standard that replaced UPCS in 2023. NSPIRE focuses on health and safety inside the units — where residents actually live — with new scoring, new deficiency definitions, and stricter affirmative requirements like smoke detectors in every unit. <a href="/reac-vs-nspire/">Read our full REAC vs. NSPIRE guide →</a></p>
+        <p data-lang="es">REAC (Real Estate Assessment Center) es la oficina de HUD que realiza las inspecciones. NSPIRE es el estándar de inspección que reemplazó a UPCS en 2023. NSPIRE se enfoca en la salud y seguridad dentro de las unidades, con nueva puntuación, nuevas definiciones de deficiencias y requisitos más estrictos como detectores de humo en cada unidad.</p>
       </details>
 
-      <details class="faq-item" style="background:var(--white);border:1.5px solid var(--gray-200);border-radius:12px;padding:20px 24px;">
-        <summary style="font-weight:600;font-size:16px;color:var(--navy);cursor:pointer;" data-lang="en">How far in advance should I schedule a pre-inspection?</summary>
-        <summary style="font-weight:600;font-size:16px;color:var(--navy);cursor:pointer;" data-lang="es">¿Con cuánta anticipación debo programar una pre-inspección?</summary>
-        <p style="margin-top:12px;font-size:14px;color:var(--text-light);line-height:1.7;" data-lang="en">Ideally 30–60 days before your scheduled REAC inspection. That gives your maintenance team enough time to correct every deficiency we document. If your inspection is sooner, contact us anyway — we prioritize urgent timelines.</p>
-        <p style="margin-top:12px;font-size:14px;color:var(--text-light);line-height:1.7;" data-lang="es">Idealmente de 30 a 60 días antes de su inspección de REAC. Eso le da a su equipo de mantenimiento tiempo suficiente para corregir cada deficiencia que documentamos. Si su inspección es antes, contáctenos de todos modos — damos prioridad a plazos urgentes.</p>
+      <details class="faq-item" aria-labelledby="faq-question-1"><summary id="faq-question-1"><span data-lang="en">How far in advance should I schedule a pre-inspection?</span><span data-lang="es">¿Con cuánta anticipación debo programar una pre-inspección?</span><svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg></summary>
+
+
+        <p data-lang="en">Ideally 30–60 days before your scheduled REAC inspection. That gives your maintenance team enough time to correct every deficiency we document. If your inspection is sooner, contact us anyway — we prioritize urgent timelines.</p>
+        <p data-lang="es">Idealmente de 30 a 60 días antes de su inspección de REAC. Eso le da a su equipo de mantenimiento tiempo suficiente para corregir cada deficiencia que documentamos. Si su inspección es antes, contáctenos de todos modos — damos prioridad a plazos urgentes.</p>
       </details>
 
-      <details class="faq-item" style="background:var(--white);border:1.5px solid var(--gray-200);border-radius:12px;padding:20px 24px;">
-        <summary style="font-weight:600;font-size:16px;color:var(--navy);cursor:pointer;" data-lang="en">Why does my REAC score matter?</summary>
-        <summary style="font-weight:600;font-size:16px;color:var(--navy);cursor:pointer;" data-lang="es">¿Por qué importa mi puntuación de REAC?</summary>
-        <p style="margin-top:12px;font-size:14px;color:var(--text-light);line-height:1.7;" data-lang="en">Your score determines how often HUD inspects you: 90+ means every 3 years, 80–89 every 2 years, and below 80 means annual inspections. Low scores can trigger enforcement action and put your HUD funding at risk.</p>
-        <p style="margin-top:12px;font-size:14px;color:var(--text-light);line-height:1.7;" data-lang="es">Su puntuación determina con qué frecuencia HUD lo inspecciona: 90+ significa cada 3 años, 80–89 cada 2 años, y menos de 80 significa inspecciones anuales. Las puntuaciones bajas pueden provocar acciones de cumplimiento y poner en riesgo su financiamiento de HUD.</p>
+      <details class="faq-item" aria-labelledby="faq-question-2"><summary id="faq-question-2"><span data-lang="en">Why does my REAC score matter?</span><span data-lang="es">¿Por qué importa mi puntuación de REAC?</span><svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg></summary>
+
+
+        <p data-lang="en">Your score determines how often HUD inspects you: 90+ means every 3 years, 80–89 every 2 years, and below 80 means annual inspections. Low scores can trigger enforcement action and put your HUD funding at risk.</p>
+        <p data-lang="es">Su puntuación determina con qué frecuencia HUD lo inspecciona: 90+ significa cada 3 años, 80–89 cada 2 años, y menos de 80 significa inspecciones anuales. Las puntuaciones bajas pueden provocar acciones de cumplimiento y poner en riesgo su financiamiento de HUD.</p>
       </details>
 
-      <details class="faq-item" style="background:var(--white);border:1.5px solid var(--gray-200);border-radius:12px;padding:20px 24px;">
-        <summary style="font-weight:600;font-size:16px;color:var(--navy);cursor:pointer;" data-lang="en">Do you really train maintenance staff in Spanish?</summary>
-        <summary style="font-weight:600;font-size:16px;color:var(--navy);cursor:pointer;" data-lang="es">¿Realmente entrenan al personal de mantenimiento en español?</summary>
-        <p style="margin-top:12px;font-size:14px;color:var(--text-light);line-height:1.7;" data-lang="en">Yes — we are the only REAC consultant with training materials written in Spanish (not translated). Many maintenance teams are Spanish-speaking, and training in their language means they actually retain and apply what they learn on inspection day.</p>
-        <p style="margin-top:12px;font-size:14px;color:var(--text-light);line-height:1.7;" data-lang="es">Sí — somos la única consultora de REAC con materiales de entrenamiento escritos en español (no traducidos). Muchos equipos de mantenimiento hablan español, y entrenar en su idioma significa que realmente retienen y aplican lo que aprenden.</p>
+      <details class="faq-item" aria-labelledby="faq-question-3"><summary id="faq-question-3"><span data-lang="en">Do you really train maintenance staff in Spanish?</span><span data-lang="es">¿Realmente entrenan al personal de mantenimiento en español?</span><svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg></summary>
+
+
+        <p data-lang="en">Yes — we are the only REAC consultant with training materials written in Spanish (not translated). Many maintenance teams are Spanish-speaking, and training in their language means they actually retain and apply what they learn on inspection day.</p>
+        <p data-lang="es">Sí — somos la única consultora de REAC con materiales de entrenamiento escritos en español (no traducidos). Muchos equipos de mantenimiento hablan español, y entrenar en su idioma significa que realmente retienen y aplican lo que aprenden.</p>
       </details>
 
-      <details class="faq-item" style="background:var(--white);border:1.5px solid var(--gray-200);border-radius:12px;padding:20px 24px;">
-        <summary style="font-weight:600;font-size:16px;color:var(--navy);cursor:pointer;" data-lang="en">Where do you provide services?</summary>
-        <summary style="font-weight:600;font-size:16px;color:var(--navy);cursor:pointer;" data-lang="es">¿Dónde ofrecen servicios?</summary>
-        <p style="margin-top:12px;font-size:14px;color:var(--text-light);line-height:1.7;" data-lang="en">Nationwide across all 50 states and Puerto Rico. Training can be delivered on-site at your property, at a hotel venue, or virtually via Zoom or Microsoft Teams.</p>
-        <p style="margin-top:12px;font-size:14px;color:var(--text-light);line-height:1.7;" data-lang="es">En todo Estados Unidos — los 50 estados — y Puerto Rico. El entrenamiento puede ser en su propiedad, en un hotel, o virtual por Zoom o Microsoft Teams.</p>
+      <details class="faq-item" aria-labelledby="faq-question-4"><summary id="faq-question-4"><span data-lang="en">Where do you provide services?</span><span data-lang="es">¿Dónde ofrecen servicios?</span><svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg></summary>
+
+
+        <p data-lang="en">Nationwide across all 50 states and Puerto Rico. Training can be delivered on-site at your property, at a hotel venue, or virtually via Zoom or Microsoft Teams.</p>
+        <p data-lang="es">En todo Estados Unidos — los 50 estados — y Puerto Rico. El entrenamiento puede ser en su propiedad, en un hotel, o virtual por Zoom o Microsoft Teams.</p>
+      </details>
+
+      <details class="faq-item" aria-labelledby="faq-question-5"><summary id="faq-question-5"><span data-lang="en">Does NspirePro support NSPIRE-V voucher inspections?</span><span data-lang="es">¿NspirePro funciona con inspecciones NSPIRE-V de vales?</span><svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg></summary>
+        <p data-lang="en">Yes. NspirePro Inspections includes both HUD protocols: NSPIRE for public and multifamily housing, and NSPIRE-V for Housing Choice Voucher (HCV) and Project-Based Voucher (PBV) units. HUD's NSPIRE-V compliance date is February 1, 2027, and smoke and carbon-monoxide alarm requirements already apply.</p>
+        <p data-lang="es">Sí. NspirePro Inspections incluye ambos protocolos de HUD: NSPIRE para vivienda pública y multifamiliar, y NSPIRE-V para unidades de Vales de Elección de Vivienda (HCV) y Vales Basados en Proyectos (PBV). La fecha de cumplimiento de NSPIRE-V de HUD es el 1 de febrero de 2027, y los requisitos de alarmas de humo y monóxido de carbono ya aplican.</p>
       </details>
 
     </div>
@@ -1642,45 +788,27 @@
     {"@type": "Question", "name": "How far in advance should I schedule a pre-inspection?", "acceptedAnswer": {"@type": "Answer", "text": "Ideally 30-60 days before your scheduled REAC inspection, giving your maintenance team enough time to correct every documented deficiency. Urgent timelines are prioritized."}},
     {"@type": "Question", "name": "Why does my REAC score matter?", "acceptedAnswer": {"@type": "Answer", "text": "Your score determines inspection frequency: 90+ means every 3 years, 80-89 every 2 years, below 80 means annual inspections. Low scores can trigger enforcement action and put HUD funding at risk."}},
     {"@type": "Question", "name": "Do you train maintenance staff in Spanish?", "acceptedAnswer": {"@type": "Answer", "text": "Yes - Kendra REAC Consultant is the only REAC consultant with training materials written in Spanish (not translated), so Spanish-speaking maintenance teams retain and apply what they learn."}},
-    {"@type": "Question", "name": "Where do you provide services?", "acceptedAnswer": {"@type": "Answer", "text": "Nationwide across all 50 states and Puerto Rico. Training is delivered on-site, at hotel venues, or virtually via Zoom or Microsoft Teams."}}
+    {"@type": "Question", "name": "Where do you provide services?", "acceptedAnswer": {"@type": "Answer", "text": "Nationwide across all 50 states and Puerto Rico. Training is delivered on-site, at hotel venues, or virtually via Zoom or Microsoft Teams."}},
+    {"@type": "Question", "name": "Does NspirePro support NSPIRE-V voucher inspections?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. NspirePro Inspections includes both HUD protocols: NSPIRE for public and multifamily housing, and NSPIRE-V for Housing Choice Voucher (HCV) and Project-Based Voucher (PBV) units. HUD's NSPIRE-V compliance date is February 1, 2027, and smoke and carbon-monoxide alarm requirements already apply."}}
   ]
 }
 </script>
 
 <!-- CTA BANNER -->
-<div class="cta-banner">
-  <div class="cta-banner-content">
-    <h2 data-lang="en">Ready for your next <em>REAC inspection?</em></h2>
-    <h2 data-lang="es">¿Listo para su próxima <em>inspección de REAC?</em></h2>
-    <p data-lang="en">Let's talk about your property, your score history, and how we can get your team inspection-ready — in English or Spanish.</p>
-    <p data-lang="es">Hablemos sobre su propiedad, su historial de puntuaciones y cómo podemos preparar a su equipo para la inspección — en español o inglés.</p>
-    <div class="cta-banner-btns">
-      <a href="#contact" class="btn-primary" data-lang="en">Book a Consultation</a>
-      <a href="#contact" class="btn-primary" data-lang="es">Reservar una Consulta</a>
-      <a href="tel:4075165393" class="btn-ghost">📞 407-516-5393</a>
-    </div>
-    <div style="display:flex;align-items:center;justify-content:center;gap:12px;margin-top:28px;">
-      <span style="font-size:13px;color:rgba(255,255,255,0.35);" data-lang="en">Stay connected:</span>
-      <span style="font-size:13px;color:rgba(255,255,255,0.35);" data-lang="es">Manténgase conectado:</span>
-      <a href="https://www.facebook.com/kendrareac" target="_blank" rel="noopener noreferrer" aria-label="Kendra REAC on Facebook" class="social-btn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 21v-8h2.7l.4-3h-3.1V8.1c0-.9.3-1.6 1.7-1.6h1.8V3.8c-.3 0-1.4-.1-2.6-.1-2.6 0-4.4 1.6-4.4 4.5V10H7v3h3v8h3.5Z"/></svg></a>
-      <a href="https://www.instagram.com/kendrareac/" target="_blank" rel="noopener noreferrer" aria-label="Kendra REAC on Instagram" class="social-btn"><svg class="instagram-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.8" r="1" fill="currentColor" stroke="none"/></svg></a>
-      <a href="https://x.com/ReacConsultant" target="_blank" rel="noopener noreferrer" aria-label="Kendra REAC on X" class="social-btn">X</a>
-    </div>
-  </div>
-</div>
+
 
 <!-- CONTACT -->
 <section class="contact" id="contact">
   <div class="container">
     <div class="contact-grid">
       <div class="contact-info">
-        <p class="section-label" data-lang="en">Get in Touch</p>
-        <p class="section-label" data-lang="es">Contáctenos</p>
+        <p class="section-label" data-lang="en">11 — Get in Touch</p>
+        <p class="section-label" data-lang="es">11 — Contáctenos</p>
         <h2 class="section-title" data-lang="en">Let's get your property inspection-ready</h2>
         <h2 class="section-title" data-lang="es">Preparemos su propiedad para la inspección</h2>
 
-        <div class="contact-item">
-          <div class="contact-icon">📞</div>
+        <p data-lang="en">Let's talk about your property, your score history, and how we can get your team inspection-ready — in English or Spanish.</p><p data-lang="es">Hablemos sobre su propiedad, su historial de puntuaciones y cómo podemos preparar a su equipo para la inspección — en español o inglés.</p><div class="contact-item">
+          <div class="contact-icon"><svg class="line-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M7 3H4a1 1 0 0 0-1 1c0 9.4 7.6 17 17 17a1 1 0 0 0 1-1v-3l-5-2-2 2a14 14 0 0 1-7-7l2-2-2-5Z"></path></svg></div>
           <div>
             <div class="contact-label" data-lang="en">Phone</div>
             <div class="contact-label" data-lang="es">Teléfono</div>
@@ -1688,14 +816,14 @@
           </div>
         </div>
         <div class="contact-item">
-          <div class="contact-icon">✉️</div>
+          <div class="contact-icon"><svg class="line-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="m3 6 9 7 9-7"></path></svg></div>
           <div>
-            <div class="contact-label">Email</div>
+            <div class="contact-label"><span data-lang="en">Email</span><span data-lang="es">Correo electrónico</span></div>
             <a href="mailto:proposals@reacnspire.com" class="contact-value">proposals@reacnspire.com</a>
           </div>
         </div>
         <div class="contact-item">
-          <div class="contact-icon">📍</div>
+          <div class="contact-icon"><svg class="line-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M19 10c0 5-7 11-7 11S5 15 5 10a7 7 0 1 1 14 0Z"></path><circle cx="12" cy="10" r="2"></circle></svg></div>
           <div>
             <div class="contact-label" data-lang="en">Service Area</div>
             <div class="contact-label" data-lang="es">Área de Servicio</div>
@@ -1705,35 +833,35 @@
         </div>
 
         <div class="contact-social">
-          <a href="https://www.facebook.com/kendrareac" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Kendra REAC on Facebook"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 21v-8h2.7l.4-3h-3.1V8.1c0-.9.3-1.6 1.7-1.6h1.8V3.8c-.3 0-1.4-.1-2.6-.1-2.6 0-4.4 1.6-4.4 4.5V10H7v3h3v8h3.5Z"/></svg></a>
-          <a href="https://www.instagram.com/kendrareac/" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Kendra REAC on Instagram"><svg class="instagram-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.8" r="1" fill="currentColor" stroke="none"/></svg></a>
+          <a href="https://www.facebook.com/kendrareac" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Kendra REAC on Facebook"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 21v-8h2.7l.4-3h-3.1V8.1c0-.9.3-1.6 1.7-1.6h1.8V3.8c-.3 0-1.4-.1-2.6-.1-2.6 0-4.4 1.6-4.4 4.5V10H7v3h3v8h3.5Z"></path></svg></a>
+          <a href="https://www.instagram.com/kendrareac/" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Kendra REAC on Instagram"><svg class="instagram-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.3" cy="6.8" r="1" fill="currentColor" stroke="none"></circle></svg></a>
           <a href="https://x.com/ReacConsultant" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Kendra REAC on X">X</a>
         </div>
       </div>
 
       <form class="contact-form" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thank-you/">
         <input type="hidden" name="form-name" value="contact">
-        <p style="display:none;"><label>Don't fill this out: <input name="bot-field"></label></p>
+        <p hidden=""><label>Don't fill this out: <input name="bot-field"></label></p>
         <h3 data-lang="en">Book a consultation</h3>
         <h3 data-lang="es">Reserve su consulta</h3>
-        <p style="font-size:13px;color:var(--gray-400);margin-bottom:18px;" data-lang="en">We respond within 1 business day — in English or Spanish.</p>
-        <p style="font-size:13px;color:var(--gray-400);margin-bottom:18px;" data-lang="es">Respondemos dentro de 1 día hábil — en español o inglés.</p>
+        <p data-lang="en">We respond within 1 business day — in English or Spanish.</p>
+        <p data-lang="es">Respondemos dentro de 1 día hábil — en español o inglés.</p>
 
         <div class="form-row">
           <div class="form-group">
             <label for="first-name" data-lang="en">First name</label>
             <label for="first-name" data-lang="es">Nombre</label>
-            <input id="first-name" type="text" name="first-name" autocomplete="given-name" required placeholder="First name" data-ph-en="First name" data-ph-es="Nombre">
+            <input id="first-name" type="text" name="first-name" autocomplete="given-name" required="" placeholder="First name" data-ph-en="First name" data-ph-es="Nombre">
           </div>
           <div class="form-group">
             <label for="last-name" data-lang="en">Last name</label>
             <label for="last-name" data-lang="es">Apellido</label>
-            <input id="last-name" type="text" name="last-name" autocomplete="family-name" required placeholder="Last name" data-ph-en="Last name" data-ph-es="Apellido">
+            <input id="last-name" type="text" name="last-name" autocomplete="family-name" required="" placeholder="Last name" data-ph-en="Last name" data-ph-es="Apellido">
           </div>
         </div>
         <div class="form-group">
-          <label for="email">Email</label>
-          <input id="email" type="email" name="email" autocomplete="email" required placeholder="Email address" data-ph-en="Email address" data-ph-es="Correo electrónico">
+          <label for="email"><span data-lang="en">Email</span><span data-lang="es">Correo electrónico</span></label>
+          <input id="email" type="email" name="email" autocomplete="email" required="" placeholder="Email address" data-ph-en="Email address" data-ph-es="Correo electrónico">
         </div>
         <div class="form-group">
           <label for="phone" data-lang="en">Phone</label>
@@ -1743,7 +871,7 @@
         <div class="form-group">
           <label for="company" data-lang="en">Company or property</label>
           <label for="company" data-lang="es">Empresa o propiedad</label>
-          <input id="company" type="text" name="company" autocomplete="organization" required placeholder="Organization or property name" data-ph-en="Organization or property name" data-ph-es="Nombre de empresa o propiedad">
+          <input id="company" type="text" name="company" autocomplete="organization" required="" placeholder="Organization or property name" data-ph-en="Organization or property name" data-ph-es="Nombre de empresa o propiedad">
         </div>
         <div class="form-row">
           <div class="form-group">
@@ -1777,7 +905,7 @@
             <option value="Staff Training">Staff Training / Capacitación del Personal</option>
             <option value="NSPIRE Consulting">NSPIRE Consulting / Consultoría NSPIRE</option>
             <option value="Conference Speaking">Conference Speaking / Ponente en Conferencia</option>
-            <option value="Training Manuals & Materials">Training Manuals &amp; Materials / Manuales y Materiales</option>
+            <option value="Training Manuals &amp; Materials">Training Manuals &amp; Materials / Manuales y Materiales</option>
           </select>
         </div>
         <div class="form-group">
@@ -1790,10 +918,10 @@
           <label for="message" data-lang="es">¿Algo más que debamos saber?</label>
           <textarea id="message" name="message" placeholder="Timeline, concerns, or training goals..." data-ph-en="Timeline, concerns, or training goals..." data-ph-es="Calendario, inquietudes u objetivos de capacitación..."></textarea>
         </div>
-        <label class="consent-row"><input type="checkbox" name="privacy-consent" required><span data-lang="en">I agree that Kendra REAC Consultant may use this information to respond to my request. See the <a href="/privacy/">Privacy Policy</a>.</span><span data-lang="es">Acepto que Kendra REAC Consultant use esta información para responder a mi solicitud. Consulte la <a href="/privacy/">Política de Privacidad</a>.</span></label>
+        <label class="consent-row"><input type="checkbox" name="privacy-consent" required=""><span data-lang="en">I agree that Kendra REAC Consultant may use this information to respond to my request. See the <a href="/privacy/">Privacy Policy</a>.</span><span data-lang="es">Acepto que Kendra REAC Consultant use esta información para responder a mi solicitud. Consulte la <a href="/privacy/">Política de Privacidad</a>.</span></label>
         <button type="submit" class="form-submit" data-lang="en">Send message →</button>
         <button type="submit" class="form-submit" data-lang="es">Enviar mensaje →</button>
-        <p style="text-align:center;font-size:12px;color:var(--gray-600);margin-top:12px;"><span data-lang="en">Prefer email?</span><span data-lang="es">¿Prefiere correo?</span> <a href="mailto:proposals@reacnspire.com" style="color:var(--navy);font-weight:600;">proposals@reacnspire.com</a></p>
+        <p><span data-lang="en">Prefer email?</span><span data-lang="es">¿Prefiere correo?</span> <a href="mailto:proposals@reacnspire.com">proposals@reacnspire.com</a></p>
       </form>
     </div>
   </div>
@@ -1802,21 +930,21 @@
 <!-- NSPIRE advanced on-site training — current flat fee -->
 <div class="promo-overlay" id="promoOverlay" role="dialog" aria-modal="true" aria-labelledby="promoTitle">
   <div class="promo-card">
-    <button class="promo-close" onclick="closePromo()" aria-label="Close">&times;</button>
+    <button class="promo-close" onclick="closePromo()" aria-label="Close">×</button>
 
     <div class="promo-head">
       <span class="promo-alert" data-lang="en">NSPIRE Advanced On-Site Training</span>
       <span class="promo-alert" data-lang="es">Entrenamiento avanzado NSPIRE</span>
       <h2 id="promoTitle" data-lang="en">Prepare Your Team for NSPIRE Inspections</h2>
-      <h2 data-lang="es">Prepare a su equipo para las inspecciones NSPIRE</h2>
+      <h2 data-lang="es" id="promoTitleEs">Prepare a su equipo para las inspecciones NSPIRE</h2>
       <p data-lang="en">Practical training to help your team identify deficiencies and prepare for an NSPIRE inspection.</p>
       <p data-lang="es">Entrenamiento práctico para que su equipo identifique deficiencias y se prepare para una inspección NSPIRE.</p>
     </div>
 
     <div class="promo-body">
-      <div style="text-align:center;margin-bottom:6px;">
-        <p style="font-size:13px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:var(--navy);margin:0;" data-lang="en">NSPIRE Advanced On-Site Training</p>
-        <p style="font-size:13px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:var(--navy);margin:0;" data-lang="es">Entrenamiento Avanzado NSPIRE en el Sitio</p>
+      <div class="promo-intro">
+        <p data-lang="en">NSPIRE Advanced On-Site Training</p>
+        <p data-lang="es">Entrenamiento Avanzado NSPIRE en el Sitio</p>
       </div>
 
       <div class="promo-price-row">
@@ -1830,18 +958,18 @@
       </div>
 
       <ul class="promo-list">
-        <li data-lang="en">Life-threatening deficiencies</li>
-        <li data-lang="es">Deficiencias que amenazan la vida</li>
-        <li data-lang="en">Most common severe &amp; moderate deficiencies</li>
-        <li data-lang="es">Deficiencias severas y moderadas comunes</li>
-        <li data-lang="en">Affirmative NSPIRE requirements</li>
-        <li data-lang="es">Requisitos afirmativos de NSPIRE</li>
-        <li data-lang="en">Latest HUD updates &amp; clarifications</li>
-        <li data-lang="es">Últimas actualizaciones de HUD</li>
-        <li data-lang="en">Digital PDF training manual</li>
-        <li data-lang="es">Manual de entrenamiento en PDF</li>
-        <li data-lang="en">Certificates of participation</li>
-        <li data-lang="es">Certificados de participación</li>
+        <li data-lang="en"><svg class="line-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 12l4 4L19 6"></path></svg>Life-threatening deficiencies</li>
+        <li data-lang="es"><svg class="line-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 12l4 4L19 6"></path></svg>Deficiencias que amenazan la vida</li>
+        <li data-lang="en"><svg class="line-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 12l4 4L19 6"></path></svg>Most common severe &amp; moderate deficiencies</li>
+        <li data-lang="es"><svg class="line-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 12l4 4L19 6"></path></svg>Deficiencias severas y moderadas comunes</li>
+        <li data-lang="en"><svg class="line-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 12l4 4L19 6"></path></svg>Affirmative NSPIRE requirements</li>
+        <li data-lang="es"><svg class="line-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 12l4 4L19 6"></path></svg>Requisitos afirmativos de NSPIRE</li>
+        <li data-lang="en"><svg class="line-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 12l4 4L19 6"></path></svg>Latest HUD updates &amp; clarifications</li>
+        <li data-lang="es"><svg class="line-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 12l4 4L19 6"></path></svg>Últimas actualizaciones de HUD</li>
+        <li data-lang="en"><svg class="line-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 12l4 4L19 6"></path></svg>Digital PDF training manual</li>
+        <li data-lang="es"><svg class="line-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 12l4 4L19 6"></path></svg>Manual de entrenamiento en PDF</li>
+        <li data-lang="en"><svg class="line-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 12l4 4L19 6"></path></svg>Certificates of participation</li>
+        <li data-lang="es"><svg class="line-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 12l4 4L19 6"></path></svg>Certificados de participación</li>
       </ul>
 
       <div class="promo-urgency">
@@ -1856,8 +984,8 @@
         <span class="name">Sandra Romero-Negron</span> ·
         <span data-lang="en">President, Kendra REAC Consultant, Inc.</span>
         <span data-lang="es">Presidenta, Kendra REAC Consultant, Inc.</span><br>
-        📞 <a href="tel:+14075165393">(407) 516-5393</a> ·
-        📧 <a href="mailto:sandra@reacnspire.com">sandra@reacnspire.com</a>
+         <a href="tel:+14075165393">(407) 516-5393</a> ·
+         <a href="mailto:sandra@reacnspire.com">sandra@reacnspire.com</a>
       </div>
     </div>
   </div>
@@ -1870,35 +998,13 @@
 </button>
 
 <!-- FOOTER -->
-<footer>
-  <div style="display:flex;flex-direction:column;align-items:center;gap:20px;width:100%;">
-    <div style="display:flex;align-items:center;gap:14px;">
-      <span style="font-size:13px;color:rgba(255,255,255,0.4);" data-lang="en">Follow Kendra REAC:</span>
-      <span style="font-size:13px;color:rgba(255,255,255,0.4);" data-lang="es">Síguenos:</span>
-      <a href="https://www.facebook.com/kendrareac" target="_blank" rel="noopener noreferrer" aria-label="Kendra REAC on Facebook" class="social-btn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 21v-8h2.7l.4-3h-3.1V8.1c0-.9.3-1.6 1.7-1.6h1.8V3.8c-.3 0-1.4-.1-2.6-.1-2.6 0-4.4 1.6-4.4 4.5V10H7v3h3v8h3.5Z"/></svg></a>
-      <a href="https://www.instagram.com/kendrareac/" target="_blank" rel="noopener noreferrer" aria-label="Kendra REAC on Instagram" class="social-btn"><svg class="instagram-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.8" r="1" fill="currentColor" stroke="none"/></svg></a>
+<footer><div class="container footer-grid"><div class="footer-brand"><img src="/kendra-logo-nobg.png" width="168" height="94" loading="lazy" alt="Kendra REAC Consultant"><h3>Kendra REAC Consultant, Inc.</h3><p><span data-lang="en">HUD REAC / NSPIRE consulting and bilingual training.</span><span data-lang="es">Consultoría HUD REAC / NSPIRE y adiestramientos bilingües.</span></p><p><a href="tel:4075165393">407-516-5393</a><br><a href="mailto:proposals@reacnspire.com">proposals@reacnspire.com</a></p></div><div class="footer-service"><h4><span data-lang="en">Services</span><span data-lang="es">Servicios</span></h4><a href="/nspire-consulting/"><span data-lang="en">NSPIRE Consulting</span><span data-lang="es">Consultoría NSPIRE</span></a><a href="/nspire-pre-inspection/"><span data-lang="en">NSPIRE Pre-Inspections</span><span data-lang="es">Preinspecciones NSPIRE</span></a><a href="/spanish-nspire-training/"><span data-lang="en">Spanish NSPIRE Training</span><span data-lang="es">Adiestramientos NSPIRE en español</span></a></div><div class="footer-resource"><h4><span data-lang="en">Resources</span><span data-lang="es">Recursos</span></h4><a href="updates/" data-lang="en">App tips &amp; updates</a><a href="updates/es/" data-lang="es">Consejos y novedades de las apps</a><a href="/hud-news/"><span data-lang="en">HUD News &amp; Updates</span><span data-lang="es">Noticias y novedades de HUD</span></a><a href="/reac-vs-nspire/"><span data-lang="en">REAC vs. NSPIRE</span><span data-lang="es">REAC y NSPIRE</span></a><a href="/nspire-2026-changes/"><span data-lang="en">NSPIRE 2026 Changes</span><span data-lang="es">Cambios de NSPIRE 2026</span></a></div><div class="footer-legal"><h4><span data-lang="en">Legal</span><span data-lang="es">Políticas</span></h4><a href="/privacy/"><span data-lang="en">Privacy Policy</span><span data-lang="es">Política de privacidad</span></a><a href="/terms/"><span data-lang="en">Terms of Use</span><span data-lang="es">Términos de uso</span></a><a href="/fulfillment/"><span data-lang="en">Fulfillment Policy</span><span data-lang="es">Política de cumplimiento de pedidos</span></a><a href="/cancellation/"><span data-lang="en">Cancellation Policy</span><span data-lang="es">Política de cancelación</span></a></div></div><div class="container footer-bottom"><div class="footer-copy"><span data-lang="en">© 2026 Kendra REAC Consultant, Inc. All rights reserved.</span><span data-lang="es">© 2026 Kendra REAC Consultant, Inc. Todos los derechos reservados.</span></div><div>
+      <span data-lang="en">Follow Kendra REAC:</span>
+      <span data-lang="es">Síguenos:</span>
+      <a href="https://www.facebook.com/kendrareac" target="_blank" rel="noopener noreferrer" aria-label="Kendra REAC on Facebook" class="social-btn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 21v-8h2.7l.4-3h-3.1V8.1c0-.9.3-1.6 1.7-1.6h1.8V3.8c-.3 0-1.4-.1-2.6-.1-2.6 0-4.4 1.6-4.4 4.5V10H7v3h3v8h3.5Z"></path></svg></a>
+      <a href="https://www.instagram.com/kendrareac/" target="_blank" rel="noopener noreferrer" aria-label="Kendra REAC on Instagram" class="social-btn"><svg class="instagram-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.3" cy="6.8" r="1" fill="currentColor" stroke="none"></circle></svg></a>
       <a href="https://x.com/ReacConsultant" target="_blank" rel="noopener noreferrer" aria-label="Kendra REAC on X" class="social-btn">X</a>
-    </div>
-    <div style="width:100%;height:1px;background:rgba(255,255,255,0.07);"></div>
-    <div style="display:flex;align-items:center;justify-content:space-between;width:100%;flex-wrap:wrap;gap:12px;">
-      <div class="footer-copy">© 2026 Kendra REAC Consultant, Inc. All rights reserved.</div>
-      <div class="footer-links">
-        <a href="updates/" data-lang="en">App tips &amp; updates</a>
-        <a href="updates/es/" data-lang="es">Consejos y novedades de las apps</a>
-        <a href="/hud-news/">HUD News &amp; Updates</a>
-        <a href="/nspire-consulting/">NSPIRE Consulting</a>
-        <a href="/nspire-pre-inspection/">NSPIRE Pre-Inspections</a>
-        <a href="/spanish-nspire-training/">Spanish NSPIRE Training</a>
-        <a href="/reac-vs-nspire/">REAC vs. NSPIRE</a>
-        <a href="/nspire-2026-changes/">NSPIRE 2026 Changes</a>
-        <a href="/privacy/">Privacy Policy</a>
-        <a href="/terms/">Terms of Use</a>
-        <a href="/fulfillment/">Fulfillment Policy</a>
-        <a href="/cancellation/">Cancellation Policy</a>
-      </div>
-    </div>
-  </div>
-</footer>
+    </div></div></footer>
 
 <script>
   function toggleLang() {
@@ -1965,7 +1071,7 @@
     let dismissed = false;
     try { dismissed = localStorage.getItem(PROMO_KEY) === '1'; } catch (e) {}
     if (dismissed) { showReopenLink(); return; }
-    setTimeout(openPromo, 5000);
+    setTimeout(() => openPromo(), 5000);
   })();
   // Close on backdrop click or Escape
   const promoOverlay = document.getElementById('promoOverlay');
@@ -1978,7 +1084,11 @@
   });
 </script>
 
+<script src="/home.js" defer=""></script>
 <!-- Metricool tracker -->
 <script>function loadScript(a){var b=document.getElementsByTagName("head")[0],c=document.createElement("script");c.type="text/javascript",c.src="https://tracker.metricool.com/resources/be.js",c.onreadystatechange=a,c.onload=a,b.appendChild(c)}loadScript(function(){beTracker.t({hash:"5f0b9e78174c121beb6b547e674d4cc4"})});</script>
+
+
+
 </body>
 </html>

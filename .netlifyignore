@@ -9,3 +9,6 @@ AGENTS.md
 
 # MCP server config for Claude Code.
 .mcp.json
+
+# Design-review screenshots and QA notes (PR evidence, not site content).
+review/
