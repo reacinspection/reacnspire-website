@@ -18,3 +18,8 @@ http://www.kendrareacconsultant.com/*    https://reacnspire.com/:splat   301!
 /.mcp.json   /404   404!
 /AGENTS.md   /404   404!
 /review/*    /404   404!
+/scripts/*   /404   404!
+/docs/*      /404   404!
+/node_modules/*  /404   404!
+/package.json       /404   404!
+/package-lock.json  /404   404!

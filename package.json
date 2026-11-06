@@ -1,0 +1,12 @@
+{
+  "name": "reacnspire-website",
+  "private": true,
+  "type": "module",
+  "description": "reacnspire.com static site + Netlify Functions",
+  "scripts": {
+    "invoice": "node scripts/stripe-invoice.mjs"
+  },
+  "dependencies": {
+    "stripe": "^23.1.0"
+  }
+}

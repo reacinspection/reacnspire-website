@@ -12,3 +12,10 @@ AGENTS.md
 
 # Design-review screenshots and QA notes (PR evidence, not site content).
 review/
+
+# Node dependencies and owner-only scripts/docs (functions are bundled separately).
+node_modules/
+scripts/
+docs/
+package.json
+package-lock.json
