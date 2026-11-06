@@ -1,6 +1,6 @@
-# Stripe — NspirePro software, sold by National Pro Inspections
+# Stripe — NspirePro software, sold by JE BookKeeper LLC d/b/a National ProInspections
 
-**Seller:** `[LEGAL COMPANY NAME]` d/b/a **National Pro Inspections**. This company
+**Seller:** **JE BookKeeper LLC** d/b/a **National ProInspections**. This company
 is **separate from Kendra REAC Consultant, Inc.** It owns the Stripe account, the
 bank account Stripe pays out to, and the software sales-tax registrations.
 Stripe is used only for NspirePro software: the apps, subscriptions, and
@@ -9,10 +9,6 @@ software licenses and invoices.
 **Kendra REAC Consultant, Inc.** sells workshops, trainings, consulting and
 inspections through **Square**. Those never go through Stripe. The workshop pages
 (`/hqs-a-nspire/`, `/taller-seguridad/`) keep their Square links.
-
-> **Before merging:** set `LEGAL_NAME` in `netlify/lib/billing.mjs` and replace
-> `[LEGAL COMPANY NAME]` in `terms/index.html` (both paragraphs) and in this file.
-> The invoice script refuses to run until `LEGAL_NAME` is set.
 
 | Piece | Where | What it does |
 | --- | --- | --- |
@@ -25,14 +21,13 @@ inspections through **Square**. Those never go through Stripe. The workshop page
 ## Opening the Stripe account
 - **Business type:** the company that owns the DBA, with its own EIN. Enter that
   company's legal name and EIN. Do **not** use Kendra REAC Consultant, Inc.
-- **Public business name / DBA:** `National Pro Inspections`.
+- **Public business name / DBA:** `National ProInspections`.
 - **Bank account:** the National Pro Inspections business account, titled to that
   company. Stripe may ask for the DBA filing (fictitious name registration) to
   match the DBA to the legal name.
 - **Statement descriptor:** `NATL PRO INSPECTIONS`; shortened descriptor
   `NATL PRO INSP`. These must match `STATEMENT` in `billing.mjs`.
-- **Support email / phone:** whatever that company wants customers to use. If it's
-  not kendra@reacnspire.com / (407) 516-5393, update `billing.mjs` and `/terms/`.
+- **Support email / phone:** administration@reacnspire.com · (407) 744-2644 (same as `billing.mjs` and `/terms/`).
 - Product description: NspirePro inspection and maintenance software (SaaS),
   website reacnspire.com. reacnspire.com is Kendra REAC's site, so the Terms
   disclosure explains that the software is sold by a separate company.
