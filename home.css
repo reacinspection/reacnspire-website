@@ -37,3 +37,34 @@ footer{background:var(--ink);color:#fff;padding:64px 0 24px}.footer-grid{display
 /* Three app cards: 3-up on wide screens, 2-up on tablets (mobile 1-up rule above) */
 @media(min-width:1100px){.app2{padding:28px}}
 @media(min-width:601px) and (max-width:1099px){.apps2-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+/* App family: inspection tools above their shared Maintenance workflow. */
+#app .apps2-tree{grid-template-columns:repeat(2,minmax(0,1fr));column-gap:24px;row-gap:0}
+#app .apps2-tree>.app2{min-width:0}
+#app .apps2-connector{grid-column:1/-1;position:relative;height:116px;color:var(--ink-2)}
+#app .apps2-branches{position:absolute;left:calc(25% - 6px);right:calc(25% - 6px);top:0;height:32px;border:2px solid currentColor;border-top:0;border-radius:0 0 12px 12px}
+#app .apps2-stem{position:absolute;left:50%;top:32px;bottom:0;border-left:2px solid currentColor;transform:translateX(-1px)}
+#app .apps2-connection-label{position:absolute;left:50%;top:54px;transform:translateX(-50%);margin:0;padding:7px 16px;max-width:calc(100% - 24px);width:max-content;background:var(--paper);border:1px solid var(--line);border-radius:24px;color:var(--ink);font-size:13px;line-height:1.5;text-align:center}
+#app .app2-maintenance{grid-column:1/-1;display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:40px;align-items:center}
+#app .app2-copy{display:flex;flex-direction:column;min-width:0}
+#app .app2-copy>p{font-size:15px;color:var(--ink-2)}
+#app .app2-maintenance .app2-shot{margin:0;min-width:0}
+#app .app2-maintenance .frame{height:440px}
+#app .apps2-tree .app2-shot img{max-width:100%}
+@media(min-width:601px) and (max-width:1099px){#app .app2-maintenance{gap:24px}#app .app2-maintenance .frame{height:380px;padding:16px}}
+@media(max-width:600px){
+ #app .apps2-tree{grid-template-columns:minmax(0,1fr)}
+ #app .apps2-tree>.app2:first-child{position:relative;margin-bottom:28px}
+ #app .apps2-tree>.app2:first-child::after{content:"";position:absolute;left:50%;top:100%;height:28px;border-left:2px solid var(--ink-2)}
+ #app .apps2-connector{height:96px}
+ #app .apps2-branches{display:none}
+ #app .apps2-stem{top:0}
+ #app .apps2-connection-label{top:30px;font-size:12px;padding:7px 12px}
+ #app .app2-maintenance{display:flex;flex-direction:column;align-items:stretch;gap:0}
+ #app .app2-copy{display:contents}
+ #app .app2-maintenance .app2-shot{order:1;margin:8px 0 24px}
+ #app .app2-maintenance .chips{order:2}
+ #app .app2-maintenance .price{order:3}
+ #app .app2-maintenance .ctas{order:4}
+ #app .app2-maintenance .frame{height:320px}
+}

@@ -566,7 +566,7 @@
       <p data-lang="es">Inspeccione propiedades públicas y multifamiliares, inspeccione unidades de vales y administre las reparaciones. Cada app se vende por separado.</p>
     </div>
 
-    <div class="apps2-grid">
+    <div class="apps2-grid apps2-tree">
 
       <!-- LEFT: NspirePro (inspections) -->
       <div class="app2 on reveal">
@@ -627,21 +627,22 @@
         </div>
       </div>
 
-      <!-- RIGHT: NspirePro Maintenance (work orders) -->
-      <div class="app2 reveal">
+      <div class="apps2-connector">
+        <span class="apps2-branches" aria-hidden="true"></span>
+        <span class="apps2-stem" aria-hidden="true"></span>
+        <p class="apps2-connection-label"><span data-lang="en">Findings → work orders</span><span data-lang="es">Hallazgos → órdenes de trabajo</span></p>
+      </div>
+
+      <!-- BELOW: NspirePro Maintenance (work orders) -->
+      <div class="app2 app2-maintenance reveal">
+        <div class="app2-copy">
         <div class="ic"><svg class="line-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="m14 6 4 4 4-4a7 7 0 0 1-9 9l-7 7-4-4 7-7a7 7 0 0 1 9-9Z"></path></svg></div>
         <div class="role" data-lang="en">For property managers</div>
         <div class="role" data-lang="es">Para administradores</div>
         <h3>NspirePro Maintenance</h3>
         <p data-lang="en">Tenants and technicians report work orders with a photo. Assign to your team, auto-translate every request to English, and keep tenants updated by email — start to finish.</p>
         <p data-lang="es">Inquilinos y técnicos reportan órdenes de trabajo con una foto. Asigne a su equipo, traduzca cada solicitud al inglés automáticamente y mantenga informados a los inquilinos por correo — de principio a fin.</p>
-        <figure class="app2-shot">
-          <div class="frame">
-            <img src="/images/nspire-maintenance-preview.png" alt="NspirePro Maintenance workflow illustration" width="750" height="1100" loading="lazy" data-alt-en="NspirePro Maintenance workflow illustration" data-alt-es="Ilustración del flujo de mantenimiento de NspirePro">
-          </div>
-          <figcaption data-lang="en">Maintenance workflow illustration</figcaption>
-          <figcaption data-lang="es">Ejemplo del flujo de mantenimiento</figcaption>
-        </figure>
+
         <div class="chips">
           <span class="np-chip" data-lang="en">Tenant photo reports</span> <span class="np-chip" data-lang="en">Auto-translated</span> <span class="np-chip" data-lang="en">Technician app</span> <span class="np-chip" data-lang="en">Tenant status emails</span> <span class="np-chip" data-lang="en">Unlimited users</span>
           <span class="np-chip" data-lang="es">Reportes con foto</span> <span class="np-chip" data-lang="es">Traducción automática</span> <span class="np-chip" data-lang="es">App para técnicos</span> <span class="np-chip" data-lang="es">Correos de estado</span> <span class="np-chip" data-lang="es">Usuarios ilimitados</span>
@@ -654,6 +655,14 @@
           <a class="o" href="https://app.reacnspire.com/maintenance.html" target="_blank" data-lang="en">Manager Sign-in</a>
           <a class="o" href="https://app.reacnspire.com/maintenance.html" target="_blank" data-lang="es">Acceso Gerente</a>
         </div>
+        </div>
+        <figure class="app2-shot">
+          <div class="frame">
+            <img src="/images/nspire-maintenance-preview.png" alt="NspirePro Maintenance workflow illustration" width="750" height="1100" loading="lazy" data-alt-en="NspirePro Maintenance workflow illustration" data-alt-es="Ilustración del flujo de mantenimiento de NspirePro">
+          </div>
+          <figcaption data-lang="en">Maintenance workflow illustration</figcaption>
+          <figcaption data-lang="es">Ejemplo del flujo de mantenimiento</figcaption>
+        </figure>
       </div>
 
     </div>
