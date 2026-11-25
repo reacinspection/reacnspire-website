@@ -18,3 +18,7 @@ http://www.kendrareacconsultant.com/*    https://reacnspire.com/:splat   301!
 /.mcp.json   /404   404!
 /AGENTS.md   /404   404!
 /review/*    /404   404!
+
+# HQS to NSPIRE-V workshop on hold (2026-11-25); temporary so the URL can be reused.
+/hqs-a-nspire / 302!
+/hqs-a-nspire/* / 302!
